@@ -340,6 +340,8 @@ your thesis, seek advice from your supervisor.
 %
 %TODO : review section to make more appropriate for final submission
 
+%TODO : look for journal papers about people using biomedical radar devices and how they take a long time, if faster switching is used then they would get better speeds.
+
 \chapter{Introduction}
 \section{Background}
 \justify
@@ -351,6 +353,7 @@ This thesis project looks into the development of an RF switching system to allo
 
 
 
+%TODO : talk about how "speed is relevant to the VNA, so the switches dont limit the overall speed of the device.
 \section{Aims/Objectives}
 This thesis aims to evaluate the current available designs and products to develop a low-cost and portable RF switch matrix. \newline
 The primary objective are to complete the following tasks: \\[-0.8cm]
@@ -395,39 +398,22 @@ This thesis is expected to produce a proprietary switch matrix that can enable t
 
 
 %---------------------------------------------------------------------------------
-\chapter{Literature review and prior art}
-%You will need to review previous work in the field, which may include
-%books and papers (``literature''), patents and commercial products
-%(``prior art''), and earlier work in your Department.  This
-%information is usually (but not always) collected in a single chapter,
-%whose title should preferably be more specific and interesting than
-%the one above.
 
+\chapter{Literature review}
+\section{Prior Art}
 This chapter looks into the currently available designs used for high speed RF switching as well as relevant theory that has and is being completed in the field.
 
-\section{Currently Available Technology}
+
+%TODO : Look into mechanical motion technology in rf imaging techniques???
+\subsection{Currently Available Technology}
 
 
-\section{Previous designs}
+\subsection{Previous designs}
 In order to develop the PCB 
 
 
 
-%---------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-%---------------------------------------------------------------------------------
-\chapter{Theory}
 \section{Software Defined Radio}
 The application of the RF switching system this thesis looks a developing, is to provide an RF front end such as a software defined radio (SDR) or Vector Network Analyser (VNA) with the ability to communicate multiple antennas or sensors. An SDR is a radio that is partially or entirely controlled by software in the physical layer in the Open Systems Interconnection (OSI) model. The OSI model is used to describe the subsystems of a communication system, where the physical layer represents the data. This allows for the software or firmware to be adjusted resulting in the change the carrier frequency, data rate, modulation, coding, etc. without having the reconstruct the hardware of the radio [6]. This project doesn't look into the control of an SDR, instead focuses on interfacing the switching system with the SDR. It is expected that the SDR will have an impedance of $50\ohm$ which is common of most SDR technology or a less common impedance of $75\ohm$ [7].
 
@@ -472,6 +458,8 @@ Since the RF switching system this thesis is designing will not generating its o
 This thesis topic looks into the development of a RF switching system, this will be done by utilising RF and microwave switches to create an RF switching matrix. An RF switch matrix are used to route RF signals from an input to an output.
 There are several different types of switching matrix's, there is multiple input multiple output (MIMO), multiple input single output (MISO), single input multiple output (SIMO) and single input single output (SISO) [12]. For this project we are looking at controlling multiple outputs with a single input, so will be implementing a SIMO RF switching matrix.
 
+\subsection{Switch Architecture}
+
 
 \subsection{Switch Topologies}
 When constructing a RF switch there are two typical topologies, these are multiplexers and general purpose relays; examples can be seen in Figure 3. General purpose relays are commonly a SPDT or SDnT relay's that are used for routing a signal between multiple paths. Multiplexers are devices that route a single input to multiple outputs or vice versa, they are commonly built from multiple SPDT relays but have a greater inherited insertion loss from this configuration [13]. 
@@ -494,7 +482,7 @@ When designing PCB's for
 
 
 
-
+%TODO : Replace 'track' with 'transmission line'
 \section{RF Track Design}
 %talk about; microstrip, stripline, coplanar. design techniques, 
 For designing the RF tracks on the PCB there are three primary options available
@@ -631,10 +619,24 @@ This chapter will cover the progression of the design and development of the RF 
 
 \section{Evaluation}
 
-
+\subsection{Evaluation Boards}
 We currently have $3$ boards available 
 
-We are able to evaluate these boards by 
+
+
+The three available evaluation boards we investigated using a MODELNUMBER VNA; each switch was wired so that the input is connected to the output, while all other ports were $50\ohm$ terminated. The switch was powered and the controls set to allow the signal to proprigate down the open path, then changed the state to have a closed path; this was conducted for each evaluation board. The results were exported to a \textit{.s2p} file to be analysed using ADS, and the results can be seen in Figure's \ref{fig:res:}, \ref{fig:res:} \& \ref{fig:res:}. 
+%Insert Images
+These simulations 
+
+
+
+\subsection{RF Switches}
+
+
+
+\subsection{Transmission Line Design}
+
+
 
 
 
@@ -682,6 +684,18 @@ One of the key design parameters is for developing a portable device, this requi
 
 
 \section{Micro-controller Development}
+%TODO : Discus key design requirements for the microcontroller
+%TODO : device selection
+
+
+
+
+%TODO : Flow chart, block diagram
+\subsection{Design}
+
+
+
+\subsection{Evaluation}
 
 
 %---------------------------------------------------------------------------------
@@ -695,17 +709,7 @@ One of the key design parameters is for developing a portable device, this requi
 
 
 %---------------------------------------------------------------------------------
-\chapter{Results}
-\section{Simulations}
-This section presents the results obtain from the simulation run on the development boards and used in the design of the SP16T switches.
-
-\subsection{Evaluation Boards}
-The three available evaluation boards we investigated using a MODELNUMBER VNA; each switch was wired so that the input is connected to the output, while all other ports were $50\ohm$ terminated. The switch was powered and the controls set to allow the signal to proprigate down the open path, then changed the state to have a closed path; this was conducted for each evaluation board. The results were exported to a \textit{.s2p} file to be analysed using ADS, and the results can be seen in Figure's \ref{fig:res:}, \ref{fig:res:} \& \ref{fig:res:}. 
-%Insert Images
-These simulations 
-
-\subsection{Tracks}
-
+\chapter{Verification}
 
 \section{Individual Board's}
 This section looks at the results obtain from each of the 
@@ -713,6 +717,11 @@ This section looks at the results obtain from each of the
 
 \section{RF Switch Matrix}
 
+\subsection{Losses}
+
+\subsection{Speed}
+
+\subsection{Power Requirements \& Control}
 
 %---------------------------------------------------------------------------------
 
@@ -732,7 +741,7 @@ This section looks at the results obtain from each of the
 
 
 
-
+\section{Contributions}
 
 
 
@@ -753,6 +762,8 @@ This section looks at the results obtain from each of the
 
 \section{Conclusion}
 
+
+%TODO : Intergrate an SDR into the switch matrix, replacing the microcontroller allowing for more precise control over switches
 \section{Future Work}
 
 
