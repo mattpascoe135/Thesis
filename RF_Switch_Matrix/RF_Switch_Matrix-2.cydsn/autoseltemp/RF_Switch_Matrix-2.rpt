@@ -1,0 +1,19 @@
+Loading plugins phase: Elapsed time ==> 0s.349ms
+Initializing data phase: Elapsed time ==> 0s.000ms
+<CYPRESSTAG name="CyDsfit arguments...">
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix-2.cydsn\RF_Switch_Matrix-2.cyprj -d CY8C3245AXA-166 -s C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix-2.cydsn\Generated_Source\PSoC3 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=BE</CYPRESSTAG>
+<CYPRESSTAG name="Design elaboration results...">
+ADD: pft.M0038: error: Input voltage error: The input voltage of "VDDIO0" is set to 5 which is out of range. This pin's value must be between 1.7 and VDDA (3.3).
+ * C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix-2.cydsn\RF_Switch_Matrix-2.cydwr (VDDIO0 (V))
+
+ADD: pft.M0038: error: Input voltage error: The input voltage of "VDDIO1" is set to 5 which is out of range. This pin's value must be between 1.7 and VDDA (3.3).
+ * C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix-2.cydsn\RF_Switch_Matrix-2.cydwr (VDDIO1 (V))
+
+ADD: pft.M0038: error: Input voltage error: The input voltage of "VDDIO2" is set to 5 which is out of range. This pin's value must be between 1.7 and VDDA (3.3).
+ * C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix-2.cydsn\RF_Switch_Matrix-2.cydwr (VDDIO2 (V))
+
+ADD: pft.M0038: error: Input voltage error: The input voltage of "VDDIO3" is set to 5 which is out of range. This pin's value must be between 1.7 and VDDA (3.3).
+ * C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix-2.cydsn\RF_Switch_Matrix-2.cydwr (VDDIO3 (V))
+
+</CYPRESSTAG>
+Elaboration phase: Elapsed time ==> 0s.285ms

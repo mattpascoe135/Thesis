@@ -1,0 +1,1594 @@
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"cli.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.comm	switchFreq,4,4
+  18              		.comm	power,1,1
+  19              		.comm	status,1,1
+  20              		.section	.text.sendString,"ax",%progbits
+  21              		.align	2
+  22              		.global	sendString
+  23              		.code	16
+  24              		.thumb_func
+  25              		.type	sendString, %function
+  26              	sendString:
+  27              	.LFB34:
+  28              		.file 1 ".\\cli.c"
+   1:.\cli.c       **** /* ========================================
+   2:.\cli.c       ****  *
+   3:.\cli.c       ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\cli.c       ****  * All Rights Reserved
+   5:.\cli.c       ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\cli.c       ****  *
+   7:.\cli.c       ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\cli.c       ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\cli.c       ****  *
+  10:.\cli.c       ****  * ========================================
+  11:.\cli.c       **** */
+  12:.\cli.c       **** #include <project.h>
+  13:.\cli.c       **** #include <cli.h>
+  14:.\cli.c       **** #include <stdbool.h>
+  15:.\cli.c       **** #include <stdio.h>
+  16:.\cli.c       **** #include <main.h>
+  17:.\cli.c       **** 
+  18:.\cli.c       **** /* void sendString(char* string)
+  19:.\cli.c       ****  * @param:
+  20:.\cli.c       ****  *     pointer to a array of char
+  21:.\cli.c       ****  *
+  22:.\cli.c       ****  * Writes the parsed string to the Tx USB conneciton
+  23:.\cli.c       ****  */
+  24:.\cli.c       **** void sendString(char* string) {
+  29              		.loc 1 24 0
+  30              		.cfi_startproc
+  31 0000 80B5     		push	{r7, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 7, -8
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 2
+
+
+  34              		.cfi_offset 14, -4
+  35 0002 84B0     		sub	sp, sp, #16
+  36              		.cfi_def_cfa_offset 24
+  37 0004 00AF     		add	r7, sp, #0
+  38              		.cfi_def_cfa_register 7
+  39 0006 7860     		str	r0, [r7, #4]
+  25:.\cli.c       ****     int i=0;
+  40              		.loc 1 25 0
+  41 0008 0023     		mov	r3, #0
+  42 000a FB60     		str	r3, [r7, #12]
+  26:.\cli.c       ****     while(string[i] != '\0') {
+  43              		.loc 1 26 0
+  44 000c 09E0     		b	.L2
+  45              	.L3:
+  27:.\cli.c       ****         UART_WriteTxData(string[i]);
+  46              		.loc 1 27 0
+  47 000e FB68     		ldr	r3, [r7, #12]
+  48 0010 7A68     		ldr	r2, [r7, #4]
+  49 0012 D318     		add	r3, r2, r3
+  50 0014 1B78     		ldrb	r3, [r3]
+  51 0016 181C     		mov	r0, r3
+  52 0018 FFF7FEFF 		bl	UART_WriteTxData
+  28:.\cli.c       ****         i++;
+  53              		.loc 1 28 0
+  54 001c FB68     		ldr	r3, [r7, #12]
+  55 001e 0133     		add	r3, r3, #1
+  56 0020 FB60     		str	r3, [r7, #12]
+  57              	.L2:
+  26:.\cli.c       ****     while(string[i] != '\0') {
+  58              		.loc 1 26 0 discriminator 1
+  59 0022 FB68     		ldr	r3, [r7, #12]
+  60 0024 7A68     		ldr	r2, [r7, #4]
+  61 0026 D318     		add	r3, r2, r3
+  62 0028 1B78     		ldrb	r3, [r3]
+  63 002a 002B     		cmp	r3, #0
+  64 002c EFD1     		bne	.L3
+  29:.\cli.c       ****     }
+  30:.\cli.c       **** }
+  65              		.loc 1 30 0
+  66 002e BD46     		mov	sp, r7
+  67 0030 04B0     		add	sp, sp, #16
+  68              		@ sp needed
+  69 0032 80BD     		pop	{r7, pc}
+  70              		.cfi_endproc
+  71              	.LFE34:
+  72              		.size	sendString, .-sendString
+  73              		.section	.rodata
+  74              		.align	2
+  75              	.LC1:
+  76 0000 5475726E 		.ascii	"Turning switch OFF\015\012\015\012\000"
+  76      696E6720 
+  76      73776974 
+  76      6368204F 
+  76      46460D0A 
+  77 0017 00       		.align	2
+  78              	.LC3:
+  79 0018 5475726E 		.ascii	"Turning switch ON\015\012\015\012\000"
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 3
+
+
+  79      696E6720 
+  79      73776974 
+  79      6368204F 
+  79      4E0D0A0D 
+  80 002e 0000     		.align	2
+  81              	.LC6:
+  82 0030 0D0A00   		.ascii	"\015\012\000"
+  83 0033 00       		.align	2
+  84              	.LC8:
+  85 0034 496E7661 		.ascii	"Invalid input\015\012\000"
+  85      6C696420 
+  85      696E7075 
+  85      740D0A00 
+  86              		.align	2
+  87              	.LC10:
+  88 0044 3E2000   		.ascii	"> \000"
+  89              		.section	.text.homeProcess,"ax",%progbits
+  90              		.align	2
+  91              		.global	homeProcess
+  92              		.code	16
+  93              		.thumb_func
+  94              		.type	homeProcess, %function
+  95              	homeProcess:
+  96              	.LFB35:
+  31:.\cli.c       **** 
+  32:.\cli.c       **** void homeProcess(char input) {
+  97              		.loc 1 32 0
+  98              		.cfi_startproc
+  99 0000 80B5     		push	{r7, lr}
+ 100              		.cfi_def_cfa_offset 8
+ 101              		.cfi_offset 7, -8
+ 102              		.cfi_offset 14, -4
+ 103 0002 82B0     		sub	sp, sp, #8
+ 104              		.cfi_def_cfa_offset 16
+ 105 0004 00AF     		add	r7, sp, #0
+ 106              		.cfi_def_cfa_register 7
+ 107 0006 021C     		mov	r2, r0
+ 108 0008 FB1D     		add	r3, r7, #7
+ 109 000a 1A70     		strb	r2, [r3]
+  33:.\cli.c       ****     switch(input) {
+ 110              		.loc 1 33 0
+ 111 000c FB1D     		add	r3, r7, #7
+ 112 000e 1B78     		ldrb	r3, [r3]
+ 113 0010 332B     		cmp	r3, #51
+ 114 0012 28D0     		beq	.L6
+ 115 0014 04DC     		bgt	.L7
+ 116 0016 312B     		cmp	r3, #49
+ 117 0018 07D0     		beq	.L8
+ 118 001a 322B     		cmp	r3, #50
+ 119 001c 1DD0     		beq	.L9
+ 120 001e 35E0     		b	.L5
+ 121              	.L7:
+ 122 0020 342B     		cmp	r3, #52
+ 123 0022 26D0     		beq	.L10
+ 124 0024 682B     		cmp	r3, #104
+ 125 0026 2AD0     		beq	.L11
+ 126 0028 30E0     		b	.L5
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 4
+
+
+ 127              	.L8:
+  34:.\cli.c       ****         case '1':
+  35:.\cli.c       ****             if(power) {
+ 128              		.loc 1 35 0
+ 129 002a 1E4B     		ldr	r3, .L15
+ 130 002c 1B78     		ldrb	r3, [r3]
+ 131 002e 002B     		cmp	r3, #0
+ 132 0030 09D0     		beq	.L12
+  36:.\cli.c       ****                 power = false;
+ 133              		.loc 1 36 0
+ 134 0032 1C4B     		ldr	r3, .L15
+ 135 0034 0022     		mov	r2, #0
+ 136 0036 1A70     		strb	r2, [r3]
+  37:.\cli.c       ****                 updatePower();
+ 137              		.loc 1 37 0
+ 138 0038 FFF7FEFF 		bl	updatePower
+  38:.\cli.c       ****                 UART_PutString("Turning switch OFF\r\n\r\n");
+ 139              		.loc 1 38 0
+ 140 003c 1A4B     		ldr	r3, .L15+4
+ 141 003e 181C     		mov	r0, r3
+ 142 0040 FFF7FEFF 		bl	UART_PutString
+  39:.\cli.c       ****             } else {
+  40:.\cli.c       ****                 power = true;
+  41:.\cli.c       ****                 updatePower(); 
+  42:.\cli.c       ****                 UART_PutString("Turning switch ON\r\n\r\n");
+  43:.\cli.c       ****             }
+  44:.\cli.c       ****             break;
+ 143              		.loc 1 44 0
+ 144 0044 26E0     		b	.L14
+ 145              	.L12:
+  40:.\cli.c       ****                 power = true;
+ 146              		.loc 1 40 0
+ 147 0046 174B     		ldr	r3, .L15
+ 148 0048 0122     		mov	r2, #1
+ 149 004a 1A70     		strb	r2, [r3]
+  41:.\cli.c       ****                 updatePower(); 
+ 150              		.loc 1 41 0
+ 151 004c FFF7FEFF 		bl	updatePower
+  42:.\cli.c       ****                 UART_PutString("Turning switch ON\r\n\r\n");
+ 152              		.loc 1 42 0
+ 153 0050 164B     		ldr	r3, .L15+8
+ 154 0052 181C     		mov	r0, r3
+ 155 0054 FFF7FEFF 		bl	UART_PutString
+ 156              		.loc 1 44 0
+ 157 0058 1CE0     		b	.L14
+ 158              	.L9:
+  45:.\cli.c       ****         case '2':
+  46:.\cli.c       ****             status = SET_FREQ;
+ 159              		.loc 1 46 0
+ 160 005a 154B     		ldr	r3, .L15+12
+ 161 005c 0122     		mov	r2, #1
+ 162 005e 1A70     		strb	r2, [r3]
+  47:.\cli.c       ****             dispFuncHelp();
+ 163              		.loc 1 47 0
+ 164 0060 FFF7FEFF 		bl	dispFuncHelp
+  48:.\cli.c       ****             break;
+ 165              		.loc 1 48 0
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 5
+
+
+ 166 0064 16E0     		b	.L14
+ 167              	.L6:
+  49:.\cli.c       ****         case '3':
+  50:.\cli.c       ****             status = SET_SWITCH;
+ 168              		.loc 1 50 0
+ 169 0066 124B     		ldr	r3, .L15+12
+ 170 0068 0222     		mov	r2, #2
+ 171 006a 1A70     		strb	r2, [r3]
+  51:.\cli.c       ****             dispSwitchHelp();
+ 172              		.loc 1 51 0
+ 173 006c FFF7FEFF 		bl	dispSwitchHelp
+  52:.\cli.c       ****             break;
+ 174              		.loc 1 52 0
+ 175 0070 10E0     		b	.L14
+ 176              	.L10:
+  53:.\cli.c       ****         case '4':
+  54:.\cli.c       ****             status = DEBUG_MODE;
+ 177              		.loc 1 54 0
+ 178 0072 0F4B     		ldr	r3, .L15+12
+ 179 0074 0422     		mov	r2, #4
+ 180 0076 1A70     		strb	r2, [r3]
+  55:.\cli.c       ****             dispDebugHelp();
+ 181              		.loc 1 55 0
+ 182 0078 FFF7FEFF 		bl	dispDebugHelp
+  56:.\cli.c       ****            
+  57:.\cli.c       ****             //move to new for loop in main
+  58:.\cli.c       ****             break;
+ 183              		.loc 1 58 0
+ 184 007c 0AE0     		b	.L14
+ 185              	.L11:
+  59:.\cli.c       ****         case 'h':
+  60:.\cli.c       ****             UART_PutString("\r\n");
+ 186              		.loc 1 60 0
+ 187 007e 0D4B     		ldr	r3, .L15+16
+ 188 0080 181C     		mov	r0, r3
+ 189 0082 FFF7FEFF 		bl	UART_PutString
+  61:.\cli.c       ****             dispMenuHelp();
+ 190              		.loc 1 61 0
+ 191 0086 FFF7FEFF 		bl	dispMenuHelp
+  62:.\cli.c       ****             break;
+ 192              		.loc 1 62 0
+ 193 008a 03E0     		b	.L14
+ 194              	.L5:
+  63:.\cli.c       ****         default:
+  64:.\cli.c       ****             UART_PutString("Invalid input\r\n");
+ 195              		.loc 1 64 0
+ 196 008c 0A4B     		ldr	r3, .L15+20
+ 197 008e 181C     		mov	r0, r3
+ 198 0090 FFF7FEFF 		bl	UART_PutString
+ 199              	.L14:
+  65:.\cli.c       ****     }
+  66:.\cli.c       ****     UART_PutString("> ");
+ 200              		.loc 1 66 0
+ 201 0094 094B     		ldr	r3, .L15+24
+ 202 0096 181C     		mov	r0, r3
+ 203 0098 FFF7FEFF 		bl	UART_PutString
+  67:.\cli.c       **** }
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 6
+
+
+ 204              		.loc 1 67 0
+ 205 009c BD46     		mov	sp, r7
+ 206 009e 02B0     		add	sp, sp, #8
+ 207              		@ sp needed
+ 208 00a0 80BD     		pop	{r7, pc}
+ 209              	.L16:
+ 210 00a2 C046     		.align	2
+ 211              	.L15:
+ 212 00a4 00000000 		.word	power
+ 213 00a8 00000000 		.word	.LC1
+ 214 00ac 18000000 		.word	.LC3
+ 215 00b0 00000000 		.word	status
+ 216 00b4 30000000 		.word	.LC6
+ 217 00b8 34000000 		.word	.LC8
+ 218 00bc 44000000 		.word	.LC10
+ 219              		.cfi_endproc
+ 220              	.LFE35:
+ 221              		.size	homeProcess, .-homeProcess
+ 222              		.section	.rodata
+ 223 0047 00       		.align	2
+ 224              	.LC12:
+ 225 0048 44656163 		.ascii	"Deactivated switch\015\012\000"
+ 225      74697661 
+ 225      74656420 
+ 225      73776974 
+ 225      63680D0A 
+ 226 005d 000000   		.align	2
+ 227              	.LC14:
+ 228 0060 41637469 		.ascii	"Activated switch\015\012\000"
+ 228      76617465 
+ 228      64207377 
+ 228      69746368 
+ 228      0D0A00
+ 229 0073 00       		.align	2
+ 230              	.LC16:
+ 231 0074 4368616E 		.ascii	"Change more switches? y/n\015\012\000"
+ 231      6765206D 
+ 231      6F726520 
+ 231      73776974 
+ 231      63686573 
+ 232              		.section	.text.switchProcess,"ax",%progbits
+ 233              		.align	2
+ 234              		.global	switchProcess
+ 235              		.code	16
+ 236              		.thumb_func
+ 237              		.type	switchProcess, %function
+ 238              	switchProcess:
+ 239              	.LFB36:
+  68:.\cli.c       **** 
+  69:.\cli.c       **** 
+  70:.\cli.c       **** void switchProcess(char input) {
+ 240              		.loc 1 70 0
+ 241              		.cfi_startproc
+ 242 0000 80B5     		push	{r7, lr}
+ 243              		.cfi_def_cfa_offset 8
+ 244              		.cfi_offset 7, -8
+ 245              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 7
+
+
+ 246 0002 84B0     		sub	sp, sp, #16
+ 247              		.cfi_def_cfa_offset 24
+ 248 0004 00AF     		add	r7, sp, #0
+ 249              		.cfi_def_cfa_register 7
+ 250 0006 021C     		mov	r2, r0
+ 251 0008 FB1D     		add	r3, r7, #7
+ 252 000a 1A70     		strb	r2, [r3]
+  71:.\cli.c       ****     if(input != 'x') {
+ 253              		.loc 1 71 0
+ 254 000c FB1D     		add	r3, r7, #7
+ 255 000e 1B78     		ldrb	r3, [r3]
+ 256 0010 782B     		cmp	r3, #120
+ 257 0012 1BD0     		beq	.L18
+ 258              	.LBB2:
+  72:.\cli.c       ****         int switchVal = input-'a';
+ 259              		.loc 1 72 0
+ 260 0014 FB1D     		add	r3, r7, #7
+ 261 0016 1B78     		ldrb	r3, [r3]
+ 262 0018 613B     		sub	r3, r3, #97
+ 263 001a FB60     		str	r3, [r7, #12]
+  73:.\cli.c       ****         if(isSwitchActive(switchVal)) {
+ 264              		.loc 1 73 0
+ 265 001c FB68     		ldr	r3, [r7, #12]
+ 266 001e 181C     		mov	r0, r3
+ 267 0020 FFF7FEFF 		bl	isSwitchActive
+ 268 0024 031C     		mov	r3, r0
+ 269 0026 002B     		cmp	r3, #0
+ 270 0028 08D0     		beq	.L19
+  74:.\cli.c       ****             removeSwitch(switchVal);
+ 271              		.loc 1 74 0
+ 272 002a FB68     		ldr	r3, [r7, #12]
+ 273 002c 181C     		mov	r0, r3
+ 274 002e FFF7FEFF 		bl	removeSwitch
+  75:.\cli.c       ****             UART_PutString("Deactivated switch\r\n");
+ 275              		.loc 1 75 0
+ 276 0032 0D4B     		ldr	r3, .L20
+ 277 0034 181C     		mov	r0, r3
+ 278 0036 FFF7FEFF 		bl	UART_PutString
+ 279 003a 07E0     		b	.L18
+ 280              	.L19:
+  76:.\cli.c       ****         } else {
+  77:.\cli.c       ****             addSwitch(switchVal);
+ 281              		.loc 1 77 0
+ 282 003c FB68     		ldr	r3, [r7, #12]
+ 283 003e 181C     		mov	r0, r3
+ 284 0040 FFF7FEFF 		bl	addSwitch
+  78:.\cli.c       ****             UART_PutString("Activated switch\r\n");
+ 285              		.loc 1 78 0
+ 286 0044 094B     		ldr	r3, .L20+4
+ 287 0046 181C     		mov	r0, r3
+ 288 0048 FFF7FEFF 		bl	UART_PutString
+ 289              	.L18:
+ 290              	.LBE2:
+  79:.\cli.c       ****         }  
+  80:.\cli.c       ****     }
+  81:.\cli.c       ****     
+  82:.\cli.c       ****     //Ask if there is any additional changes
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 8
+
+
+  83:.\cli.c       ****     UART_PutString("Change more switches? y/n\r\n");
+ 291              		.loc 1 83 0
+ 292 004c 084B     		ldr	r3, .L20+8
+ 293 004e 181C     		mov	r0, r3
+ 294 0050 FFF7FEFF 		bl	UART_PutString
+  84:.\cli.c       ****     UART_PutString("> ");
+ 295              		.loc 1 84 0
+ 296 0054 074B     		ldr	r3, .L20+12
+ 297 0056 181C     		mov	r0, r3
+ 298 0058 FFF7FEFF 		bl	UART_PutString
+  85:.\cli.c       ****     status = QUESTION;
+ 299              		.loc 1 85 0
+ 300 005c 064B     		ldr	r3, .L20+16
+ 301 005e 0322     		mov	r2, #3
+ 302 0060 1A70     		strb	r2, [r3]
+  86:.\cli.c       **** }
+ 303              		.loc 1 86 0
+ 304 0062 BD46     		mov	sp, r7
+ 305 0064 04B0     		add	sp, sp, #16
+ 306              		@ sp needed
+ 307 0066 80BD     		pop	{r7, pc}
+ 308              	.L21:
+ 309              		.align	2
+ 310              	.L20:
+ 311 0068 48000000 		.word	.LC12
+ 312 006c 60000000 		.word	.LC14
+ 313 0070 74000000 		.word	.LC16
+ 314 0074 44000000 		.word	.LC10
+ 315 0078 00000000 		.word	status
+ 316              		.cfi_endproc
+ 317              	.LFE36:
+ 318              		.size	switchProcess, .-switchProcess
+ 319              		.section	.rodata
+ 320              		.align	2
+ 321              	.LC21:
+ 322 0090 312E2054 		.ascii	"1. Turn off switch matrix\015\012\000"
+ 322      75726E20 
+ 322      6F666620 
+ 322      73776974 
+ 322      6368206D 
+ 323              		.align	2
+ 324              	.LC23:
+ 325 00ac 312E2054 		.ascii	"1. Turn on switch matrix\015\012\000"
+ 325      75726E20 
+ 325      6F6E2073 
+ 325      77697463 
+ 325      68206D61 
+ 326 00c7 00       		.align	2
+ 327              	.LC25:
+ 328 00c8 322E2053 		.ascii	"2. Set switching frequency\015\012\000"
+ 328      65742073 
+ 328      77697463 
+ 328      68696E67 
+ 328      20667265 
+ 329 00e5 000000   		.align	2
+ 330              	.LC27:
+ 331 00e8 332E2043 		.ascii	"3. Change active swiches\015\012\000"
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 9
+
+
+ 331      68616E67 
+ 331      65206163 
+ 331      74697665 
+ 331      20737769 
+ 332              		.section	.text.dispMenuHelp,"ax",%progbits
+ 333              		.align	2
+ 334              		.global	dispMenuHelp
+ 335              		.code	16
+ 336              		.thumb_func
+ 337              		.type	dispMenuHelp, %function
+ 338              	dispMenuHelp:
+ 339              	.LFB37:
+  87:.\cli.c       ****     
+  88:.\cli.c       **** 
+  89:.\cli.c       **** 
+  90:.\cli.c       **** /* void dispMenuHelp(void)
+  91:.\cli.c       ****  * @param:
+  92:.\cli.c       ****  *     void
+  93:.\cli.c       ****  *
+  94:.\cli.c       ****  * Prints out a help menu
+  95:.\cli.c       ****  */
+  96:.\cli.c       **** void dispMenuHelp(void) {
+ 340              		.loc 1 96 0
+ 341              		.cfi_startproc
+ 342 0000 80B5     		push	{r7, lr}
+ 343              		.cfi_def_cfa_offset 8
+ 344              		.cfi_offset 7, -8
+ 345              		.cfi_offset 14, -4
+ 346 0002 00AF     		add	r7, sp, #0
+ 347              		.cfi_def_cfa_register 7
+  97:.\cli.c       ****     if(power) {
+ 348              		.loc 1 97 0
+ 349 0004 0B4B     		ldr	r3, .L25
+ 350 0006 1B78     		ldrb	r3, [r3]
+ 351 0008 002B     		cmp	r3, #0
+ 352 000a 04D0     		beq	.L23
+  98:.\cli.c       ****         UART_PutString("1. Turn off switch matrix\r\n");
+ 353              		.loc 1 98 0
+ 354 000c 0A4B     		ldr	r3, .L25+4
+ 355 000e 181C     		mov	r0, r3
+ 356 0010 FFF7FEFF 		bl	UART_PutString
+ 357 0014 03E0     		b	.L24
+ 358              	.L23:
+  99:.\cli.c       ****     } else {
+ 100:.\cli.c       ****         UART_PutString("1. Turn on switch matrix\r\n");
+ 359              		.loc 1 100 0
+ 360 0016 094B     		ldr	r3, .L25+8
+ 361 0018 181C     		mov	r0, r3
+ 362 001a FFF7FEFF 		bl	UART_PutString
+ 363              	.L24:
+ 101:.\cli.c       ****     }
+ 102:.\cli.c       ****     UART_PutString("2. Set switching frequency\r\n");
+ 364              		.loc 1 102 0
+ 365 001e 084B     		ldr	r3, .L25+12
+ 366 0020 181C     		mov	r0, r3
+ 367 0022 FFF7FEFF 		bl	UART_PutString
+ 103:.\cli.c       ****     UART_PutString("3. Change active swiches\r\n");
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 10
+
+
+ 368              		.loc 1 103 0
+ 369 0026 074B     		ldr	r3, .L25+16
+ 370 0028 181C     		mov	r0, r3
+ 371 002a FFF7FEFF 		bl	UART_PutString
+ 104:.\cli.c       **** }
+ 372              		.loc 1 104 0
+ 373 002e BD46     		mov	sp, r7
+ 374              		@ sp needed
+ 375 0030 80BD     		pop	{r7, pc}
+ 376              	.L26:
+ 377 0032 C046     		.align	2
+ 378              	.L25:
+ 379 0034 00000000 		.word	power
+ 380 0038 90000000 		.word	.LC21
+ 381 003c AC000000 		.word	.LC23
+ 382 0040 C8000000 		.word	.LC25
+ 383 0044 E8000000 		.word	.LC27
+ 384              		.cfi_endproc
+ 385              	.LFE37:
+ 386              		.size	dispMenuHelp, .-dispMenuHelp
+ 387              		.section	.rodata
+ 388 0103 00       		.align	2
+ 389              	.LC29:
+ 390 0104 456E7465 		.ascii	"Enter a valid switching frequency from 0-30000Hz\015"
+ 390      72206120 
+ 390      76616C69 
+ 390      64207377 
+ 390      69746368 
+ 391 0135 0A00     		.ascii	"\012\000"
+ 392 0137 00       		.align	2
+ 393              	.LC31:
+ 394 0138 456E7465 		.ascii	"Enter the frequency in Hz and press ENTER\015\012\000"
+ 394      72207468 
+ 394      65206672 
+ 394      65717565 
+ 394      6E637920 
+ 395              		.align	2
+ 396              	.LC33:
+ 397 0164 50726573 		.ascii	"Press 'x' to return to main menu\015\012\000"
+ 397      73202778 
+ 397      2720746F 
+ 397      20726574 
+ 397      75726E20 
+ 398              		.section	.text.dispFuncHelp,"ax",%progbits
+ 399              		.align	2
+ 400              		.global	dispFuncHelp
+ 401              		.code	16
+ 402              		.thumb_func
+ 403              		.type	dispFuncHelp, %function
+ 404              	dispFuncHelp:
+ 405              	.LFB38:
+ 105:.\cli.c       **** 
+ 106:.\cli.c       **** /* void dispFuncHelp(void)
+ 107:.\cli.c       ****  * @param:
+ 108:.\cli.c       ****  *     void
+ 109:.\cli.c       ****  *
+ 110:.\cli.c       ****  * Prints out a help menu
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 11
+
+
+ 111:.\cli.c       ****  */
+ 112:.\cli.c       **** void dispFuncHelp(void) {
+ 406              		.loc 1 112 0
+ 407              		.cfi_startproc
+ 408 0000 80B5     		push	{r7, lr}
+ 409              		.cfi_def_cfa_offset 8
+ 410              		.cfi_offset 7, -8
+ 411              		.cfi_offset 14, -4
+ 412 0002 00AF     		add	r7, sp, #0
+ 413              		.cfi_def_cfa_register 7
+ 113:.\cli.c       ****     UART_PutString("Enter a valid switching frequency from 0-30000Hz\r\n");
+ 414              		.loc 1 113 0
+ 415 0004 064B     		ldr	r3, .L28
+ 416 0006 181C     		mov	r0, r3
+ 417 0008 FFF7FEFF 		bl	UART_PutString
+ 114:.\cli.c       ****     UART_PutString("Enter the frequency in Hz and press ENTER\r\n");
+ 418              		.loc 1 114 0
+ 419 000c 054B     		ldr	r3, .L28+4
+ 420 000e 181C     		mov	r0, r3
+ 421 0010 FFF7FEFF 		bl	UART_PutString
+ 115:.\cli.c       ****     UART_PutString("Press 'x' to return to main menu\r\n");
+ 422              		.loc 1 115 0
+ 423 0014 044B     		ldr	r3, .L28+8
+ 424 0016 181C     		mov	r0, r3
+ 425 0018 FFF7FEFF 		bl	UART_PutString
+ 116:.\cli.c       **** }
+ 426              		.loc 1 116 0
+ 427 001c BD46     		mov	sp, r7
+ 428              		@ sp needed
+ 429 001e 80BD     		pop	{r7, pc}
+ 430              	.L29:
+ 431              		.align	2
+ 432              	.L28:
+ 433 0020 04010000 		.word	.LC29
+ 434 0024 38010000 		.word	.LC31
+ 435 0028 64010000 		.word	.LC33
+ 436              		.cfi_endproc
+ 437              	.LFE38:
+ 438              		.size	dispFuncHelp, .-dispFuncHelp
+ 439              		.section	.rodata
+ 440 0187 00       		.align	2
+ 441              	.LC35:
+ 442 0188 456E7465 		.ascii	"Enter a character for which switch to add/remove\015"
+ 442      72206120 
+ 442      63686172 
+ 442      61637465 
+ 442      7220666F 
+ 443 01b9 0A00     		.ascii	"\012\000"
+ 444 01bb 00       		.align	2
+ 445              	.LC37:
+ 446 01bc 2563292E 		.ascii	"%c). Output %d - ON\015\012\000"
+ 446      204F7574 
+ 446      70757420 
+ 446      2564202D 
+ 446      204F4E0D 
+ 447 01d2 0000     		.align	2
+ 448              	.LC39:
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 12
+
+
+ 449 01d4 2563292E 		.ascii	"%c). Output %d - OFF\015\012\000"
+ 449      204F7574 
+ 449      70757420 
+ 449      2564202D 
+ 449      204F4646 
+ 450 01eb 00       		.align	2
+ 451              	.LC41:
+ 452 01ec 78292E20 		.ascii	"x). Cancel and resturn to main menu.\015\012\000"
+ 452      43616E63 
+ 452      656C2061 
+ 452      6E642072 
+ 452      65737475 
+ 453              		.section	.text.dispSwitchHelp,"ax",%progbits
+ 454              		.align	2
+ 455              		.global	dispSwitchHelp
+ 456              		.code	16
+ 457              		.thumb_func
+ 458              		.type	dispSwitchHelp, %function
+ 459              	dispSwitchHelp:
+ 460              	.LFB39:
+ 117:.\cli.c       **** 
+ 118:.\cli.c       **** /* void dispSwitchHelp(void)
+ 119:.\cli.c       ****  * @param:
+ 120:.\cli.c       ****  *     void
+ 121:.\cli.c       ****  *
+ 122:.\cli.c       ****  * Prints out a help menu
+ 123:.\cli.c       ****  */
+ 124:.\cli.c       **** void dispSwitchHelp(void) {
+ 461              		.loc 1 124 0
+ 462              		.cfi_startproc
+ 463 0000 80B5     		push	{r7, lr}
+ 464              		.cfi_def_cfa_offset 8
+ 465              		.cfi_offset 7, -8
+ 466              		.cfi_offset 14, -4
+ 467 0002 96B0     		sub	sp, sp, #88
+ 468              		.cfi_def_cfa_offset 96
+ 469 0004 00AF     		add	r7, sp, #0
+ 470              		.cfi_def_cfa_register 7
+ 125:.\cli.c       ****     char str[80];
+ 126:.\cli.c       ****     int i;
+ 127:.\cli.c       ****     UART_PutString("Enter a character for which switch to add/remove\r\n");
+ 471              		.loc 1 127 0
+ 472 0006 184B     		ldr	r3, .L35
+ 473 0008 181C     		mov	r0, r3
+ 474 000a FFF7FEFF 		bl	UART_PutString
+ 128:.\cli.c       ****     for(i=0; i<MAX_SWITCHES; i++) {
+ 475              		.loc 1 128 0
+ 476 000e 0023     		mov	r3, #0
+ 477 0010 7B65     		str	r3, [r7, #84]
+ 478 0012 1EE0     		b	.L31
+ 479              	.L34:
+ 129:.\cli.c       ****         if(isSwitchActive(i)) {
+ 480              		.loc 1 129 0
+ 481 0014 7B6D     		ldr	r3, [r7, #84]
+ 482 0016 181C     		mov	r0, r3
+ 483 0018 FFF7FEFF 		bl	isSwitchActive
+ 484 001c 031C     		mov	r3, r0
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 13
+
+
+ 485 001e 002B     		cmp	r3, #0
+ 486 0020 08D0     		beq	.L32
+ 130:.\cli.c       ****             sprintf(str, "%c). Output %d - ON\r\n", 'a'+i, i);
+ 487              		.loc 1 130 0
+ 488 0022 7B6D     		ldr	r3, [r7, #84]
+ 489 0024 1A1C     		mov	r2, r3
+ 490 0026 6132     		add	r2, r2, #97
+ 491 0028 381D     		add	r0, r7, #4
+ 492 002a 1049     		ldr	r1, .L35+4
+ 493 002c 7B6D     		ldr	r3, [r7, #84]
+ 494 002e FFF7FEFF 		bl	sprintf
+ 495 0032 07E0     		b	.L33
+ 496              	.L32:
+ 131:.\cli.c       ****         } else {
+ 132:.\cli.c       ****             sprintf(str, "%c). Output %d - OFF\r\n", 'a'+i, i);
+ 497              		.loc 1 132 0
+ 498 0034 7B6D     		ldr	r3, [r7, #84]
+ 499 0036 1A1C     		mov	r2, r3
+ 500 0038 6132     		add	r2, r2, #97
+ 501 003a 381D     		add	r0, r7, #4
+ 502 003c 0C49     		ldr	r1, .L35+8
+ 503 003e 7B6D     		ldr	r3, [r7, #84]
+ 504 0040 FFF7FEFF 		bl	sprintf
+ 505              	.L33:
+ 133:.\cli.c       ****         }
+ 134:.\cli.c       ****         UART_PutString(str);
+ 506              		.loc 1 134 0
+ 507 0044 3B1D     		add	r3, r7, #4
+ 508 0046 181C     		mov	r0, r3
+ 509 0048 FFF7FEFF 		bl	UART_PutString
+ 128:.\cli.c       ****     for(i=0; i<MAX_SWITCHES; i++) {
+ 510              		.loc 1 128 0
+ 511 004c 7B6D     		ldr	r3, [r7, #84]
+ 512 004e 0133     		add	r3, r3, #1
+ 513 0050 7B65     		str	r3, [r7, #84]
+ 514              	.L31:
+ 128:.\cli.c       ****     for(i=0; i<MAX_SWITCHES; i++) {
+ 515              		.loc 1 128 0 is_stmt 0 discriminator 1
+ 516 0052 7B6D     		ldr	r3, [r7, #84]
+ 517 0054 0F2B     		cmp	r3, #15
+ 518 0056 DDDD     		ble	.L34
+ 135:.\cli.c       ****     }    
+ 136:.\cli.c       ****     UART_PutString("x). Cancel and resturn to main menu.\r\n");
+ 519              		.loc 1 136 0 is_stmt 1
+ 520 0058 064B     		ldr	r3, .L35+12
+ 521 005a 181C     		mov	r0, r3
+ 522 005c FFF7FEFF 		bl	UART_PutString
+ 137:.\cli.c       **** }
+ 523              		.loc 1 137 0
+ 524 0060 BD46     		mov	sp, r7
+ 525 0062 16B0     		add	sp, sp, #88
+ 526              		@ sp needed
+ 527 0064 80BD     		pop	{r7, pc}
+ 528              	.L36:
+ 529 0066 C046     		.align	2
+ 530              	.L35:
+ 531 0068 88010000 		.word	.LC35
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 14
+
+
+ 532 006c BC010000 		.word	.LC37
+ 533 0070 D4010000 		.word	.LC39
+ 534 0074 EC010000 		.word	.LC41
+ 535              		.cfi_endproc
+ 536              	.LFE39:
+ 537              		.size	dispSwitchHelp, .-dispSwitchHelp
+ 538              		.section	.rodata
+ 539 0213 00       		.align	2
+ 540              	.LC43:
+ 541 0214 456E7465 		.ascii	"Entering Debug mode...\015\012\000"
+ 541      72696E67 
+ 541      20446562 
+ 541      7567206D 
+ 541      6F64652E 
+ 542 022d 000000   		.align	2
+ 543              	.LC45:
+ 544 0230 50726573 		.ascii	"Press any key to change to next switch\015\012\000"
+ 544      7320616E 
+ 544      79206B65 
+ 544      7920746F 
+ 544      20636861 
+ 545 0259 000000   		.section	.text.dispDebugHelp,"ax",%progbits
+ 546              		.align	2
+ 547              		.global	dispDebugHelp
+ 548              		.code	16
+ 549              		.thumb_func
+ 550              		.type	dispDebugHelp, %function
+ 551              	dispDebugHelp:
+ 552              	.LFB40:
+ 138:.\cli.c       **** 
+ 139:.\cli.c       **** void dispDebugHelp(void) {
+ 553              		.loc 1 139 0
+ 554              		.cfi_startproc
+ 555 0000 80B5     		push	{r7, lr}
+ 556              		.cfi_def_cfa_offset 8
+ 557              		.cfi_offset 7, -8
+ 558              		.cfi_offset 14, -4
+ 559 0002 00AF     		add	r7, sp, #0
+ 560              		.cfi_def_cfa_register 7
+ 140:.\cli.c       ****     UART_PutString("Entering Debug mode...\r\n");
+ 561              		.loc 1 140 0
+ 562 0004 064B     		ldr	r3, .L38
+ 563 0006 181C     		mov	r0, r3
+ 564 0008 FFF7FEFF 		bl	UART_PutString
+ 141:.\cli.c       ****     UART_PutString("Press any key to change to next switch\r\n");
+ 565              		.loc 1 141 0
+ 566 000c 054B     		ldr	r3, .L38+4
+ 567 000e 181C     		mov	r0, r3
+ 568 0010 FFF7FEFF 		bl	UART_PutString
+ 142:.\cli.c       ****     UART_PutString("Press 'x' to return to main menu\r\n");
+ 569              		.loc 1 142 0
+ 570 0014 044B     		ldr	r3, .L38+8
+ 571 0016 181C     		mov	r0, r3
+ 572 0018 FFF7FEFF 		bl	UART_PutString
+ 143:.\cli.c       **** }
+ 573              		.loc 1 143 0
+ 574 001c BD46     		mov	sp, r7
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 15
+
+
+ 575              		@ sp needed
+ 576 001e 80BD     		pop	{r7, pc}
+ 577              	.L39:
+ 578              		.align	2
+ 579              	.L38:
+ 580 0020 14020000 		.word	.LC43
+ 581 0024 30020000 		.word	.LC45
+ 582 0028 64010000 		.word	.LC33
+ 583              		.cfi_endproc
+ 584              	.LFE40:
+ 585              		.size	dispDebugHelp, .-dispDebugHelp
+ 586              		.text
+ 587              	.Letext0:
+ 588              		.file 2 "./main.h"
+ 589              		.section	.debug_info,"",%progbits
+ 590              	.Ldebug_info0:
+ 591 0000 FA010000 		.4byte	0x1fa
+ 592 0004 0400     		.2byte	0x4
+ 593 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 594 000a 04       		.byte	0x4
+ 595 000b 01       		.uleb128 0x1
+ 596 000c 56000000 		.4byte	.LASF32
+ 597 0010 01       		.byte	0x1
+ 598 0011 15020000 		.4byte	.LASF33
+ 599 0015 BE010000 		.4byte	.LASF34
+ 600 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 601 001d 00000000 		.4byte	0
+ 602 0021 00000000 		.4byte	.Ldebug_line0
+ 603 0025 02       		.uleb128 0x2
+ 604 0026 01       		.byte	0x1
+ 605 0027 06       		.byte	0x6
+ 606 0028 1D020000 		.4byte	.LASF0
+ 607 002c 02       		.uleb128 0x2
+ 608 002d 01       		.byte	0x1
+ 609 002e 08       		.byte	0x8
+ 610 002f D7000000 		.4byte	.LASF1
+ 611 0033 02       		.uleb128 0x2
+ 612 0034 02       		.byte	0x2
+ 613 0035 05       		.byte	0x5
+ 614 0036 B4010000 		.4byte	.LASF2
+ 615 003a 02       		.uleb128 0x2
+ 616 003b 02       		.byte	0x2
+ 617 003c 07       		.byte	0x7
+ 618 003d FD000000 		.4byte	.LASF3
+ 619 0041 02       		.uleb128 0x2
+ 620 0042 04       		.byte	0x4
+ 621 0043 05       		.byte	0x5
+ 622 0044 0C020000 		.4byte	.LASF4
+ 623 0048 02       		.uleb128 0x2
+ 624 0049 04       		.byte	0x4
+ 625 004a 07       		.byte	0x7
+ 626 004b EB000000 		.4byte	.LASF5
+ 627 004f 02       		.uleb128 0x2
+ 628 0050 08       		.byte	0x8
+ 629 0051 05       		.byte	0x5
+ 630 0052 97010000 		.4byte	.LASF6
+ 631 0056 02       		.uleb128 0x2
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 16
+
+
+ 632 0057 08       		.byte	0x8
+ 633 0058 07       		.byte	0x7
+ 634 0059 3C010000 		.4byte	.LASF7
+ 635 005d 03       		.uleb128 0x3
+ 636 005e 04       		.byte	0x4
+ 637 005f 05       		.byte	0x5
+ 638 0060 696E7400 		.ascii	"int\000"
+ 639 0064 02       		.uleb128 0x2
+ 640 0065 04       		.byte	0x4
+ 641 0066 07       		.byte	0x7
+ 642 0067 2F010000 		.4byte	.LASF8
+ 643 006b 02       		.uleb128 0x2
+ 644 006c 04       		.byte	0x4
+ 645 006d 04       		.byte	0x4
+ 646 006e 50000000 		.4byte	.LASF9
+ 647 0072 02       		.uleb128 0x2
+ 648 0073 08       		.byte	0x8
+ 649 0074 04       		.byte	0x4
+ 650 0075 10010000 		.4byte	.LASF10
+ 651 0079 02       		.uleb128 0x2
+ 652 007a 01       		.byte	0x1
+ 653 007b 08       		.byte	0x8
+ 654 007c A5010000 		.4byte	.LASF11
+ 655 0080 02       		.uleb128 0x2
+ 656 0081 04       		.byte	0x4
+ 657 0082 07       		.byte	0x7
+ 658 0083 85010000 		.4byte	.LASF12
+ 659 0087 04       		.uleb128 0x4
+ 660 0088 04       		.byte	0x4
+ 661 0089 79000000 		.4byte	0x79
+ 662 008d 05       		.uleb128 0x5
+ 663 008e 01       		.byte	0x1
+ 664 008f 02       		.byte	0x2
+ 665 0090 19       		.byte	0x19
+ 666 0091 B4000000 		.4byte	0xb4
+ 667 0095 06       		.uleb128 0x6
+ 668 0096 D2000000 		.4byte	.LASF13
+ 669 009a 00       		.sleb128 0
+ 670 009b 06       		.uleb128 0x6
+ 671 009c 00000000 		.4byte	.LASF14
+ 672 00a0 01       		.sleb128 1
+ 673 00a1 06       		.uleb128 0x6
+ 674 00a2 45000000 		.4byte	.LASF15
+ 675 00a6 02       		.sleb128 2
+ 676 00a7 06       		.uleb128 0x6
+ 677 00a8 1D000000 		.4byte	.LASF16
+ 678 00ac 03       		.sleb128 3
+ 679 00ad 06       		.uleb128 0x6
+ 680 00ae 17010000 		.4byte	.LASF17
+ 681 00b2 04       		.sleb128 4
+ 682 00b3 00       		.byte	0
+ 683 00b4 07       		.uleb128 0x7
+ 684 00b5 8E010000 		.4byte	.LASF35
+ 685 00b9 02       		.byte	0x2
+ 686 00ba 19       		.byte	0x19
+ 687 00bb 8D000000 		.4byte	0x8d
+ 688 00bf 08       		.uleb128 0x8
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 17
+
+
+ 689 00c0 60010000 		.4byte	.LASF18
+ 690 00c4 01       		.byte	0x1
+ 691 00c5 18       		.byte	0x18
+ 692 00c6 00000000 		.4byte	.LFB34
+ 693 00ca 34000000 		.4byte	.LFE34-.LFB34
+ 694 00ce 01       		.uleb128 0x1
+ 695 00cf 9C       		.byte	0x9c
+ 696 00d0 EF000000 		.4byte	0xef
+ 697 00d4 09       		.uleb128 0x9
+ 698 00d5 3E000000 		.4byte	.LASF20
+ 699 00d9 01       		.byte	0x1
+ 700 00da 18       		.byte	0x18
+ 701 00db 87000000 		.4byte	0x87
+ 702 00df 02       		.uleb128 0x2
+ 703 00e0 91       		.byte	0x91
+ 704 00e1 6C       		.sleb128 -20
+ 705 00e2 0A       		.uleb128 0xa
+ 706 00e3 6900     		.ascii	"i\000"
+ 707 00e5 01       		.byte	0x1
+ 708 00e6 19       		.byte	0x19
+ 709 00e7 5D000000 		.4byte	0x5d
+ 710 00eb 02       		.uleb128 0x2
+ 711 00ec 91       		.byte	0x91
+ 712 00ed 74       		.sleb128 -12
+ 713 00ee 00       		.byte	0
+ 714 00ef 08       		.uleb128 0x8
+ 715 00f0 79010000 		.4byte	.LASF19
+ 716 00f4 01       		.byte	0x1
+ 717 00f5 20       		.byte	0x20
+ 718 00f6 00000000 		.4byte	.LFB35
+ 719 00fa C0000000 		.4byte	.LFE35-.LFB35
+ 720 00fe 01       		.uleb128 0x1
+ 721 00ff 9C       		.byte	0x9c
+ 722 0100 13010000 		.4byte	0x113
+ 723 0104 09       		.uleb128 0x9
+ 724 0105 E5000000 		.4byte	.LASF21
+ 725 0109 01       		.byte	0x1
+ 726 010a 20       		.byte	0x20
+ 727 010b 79000000 		.4byte	0x79
+ 728 010f 02       		.uleb128 0x2
+ 729 0110 91       		.byte	0x91
+ 730 0111 77       		.sleb128 -9
+ 731 0112 00       		.byte	0
+ 732 0113 08       		.uleb128 0x8
+ 733 0114 6B010000 		.4byte	.LASF22
+ 734 0118 01       		.byte	0x1
+ 735 0119 46       		.byte	0x46
+ 736 011a 00000000 		.4byte	.LFB36
+ 737 011e 7C000000 		.4byte	.LFE36-.LFB36
+ 738 0122 01       		.uleb128 0x1
+ 739 0123 9C       		.byte	0x9c
+ 740 0124 4F010000 		.4byte	0x14f
+ 741 0128 09       		.uleb128 0x9
+ 742 0129 E5000000 		.4byte	.LASF21
+ 743 012d 01       		.byte	0x1
+ 744 012e 46       		.byte	0x46
+ 745 012f 79000000 		.4byte	0x79
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 18
+
+
+ 746 0133 02       		.uleb128 0x2
+ 747 0134 91       		.byte	0x91
+ 748 0135 6F       		.sleb128 -17
+ 749 0136 0B       		.uleb128 0xb
+ 750 0137 14000000 		.4byte	.LBB2
+ 751 013b 38000000 		.4byte	.LBE2-.LBB2
+ 752 013f 0C       		.uleb128 0xc
+ 753 0140 AA010000 		.4byte	.LASF23
+ 754 0144 01       		.byte	0x1
+ 755 0145 48       		.byte	0x48
+ 756 0146 5D000000 		.4byte	0x5d
+ 757 014a 02       		.uleb128 0x2
+ 758 014b 91       		.byte	0x91
+ 759 014c 74       		.sleb128 -12
+ 760 014d 00       		.byte	0
+ 761 014e 00       		.byte	0
+ 762 014f 0D       		.uleb128 0xd
+ 763 0150 22010000 		.4byte	.LASF24
+ 764 0154 01       		.byte	0x1
+ 765 0155 60       		.byte	0x60
+ 766 0156 00000000 		.4byte	.LFB37
+ 767 015a 48000000 		.4byte	.LFE37-.LFB37
+ 768 015e 01       		.uleb128 0x1
+ 769 015f 9C       		.byte	0x9c
+ 770 0160 0D       		.uleb128 0xd
+ 771 0161 53010000 		.4byte	.LASF25
+ 772 0165 01       		.byte	0x1
+ 773 0166 70       		.byte	0x70
+ 774 0167 00000000 		.4byte	.LFB38
+ 775 016b 2C000000 		.4byte	.LFE38-.LFB38
+ 776 016f 01       		.uleb128 0x1
+ 777 0170 9C       		.byte	0x9c
+ 778 0171 08       		.uleb128 0x8
+ 779 0172 29020000 		.4byte	.LASF26
+ 780 0176 01       		.byte	0x1
+ 781 0177 7C       		.byte	0x7c
+ 782 0178 00000000 		.4byte	.LFB39
+ 783 017c 78000000 		.4byte	.LFE39-.LFB39
+ 784 0180 01       		.uleb128 0x1
+ 785 0181 9C       		.byte	0x9c
+ 786 0182 A2010000 		.4byte	0x1a2
+ 787 0186 0A       		.uleb128 0xa
+ 788 0187 73747200 		.ascii	"str\000"
+ 789 018b 01       		.byte	0x1
+ 790 018c 7D       		.byte	0x7d
+ 791 018d A2010000 		.4byte	0x1a2
+ 792 0191 03       		.uleb128 0x3
+ 793 0192 91       		.byte	0x91
+ 794 0193 A47F     		.sleb128 -92
+ 795 0195 0A       		.uleb128 0xa
+ 796 0196 6900     		.ascii	"i\000"
+ 797 0198 01       		.byte	0x1
+ 798 0199 7E       		.byte	0x7e
+ 799 019a 5D000000 		.4byte	0x5d
+ 800 019e 02       		.uleb128 0x2
+ 801 019f 91       		.byte	0x91
+ 802 01a0 74       		.sleb128 -12
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 19
+
+
+ 803 01a1 00       		.byte	0
+ 804 01a2 0E       		.uleb128 0xe
+ 805 01a3 79000000 		.4byte	0x79
+ 806 01a7 B2010000 		.4byte	0x1b2
+ 807 01ab 0F       		.uleb128 0xf
+ 808 01ac 80000000 		.4byte	0x80
+ 809 01b0 4F       		.byte	0x4f
+ 810 01b1 00       		.byte	0
+ 811 01b2 0D       		.uleb128 0xd
+ 812 01b3 0F000000 		.4byte	.LASF27
+ 813 01b7 01       		.byte	0x1
+ 814 01b8 8B       		.byte	0x8b
+ 815 01b9 00000000 		.4byte	.LFB40
+ 816 01bd 2C000000 		.4byte	.LFE40-.LFB40
+ 817 01c1 01       		.uleb128 0x1
+ 818 01c2 9C       		.byte	0x9c
+ 819 01c3 10       		.uleb128 0x10
+ 820 01c4 26000000 		.4byte	.LASF28
+ 821 01c8 02       		.byte	0x2
+ 822 01c9 1C       		.byte	0x1c
+ 823 01ca 5D000000 		.4byte	0x5d
+ 824 01ce 05       		.uleb128 0x5
+ 825 01cf 03       		.byte	0x3
+ 826 01d0 00000000 		.4byte	switchFreq
+ 827 01d4 10       		.uleb128 0x10
+ 828 01d5 38000000 		.4byte	.LASF29
+ 829 01d9 02       		.byte	0x2
+ 830 01da 1D       		.byte	0x1d
+ 831 01db E5010000 		.4byte	0x1e5
+ 832 01df 05       		.uleb128 0x5
+ 833 01e0 03       		.byte	0x3
+ 834 01e1 00000000 		.4byte	power
+ 835 01e5 02       		.uleb128 0x2
+ 836 01e6 01       		.byte	0x1
+ 837 01e7 02       		.byte	0x2
+ 838 01e8 09000000 		.4byte	.LASF30
+ 839 01ec 10       		.uleb128 0x10
+ 840 01ed 31000000 		.4byte	.LASF31
+ 841 01f1 02       		.byte	0x2
+ 842 01f2 1E       		.byte	0x1e
+ 843 01f3 B4000000 		.4byte	0xb4
+ 844 01f7 05       		.uleb128 0x5
+ 845 01f8 03       		.byte	0x3
+ 846 01f9 00000000 		.4byte	status
+ 847 01fd 00       		.byte	0
+ 848              		.section	.debug_abbrev,"",%progbits
+ 849              	.Ldebug_abbrev0:
+ 850 0000 01       		.uleb128 0x1
+ 851 0001 11       		.uleb128 0x11
+ 852 0002 01       		.byte	0x1
+ 853 0003 25       		.uleb128 0x25
+ 854 0004 0E       		.uleb128 0xe
+ 855 0005 13       		.uleb128 0x13
+ 856 0006 0B       		.uleb128 0xb
+ 857 0007 03       		.uleb128 0x3
+ 858 0008 0E       		.uleb128 0xe
+ 859 0009 1B       		.uleb128 0x1b
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 20
+
+
+ 860 000a 0E       		.uleb128 0xe
+ 861 000b 55       		.uleb128 0x55
+ 862 000c 17       		.uleb128 0x17
+ 863 000d 11       		.uleb128 0x11
+ 864 000e 01       		.uleb128 0x1
+ 865 000f 10       		.uleb128 0x10
+ 866 0010 17       		.uleb128 0x17
+ 867 0011 00       		.byte	0
+ 868 0012 00       		.byte	0
+ 869 0013 02       		.uleb128 0x2
+ 870 0014 24       		.uleb128 0x24
+ 871 0015 00       		.byte	0
+ 872 0016 0B       		.uleb128 0xb
+ 873 0017 0B       		.uleb128 0xb
+ 874 0018 3E       		.uleb128 0x3e
+ 875 0019 0B       		.uleb128 0xb
+ 876 001a 03       		.uleb128 0x3
+ 877 001b 0E       		.uleb128 0xe
+ 878 001c 00       		.byte	0
+ 879 001d 00       		.byte	0
+ 880 001e 03       		.uleb128 0x3
+ 881 001f 24       		.uleb128 0x24
+ 882 0020 00       		.byte	0
+ 883 0021 0B       		.uleb128 0xb
+ 884 0022 0B       		.uleb128 0xb
+ 885 0023 3E       		.uleb128 0x3e
+ 886 0024 0B       		.uleb128 0xb
+ 887 0025 03       		.uleb128 0x3
+ 888 0026 08       		.uleb128 0x8
+ 889 0027 00       		.byte	0
+ 890 0028 00       		.byte	0
+ 891 0029 04       		.uleb128 0x4
+ 892 002a 0F       		.uleb128 0xf
+ 893 002b 00       		.byte	0
+ 894 002c 0B       		.uleb128 0xb
+ 895 002d 0B       		.uleb128 0xb
+ 896 002e 49       		.uleb128 0x49
+ 897 002f 13       		.uleb128 0x13
+ 898 0030 00       		.byte	0
+ 899 0031 00       		.byte	0
+ 900 0032 05       		.uleb128 0x5
+ 901 0033 04       		.uleb128 0x4
+ 902 0034 01       		.byte	0x1
+ 903 0035 0B       		.uleb128 0xb
+ 904 0036 0B       		.uleb128 0xb
+ 905 0037 3A       		.uleb128 0x3a
+ 906 0038 0B       		.uleb128 0xb
+ 907 0039 3B       		.uleb128 0x3b
+ 908 003a 0B       		.uleb128 0xb
+ 909 003b 01       		.uleb128 0x1
+ 910 003c 13       		.uleb128 0x13
+ 911 003d 00       		.byte	0
+ 912 003e 00       		.byte	0
+ 913 003f 06       		.uleb128 0x6
+ 914 0040 28       		.uleb128 0x28
+ 915 0041 00       		.byte	0
+ 916 0042 03       		.uleb128 0x3
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 21
+
+
+ 917 0043 0E       		.uleb128 0xe
+ 918 0044 1C       		.uleb128 0x1c
+ 919 0045 0D       		.uleb128 0xd
+ 920 0046 00       		.byte	0
+ 921 0047 00       		.byte	0
+ 922 0048 07       		.uleb128 0x7
+ 923 0049 16       		.uleb128 0x16
+ 924 004a 00       		.byte	0
+ 925 004b 03       		.uleb128 0x3
+ 926 004c 0E       		.uleb128 0xe
+ 927 004d 3A       		.uleb128 0x3a
+ 928 004e 0B       		.uleb128 0xb
+ 929 004f 3B       		.uleb128 0x3b
+ 930 0050 0B       		.uleb128 0xb
+ 931 0051 49       		.uleb128 0x49
+ 932 0052 13       		.uleb128 0x13
+ 933 0053 00       		.byte	0
+ 934 0054 00       		.byte	0
+ 935 0055 08       		.uleb128 0x8
+ 936 0056 2E       		.uleb128 0x2e
+ 937 0057 01       		.byte	0x1
+ 938 0058 3F       		.uleb128 0x3f
+ 939 0059 19       		.uleb128 0x19
+ 940 005a 03       		.uleb128 0x3
+ 941 005b 0E       		.uleb128 0xe
+ 942 005c 3A       		.uleb128 0x3a
+ 943 005d 0B       		.uleb128 0xb
+ 944 005e 3B       		.uleb128 0x3b
+ 945 005f 0B       		.uleb128 0xb
+ 946 0060 27       		.uleb128 0x27
+ 947 0061 19       		.uleb128 0x19
+ 948 0062 11       		.uleb128 0x11
+ 949 0063 01       		.uleb128 0x1
+ 950 0064 12       		.uleb128 0x12
+ 951 0065 06       		.uleb128 0x6
+ 952 0066 40       		.uleb128 0x40
+ 953 0067 18       		.uleb128 0x18
+ 954 0068 9642     		.uleb128 0x2116
+ 955 006a 19       		.uleb128 0x19
+ 956 006b 01       		.uleb128 0x1
+ 957 006c 13       		.uleb128 0x13
+ 958 006d 00       		.byte	0
+ 959 006e 00       		.byte	0
+ 960 006f 09       		.uleb128 0x9
+ 961 0070 05       		.uleb128 0x5
+ 962 0071 00       		.byte	0
+ 963 0072 03       		.uleb128 0x3
+ 964 0073 0E       		.uleb128 0xe
+ 965 0074 3A       		.uleb128 0x3a
+ 966 0075 0B       		.uleb128 0xb
+ 967 0076 3B       		.uleb128 0x3b
+ 968 0077 0B       		.uleb128 0xb
+ 969 0078 49       		.uleb128 0x49
+ 970 0079 13       		.uleb128 0x13
+ 971 007a 02       		.uleb128 0x2
+ 972 007b 18       		.uleb128 0x18
+ 973 007c 00       		.byte	0
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 22
+
+
+ 974 007d 00       		.byte	0
+ 975 007e 0A       		.uleb128 0xa
+ 976 007f 34       		.uleb128 0x34
+ 977 0080 00       		.byte	0
+ 978 0081 03       		.uleb128 0x3
+ 979 0082 08       		.uleb128 0x8
+ 980 0083 3A       		.uleb128 0x3a
+ 981 0084 0B       		.uleb128 0xb
+ 982 0085 3B       		.uleb128 0x3b
+ 983 0086 0B       		.uleb128 0xb
+ 984 0087 49       		.uleb128 0x49
+ 985 0088 13       		.uleb128 0x13
+ 986 0089 02       		.uleb128 0x2
+ 987 008a 18       		.uleb128 0x18
+ 988 008b 00       		.byte	0
+ 989 008c 00       		.byte	0
+ 990 008d 0B       		.uleb128 0xb
+ 991 008e 0B       		.uleb128 0xb
+ 992 008f 01       		.byte	0x1
+ 993 0090 11       		.uleb128 0x11
+ 994 0091 01       		.uleb128 0x1
+ 995 0092 12       		.uleb128 0x12
+ 996 0093 06       		.uleb128 0x6
+ 997 0094 00       		.byte	0
+ 998 0095 00       		.byte	0
+ 999 0096 0C       		.uleb128 0xc
+ 1000 0097 34       		.uleb128 0x34
+ 1001 0098 00       		.byte	0
+ 1002 0099 03       		.uleb128 0x3
+ 1003 009a 0E       		.uleb128 0xe
+ 1004 009b 3A       		.uleb128 0x3a
+ 1005 009c 0B       		.uleb128 0xb
+ 1006 009d 3B       		.uleb128 0x3b
+ 1007 009e 0B       		.uleb128 0xb
+ 1008 009f 49       		.uleb128 0x49
+ 1009 00a0 13       		.uleb128 0x13
+ 1010 00a1 02       		.uleb128 0x2
+ 1011 00a2 18       		.uleb128 0x18
+ 1012 00a3 00       		.byte	0
+ 1013 00a4 00       		.byte	0
+ 1014 00a5 0D       		.uleb128 0xd
+ 1015 00a6 2E       		.uleb128 0x2e
+ 1016 00a7 00       		.byte	0
+ 1017 00a8 3F       		.uleb128 0x3f
+ 1018 00a9 19       		.uleb128 0x19
+ 1019 00aa 03       		.uleb128 0x3
+ 1020 00ab 0E       		.uleb128 0xe
+ 1021 00ac 3A       		.uleb128 0x3a
+ 1022 00ad 0B       		.uleb128 0xb
+ 1023 00ae 3B       		.uleb128 0x3b
+ 1024 00af 0B       		.uleb128 0xb
+ 1025 00b0 27       		.uleb128 0x27
+ 1026 00b1 19       		.uleb128 0x19
+ 1027 00b2 11       		.uleb128 0x11
+ 1028 00b3 01       		.uleb128 0x1
+ 1029 00b4 12       		.uleb128 0x12
+ 1030 00b5 06       		.uleb128 0x6
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 23
+
+
+ 1031 00b6 40       		.uleb128 0x40
+ 1032 00b7 18       		.uleb128 0x18
+ 1033 00b8 9642     		.uleb128 0x2116
+ 1034 00ba 19       		.uleb128 0x19
+ 1035 00bb 00       		.byte	0
+ 1036 00bc 00       		.byte	0
+ 1037 00bd 0E       		.uleb128 0xe
+ 1038 00be 01       		.uleb128 0x1
+ 1039 00bf 01       		.byte	0x1
+ 1040 00c0 49       		.uleb128 0x49
+ 1041 00c1 13       		.uleb128 0x13
+ 1042 00c2 01       		.uleb128 0x1
+ 1043 00c3 13       		.uleb128 0x13
+ 1044 00c4 00       		.byte	0
+ 1045 00c5 00       		.byte	0
+ 1046 00c6 0F       		.uleb128 0xf
+ 1047 00c7 21       		.uleb128 0x21
+ 1048 00c8 00       		.byte	0
+ 1049 00c9 49       		.uleb128 0x49
+ 1050 00ca 13       		.uleb128 0x13
+ 1051 00cb 2F       		.uleb128 0x2f
+ 1052 00cc 0B       		.uleb128 0xb
+ 1053 00cd 00       		.byte	0
+ 1054 00ce 00       		.byte	0
+ 1055 00cf 10       		.uleb128 0x10
+ 1056 00d0 34       		.uleb128 0x34
+ 1057 00d1 00       		.byte	0
+ 1058 00d2 03       		.uleb128 0x3
+ 1059 00d3 0E       		.uleb128 0xe
+ 1060 00d4 3A       		.uleb128 0x3a
+ 1061 00d5 0B       		.uleb128 0xb
+ 1062 00d6 3B       		.uleb128 0x3b
+ 1063 00d7 0B       		.uleb128 0xb
+ 1064 00d8 49       		.uleb128 0x49
+ 1065 00d9 13       		.uleb128 0x13
+ 1066 00da 3F       		.uleb128 0x3f
+ 1067 00db 19       		.uleb128 0x19
+ 1068 00dc 02       		.uleb128 0x2
+ 1069 00dd 18       		.uleb128 0x18
+ 1070 00de 00       		.byte	0
+ 1071 00df 00       		.byte	0
+ 1072 00e0 00       		.byte	0
+ 1073              		.section	.debug_aranges,"",%progbits
+ 1074 0000 4C000000 		.4byte	0x4c
+ 1075 0004 0200     		.2byte	0x2
+ 1076 0006 00000000 		.4byte	.Ldebug_info0
+ 1077 000a 04       		.byte	0x4
+ 1078 000b 00       		.byte	0
+ 1079 000c 0000     		.2byte	0
+ 1080 000e 0000     		.2byte	0
+ 1081 0010 00000000 		.4byte	.LFB34
+ 1082 0014 34000000 		.4byte	.LFE34-.LFB34
+ 1083 0018 00000000 		.4byte	.LFB35
+ 1084 001c C0000000 		.4byte	.LFE35-.LFB35
+ 1085 0020 00000000 		.4byte	.LFB36
+ 1086 0024 7C000000 		.4byte	.LFE36-.LFB36
+ 1087 0028 00000000 		.4byte	.LFB37
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 24
+
+
+ 1088 002c 48000000 		.4byte	.LFE37-.LFB37
+ 1089 0030 00000000 		.4byte	.LFB38
+ 1090 0034 2C000000 		.4byte	.LFE38-.LFB38
+ 1091 0038 00000000 		.4byte	.LFB39
+ 1092 003c 78000000 		.4byte	.LFE39-.LFB39
+ 1093 0040 00000000 		.4byte	.LFB40
+ 1094 0044 2C000000 		.4byte	.LFE40-.LFB40
+ 1095 0048 00000000 		.4byte	0
+ 1096 004c 00000000 		.4byte	0
+ 1097              		.section	.debug_ranges,"",%progbits
+ 1098              	.Ldebug_ranges0:
+ 1099 0000 00000000 		.4byte	.LFB34
+ 1100 0004 34000000 		.4byte	.LFE34
+ 1101 0008 00000000 		.4byte	.LFB35
+ 1102 000c C0000000 		.4byte	.LFE35
+ 1103 0010 00000000 		.4byte	.LFB36
+ 1104 0014 7C000000 		.4byte	.LFE36
+ 1105 0018 00000000 		.4byte	.LFB37
+ 1106 001c 48000000 		.4byte	.LFE37
+ 1107 0020 00000000 		.4byte	.LFB38
+ 1108 0024 2C000000 		.4byte	.LFE38
+ 1109 0028 00000000 		.4byte	.LFB39
+ 1110 002c 78000000 		.4byte	.LFE39
+ 1111 0030 00000000 		.4byte	.LFB40
+ 1112 0034 2C000000 		.4byte	.LFE40
+ 1113 0038 00000000 		.4byte	0
+ 1114 003c 00000000 		.4byte	0
+ 1115              		.section	.debug_line,"",%progbits
+ 1116              	.Ldebug_line0:
+ 1117 0000 EC000000 		.section	.debug_str,"MS",%progbits,1
+ 1117      02002A00 
+ 1117      00000201 
+ 1117      FB0E0D00 
+ 1117      01010101 
+ 1118              	.LASF14:
+ 1119 0000 5345545F 		.ascii	"SET_FREQ\000"
+ 1119      46524551 
+ 1119      00
+ 1120              	.LASF30:
+ 1121 0009 5F426F6F 		.ascii	"_Bool\000"
+ 1121      6C00
+ 1122              	.LASF27:
+ 1123 000f 64697370 		.ascii	"dispDebugHelp\000"
+ 1123      44656275 
+ 1123      6748656C 
+ 1123      7000
+ 1124              	.LASF16:
+ 1125 001d 51554553 		.ascii	"QUESTION\000"
+ 1125      54494F4E 
+ 1125      00
+ 1126              	.LASF28:
+ 1127 0026 73776974 		.ascii	"switchFreq\000"
+ 1127      63684672 
+ 1127      657100
+ 1128              	.LASF31:
+ 1129 0031 73746174 		.ascii	"status\000"
+ 1129      757300
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 25
+
+
+ 1130              	.LASF29:
+ 1131 0038 706F7765 		.ascii	"power\000"
+ 1131      7200
+ 1132              	.LASF20:
+ 1133 003e 73747269 		.ascii	"string\000"
+ 1133      6E6700
+ 1134              	.LASF15:
+ 1135 0045 5345545F 		.ascii	"SET_SWITCH\000"
+ 1135      53574954 
+ 1135      434800
+ 1136              	.LASF9:
+ 1137 0050 666C6F61 		.ascii	"float\000"
+ 1137      7400
+ 1138              	.LASF32:
+ 1139 0056 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1139      4320342E 
+ 1139      382E3420 
+ 1139      32303134 
+ 1139      30353236 
+ 1140 0089 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 1140      20726576 
+ 1140      6973696F 
+ 1140      6E203231 
+ 1140      31333538 
+ 1141 00bc 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 1141      66756E63 
+ 1141      74696F6E 
+ 1141      2D736563 
+ 1141      74696F6E 
+ 1142              	.LASF13:
+ 1143 00d2 484F4D45 		.ascii	"HOME\000"
+ 1143      00
+ 1144              	.LASF1:
+ 1145 00d7 756E7369 		.ascii	"unsigned char\000"
+ 1145      676E6564 
+ 1145      20636861 
+ 1145      7200
+ 1146              	.LASF21:
+ 1147 00e5 696E7075 		.ascii	"input\000"
+ 1147      7400
+ 1148              	.LASF5:
+ 1149 00eb 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1149      20756E73 
+ 1149      69676E65 
+ 1149      6420696E 
+ 1149      7400
+ 1150              	.LASF3:
+ 1151 00fd 73686F72 		.ascii	"short unsigned int\000"
+ 1151      7420756E 
+ 1151      7369676E 
+ 1151      65642069 
+ 1151      6E7400
+ 1152              	.LASF10:
+ 1153 0110 646F7562 		.ascii	"double\000"
+ 1153      6C6500
+ 1154              	.LASF17:
+ 1155 0117 44454255 		.ascii	"DEBUG_MODE\000"
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 26
+
+
+ 1155      475F4D4F 
+ 1155      444500
+ 1156              	.LASF24:
+ 1157 0122 64697370 		.ascii	"dispMenuHelp\000"
+ 1157      4D656E75 
+ 1157      48656C70 
+ 1157      00
+ 1158              	.LASF8:
+ 1159 012f 756E7369 		.ascii	"unsigned int\000"
+ 1159      676E6564 
+ 1159      20696E74 
+ 1159      00
+ 1160              	.LASF7:
+ 1161 013c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1161      206C6F6E 
+ 1161      6720756E 
+ 1161      7369676E 
+ 1161      65642069 
+ 1162              	.LASF25:
+ 1163 0153 64697370 		.ascii	"dispFuncHelp\000"
+ 1163      46756E63 
+ 1163      48656C70 
+ 1163      00
+ 1164              	.LASF18:
+ 1165 0160 73656E64 		.ascii	"sendString\000"
+ 1165      53747269 
+ 1165      6E6700
+ 1166              	.LASF22:
+ 1167 016b 73776974 		.ascii	"switchProcess\000"
+ 1167      63685072 
+ 1167      6F636573 
+ 1167      7300
+ 1168              	.LASF19:
+ 1169 0179 686F6D65 		.ascii	"homeProcess\000"
+ 1169      50726F63 
+ 1169      65737300 
+ 1170              	.LASF12:
+ 1171 0185 73697A65 		.ascii	"sizetype\000"
+ 1171      74797065 
+ 1171      00
+ 1172              	.LASF35:
+ 1173 018e 73746174 		.ascii	"status_t\000"
+ 1173      75735F74 
+ 1173      00
+ 1174              	.LASF6:
+ 1175 0197 6C6F6E67 		.ascii	"long long int\000"
+ 1175      206C6F6E 
+ 1175      6720696E 
+ 1175      7400
+ 1176              	.LASF11:
+ 1177 01a5 63686172 		.ascii	"char\000"
+ 1177      00
+ 1178              	.LASF23:
+ 1179 01aa 73776974 		.ascii	"switchVal\000"
+ 1179      63685661 
+ 1179      6C00
+ 1180              	.LASF2:
+ARM GAS  C:\Users\Matty\AppData\Local\Temp\ccmyBE4w.s 			page 27
+
+
+ 1181 01b4 73686F72 		.ascii	"short int\000"
+ 1181      7420696E 
+ 1181      7400
+ 1182              	.LASF34:
+ 1183 01be 433A5C55 		.ascii	"C:\\Users\\Matty\\Documents\\PSoC Creator\\RF_Switc"
+ 1183      73657273 
+ 1183      5C4D6174 
+ 1183      74795C44 
+ 1183      6F63756D 
+ 1184 01ec 685F4D61 		.ascii	"h_Matrix\\RF_Switch_Matrix.cydsn\000"
+ 1184      74726978 
+ 1184      5C52465F 
+ 1184      53776974 
+ 1184      63685F4D 
+ 1185              	.LASF4:
+ 1186 020c 6C6F6E67 		.ascii	"long int\000"
+ 1186      20696E74 
+ 1186      00
+ 1187              	.LASF33:
+ 1188 0215 2E5C636C 		.ascii	".\\cli.c\000"
+ 1188      692E6300 
+ 1189              	.LASF0:
+ 1190 021d 7369676E 		.ascii	"signed char\000"
+ 1190      65642063 
+ 1190      68617200 
+ 1191              	.LASF26:
+ 1192 0229 64697370 		.ascii	"dispSwitchHelp\000"
+ 1192      53776974 
+ 1192      63684865 
+ 1192      6C7000
+ 1193              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

@@ -1,0 +1,6 @@
+C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix.cydsn\RF_Switch_Matrix.cyprj|3dd67603-6c3d-402b-a9cb-ac4e70eec2f4
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|998d520b-5f5b-4f43-9d00-1a37792f1ba7
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|5c63b472-e405-4a26-bb42-36f4acdc3979
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|93f24d93-d312-4448-baa8-dfeaa7ed7af8
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e228a397-475b-4594-ba1e-65dfc2bdd52f
+C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix-2.cydsn\RF_Switch_Matrix-2.cyprj|d2633d64-afb1-4a24-b9b9-caf1efc16ded

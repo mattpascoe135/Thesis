@@ -1,0 +1,19 @@
+# RF_Switch_Matrix
+# 2016-09-09 12:59:29Z
+
+# IO_4@[IOP=(0)][IoId=(4)] is reserved: KhzXtalEnabled
+dont_use_io iocell 0 4
+# IO_5@[IOP=(0)][IoId=(5)] is reserved: KhzXtalEnabled
+dont_use_io iocell 0 5
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "Rx(0)" iocell 3 1
+set_io "SDPT_0(0)" iocell 2 0
+set_io "SP8T_0(0)" iocell 2 2
+set_io "SP8T_1(0)" iocell 2 3
+set_io "SP8T_2(0)" iocell 2 4
+set_io "SPDT_1(0)" iocell 2 1
+set_io "Tx(0)" iocell 3 0

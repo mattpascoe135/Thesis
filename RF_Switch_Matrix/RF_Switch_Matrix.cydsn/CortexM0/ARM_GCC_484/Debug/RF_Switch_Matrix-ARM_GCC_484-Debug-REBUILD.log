@@ -1,0 +1,62 @@
+--------------- Rebuild Started: 08/27/2016 17:13:25 Project: RF_Switch_Matrix, Configuration: ARM GCC 4.8.4 Debug ---------------
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\main.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\cli.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\cymetadata.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\Cm0Start.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\CyBootAsmGnu.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\CyFlash.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\CyLib.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\cyPm.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\cyutils.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\CydwClock_1.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\UART.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\UART_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\UART_INT.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\UART_BOOT.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\uartRx_isr.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\Clock.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\OutputReg.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\Pin_1.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\Pin_2.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\Pin_3.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\Pin_4.o"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\RF_Switch_Matrix.map"
+Deleting file ".\RF_Switch_Matrix.cycdx"
+Deleting file ".\RF_Switch_Matrix.svd"
+Deleting file ".\RF_Switch_Matrix.rpt"
+Deleting file ".\RF_Switch_Matrix_timing.html"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\.deps\C_FILE.P"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\.deps\ARM_C_FILE.P"
+Deleting file ".\CortexM0\ARM_GCC_484\Debug\.deps\GNU_ARM_ASM_FILE.P"
+cydsfit.exe -.appdatapath "C:\Users\Matty\AppData\Local\Cypress Semiconductor\PSoC Creator\3.1" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p "C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix.cydsn\RF_Switch_Matrix.cyprj" -d CY8C4247LQI-BL483 -s "C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+ADD: pft.M0040: information: The following 6 pin(s) will be assigned a location by the fitter: Pin_1(0), Pin_2(0), Pin_3(0), Pin_4(0), Rx(0), Tx(0)
+Analog Placement ...
+Analog Routing ...
+Analog Code Generation ...
+Digital Placement ...
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\main.c -o .\CortexM0\ARM_GCC_484\Debug\main.o
+.\main.c: In function 'rx_int':
+.\main.c:39:12: warning: unused variable 'source' [-Wunused-variable]
+     uint32 source;
+            ^
+.\main.c: In function 'main':
+.\main.c:97:9: error: too many arguments to function 'wait'
+         wait(switchFreq);
+         ^
+.\main.c:31:6: note: declared here
+ void wait(void);
+      ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Rebuild Failed: 08/27/2016 17:13:38 ---------------

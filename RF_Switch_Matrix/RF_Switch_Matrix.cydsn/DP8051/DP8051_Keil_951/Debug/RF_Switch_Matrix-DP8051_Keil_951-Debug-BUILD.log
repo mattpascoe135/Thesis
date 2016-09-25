@@ -1,0 +1,14 @@
+--------------- Build Started: 08/27/2016 17:26:47 Project: RF_Switch_Matrix, Configuration: DP8051 Keil 9.51 Debug ---------------
+Project 1 of 2: Initializing Build...
+cydsfit.exe -.appdatapath "C:\Users\Matty\AppData\Local\Cypress Semiconductor\PSoC Creator\3.1" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p "C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix.cydsn\RF_Switch_Matrix.cyprj" -d CY8C3245AXA-166 -s "C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix.cydsn\Generated_Source\PSoC3" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=BE
+Elaborating Design...
+ADD: pft.M0038: error: Input voltage error: The input voltage of "VDDIO0" is set to 5 which is out of range. This pin's value must be between 1.7 and VDDA (3.3).
+ * C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix.cydsn\RF_Switch_Matrix.cydwr (VDDIO0 (V))
+ADD: pft.M0038: error: Input voltage error: The input voltage of "VDDIO1" is set to 5 which is out of range. This pin's value must be between 1.7 and VDDA (3.3).
+ * C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix.cydsn\RF_Switch_Matrix.cydwr (VDDIO1 (V))
+ADD: pft.M0038: error: Input voltage error: The input voltage of "VDDIO2" is set to 5 which is out of range. This pin's value must be between 1.7 and VDDA (3.3).
+ * C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix.cydsn\RF_Switch_Matrix.cydwr (VDDIO2 (V))
+ADD: pft.M0038: error: Input voltage error: The input voltage of "VDDIO3" is set to 5 which is out of range. This pin's value must be between 1.7 and VDDA (3.3).
+ * C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix.cydsn\RF_Switch_Matrix.cydwr (VDDIO3 (V))
+Error: cdf.M0005: CyDsFit aborted due to errors, please address all errors and rerun CyDsFit. (App=cydsfit)
+--------------- Build Failed: 08/27/2016 17:26:51 ---------------
