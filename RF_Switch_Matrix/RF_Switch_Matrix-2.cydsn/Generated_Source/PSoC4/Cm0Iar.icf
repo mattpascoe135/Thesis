@@ -16,7 +16,7 @@ define symbol __ICFEDIT_size_heap__   = 0x80;
 
 /******** Definitions ********/
 define symbol CY_FLASH_SIZE     = 32768;
-define symbol CY_APPL_ORIGIN    = 0; 
+define symbol CY_APPL_ORIGIN    = 0;
 define symbol CY_FLASH_ROW_SIZE = 128;
 define symbol CY_APPL_LOADABLE  = 0;
 define symbol CY_APPL_LOADER    = 0;
@@ -26,12 +26,12 @@ define symbol CY_METADATA_SIZE  = 64;
 if (!CY_APPL_LOADABLE) {
     define symbol CYDEV_BTLDR_SIZE = 0;
 
-    /* The first 0x100 Flash bytes become unavailable right after remapping of the vector table to RAM. 
-     * This space should be used for .romvectors and .psocinit sections only.
+    /* The first 0x100 Flash bytes become unavailable right after remapping of the vector table to RAM.
+     * This space should be used for .romvectors section.
      */
-    define block ROMVEC with size = 0x100, fixed order {readonly section .romvectors, section .psocinit};
+    define block ROMVEC with size = 0x100 {readonly section .romvectors};
 
-    define block APPL with fixed order {block ROMVEC, readonly};
+    define block APPL with fixed order {block ROMVEC, section .psocinit, readonly};
 } else {
     define block APPL with fixed order {readonly section .romvectors, section .psocinit, readonly};
 }
@@ -93,10 +93,10 @@ if (CY_APPL_LOADABLE)
 "HSTACK"           : place at end of RAM_region   { block HSTACK};
 
 keep {  section .cybootloader,
-        section .cyloadermeta, 
-        section .cyloadablemeta, 
+        section .cyloadermeta,
+        section .cyloadablemeta,
         section .cyflashprotect,
-        section .cymeta, 
+        section .cymeta,
         section .cychipprotect };
 
 ".cyloadermeta"     : place at address mem : (CY_APPL_LOADER ? (CY_FLASH_SIZE - CY_METADATA_SIZE) : 0xF0000000) { readonly section .cyloadermeta };

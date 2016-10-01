@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="RF_Switch_Matrix">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="RF_Switch_Matrix\RF_Switch_Matrix">
 <ExpandedNodeIds>
 <v>RF_Switch_Matrix</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix</v>
@@ -112,6 +112,7 @@
 <v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cyfitterrv.inc</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cymetadata.c</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\project.h</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix-2</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\TopDesign</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\RF_Switch_Matrix-2.cydwr</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\Header Files</v>
@@ -140,6 +141,9 @@
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\Generated_Source\PSoC4\cy_boot\cyPm.h</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\Generated_Source\PSoC4\cy_boot\cytypes.h</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\Generated_Source\PSoC4\cy_boot\cyutils.c</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix-2\Generated_Source\PSoC4\cy_lfclk</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix-2\Generated_Source\PSoC4\cy_lfclk\CyLFClk.c</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix-2\Generated_Source\PSoC4\cy_lfclk\CyLFClk.h</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\Generated_Source\PSoC4\cydevice_trm.h</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
@@ -155,6 +159,30 @@
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\Generated_Source\PSoC4\project.h</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>RF_Switch_Matrix</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\TopDesign</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\RF_Switch_Matrix.cydwr</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Header Files</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Source Files</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Source Files\cli.c</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Source Files\cli.h</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Source Files\main.c</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Source Files\main.h</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cy_boot</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cy_dmac</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cy_dmac\CyDMA.c</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cy_dmac\CyDMA.h</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cy_lfclk</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cy_lfclk\CyLFClk.c</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cy_lfclk\CyLFClk.h</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\CydwClock_1</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\OutputReg</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\OutputReg\OutputReg.c</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\OutputReg\OutputReg.h</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\OutputReg\OutputReg_PM.c</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\Rx</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\Rx\Rx.c</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\Rx\Rx.h</v>
@@ -180,30 +208,6 @@
 <v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\SPDT_1\SPDT_1.h</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\SPDT_1\SPDT_1_aliases.h</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\Tx</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\Tx\Tx.c</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\Tx\Tx.h</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\Tx\Tx_aliases.h</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\UART</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\UART\UART.c</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\UART\UART.h</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\UART\UART_BOOT.c</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\UART\UART_INT.c</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\UART\UART_PM.c</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\UART_IntClock</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\UART_IntClock\UART_IntClock.c</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\UART_IntClock\UART_IntClock.h</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\uartRx_isr</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\uartRx_isr\uartRx_isr.c</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\uartRx_isr\uartRx_isr.h</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cydevice_trm.h</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cydevicerv_trm.inc</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cydisabledsheets.h</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cyfitter.h</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cyfitter_cfg.c</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cyfitter_cfg.h</v>
-<v>RF_Switch_Matrix\RF_Switch_Matrix\Generated_Source\PSoC4\cyfittergnu.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -277,6 +281,7 @@
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\CortexM0\ARM_GCC_484\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\CortexM0\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\CortexM0\ARM_GCC_484\Debug\Listing Files\CyFlash.lst</v>
+<v>RF_Switch_Matrix\RF_Switch_Matrix-2\CortexM0\ARM_GCC_484\Debug\Listing Files\CyLFClk.lst</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\CortexM0\ARM_GCC_484\Debug\Listing Files\CyLib.lst</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\CortexM0\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
 <v>RF_Switch_Matrix\RF_Switch_Matrix-2\CortexM0\ARM_GCC_484\Debug\Listing Files\cyPm.lst</v>
@@ -409,10 +414,8 @@
 <name v=".\RF_Switch_Matrix.cydsn\main.c" />
 <name v=".\RF_Switch_Matrix.cydsn\main.h" />
 <name v=".\RF_Switch_Matrix.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\RF_Switch_Matrix.cydsn\RF_Switch_Matrix.cydwr" />
 <name v=".\RF_Switch_Matrix.cydsn\cli.h" />
 <name v=".\RF_Switch_Matrix.cydsn\cli.c" />
-<name v=".\RF_Switch_Matrix.cydsn\Generated_Source\PSoC4\UART.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: CyLib.h
-* Version 4.20
+* Version 5.0
 *
 *  Description:
 *
@@ -9,7 +9,7 @@
 *   System Reference Guide provided with PSoC Creator.
 *
 ********************************************************************************
-* Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -20,6 +20,7 @@
 
 #include "cytypes.h"
 #include "cydevice_trm.h"
+#include "CyLFClk.h"
 
 #include <string.h>
 #include <limits.h>
@@ -33,9 +34,12 @@
 /* Clocks API */
 void CySysClkImoStart(void);
 void CySysClkImoStop(void);
-void CySysClkIloStart(void);
-void CySysClkIloStop(void);
 void CySysClkWriteHfclkDirect(uint32 clkSelect);
+
+#if (CY_PSOC4_4100M || CY_PSOC4_4200M)
+    void CySysClkImoEnableWcoLock(void);
+    void CySysClkImoDisableWcoLock(void);
+#endif /* (CY_PSOC4_4100M || CY_PSOC4_4200M) */
 
 #if !(CY_PSOC4_4100 || CY_PSOC4_4200)
     void CySysClkWriteHfclkDiv(uint32 divider);
@@ -44,50 +48,10 @@ void CySysClkWriteHfclkDirect(uint32 clkSelect);
 void CySysClkWriteSysclkDiv(uint32 divider);
 void CySysClkWriteImoFreq(uint32 freq);
 
-#if (CY_IP_WCO)
-    void CySysClkSetLfclkSource(uint32 source);
-#endif /* (CY_IP_WCO) */
-
 #if (CY_PSOC4_4100BL || CY_PSOC4_4200BL)
     void CySysClkWriteEcoDiv(uint32 divider);
 #endif /* (CY_PSOC4_4100BL || CY_PSOC4_4200BL) */
 
-
-#if(CY_IP_SRSSV2)
-    /* WDT API */
-    void   CySysWdtLock(void);
-    void   CySysWdtUnlock(void);
-    void   CySysWdtWriteMode(uint32 counterNum, uint32 mode);
-    uint32 CySysWdtReadMode(uint32 counterNum);
-    uint32 CySysWdtReadEnabledStatus(uint32 counterNum);
-    void   CySysWdtWriteClearOnMatch(uint32 counterNum, uint32 enable);
-    uint32 CySysWdtReadClearOnMatch(uint32 counterNum);
-    void   CySysWdtEnable(uint32 counterMask);
-    void   CySysWdtDisable(uint32 counterMask);
-    void   CySysWdtWriteCascade(uint32 cascadeMask);
-    uint32 CySysWdtReadCascade(void);
-    void   CySysWdtWriteMatch(uint32 counterNum, uint32 match);
-    void   CySysWdtWriteToggleBit(uint32 bits);
-    uint32 CySysWdtReadToggleBit(void);
-    uint32 CySysWdtReadMatch(uint32 counterNum);
-    uint32 CySysWdtReadCount(uint32 counterNum);
-    uint32 CySysWdtGetInterruptSource(void);
-    void   CySysWdtClearInterrupt(uint32 counterMask);
-    void   CySysWdtResetCounters(uint32 countersMask);
-#else
-    /* WDT API */
-    uint32 CySysWdtReadEnabledStatus(void);
-    void   CySysWdtEnable(void);
-    void   CySysWdtDisable(void);
-    void   CySysWdtWriteMatch(uint32 match);
-    uint32 CySysWdtReadMatch(void);
-    uint32 CySysWdtReadCount(void);
-    void   CySysWdtWriteIgnoreBits(uint32 bitsNum);
-    uint32 CySysWdtReadIgnoreBits(void);
-    void   CySysWdtClearInterrupt(void);
-    void   CySysWdtMaskInterrupt(void);
-    void   CySysWdtUnmaskInterrupt(void);
-#endif  /* (CY_IP_SRSSV2) */
 
 
 #if(CY_IP_SRSSV2)
@@ -150,9 +114,9 @@ uint32 CySysTickGetValue(void);
 cySysTickCallback CySysTickSetCallback(uint32 number, cySysTickCallback function);
 cySysTickCallback CySysTickGetCallback(uint32 number);
 
-#if(CY_PSOC4_4100BL || CY_PSOC4_4200BL || CY_PSOC5)
+#if(!CY_PSOC3 && !CY_PSOC4_4000 && !CY_PSOC4_4100 && !CY_PSOC4_4200)
     void CySysTickSetClockSource(uint32 clockSource);
-#endif /* (CY_PSOC4_4100BL || CY_PSOC4_4200BL || CY_PSOC5) */
+#endif /* (!CY_PSOC3 && !CY_PSOC4_4000 && !CY_PSOC4_4100 && !CY_PSOC4_4200) */
 
 uint32 CySysTickGetCountFlag(void);
 void CySysTickClear(void);
@@ -170,21 +134,7 @@ extern uint32 cydelay32kMs;
     uint32   CySysClkEcoReadStatus(void);
 #endif  /* (CY_PSOC4_4100BL || CY_PSOC4_4200BL) */
 
-#if (CY_IP_WCO)
-    void   CySysClkWcoStart(void);
-    void   CySysClkWcoStop(void);
-    uint32 CySysClkWcoSetPowerMode(uint32 mode);
-    static CY_INLINE void CySysClkWcoSetHighPowerMode(void);
-    static CY_INLINE void CySysClkWcoSetLowPowerMode(void);
-#endif  /* (CY_IP_WCO) */
-
-
-#if(CY_IP_SRSSV2)
-    /* CySysClkLfclkPosedgeCatch() / CySysClkLfclkPosedgeRestore() */
-    extern uint32 lfclkPosedgeWdtCounter0Enabled;
-    extern uint32 lfclkPosedgeEnabledWdtCounter;
-    extern uint32 lfclkPosedgeWdtCounter0Mode;
-#endif /* (CY_IP_SRSSV2) */
+void CyGetUniqueId(uint32* uniqueId);
 
 
 /***************************************
@@ -257,6 +207,8 @@ extern uint32 cydelay32kMs;
     #define CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET            (3u)
     #define CY_SYS_CLK_IMO_FREQ_BITS_MASK               (( uint32 )0x3Fu)
     #define CY_SYS_CLK_IMO_FREQ_CLEAR                   (( uint32 )(CY_SYS_CLK_IMO_FREQ_BITS_MASK << 8u))
+	#define CY_SYS_CLK_IMO_TRIM4_GAIN_MASK				(( uint32 )0x1Fu)
+	#define CY_SYS_CLK_IMO_TRIM4_GAIN					(( uint32 ) 12u)
 #else
     #define CY_SYS_CLK_IMO_MIN_FREQ_MHZ                 (24u)
     #define CY_SYS_CLK_IMO_MAX_FREQ_MHZ                 (48u)
@@ -270,7 +222,6 @@ extern uint32 cydelay32kMs;
     #define CY_SYS_CLK_IMO_TRIM_DELAY_US                (( uint32 )(50u))
 #endif  /* (CY_IP_SRSSV2) */
 
-
 #if(CY_IP_SRSSV2)
         /* Conversion between CySysClkWriteImoFreq() parameter and register's value */
         extern const uint8 cyImoFreqMhz2Reg[CY_SYS_CLK_IMO_FREQ_TABLE_SIZE];
@@ -280,21 +231,6 @@ extern uint32 cydelay32kMs;
 /* CySysClkImoStart()/CySysClkImoStop() - implementation definitions */
 #define CY_SYS_CLK_IMO_CONFIG_ENABLE                    (( uint32 )(( uint32 )0x01u << 31u))
 
-
-/* CySysClkIloStart()/CySysClkIloStop() - implementation definitions */
-#define CY_SYS_CLK_ILO_CONFIG_ENABLE                    (( uint32 )(( uint32 )0x01u << 31u))
-
-
-/* CySysClkSetLfclkSource() - parameter definitions */
-#if (CY_IP_WCO)
-    #define CY_SYS_CLK_LFCLK_SRC_ILO                    (0u)
-    #define CY_SYS_CLK_LFCLK_SRC_WCO                    (( uint32 )(( uint32 )0x01u << 30u))
-#endif /* (CY_IP_WCO) */
-
-/* CySysClkSetLfclkSource() - implementation definitions */
-#if (CY_IP_WCO)
-    #define CY_SYS_CLK_LFCLK_SEL_MASK                   (( uint32 )(( uint32 )0x03u << 30u))
-#endif /* (CY_IP_WCO) */
 
 
 #if(CY_IP_SRSSLT)
@@ -353,116 +289,27 @@ extern uint32 cydelay32kMs;
     #define CY_SYS_CLK_XTAL_CLK_DIV_MASK                ((uint32) 0x03)
 #endif  /* (CY_PSOC4_4100BL || CY_PSOC4_4200BL) */
 
-#if (CY_IP_WCO)
-    /* WCO Configuration Register */
-    #define CY_SYS_CLK_WCO_CONFIG_LPM_EN                (( uint32 )(( uint32 )0x01u <<  0u))
-    #define CY_SYS_CLK_WCO_CONFIG_LPM_AUTO              (( uint32 )(( uint32 )0x01u <<  1u))
-    #define CY_SYS_CLK_WCO_CONFIG_LPM_ENABLE            (( uint32 )(( uint32 )0x01u << 31u))
 
-    /* WCO Status Register */
-    #define CY_SYS_CLK_WCO_STATUS_OUT_BLNK_A            (( uint32 )(( uint32 )0x01u <<  0u))
+/* CySysClkImoEnableWcoLock() / CySysClkImoDisableWcoLock() constants */
+#if (CY_PSOC4_4100M || CY_PSOC4_4200M)
+    /* Fimo = DPLL_MULT  * Fwco */
 
-    /* WCO Trim Register */
-    #define CY_SYS_CLK_WCO_TRIM_XGM_MASK                (( uint32 ) 0x07u)
-    #define CY_SYS_CLK_WCO_TRIM_XGM_SHIFT               (( uint32 ) 0x00u)
+    #define CY_SYS_CLK_WCO_CONFIG_DPLL_ENABLE               (( uint32 )(( uint32 )0x01u << 30u))
 
-    #define CY_SYS_CLK_WCO_TRIM_XGM_3370NA              (( uint32 ) 0x00u)
-    #define CY_SYS_CLK_WCO_TRIM_XGM_2620NA              (( uint32 ) 0x01u)
-    #define CY_SYS_CLK_WCO_TRIM_XGM_2250NA              (( uint32 ) 0x02u)
-    #define CY_SYS_CLK_WCO_TRIM_XGM_1500NA              (( uint32 ) 0x03u)
-    #define CY_SYS_CLK_WCO_TRIM_XGM_1870NA              (( uint32 ) 0x04u)
-    #define CY_SYS_CLK_WCO_TRIM_XGM_1120NA              (( uint32 ) 0x05u)
-    #define CY_SYS_CLK_WCO_TRIM_XGM_750NA               (( uint32 ) 0x06u)
-    #define CY_SYS_CLK_WCO_TRIM_XGM_0NA                 (( uint32 ) 0x07u)
+    /* Rounding integer division: DPLL_MULT = (Fimo_in_khz + Fwco_in_khz / 2) / Fwco_in_khz */
+    #define CY_SYS_CLK_WCO_DPLL_MULT_VALUE(frequencyMhz)    ((uint32) (((((frequencyMhz) * 1000000u) + 16384u) / 32768u) - 1u))
+    #define CY_SYS_CLK_WCO_DPLL_MULT_MASK                   ((uint32) 0x7FFu)
 
-    #define CY_SYS_CLK_WCO_TRIM_GM_MASK                 (( uint32 )(( uint32 )0x03u << 4u))
-    #define CY_SYS_CLK_WCO_TRIM_GM_SHIFT                (( uint32 ) 0x04u)
-    #define CY_SYS_CLK_WCO_TRIM_GM_HPM                  (( uint32 ) 0x01u)
-    #define CY_SYS_CLK_WCO_TRIM_GM_LPM                  (( uint32 ) 0x02u)
-#endif  /* (CY_IP_WCO) */
+    #define CY_SYS_CLK_WCO_CONFIG_DPLL_LF_IGAIN_SHIFT       (16u)
+    #define CY_SYS_CLK_WCO_CONFIG_DPLL_LF_PGAIN_SHIFT       (19u)
 
+    #define CY_SYS_CLK_WCO_CONFIG_DPLL_LF_IGAIN_MASK        (( uint32 )(( uint32 )0x07u << CY_SYS_CLK_WCO_CONFIG_DPLL_LF_IGAIN_SHIFT))
+    #define CY_SYS_CLK_WCO_CONFIG_DPLL_LF_PGAIN_MASK        (( uint32 )(( uint32 )0x07u << CY_SYS_CLK_WCO_CONFIG_DPLL_LF_PGAIN_SHIFT))
 
-/*******************************************************************************
-* WDT API Constants
-*******************************************************************************/
-#if(CY_IP_SRSSV2)
-    #define CY_SYS_WDT_MODE_NONE                (0u)
-    #define CY_SYS_WDT_MODE_INT                 (1u)
-    #define CY_SYS_WDT_MODE_RESET               (2u)
-    #define CY_SYS_WDT_MODE_INT_RESET           (3u)
+    #define CY_SYS_CLK_WCO_CONFIG_DPLL_LF_IGAIN             (( uint32 )(( uint32 ) 4u << CY_SYS_CLK_WCO_CONFIG_DPLL_LF_IGAIN_SHIFT))
+    #define CY_SYS_CLK_WCO_CONFIG_DPLL_LF_PGAIN             (( uint32 )(( uint32 ) 2u << CY_SYS_CLK_WCO_CONFIG_DPLL_LF_PGAIN_SHIFT))
 
-    #define CY_SYS_WDT_COUNTER0_MASK            ((uint32)((uint32)0x01u))
-    #define CY_SYS_WDT_COUNTER1_MASK            ((uint32)((uint32)0x01u << 8u))
-    #define CY_SYS_WDT_COUNTER2_MASK            ((uint32)((uint32)0x01u << 16u))
-
-    #define CY_SYS_WDT_CASCADE_NONE             ((uint32)0x00u)
-    #define CY_SYS_WDT_CASCADE_01               ((uint32)0x01u << 3u)
-    #define CY_SYS_WDT_CASCADE_12               ((uint32)0x01u << 11u)
-
-    #define CY_SYS_WDT_COUNTER0_INT             ((uint32)0x01u << 2u)
-    #define CY_SYS_WDT_COUNTER1_INT             ((uint32)0x01u << 10u)
-    #define CY_SYS_WDT_COUNTER2_INT             ((uint32)0x01u << 18u)
-
-    #define CY_SYS_WDT_COUNTER0_RESET           ((uint32)0x01u << 3u)
-    #define CY_SYS_WDT_COUNTER1_RESET           ((uint32)0x01u << 11u)
-    #define CY_SYS_WDT_COUNTER2_RESET           ((uint32)0x01u << 19u)
-
-    #define CY_SYS_WDT_COUNTER0                 (0x00u)
-    #define CY_SYS_WDT_COUNTER1                 (0x01u)
-    #define CY_SYS_WDT_COUNTER2                 (0x02u)
-
-    #define CY_SYS_WDT_MODE_MASK                (uint32)(0x03u)
-
-    #define CY_SYS_WDT_CLK_LOCK_BITS_MASK       ((uint32)0x03u << 14u)
-    #define CY_SYS_WDT_CLK_LOCK_BIT0            ((uint32)0x01u << 14u)
-    #define CY_SYS_WDT_CLK_LOCK_BIT1            ((uint32)0x01u << 15u)
-
-    #define CY_SYS_WDT_CONFIG_BITS2_MASK        (uint32)(0x1Fu)
-    #define CY_SYS_WDT_CONFIG_BITS2_POS         (uint32)(24u)
-    #define CY_SYS_WDT_LOWER_16BITS_MASK        (uint32)(0xFFFFu)
-    #define CY_SYS_WDT_COUNTERS_MAX             (0x03u)
-    #define CY_SYS_WDT_CNT_SHIFT                (0x08u)
-    #define CY_SYS_WDT_CNT_MATCH_CLR_SHIFT      (0x02u)
-    #define CY_SYS_WDT_CNT_STTS_SHIFT           (0x01u)
-    #define CY_SYS_WDT_CNT_MATCH_SHIFT          (0x10u)
-
-
-    #if (CY_PSOC4_4100 || CY_PSOC4_4200)
-        #define CY_SYS_WDT_1LFCLK_DELAY_US      ((uint16)( 67u))
-        #define CY_SYS_WDT_3LFCLK_DELAY_US      ((uint16)(201u))
-    #endif /* (CY_PSOC4_4100 || CY_PSOC4_4200) */
-
-    #if (CY_PSOC4_4000)
-        #define CY_SYS_WDT_1LFCLK_DELAY_US      ((uint16)( 50u))
-        #define CY_SYS_WDT_3LFCLK_DELAY_US      ((uint16)(150u))
-    #endif /* (CY_PSOC4_4000) */
-
-    #if (CY_IP_WCO)
-
-        #define CY_SYS_WDT_1LFCLK_DELAY_US      \
-            ((CY_SYS_CLK_LFCLK_SRC_ILO == (CY_SYS_WDT_CONFIG_REG & CY_SYS_CLK_LFCLK_SEL_MASK)) ? \
-                                                ((uint16)(67u)) : \
-                                                ((uint16)(31u)))
-
-        #define CY_SYS_WDT_3LFCLK_DELAY_US      \
-            ((CY_SYS_CLK_LFCLK_SRC_ILO == (CY_SYS_WDT_CONFIG_REG & CY_SYS_CLK_LFCLK_SEL_MASK)) ? \
-                                                ((uint16)(201u)) : \
-                                                ((uint16)(93u)))
-
-    #endif /* (CY_IP_WCO) */
-
-#else
-    #define CY_SYS_WDT_KEY                      ((uint32)(0xACED8865u))
-    #define CY_SYS_WDT_MATCH_MASK               ((uint32)(0x0000FFFFu))
-    #define CY_SYS_WDT_IGNORE_BITS_MASK         ((uint32)(0x000F0000u))
-    #define CY_SYS_WDT_IGNORE_BITS_SHIFT        ((uint32)(16u))
-    #define CY_SYS_WDT_LOWER_BIT_MASK           ((uint32)(0x00000001u))
-#endif  /* (CY_IP_SRSSV2) */
-
-
-/* CySysXTAL_32KHZ_SetPowerMode() */
-#define CY_SYS_CLK_WCO_HPM                   (0x0u)
-#define CY_SYS_CLK_WCO_LPM                   (0x1u)
+#endif /* (CY_PSOC4_4100M || CY_PSOC4_4200M) */
 
 
 /*******************************************************************************
@@ -528,6 +375,7 @@ extern uint32 cydelay32kMs;
 #define CY_SYS_SYST_CSR_CLK_SRC_SYSCLK       ((uint32) (1u))
 #define CY_SYS_SYST_CSR_CLK_SRC_LFCLK        (0u)
 #define CY_SYS_SYST_RVR_CNT_MASK             (0x00FFFFFFu)
+#define CY_SYS_SYST_CVR_CNT_MASK             (0x00FFFFFFu)
 #define CY_SYS_SYST_NUM_OF_CALLBACKS         (5u)
 
 
@@ -618,6 +466,7 @@ extern uint32 cydelay32kMs;
     #define CY_LVD_PWR_VMON_CONFIG_LVD_SEL_SHIFT    (1u)
     #define CY_LVD_PWR_VMON_CONFIG_LVD_SEL_MASK     (( uint32 ) (0x0F << CY_LVD_PWR_VMON_CONFIG_LVD_SEL_SHIFT))
     #define CY_LVD_PROPAGATE_INT_TO_CPU             (( uint32 ) 0x02u)
+    #define CY_LVD_STABILIZE_TIMEOUT_US             (1000u)
 
     /* CySysLvdGetInterruptSource()/ CySysLvdClearInterrupt()  - parameter definitions  */
     #define CY_SYS_LVD_INT                          (( uint32 ) 0x02u)
@@ -648,22 +497,26 @@ extern uint32 cydelay32kMs;
 #define CY_SYS_CLK_IMO_TRIM3_REG            (*(reg32 *) CYREG_CLK_IMO_TRIM3)
 #define CY_SYS_CLK_IMO_TRIM3_PTR            ( (reg32 *) CYREG_CLK_IMO_TRIM3)
 
+#define CY_SYS_CLK_IMO_TRIM4_REG            (*(reg32 *) CYREG_CLK_IMO_TRIM4)
+#define CY_SYS_CLK_IMO_TRIM4_PTR            ( (reg32 *) CYREG_CLK_IMO_TRIM4)
+
 #define CY_SYS_CLK_IMO_CONFIG_REG           (*(reg32 *) CYREG_CLK_IMO_CONFIG)
 #define CY_SYS_CLK_IMO_CONFIG_PTR           ( (reg32 *) CYREG_CLK_IMO_CONFIG)
 
-#define CY_SYS_CLK_ILO_CONFIG_REG           (*(reg32 *) CYREG_CLK_ILO_CONFIG)
-#define CY_SYS_CLK_ILO_CONFIG_PTR           ( (reg32 *) CYREG_CLK_ILO_CONFIG)
 
 #define CY_SYS_CLK_SELECT_REG               (*(reg32 *) CYREG_CLK_SELECT)
 #define CY_SYS_CLK_SELECT_PTR               ( (reg32 *) CYREG_CLK_SELECT)
 
 #if(CY_IP_SRSSV2)
 
-    #define CY_SYS_CLK_ILO_TRIM_REG             (*(reg32 *) CYREG_CLK_ILO_TRIM)
-    #define CY_SYS_CLK_ILO_TRIM_PTR             ( (reg32 *) CYREG_CLK_ILO_TRIM)
 
-    #define CY_SFLASH_IMO_TRIM_REG(number)      ( ((reg8 *) CYREG_SFLASH_IMO_TRIM00)[number])
-    #define CY_SFLASH_IMO_TRIM_PTR(number)      (&((reg8 *) CYREG_SFLASH_IMO_TRIM00)[number])
+    #if(CY_PSOC4_4100 || CY_PSOC4_4200)
+        #define CY_SFLASH_IMO_TRIM_REG(number)      ( ((reg8 *) CYREG_SFLASH_IMO_TRIM00)[number])
+        #define CY_SFLASH_IMO_TRIM_PTR(number)      (&((reg8 *) CYREG_SFLASH_IMO_TRIM00)[number])
+    #else
+        #define CY_SFLASH_IMO_TRIM_REG(number)      ( ((reg8 *) CYREG_SFLASH_IMO_TRIM0)[number])
+        #define CY_SFLASH_IMO_TRIM_PTR(number)      (&((reg8 *) CYREG_SFLASH_IMO_TRIM0)[number])
+    #endif /* (CY_PSOC4_4100 || CY_PSOC4_4200) */
 
     #define CY_SFLASH_IMO_MAXF0_REG             (*(reg8 *) CYREG_SFLASH_IMO_MAXF0)
     #define CY_SFLASH_IMO_MAXF0_PTR             ( (reg8 *) CYREG_SFLASH_IMO_MAXF0)
@@ -718,11 +571,11 @@ extern uint32 cydelay32kMs;
     #define CY_SYS_CLK_IMO_SELECT_REG           (*(reg32 *) CYREG_CLK_IMO_SELECT)
     #define CY_SYS_CLK_IMO_SELECT_PTR           ( (reg32 *) CYREG_CLK_IMO_SELECT)
 
-    #define CY_SFLASH_IMO_TCTRIM_REG(number)    ( ((reg8 *) CYREG_SFLASH_IMO_TCTRIM_LT00)[number])
-    #define CY_SFLASH_IMO_TCTRIM_PTR(number)    (&((reg8 *) CYREG_SFLASH_IMO_TCTRIM_LT00)[number])
+    #define CY_SFLASH_IMO_TCTRIM_REG(number)    ( ((reg8 *) CYREG_SFLASH_IMO_TCTRIM_LT0)[number])
+    #define CY_SFLASH_IMO_TCTRIM_PTR(number)    (&((reg8 *) CYREG_SFLASH_IMO_TCTRIM_LT0)[number])
 
-    #define CY_SFLASH_IMO_TRIM_REG(number)      ( ((reg8 *) CYREG_SFLASH_IMO_TRIM_LT00)[number])
-    #define CY_SFLASH_IMO_TRIM_PTR(number)      (&((reg8 *) CYREG_SFLASH_IMO_TRIM_LT00)[number])
+    #define CY_SFLASH_IMO_TRIM_REG(number)      ( ((reg8 *) CYREG_SFLASH_IMO_TRIM_LT0)[number])
+    #define CY_SFLASH_IMO_TRIM_PTR(number)      (&((reg8 *) CYREG_SFLASH_IMO_TRIM_LT0)[number])
 
 #endif  /* (CY_IP_SRSSV2) */
 
@@ -753,55 +606,13 @@ extern uint32 cydelay32kMs;
     #define CY_SYS_CLK_XTAL_CLK_DIV_CONFIG_PTR      ( (reg32 *) CYREG_BLE_BLESS_XTAL_CLK_DIV_CONFIG)
 #endif  /* (CY_PSOC4_4100BL || CY_PSOC4_4200BL) */
 
-#if (CY_IP_WCO)
-    /* WCO Status Register */
-    #define CY_SYS_CLK_WCO_STATUS_REG               (*(reg32 *) CYREG_BLE_BLESS_WCO_STATUS)
-    #define CY_SYS_CLK_WCO_STATUS_PTR               ( (reg32 *) CYREG_BLE_BLESS_WCO_STATUS)
 
-    /* WCO Configuration Register */
-    #define CY_SYS_CLK_WCO_CONFIG_REG               (*(reg32 *) CYREG_BLE_BLESS_WCO_CONFIG)
-    #define CY_SYS_CLK_WCO_CONFIG_PTR               ( (reg32 *) CYREG_BLE_BLESS_WCO_CONFIG)
-
-    /* WCO Trim Register */
-    #define CY_SYS_CLK_WCO_TRIM_REG                 (*(reg32 *) CYREG_BLE_BLESS_WCO_TRIM)
-    #define CY_SYS_CLK_WCO_TRIM_PTR                 ( (reg32 *) CYREG_BLE_BLESS_WCO_TRIM)
-#endif  /* (CY_IP_WCO) */
-
-
-/*******************************************************************************
-* WDT API Registers
-*******************************************************************************/
-#if(CY_IP_SRSSV2)
-    #define CY_SYS_WDT_CTRLOW_REG               (*(reg32 *) CYREG_WDT_CTRLOW)
-    #define CY_SYS_WDT_CTRLOW_PTR               ( (reg32 *) CYREG_WDT_CTRLOW)
-
-    #define CY_SYS_WDT_CTRHIGH_REG              (*(reg32 *) CYREG_WDT_CTRHIGH)
-    #define CY_SYS_WDT_CTRHIGH_PTR              ( (reg32 *) CYREG_WDT_CTRHIGH)
-
-    #define CY_SYS_WDT_MATCH_REG                (*(reg32 *) CYREG_WDT_MATCH)
-    #define CY_SYS_WDT_MATCH_PTR                ( (reg32 *) CYREG_WDT_MATCH)
-
-    #define CY_SYS_WDT_CONFIG_REG               (*(reg32 *) CYREG_WDT_CONFIG)
-    #define CY_SYS_WDT_CONFIG_PTR               ( (reg32 *) CYREG_WDT_CONFIG)
-
-    #define CY_SYS_WDT_CONTROL_REG              (*(reg32 *) CYREG_WDT_CONTROL)
-    #define CY_SYS_WDT_CONTROL_PTR              ( (reg32 *) CYREG_WDT_CONTROL)
-#else
-    #define CY_SYS_WDT_DISABLE_KEY_REG          (*(reg32 *) CYREG_WDT_DISABLE_KEY)
-    #define CY_SYS_WDT_DISABLE_KEY_PTR          ( (reg32 *) CYREG_WDT_DISABLE_KEY)
-
-    #define CY_SYS_WDT_MATCH_REG                (*(reg32 *) CYREG_WDT_MATCH)
-    #define CY_SYS_WDT_MATCH_PTR                ( (reg32 *) CYREG_WDT_MATCH)
-
-    #define CY_SYS_WDT_COUNTER_REG              (*(reg32 *) CYREG_WDT_COUNTER)
-    #define CY_SYS_WDT_COUNTER_PTR              ( (reg32 *) CYREG_WDT_COUNTER)
-
-    #define CY_SYS_SRSS_INTR_REG                (*(reg32 *) CYREG_SRSS_INTR)
-    #define CY_SYS_SRSS_INTR_PTR                ( (reg32 *) CYREG_SRSS_INTR)
-
-    #define CY_SYS_SRSS_INTR_MASK_REG           (*(reg32 *) CYREG_SRSS_INTR_MASK)
-    #define CY_SYS_SRSS_INTR_MASK_PTR           ( (reg32 *) CYREG_SRSS_INTR_MASK)
-#endif  /* (CY_IP_SRSSV2) */
+/* CySysClkImoEnableWcoLock() / CySysClkImoDisableWcoLock() registers */
+#if (CY_PSOC4_4100M || CY_PSOC4_4200M)
+    /* WCO DPLL Register */
+    #define CY_SYS_CLK_WCO_DPLL_REG                 (*(reg32 *) CYREG_WCO_DPLL)
+    #define CY_SYS_CLK_WCO_DPLL_PTR                 ( (reg32 *) CYREG_WCO_DPLL)
+#endif /* (CY_PSOC4_4100M || CY_PSOC4_4200M) */
 
 
 /*******************************************************************************
@@ -872,71 +683,7 @@ extern uint32 cydelay32kMs;
 #define CY_SYS_SYST_CALIB_PTR               ( (reg32 *) CYREG_CM0_SYST_CALIB)
 
 
-#if (CY_IP_WCO)
 
-    /*******************************************************************************
-    * Function Name: CySysClkWcoSetHighPowerMode
-    ********************************************************************************
-    *
-    * Summary:
-    *  Sets the high power mode for the 32 KHz WCO.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  None
-    *
-    *******************************************************************************/
-    static CY_INLINE void CySysClkWcoSetHighPowerMode(void)
-    {
-        /* Switch off low power mode for WCO */
-        CY_SYS_CLK_WCO_CONFIG_REG &= (uint32) ~CY_SYS_CLK_WCO_CONFIG_LPM_EN;
-
-        /* Restore WCO trim register HPM settings */
-        CY_SYS_CLK_WCO_TRIM_REG = (CY_SYS_CLK_WCO_TRIM_REG & (uint32)(~CY_SYS_CLK_WCO_TRIM_GM_MASK)) \
-                    | (uint32)(CY_SYS_CLK_WCO_TRIM_GM_HPM << CY_SYS_CLK_WCO_TRIM_GM_SHIFT);
-        CY_SYS_CLK_WCO_TRIM_REG = (CY_SYS_CLK_WCO_TRIM_REG & (uint32)(~CY_SYS_CLK_WCO_TRIM_XGM_MASK)) \
-                    | (uint32)(CY_SYS_CLK_WCO_TRIM_XGM_2620NA << CY_SYS_CLK_WCO_TRIM_XGM_SHIFT);
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysClkWcoSetLowPowerMode
-    ********************************************************************************
-    *
-    * Summary:
-    *  Sets the low power mode for the 32 KHz WCO.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  None
-    *
-    *******************************************************************************/
-    static CY_INLINE void CySysClkWcoSetLowPowerMode(void)
-    {
-        /* Switch off auto low power mode in WCO */
-        CY_SYS_CLK_WCO_CONFIG_REG &= ((uint32)~CY_SYS_CLK_WCO_CONFIG_LPM_AUTO);
-
-        /* Change WCO trim register settings to LPM */
-        CY_SYS_CLK_WCO_TRIM_REG = (CY_SYS_CLK_WCO_TRIM_REG & (uint32)(~CY_SYS_CLK_WCO_TRIM_XGM_MASK)) \
-                    | (uint32)(CY_SYS_CLK_WCO_TRIM_XGM_2250NA << CY_SYS_CLK_WCO_TRIM_XGM_SHIFT);
-        CY_SYS_CLK_WCO_TRIM_REG = (CY_SYS_CLK_WCO_TRIM_REG & (uint32)(~CY_SYS_CLK_WCO_TRIM_GM_MASK)) \
-                    | (uint32)(CY_SYS_CLK_WCO_TRIM_GM_LPM << CY_SYS_CLK_WCO_TRIM_GM_SHIFT);
-
-        /* Switch on low power mode for WCO */
-        CY_SYS_CLK_WCO_CONFIG_REG |= CY_SYS_CLK_WCO_CONFIG_LPM_EN;
-    }
-
-#endif  /* (CY_IP_WCO) */
 
 /*******************************************************************************
 * The following code is OBSOLETE and must not be used.

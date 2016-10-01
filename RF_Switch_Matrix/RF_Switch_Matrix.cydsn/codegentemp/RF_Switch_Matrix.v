@@ -1,6 +1,6 @@
 // ======================================================================
 // RF_Switch_Matrix.v generated from TopDesign.cysch
-// 09/09/2016 at 22:59
+// 09/26/2016 at 16:46
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -126,7 +126,7 @@ module UART_v2_50_0 (
 		  .divisor(0),
 		  .period("1085069444.44444"),
 		  .is_direct(0),
-		  .is_digital(1))
+		  .is_digital(0))
 		IntClock
 		 (.clock_out(Net_9));
 
@@ -232,7 +232,6 @@ module top ;
           wire  Net_229;
           wire  Net_228;
           wire  Net_227;
-          wire  Net_226;
           wire  Net_201;
           wire  Net_200;
           wire  Net_199;
@@ -245,6 +244,8 @@ module top ;
           wire  Net_193;
           wire  Net_2;
           wire  Net_192;
+          wire  Net_296;
+          wire  Net_226;
           wire  Net_9;
           wire  Net_251;
           wire  Net_253;
@@ -458,7 +459,7 @@ module top ;
     defparam OutputReg.BitValue = 0;
     defparam OutputReg.BusDisplay = 0;
     defparam OutputReg.ExtrReset = 0;
-    defparam OutputReg.NumOutputs = 5;
+    defparam OutputReg.NumOutputs = 6;
 
 	wire [0:0] tmpOE__SDPT_0_net;
 	wire [0:0] tmpFB_0__SDPT_0_net;
@@ -841,6 +842,82 @@ module top ;
 	assign tmpOE__SP8T_2_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
     assign Net_196 = 1'h0;
+
+
+    assign Net_296 = Net_226 & Net_245;
+
+	wire [0:0] tmpOE__SPDT_Controller_net;
+	wire [0:0] tmpFB_0__SPDT_Controller_net;
+	wire [0:0] tmpIO_0__SPDT_Controller_net;
+	wire [0:0] tmpINTERRUPT_0__SPDT_Controller_net;
+	electrical [0:0] tmpSIOVREF__SPDT_Controller_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("b9a6e695-4ffd-4086-9300-1cae51d7e458"),
+		  .drive_mode(3'b110),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b1),
+		  .input_clk_en(0),
+		  .input_sync(1'b1),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b1),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .por_state(4),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b1),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .use_annotation(1'b0),
+		  .vtrip(2'b10),
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
+		SPDT_Controller
+		 (.oe(tmpOE__SPDT_Controller_net),
+		  .y({Net_296}),
+		  .fb({tmpFB_0__SPDT_Controller_net[0:0]}),
+		  .io({tmpIO_0__SPDT_Controller_net[0:0]}),
+		  .siovref(tmpSIOVREF__SPDT_Controller_net),
+		  .interrupt({tmpINTERRUPT_0__SPDT_Controller_net[0:0]}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__SPDT_Controller_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
 

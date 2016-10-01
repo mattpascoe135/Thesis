@@ -1,5 +1,5 @@
 # RF_Switch_Matrix
-# 2016-09-09 12:59:29Z
+# 2016-09-26 06:46:29Z
 
 # IO_4@[IOP=(0)][IoId=(4)] is reserved: KhzXtalEnabled
 dont_use_io iocell 0 4
@@ -16,4 +16,5 @@ set_io "SP8T_0(0)" iocell 2 2
 set_io "SP8T_1(0)" iocell 2 3
 set_io "SP8T_2(0)" iocell 2 4
 set_io "SPDT_1(0)" iocell 2 1
+set_io "SPDT_Controller(0)" iocell 2 5
 set_io "Tx(0)" iocell 3 0

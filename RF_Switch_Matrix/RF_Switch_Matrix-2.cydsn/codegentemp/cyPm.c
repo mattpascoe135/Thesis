@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: cyPm.c
-* Version 4.20
+* Version 5.0
 *
 *  Description:
 *   Provides an API for the power management.
@@ -10,7 +10,7 @@
 *   System Reference Guide provided with PSoC Creator.
 *
 ********************************************************************************
-* Copyright 2011-2014, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2011-2015, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -390,6 +390,13 @@ void CySysPmDeepSleep(void)
     *  The IO-Cells remain frozen after awake from Hibernate or Stop mode until
     *  the firmware unfreezes them after booting. The call of this function
     *  unfreezes IO-Cells explicitly.
+    *
+    *  If the firmware intent is to retain the data value on the port, then the
+    *  value must be read and re-written to the data register before calling this
+    *  API. Furthermore, the drive mode must be re-programmed.  If this is not done,
+    *  the pin state will change to default state the moment the freeze is removed.
+    *
+    *  This API is not available for PSoC 4000 family of devices.
     *
     * Parameters:
     *  None

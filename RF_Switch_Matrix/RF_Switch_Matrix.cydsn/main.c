@@ -101,8 +101,14 @@ int main() {
     for(;;) {
         while(mode==MODEA) {                   // Loop through all the switches
             updateOutput(curr->number);
-            curr=curr->next;
-            CyDelay(switchFreq);                //Delay for switchFreq;    
+            
+            //Update input/output switch
+            
+            CyDelay(switchFreq);                //Delay for switchFreq;  
+            
+            CyDelay(switchFreq);                //Delay for switchFreq;  
+            
+            curr=curr->next;  
         }
         
         while(mode==MODEB){}

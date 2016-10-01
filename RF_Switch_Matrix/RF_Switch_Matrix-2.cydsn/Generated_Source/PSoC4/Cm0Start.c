@@ -1,12 +1,12 @@
 /*******************************************************************************
 * File Name: Cm0Start.c
-* Version 4.20
+* Version 5.0
 *
 *  Description:
 *  Startup code for the ARM CM0.
 *
 ********************************************************************************
-* Copyright 2010-2014, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2010-2015, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -145,7 +145,7 @@ extern int __main(void);
 *******************************************************************************/
 void Reset(void)
 {
-    #if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE)
+    #if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE || CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
         /* The bootloadable application image is started at Reset() handler
         * as a result of a branch instruction execution from the bootloader.
         * So, the stack pointer needs to be reset to be sure that
@@ -153,15 +153,15 @@ void Reset(void)
         */
         register uint32_t msp __asm("msp");
         msp = (uint32_t)&Image$$ARM_LIB_STACK$$ZI$$Limit;
-    #endif /* CYDEV_PROJ_TYPE_LOADABLE */
+    #endif /*(CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE || CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)*/
 
     #if(CY_IP_SRSSLT)
         CySysWdtDisable();
     #endif  /* (CY_IP_SRSSLT) */
 
-    #if (CYDEV_BOOTLOADER_ENABLE)
+    #if ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER))
         CyBtldr_CheckLaunch();
-    #endif /* CYDEV_BOOTLOADER_ENABLE */
+    #endif /* ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)) */
 
     __main();
 }
@@ -180,7 +180,7 @@ void Reset(void)
 *  None
 *
 *******************************************************************************/
-__attribute__ ((noreturn))
+__attribute__ ((noreturn, __noinline__))
 void $Sub$$main(void)
 {
     initialize_psoc();
@@ -244,9 +244,7 @@ extern const char __cy_region_num __attribute__((weak));
 __attribute__((weak))
 void _exit(int status)
 {
-    /* Cause divide by 0 exception */
-    int x = status / (int) INT_MAX;
-    x = 4 / x;
+    CyHalt((uint8) status);
 
     while(1)
     {
@@ -314,7 +312,7 @@ void * _sbrk (int nbytes)
 *  None
 *
 *******************************************************************************/
-void Start_c(void)  __attribute__ ((noreturn));
+void Start_c(void)  __attribute__ ((noreturn, noinline));
 void Start_c(void)
 {
     unsigned regions = __cy_region_num;
@@ -372,7 +370,8 @@ void Start_c(void)
 *******************************************************************************/
 void Reset(void)
 {
-    #if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE)
+    #if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE || CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
+
         /* The bootloadable application image is started at Reset() handler
         * as a result of a branch instruction execution from the bootloader.
         * So, the stack pointer needs to be reset to be sure that
@@ -385,9 +384,9 @@ void Reset(void)
         CySysWdtDisable();
     #endif  /* (CY_IP_SRSSLT) */
 
-    #if (CYDEV_BOOTLOADER_ENABLE)
+    #if ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER))
         CyBtldr_CheckLaunch();
-    #endif /* CYDEV_BOOTLOADER_ENABLE */
+    #endif /* ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)) */
     Start_c();
 }
 
@@ -413,15 +412,16 @@ void Reset(void)
 *    1 - initialize data sections;
 *
 *******************************************************************************/
+#pragma inline = never
 int __low_level_init(void)
 {
     #if(CY_IP_SRSSLT)
         CySysWdtDisable();
     #endif  /* (CY_IP_SRSSLT) */
 
-#if (CYDEV_BOOTLOADER_ENABLE)
+#if ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER))
     CyBtldr_CheckLaunch();
-#endif /* CYDEV_BOOTLOADER_ENABLE */
+#endif /* ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)) */
 
     /* Initialize data sections */
     __iar_data_init3();

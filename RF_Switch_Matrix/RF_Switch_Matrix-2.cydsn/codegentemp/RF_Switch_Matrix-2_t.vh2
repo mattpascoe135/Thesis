@@ -1,6 +1,6 @@
--- Project:   C:\Users\Matty\Documents\PSoC Creator\RF_Switch_Matrix\RF_Switch_Matrix-2.cydsn\RF_Switch_Matrix-2.cyprj
--- Generated: 08/27/2016 13:30:51
--- PSoC Creator  3.1 SP1
+-- Project:   C:\Users\Matty\Desktop\Thesis\RF_Switch_Matrix\RF_Switch_Matrix-2.cydsn\RF_Switch_Matrix-2.cyprj
+-- Generated: 09/26/2016 16:44:21
+-- PSoC Creator  3.2
 
 ENTITY \RF_Switch_Matrix-2\ IS
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 3.3e0;
@@ -76,6 +76,54 @@ ARCHITECTURE __DEFAULT__ OF \RF_Switch_Matrix-2\ IS
             ff_div_13 : OUT std_ulogic;
             ff_div_14 : OUT std_ulogic;
             ff_div_15 : OUT std_ulogic;
+            ff_div_16 : OUT std_ulogic;
+            ff_div_17 : OUT std_ulogic;
+            ff_div_18 : OUT std_ulogic;
+            ff_div_19 : OUT std_ulogic;
+            ff_div_20 : OUT std_ulogic;
+            ff_div_21 : OUT std_ulogic;
+            ff_div_22 : OUT std_ulogic;
+            ff_div_23 : OUT std_ulogic;
+            ff_div_24 : OUT std_ulogic;
+            ff_div_25 : OUT std_ulogic;
+            ff_div_26 : OUT std_ulogic;
+            ff_div_27 : OUT std_ulogic;
+            ff_div_28 : OUT std_ulogic;
+            ff_div_29 : OUT std_ulogic;
+            ff_div_30 : OUT std_ulogic;
+            ff_div_31 : OUT std_ulogic;
+            ff_div_32 : OUT std_ulogic;
+            ff_div_33 : OUT std_ulogic;
+            ff_div_34 : OUT std_ulogic;
+            ff_div_35 : OUT std_ulogic;
+            ff_div_36 : OUT std_ulogic;
+            ff_div_37 : OUT std_ulogic;
+            ff_div_38 : OUT std_ulogic;
+            ff_div_39 : OUT std_ulogic;
+            ff_div_40 : OUT std_ulogic;
+            ff_div_41 : OUT std_ulogic;
+            ff_div_42 : OUT std_ulogic;
+            ff_div_43 : OUT std_ulogic;
+            ff_div_44 : OUT std_ulogic;
+            ff_div_45 : OUT std_ulogic;
+            ff_div_46 : OUT std_ulogic;
+            ff_div_47 : OUT std_ulogic;
+            ff_div_48 : OUT std_ulogic;
+            ff_div_49 : OUT std_ulogic;
+            ff_div_50 : OUT std_ulogic;
+            ff_div_51 : OUT std_ulogic;
+            ff_div_52 : OUT std_ulogic;
+            ff_div_53 : OUT std_ulogic;
+            ff_div_54 : OUT std_ulogic;
+            ff_div_55 : OUT std_ulogic;
+            ff_div_56 : OUT std_ulogic;
+            ff_div_57 : OUT std_ulogic;
+            ff_div_58 : OUT std_ulogic;
+            ff_div_59 : OUT std_ulogic;
+            ff_div_60 : OUT std_ulogic;
+            ff_div_61 : OUT std_ulogic;
+            ff_div_62 : OUT std_ulogic;
+            ff_div_63 : OUT std_ulogic;
             dsi_in_0 : OUT std_ulogic;
             dsi_in_1 : OUT std_ulogic;
             dsi_in_2 : OUT std_ulogic;
@@ -104,13 +152,13 @@ BEGIN
 
     ClockBlock:m0s8clockblockcell
         PORT MAP(
-            dsi_in_0 => ClockBlock_Routed1,
-            lfclk => ClockBlock_LFCLK,
-            ilo => ClockBlock_ILO,
-            sysclk => ClockBlock_SYSCLK,
-            ext => ClockBlock_EXTCLK,
+            hfclk => ClockBlock_HFCLK,
             imo => ClockBlock_IMO,
-            hfclk => ClockBlock_HFCLK);
+            ext => ClockBlock_EXTCLK,
+            sysclk => ClockBlock_SYSCLK,
+            ilo => ClockBlock_ILO,
+            lfclk => ClockBlock_LFCLK,
+            dsi_in_0 => ClockBlock_Routed1);
 
     ClockGenBlock:m0s8clockgenblockcell;
 

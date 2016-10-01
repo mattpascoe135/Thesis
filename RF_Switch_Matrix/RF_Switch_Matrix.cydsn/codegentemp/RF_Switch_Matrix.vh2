@@ -2,7 +2,7 @@
 --	Conversion of RF_Switch_Matrix.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri Sep 09 22:59:26 2016
+--	Mon Sep 26 16:46:27 2016
 --
 
 USE cypress.cypress.all;
@@ -418,6 +418,12 @@ SIGNAL tmpFB_0__SP8T_2_net_0 : bit;
 SIGNAL tmpIO_0__SP8T_2_net_0 : bit;
 TERMINAL tmpSIOVREF__SP8T_2_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__SP8T_2_net_0 : bit;
+SIGNAL Net_296 : bit;
+SIGNAL tmpOE__SPDT_Controller_net_0 : bit;
+SIGNAL tmpFB_0__SPDT_Controller_net_0 : bit;
+SIGNAL tmpIO_0__SPDT_Controller_net_0 : bit;
+TERMINAL tmpSIOVREF__SPDT_Controller_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__SPDT_Controller_net_0 : bit;
 SIGNAL \UART:BUART:reset_reg\\D\ : bit;
 SIGNAL \UART:BUART:txn\\D\ : bit;
 SIGNAL \UART:BUART:tx_state_1\\D\ : bit;
@@ -572,6 +578,8 @@ Net_263 <= (not Net_245
 
 Net_196 <=  ('0') ;
 
+Net_296 <= ((Net_245 and Net_226));
+
 \UART:IntClock\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
@@ -579,7 +587,7 @@ Net_196 <=  ('0') ;
 		divisor=>0,
 		period=>"1085069444.44444",
 		is_direct=>'0',
-		is_digital=>'1')
+		is_digital=>'0')
 	PORT MAP(clock_out=>\UART:Net_9\,
 		dig_domain_out=>open);
 \UART:BUART:ClkSync\:cy_psoc3_udb_clock_enable_v1_0
@@ -1026,7 +1034,7 @@ uartRx_isr:cy_isr_v1_0
 		cy_ext_reset=>'0')
 	PORT MAP(reset=>Net_196,
 		clock=>Net_196,
-		control=>(\OutputReg:control_7\, \OutputReg:control_6\, \OutputReg:control_5\, Net_245,
+		control=>(\OutputReg:control_7\, \OutputReg:control_6\, Net_226, Net_245,
 			Net_251, Net_249, Net_253, Net_244));
 SDPT_0:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"e851a3b9-efb8-48be-bbb8-b303b216c393",
@@ -1373,6 +1381,75 @@ SP8T_2:cy_psoc3_pins_v1_10
 		out_clock_en=>one,
 		out_reset=>Net_196,
 		interrupt=>tmpINTERRUPT_0__SP8T_2_net_0);
+SPDT_Controller:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"b9a6e695-4ffd-4086-9300-1cae51d7e458",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"1",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>Net_296,
+		fb=>(tmpFB_0__SPDT_Controller_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__SPDT_Controller_net_0),
+		siovref=>(tmpSIOVREF__SPDT_Controller_net_0),
+		annotation=>(open),
+		in_clock=>Net_196,
+		in_clock_en=>one,
+		in_reset=>Net_196,
+		out_clock=>Net_196,
+		out_clock_en=>one,
+		out_reset=>Net_196,
+		interrupt=>tmpINTERRUPT_0__SPDT_Controller_net_0);
 \UART:BUART:reset_reg\:cy_dff
 	PORT MAP(d=>Net_196,
 		clk=>\UART:BUART:clock_op\,

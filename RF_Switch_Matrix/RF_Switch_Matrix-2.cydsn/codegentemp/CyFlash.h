@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: CyFlash.h
-* Version 4.20
+* Version 5.0
 *
 *  Description:
 *   Provides the function definitions for the FLASH.
@@ -10,7 +10,7 @@
 *   System Reference Guide provided with PSoC Creator.
 *
 ********************************************************************************
-* Copyright 2010-2014, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2010-2015, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -59,7 +59,7 @@ void   CySysFlashSetWaitCycles  (uint32 freq);
 
         #define CY_FLASH_CTL_WS_1_FREQ_MIN      (24u)
         #define CY_FLASH_CTL_WS_1_FREQ_MAX      (48u)
-    #else
+    #else /* (CY_IP_FMLT || CY_IP_S8FS) */
         #define CY_FLASH_CTL_WS_0_FREQ_MIN      (0u)
         #define CY_FLASH_CTL_WS_0_FREQ_MAX      (16u)
 
@@ -73,9 +73,9 @@ void   CySysFlashSetWaitCycles  (uint32 freq);
     #define CY_FLASH_CTL_WS_MASK        ((uint32) 0x03u)
     #define CY_FLASH_CTL_WS_0_VALUE     (0x00u)
     #define CY_FLASH_CTL_WS_1_VALUE     (0x01u)
-    #if(CY_IP_FMLT)
+    #if(CY_IP_FMLT || CY_IP_S8FS)
         #define CY_FLASH_CTL_WS_2_VALUE (0x02u)
-    #endif  /* (CY_IP_FMLT) */
+    #endif  /* (CY_IP_FMLT || CY_IP_S8FS) */
 #endif  /* (CY_IP_CPUSSV2) */
 
 
@@ -101,13 +101,13 @@ void   CySysFlashSetWaitCycles  (uint32 freq);
 #define CY_FLASH_PARAM_ADDR_OFFSET      (16u)
 #define CY_FLASH_PARAM_MACRO_SEL_OFFSET (24u)
 
-#if (CY_PSOC4_4200BL || CY_PSOC4_4100BL)
+#if (CY_IP_FLASH_MACROS == 2u)
     /*  Macro #0: rows 0x00-0x1ff, Macro #1: rows 0x200-0x3ff */
     #define CY_FLASH_GET_MACRO_FROM_ROW(row)         ((uint32)(((row) > 0x1ffu) ? 1u : 0u))
 #else
     /* Only macro # 0 is available */
     #define CY_FLASH_GET_MACRO_FROM_ROW(row)         ((uint32)(((row) != 0u)    ? 0u : 0u))
-#endif  /* (CY_PSOC4_4200BL || CY_PSOC4_4100BL) */
+#endif  /* (CY_IP_FLASH_MACROS == 2u) */
 
 #if(CY_IP_FMLT)
     /* SROM size greater than 4k */

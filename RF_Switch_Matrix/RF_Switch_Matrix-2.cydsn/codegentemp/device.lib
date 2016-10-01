@@ -1477,6 +1477,34 @@
 
     cell (m0s8gangedpicucell) {
         pin (interrupt) { direction : output; }
+	}
+
+    cell (m0s8dmacell) {
+        pin (interrupt) { direction : output; }
+    }
+
+    cell (cancell) {
+        pin (clock) { direction : input; clock: true; }
+        pin (can_rx) { direction : input; }
+        pin (can_tx) { direction : output; }
+        pin (can_tx_en) {
+            direction : output;
+            timing() {
+                timing_type : rising_edge;
+                related_pin : "clock";
+                intrinsic_rise : 1.0;
+                intrinsic_fall : 1.0;
+            }
+        }
+        pin (interrupt) {
+            direction : output;
+            timing() {
+                timing_type : rising_edge;
+                related_pin : "clock";
+                intrinsic_rise : 1.0;
+                intrinsic_fall : 1.0;
+            }
+        }
     }
 
 /*}*/

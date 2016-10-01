@@ -342,9 +342,9 @@ UDB 3
 ------------------------------------------------------
 	PLD 0:
 		 Instances:
+			Net_260
 			Net_257
 			Net_263
-			Net_260
 			Net_259
 
 		 Clock net: 
@@ -372,7 +372,7 @@ UDB 3
 		 Instances:
 			\UART:BUART:rx_last\
 			Net_261
-			Net_2
+			Net_296
 			\UART:BUART:rx_status_4\
 
 		 Clock net: \UART:Net_9_digital\
@@ -380,21 +380,21 @@ UDB 3
 		 Enable net: 
 
 		 Input nets:
+			Net_226
 			Net_245
 			Net_251
 			Net_7
 			\UART:BUART:rx_fifofull\
 			\UART:BUART:rx_load_fifo\
-			\UART:BUART:txn\
 
 		 Output nets:
-			Net_2
 			Net_261
+			Net_296
 			\UART:BUART:rx_last\
 			\UART:BUART:rx_status_4\
 
 		 Product terms:
-			!\UART:BUART:txn\
+			Net_226 * Net_245
 			Net_245 * Net_251
 			Net_7
 			\UART:BUART:rx_fifofull\ * \UART:BUART:rx_load_fifo\
@@ -413,6 +413,7 @@ UDB 3
 			ClockBlock_HFCLK
 
 		 Output nets:
+			Net_226
 			Net_244
 			Net_245
 			Net_249
@@ -426,6 +427,7 @@ UDB 4
 ------------------------------------------------------
 	PLD 0:
 		 Instances:
+			Net_2
 			\UART:BUART:tx_status_2\
 
 		 Clock net: 
@@ -434,12 +436,15 @@ UDB 4
 
 		 Input nets:
 			\UART:BUART:tx_fifo_notfull\
+			\UART:BUART:txn\
 
 		 Output nets:
+			Net_2
 			\UART:BUART:tx_status_2\
 
 		 Product terms:
 			!\UART:BUART:tx_fifo_notfull\
+			!\UART:BUART:txn\
 
 	PLD 1:
 

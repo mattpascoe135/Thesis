@@ -6,7 +6,7 @@
 
 #Build Date:         May  8 2015 09:27:37
 
-#File Generated:     Sep 9 2016 22:59:29
+#File Generated:     Sep 26 2016 16:46:29
 
 #Purpose:            
 
@@ -42,121 +42,456 @@ D2053: Starting placement of the design
 
 Phase 2
 Phase 3
+E2071: Unable to pack the design into 4 UDBs. See the Digital Placement section of the report file for details. For additional assistance, see the Mapper, Placer, Router section in the PSoC Creator help.
+I2722: The following instances could not be placed:
 
-Design Statistics after Packing
-    Number of Combinational MCs 	:	13
-    Number of Sequential MCs    	:	16
-    Number of DPs               	:	3
-    Number of Controls          	:	2
-    Number of Status            	:	2
-    Number of SyncCells         	:	0
-    Number of count7cells       	:	1
+   \UART:BUART:tx_status_2\:macrocell
 
-Device Utilization Summary after Packing
-    Macrocells                  :	29/32
-    UDBS                        :	4/4
-    IOs                         :	7/51
+======================================================
+UDB 0
+------------------------------------------------------
+	PLD 0:
+		 Instances:
+			\UART:BUART:rx_state_3\
+			\UART:BUART:rx_load_fifo\
+			\UART:BUART:rx_status_3\
+			\UART:BUART:rx_state_0\
 
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
 
-D2088: Phase 3, elapsed time : 0.0 (sec)
+		 Input nets:
+			Net_7
+			\UART:BUART:pollcount_0\
+			\UART:BUART:pollcount_1\
+			\UART:BUART:rx_address_detected\
+			\UART:BUART:rx_bitclk_enable\
+			\UART:BUART:rx_count_4\
+			\UART:BUART:rx_count_5\
+			\UART:BUART:rx_count_6\
+			\UART:BUART:rx_state_0\
+			\UART:BUART:rx_state_2\
+			\UART:BUART:rx_state_3\
 
-Phase 4
-D2088: Phase 4, elapsed time : 0.0 (sec)
+		 Output nets:
+			\UART:BUART:rx_load_fifo\
+			\UART:BUART:rx_state_0\
+			\UART:BUART:rx_state_3\
+			\UART:BUART:rx_status_3\
 
-Phase 6
+		 Product terms:
+			!Net_7 * !\UART:BUART:pollcount_1\ * !\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * !\UART:BUART:rx_state_3\ * \UART:BUART:rx_bitclk_enable\ * \UART:BUART:rx_state_2\
+			!Net_7 * !\UART:BUART:pollcount_1\ * !\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * \UART:BUART:rx_bitclk_enable\ * \UART:BUART:rx_state_2\ * \UART:BUART:rx_state_3\
+			!\UART:BUART:pollcount_0\ * !\UART:BUART:pollcount_1\ * !\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * !\UART:BUART:rx_state_3\ * \UART:BUART:rx_bitclk_enable\ * \UART:BUART:rx_state_2\
+			!\UART:BUART:pollcount_0\ * !\UART:BUART:pollcount_1\ * !\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * \UART:BUART:rx_bitclk_enable\ * \UART:BUART:rx_state_2\ * \UART:BUART:rx_state_3\
+			!\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_count_4\ * !\UART:BUART:rx_count_6\ * !\UART:BUART:rx_state_2\ * !\UART:BUART:rx_state_3\ * \UART:BUART:rx_state_0\
+			!\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_count_5\ * !\UART:BUART:rx_count_6\ * !\UART:BUART:rx_state_2\ * !\UART:BUART:rx_state_3\ * \UART:BUART:rx_state_0\
+			!\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * !\UART:BUART:rx_state_2\ * \UART:BUART:rx_bitclk_enable\ * \UART:BUART:rx_state_3\
+			!\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * \UART:BUART:rx_bitclk_enable\ * \UART:BUART:rx_state_2\ * \UART:BUART:rx_state_3\
 
-######################################################################
-Placement Timing Summary
+	PLD 1:
+		 Instances:
+			\UART:BUART:rx_status_5\
+			\UART:BUART:rx_state_stop1_reg\
+			\UART:BUART:rx_state_2\
+			\UART:BUART:rx_counter_load\
 
-The timing summary is based on estimated routing delays after
-placement. For final timing report, please carry out the timing
-analysis after routing.
-======================================================================
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
 
-######################################################################
-                     Clock Summary 
-======================================================================
-Number of clocks: 8
-Clock: CyHFCLK              | Frequency:  39.4 MHz | Target:  48.0 MHz
-Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyLFCLK              | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CySYSCLK             | Frequency: N/A       | Target:   1.5 MHz
-Clock: CyWCO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: UART_IntClock        | Frequency:  39.4 MHz | Target:   0.9 MHz
+		 Input nets:
+			Net_7
+			\UART:BUART:rx_address_detected\
+			\UART:BUART:rx_bitclk_enable\
+			\UART:BUART:rx_count_4\
+			\UART:BUART:rx_count_5\
+			\UART:BUART:rx_count_6\
+			\UART:BUART:rx_fifonotempty\
+			\UART:BUART:rx_last\
+			\UART:BUART:rx_state_0\
+			\UART:BUART:rx_state_2\
+			\UART:BUART:rx_state_3\
+			\UART:BUART:rx_state_stop1_reg\
 
-======================================================================
-                     End of Clock Summary
-######################################################################
+		 Output nets:
+			\UART:BUART:rx_counter_load\
+			\UART:BUART:rx_state_2\
+			\UART:BUART:rx_state_stop1_reg\
+			\UART:BUART:rx_status_5\
 
-D2088: Phase 6, elapsed time : 0.0 (sec)
+		 Product terms:
+			!Net_7 * !\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * !\UART:BUART:rx_state_2\ * !\UART:BUART:rx_state_3\ * \UART:BUART:rx_last\
+			!\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_count_4\ * !\UART:BUART:rx_count_6\ * !\UART:BUART:rx_state_2\ * !\UART:BUART:rx_state_3\ * \UART:BUART:rx_state_0\
+			!\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_count_5\ * !\UART:BUART:rx_count_6\ * !\UART:BUART:rx_state_2\ * !\UART:BUART:rx_state_3\ * \UART:BUART:rx_state_0\
+			!\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * !\UART:BUART:rx_state_2\ * !\UART:BUART:rx_state_3\
+			!\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * \UART:BUART:rx_bitclk_enable\ * \UART:BUART:rx_state_2\
+			!\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * \UART:BUART:rx_bitclk_enable\ * \UART:BUART:rx_state_3\
+			!\UART:BUART:rx_address_detected\ * !\UART:BUART:rx_state_0\ * \UART:BUART:rx_state_2\ * \UART:BUART:rx_state_3\
+			\UART:BUART:rx_fifonotempty\ * \UART:BUART:rx_state_stop1_reg\
 
-Phase 7
-######################################################################
-                     Clock Summary 
-======================================================================
-Number of clocks: 8
-Clock: CyHFCLK              | Frequency:  40.2 MHz | Target:  48.0 MHz
-Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyLFCLK              | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CySYSCLK             | Frequency: N/A       | Target:   1.5 MHz
-Clock: CyWCO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: UART_IntClock        | Frequency:  40.2 MHz | Target:   0.9 MHz
+	Datapath:
+		 Instances:
+			\UART:BUART:sRX:RxShifter:u0\
 
-======================================================================
-                     End of Clock Summary
-######################################################################
-D2088: Phase 7, elapsed time : 0.1 (sec)
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
 
-Final Design Statistics
-    Number of Combinational MCs 	:	13
-    Number of Sequential MCs    	:	16
-    Number of DPs               	:	3
-    Number of Controls          	:	2
-    Number of Status            	:	2
-    Number of SyncCells         	:	0
-    Number of count7cells       	:	1
-    Number of IOs       	:	7
+		 Input nets:
+			ClockBlock_HFCLK
+			\UART:BUART:rx_address_detected\
+			\UART:BUART:rx_bitclk_enable\
+			\UART:BUART:rx_load_fifo\
+			\UART:BUART:rx_postpoll\
+			\UART:BUART:rx_state_0\
 
-Device Utilization Summary
-    Macrocells                  :	29/32
-    IOs                         :	7/51
+		 Output nets:
+			\UART:BUART:rx_fifofull\
+			\UART:BUART:rx_fifonotempty\
 
+	Control, status and sync:
+		 Instances:
+			\UART:BUART:sRX:RxBitCounter\ : count7cell
 
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
 
-######################################################################
-Placement Timing Summary
+		 Input nets:
+			\UART:BUART:rx_counter_load\
 
-The timing summary is based on estimated routing delays after
-placement. For final timing report, please carry out the timing
-analysis after routing.
-======================================================================
+		 Output nets:
+			\UART:BUART:rx_count_0\
+			\UART:BUART:rx_count_1\
+			\UART:BUART:rx_count_2\
+			\UART:BUART:rx_count_4\
+			\UART:BUART:rx_count_5\
+			\UART:BUART:rx_count_6\
 
+	Local clock and reset nets:
 
-######################################################################
-                     Clock Summary 
-======================================================================
-Number of clocks: 8
-Clock: CyHFCLK              | Frequency:  40.2 MHz | Target:  48.0 MHz
-Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyLFCLK              | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CySYSCLK             | Frequency: N/A       | Target:   1.5 MHz
-Clock: CyWCO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: UART_IntClock        | Frequency:  40.2 MHz | Target:   0.9 MHz
+======================================================
+UDB 1
+------------------------------------------------------
+	PLD 0:
+		 Instances:
+			\UART:BUART:txn\
+			\UART:BUART:rx_address_detected\
+			\UART:BUART:tx_state_1\
 
-======================================================================
-                     End of Clock Summary
-######################################################################
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
 
-Phase 8
-D2088: Phase 8, elapsed time : 0.0 (sec)
+		 Input nets:
+			\UART:BUART:tx_bitclk\
+			\UART:BUART:tx_bitclk_enable_pre\
+			\UART:BUART:tx_counter_dp\
+			\UART:BUART:tx_shift_out\
+			\UART:BUART:tx_state_0\
+			\UART:BUART:tx_state_1\
+			\UART:BUART:tx_state_2\
+			\UART:BUART:txn\
 
-D2054: Placement of the design completed successfully
+		 Output nets:
+			\UART:BUART:rx_address_detected\
+			\UART:BUART:tx_state_1\
+			\UART:BUART:txn\
 
-I2076: Total run-time: 0.5 sec.
+		 Product terms:
+			!\UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_1\ * !\UART:BUART:tx_state_2\ * \UART:BUART:tx_state_0\
+			!\UART:BUART:tx_bitclk\ * \UART:BUART:tx_state_1\ * \UART:BUART:txn\
+			!\UART:BUART:tx_counter_dp\ * !\UART:BUART:tx_shift_out\ * !\UART:BUART:tx_state_0\ * !\UART:BUART:tx_state_2\ * \UART:BUART:tx_bitclk\ * \UART:BUART:tx_state_1\
+			!\UART:BUART:tx_shift_out\ * !\UART:BUART:tx_state_1\ * !\UART:BUART:tx_state_2\ * \UART:BUART:tx_state_0\
+			!\UART:BUART:tx_state_2\ * \UART:BUART:tx_bitclk\ * \UART:BUART:tx_counter_dp\ * \UART:BUART:tx_state_1\
+			!\UART:BUART:tx_state_2\ * \UART:BUART:tx_bitclk\ * \UART:BUART:tx_state_0\
+			\UART:BUART:tx_bitclk_enable_pre\ * \UART:BUART:tx_state_0\ * \UART:BUART:tx_state_1\ * \UART:BUART:tx_state_2\
+			\UART:BUART:tx_state_2\ * \UART:BUART:txn\
 
+	PLD 1:
+		 Instances:
+			\UART:BUART:tx_state_2\
+			\UART:BUART:counter_load_not\
+			\UART:BUART:tx_bitclk\
+
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			\UART:BUART:tx_bitclk\
+			\UART:BUART:tx_bitclk_enable_pre\
+			\UART:BUART:tx_counter_dp\
+			\UART:BUART:tx_state_0\
+			\UART:BUART:tx_state_1\
+			\UART:BUART:tx_state_2\
+
+		 Output nets:
+			\UART:BUART:counter_load_not\
+			\UART:BUART:tx_bitclk\
+			\UART:BUART:tx_state_2\
+
+		 Product terms:
+			!\UART:BUART:tx_bitclk_enable_pre\
+			!\UART:BUART:tx_state_0\ * !\UART:BUART:tx_state_1\ * !\UART:BUART:tx_state_2\
+			!\UART:BUART:tx_state_0\ * !\UART:BUART:tx_state_1\ * \UART:BUART:tx_bitclk_enable_pre\
+			!\UART:BUART:tx_state_0\ * !\UART:BUART:tx_state_1\ * \UART:BUART:tx_bitclk_enable_pre\ * \UART:BUART:tx_state_2\
+			!\UART:BUART:tx_state_0\ * !\UART:BUART:tx_state_1\ * \UART:BUART:tx_state_2\
+			!\UART:BUART:tx_state_2\ * \UART:BUART:tx_bitclk\ * \UART:BUART:tx_counter_dp\ * \UART:BUART:tx_state_1\
+			!\UART:BUART:tx_state_2\ * \UART:BUART:tx_bitclk\ * \UART:BUART:tx_state_0\ * \UART:BUART:tx_state_1\
+			\UART:BUART:tx_bitclk_enable_pre\ * \UART:BUART:tx_state_0\ * \UART:BUART:tx_state_1\ * \UART:BUART:tx_state_2\
+
+	Datapath:
+		 Instances:
+			\UART:BUART:sTX:sCLOCK:TxBitClkGen\
+
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			ClockBlock_HFCLK
+			\UART:BUART:counter_load_not\
+
+		 Output nets:
+			\UART:BUART:tx_bitclk_enable_pre\
+			\UART:BUART:tx_counter_dp\
+
+	Control, status and sync:
+		 Instances:
+			\OutputReg:Sync:ctrl_reg\ : controlcell
+			\UART:BUART:sTX:TxSts\ : statusicell
+
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			ClockBlock_HFCLK
+			\UART:BUART:tx_fifo_empty\
+			\UART:BUART:tx_fifo_notfull\
+			\UART:BUART:tx_status_0\
+			\UART:BUART:tx_status_2\
+
+		 Output nets:
+			Net_226
+			Net_244
+			Net_245
+			Net_249
+			Net_251
+			Net_253
+
+	Local clock and reset nets:
+
+======================================================
+UDB 2
+------------------------------------------------------
+	PLD 0:
+		 Instances:
+			\UART:BUART:tx_status_0\
+			\UART:BUART:pollcount_1\
+			\UART:BUART:tx_state_0\
+
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			Net_7
+			\UART:BUART:pollcount_0\
+			\UART:BUART:pollcount_1\
+			\UART:BUART:rx_count_1\
+			\UART:BUART:rx_count_2\
+			\UART:BUART:tx_bitclk\
+			\UART:BUART:tx_bitclk_enable_pre\
+			\UART:BUART:tx_fifo_empty\
+			\UART:BUART:tx_state_0\
+			\UART:BUART:tx_state_1\
+			\UART:BUART:tx_state_2\
+
+		 Output nets:
+			\UART:BUART:pollcount_1\
+			\UART:BUART:tx_state_0\
+			\UART:BUART:tx_status_0\
+
+		 Product terms:
+			!Net_7 * !\UART:BUART:rx_count_1\ * !\UART:BUART:rx_count_2\ * \UART:BUART:pollcount_1\
+			!\UART:BUART:pollcount_0\ * !\UART:BUART:rx_count_1\ * !\UART:BUART:rx_count_2\ * \UART:BUART:pollcount_1\
+			!\UART:BUART:pollcount_1\ * !\UART:BUART:rx_count_1\ * !\UART:BUART:rx_count_2\ * Net_7 * \UART:BUART:pollcount_0\
+			!\UART:BUART:tx_fifo_empty\ * !\UART:BUART:tx_state_0\ * !\UART:BUART:tx_state_1\ * !\UART:BUART:tx_state_2\
+			!\UART:BUART:tx_fifo_empty\ * !\UART:BUART:tx_state_0\ * !\UART:BUART:tx_state_1\ * \UART:BUART:tx_bitclk_enable_pre\
+			!\UART:BUART:tx_state_0\ * !\UART:BUART:tx_state_1\ * \UART:BUART:tx_bitclk_enable_pre\ * \UART:BUART:tx_fifo_empty\ * \UART:BUART:tx_state_2\
+			!\UART:BUART:tx_state_2\ * \UART:BUART:tx_bitclk\ * \UART:BUART:tx_state_0\
+			\UART:BUART:tx_bitclk_enable_pre\ * \UART:BUART:tx_fifo_empty\ * \UART:BUART:tx_state_0\ * \UART:BUART:tx_state_1\ * \UART:BUART:tx_state_2\
+
+	PLD 1:
+		 Instances:
+			Net_260
+			\UART:BUART:rx_postpoll\
+			\UART:BUART:rx_bitclk_enable\
+			\UART:BUART:pollcount_0\
+
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			Net_245
+			Net_249
+			Net_7
+			\UART:BUART:pollcount_0\
+			\UART:BUART:pollcount_1\
+			\UART:BUART:rx_count_0\
+			\UART:BUART:rx_count_1\
+			\UART:BUART:rx_count_2\
+
+		 Output nets:
+			Net_260
+			\UART:BUART:pollcount_0\
+			\UART:BUART:rx_bitclk_enable\
+			\UART:BUART:rx_postpoll\
+
+		 Product terms:
+			!Net_7 * !\UART:BUART:rx_count_1\ * !\UART:BUART:rx_count_2\ * \UART:BUART:pollcount_0\
+			!\UART:BUART:pollcount_0\ * !\UART:BUART:rx_count_1\ * !\UART:BUART:rx_count_2\ * Net_7
+			!\UART:BUART:rx_count_0\ * !\UART:BUART:rx_count_1\ * !\UART:BUART:rx_count_2\
+			Net_245 * Net_249
+			Net_7 * \UART:BUART:pollcount_0\
+			\UART:BUART:pollcount_1\
+
+	Datapath:
+		 Instances:
+			\UART:BUART:sTX:TxShifter:u0\
+
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			ClockBlock_HFCLK
+			\UART:BUART:tx_bitclk_enable_pre\
+			\UART:BUART:tx_state_0\
+			\UART:BUART:tx_state_1\
+
+		 Output nets:
+			\UART:BUART:tx_fifo_empty\
+			\UART:BUART:tx_fifo_notfull\
+			\UART:BUART:tx_shift_out\
+
+	Control, status and sync:
+		 Instances:
+			\UART:BUART:sRX:RxSts\ : statusicell
+
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			\UART:BUART:rx_status_3\
+			\UART:BUART:rx_status_4\
+			\UART:BUART:rx_status_5\
+
+		 Output nets:
+			Net_9
+
+	Local clock and reset nets:
+
+======================================================
+UDB 3
+------------------------------------------------------
+	PLD 0:
+		 Instances:
+			\UART:BUART:rx_last\
+			Net_257
+			Net_263
+			Net_259
+
+		 Clock net: \UART:Net_9_digital\
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			Net_244
+			Net_245
+			Net_253
+			Net_7
+
+		 Output nets:
+			Net_257
+			Net_259
+			Net_263
+			\UART:BUART:rx_last\
+
+		 Product terms:
+			Net_244 * Net_245
+			Net_245 * Net_253
+			Net_7
+
+	PLD 1:
+		 Instances:
+			Net_2
+			Net_261
+			Net_296
+			\UART:BUART:rx_status_4\
+
+		 Clock net: 
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			Net_226
+			Net_245
+			Net_251
+			\UART:BUART:rx_fifofull\
+			\UART:BUART:rx_load_fifo\
+			\UART:BUART:txn\
+
+		 Output nets:
+			Net_2
+			Net_261
+			Net_296
+			\UART:BUART:rx_status_4\
+
+		 Product terms:
+			!\UART:BUART:txn\
+			Net_226 * Net_245
+			Net_245 * Net_251
+			\UART:BUART:rx_fifofull\ * \UART:BUART:rx_load_fifo\
+
+	Datapath:
+
+	Control, status and sync:
+
+	Local clock and reset nets:
+
+======================================================
+UDB 4
+------------------------------------------------------
+	PLD 0:
+		 Instances:
+			\UART:BUART:tx_status_2\
+
+		 Clock net: 
+		 Set/Reset net: 
+		 Enable net: 
+
+		 Input nets:
+			\UART:BUART:tx_fifo_notfull\
+
+		 Output nets:
+			\UART:BUART:tx_status_2\
+
+		 Product terms:
+			!\UART:BUART:tx_fifo_notfull\
+
+	PLD 1:
+
+	Datapath:
+
+	Control, status and sync:
+
+	Local clock and reset nets:
+
+E2055: An error occurred during placement of the design.
