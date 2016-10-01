@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.6)  20 SEP 2016 23:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.27)  28 SEP 2016 09:56
 entering extended mode
 **./ThesisReport.tex
 (ThesisReport.tex
@@ -182,6 +182,55 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
+) ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count110
+\float@exts=\toks22
+\float@box=\box31
+\@float@everytoks=\toks23
+\@floatcapt=\box32
+)
+("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\pdflscape
+.sty"
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+
+("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\lscape.st
+y"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.s
+ty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+
+("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.
+sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+))
+("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\multirow\multirow.
+sty"
+\bigstrutjot=\dimen119
+)
+("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.st
+y"
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip61
+\LTright=\skip62
+\LTpre=\skip63
+\LTpost=\skip64
+\LTchunksize=\count111
+\LTcapwidth=\dimen120
+\LT@head=\box33
+\LT@firsthead=\box34
+\LT@foot=\box35
+\LT@lastfoot=\box36
+\LT@cols=\count112
+\LT@rows=\count113
+\c@LT@tables=\count114
+\c@LT@chunks=\count115
+\LT@p@ftn=\toks24
 ) ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\cases\cases.sty"
 Package: cases 2002/05/02 ver 2.5 
 )
@@ -257,8 +306,7 @@ Package ifluatex Info: LuaTeX not detected.
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -288,10 +336,6 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.
-sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook.s
 ty"
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
@@ -300,15 +344,15 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 .sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen119
-\Hy@linkcounter=\count110
-\Hy@pagecounter=\count111
+\@linkdim=\dimen121
+\Hy@linkcounter=\count116
+\Hy@pagecounter=\count117
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.de
 f"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count112
+\Hy@SavedSpaceFactor=\count118
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperref.
 cfg"
@@ -321,16 +365,16 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count113
+\c@Hy@tempcnt=\count119
  ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen120
-\Fld@menulength=\count114
-\Field@Width=\dimen121
-\Fld@charsize=\dimen122
+\XeTeXLinkMargin=\dimen122
+\Fld@menulength=\count120
+\Field@Width=\dimen123
+\Fld@charsize=\dimen124
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -340,9 +384,9 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count115
-\c@Item=\count116
-\c@Hfootnote=\count117
+\Hy@abspage=\count121
+\c@Item=\count122
+\c@Hfootnote=\count123
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
@@ -351,8 +395,8 @@ Package hyperref Message: Driver (autodetected): hpdftex.
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex.d
 ef"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count118
-\c@bookmark@seq@number=\count119
+\Fld@listcount=\count124
+\c@bookmark@seq@number=\count125
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfile
 check.sty"
@@ -360,7 +404,7 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip61
+\Hy@SectionHShift=\skip65
 )
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\breakurl\breakurl.
 sty"
@@ -374,10 +418,10 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 tex"
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkvutils
 .tex"
-\XKV@toks=\toks22
-\XKV@tempa@toks=\toks23
+\XKV@toks=\toks25
+\XKV@tempa@toks=\toks26
 )
-\XKV@depth=\count120
+\XKV@depth=\count126
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 
@@ -387,27 +431,27 @@ Package breakurl Warning: You are using breakurl while processing via pdflatex.
 (breakurl)                 on input line 48.
 
 )
-\c@defn=\count121
-\c@theorem=\count122
-\c@lemma=\count123
+\c@defn=\count127
+\c@theorem=\count128
+\c@lemma=\count129
  (ThesisReport.aux)
 \openout1 = `ThesisReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 186.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 191.
 
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
@@ -416,22 +460,22 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
-\scratchdimen=\dimen123
-\scratchbox=\box31
-\nofMPsegments=\count125
-\nofMParguments=\count126
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count127
-\MPscratchDim=\dimen124
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count130
+\scratchdimen=\dimen125
+\scratchbox=\box37
+\nofMPsegments=\count131
+\nofMParguments=\count132
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen126
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
+\everyMPtoPDFconversion=\toks28
 ) ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 186.
-\c@lstlisting=\count130
-\AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 186.
+LaTeX Info: Redefining \selectfont on input line 191.
+\c@lstlisting=\count136
+\AtBeginShipoutBox=\box38
+Package hyperref Info: Link coloring OFF on input line 191.
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -441,20 +485,20 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 estring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count131
+\c@section@level=\count137
 )
-LaTeX Info: Redefining \ref on input line 186.
-LaTeX Info: Redefining \pageref on input line 186.
-LaTeX Info: Redefining \nameref on input line 186.
+LaTeX Info: Redefining \ref on input line 191.
+LaTeX Info: Redefining \pageref on input line 191.
+LaTeX Info: Redefining \nameref on input line 191.
  (ThesisReport.out) (ThesisReport.out)
 \@outlinefile=\write3
 \openout3 = `ThesisReport.out'.
 
 
-<UQLogo.png, id=306, 284.5029pt x 112.2594pt>
+<UQLogo.png, id=326, 284.5029pt x 112.2594pt>
 File: UQLogo.png Graphic file (type png)
  <use UQLogo.png>
-Package pdftex.def Info: UQLogo.png used on input line 193.
+Package pdftex.def Info: UQLogo.png used on input line 198.
 (pdftex.def)             Requested size: 284.52756pt x 112.26938pt.
  [1
 
@@ -462,36 +506,36 @@ Package pdftex.def Info: UQLogo.png used on input line 193.
 
 {C:/Users/Matty/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./UQLogo.pn
 g>] [2]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 287
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 292
 .
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmtt.fd"
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 292.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 297.
 
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 292
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 297
 .
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 292
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 297
 .
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 292.
+(Font)              <12> on input line 297.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 292.
+(Font)              <8> on input line 297.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 292.
+(Font)              <6> on input line 297.
 
 [3
 
@@ -517,28 +561,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 Chapter 1.
 
-LaTeX Warning: Citation `ref4' on page 1 undefined on input line 350.
+LaTeX Warning: Citation `ref4' on page 1 undefined on input line 355.
 
 
-LaTeX Warning: Citation `ref5' on page 1 undefined on input line 351.
+LaTeX Warning: Citation `ref5' on page 1 undefined on input line 356.
 
 [1
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 358--361
+Underfull \hbox (badness 10000) in paragraph at lines 363--366
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 362.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 367.
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 362.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 367.
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--378
+Underfull \hbox (badness 10000) in paragraph at lines 376--383
 
  []
 
@@ -546,23 +590,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 371--378
 Chapter 2.
 [4
 
-] <tline.png, id=459, 377.15906pt x 155.07938pt>
+] <tline.png, id=488, 377.15906pt x 155.07938pt>
 File: tline.png Graphic file (type png)
  <use tline.png>
-Package pdftex.def Info: tline.png used on input line 433.
+Package pdftex.def Info: tline.png used on input line 438.
 (pdftex.def)             Requested size: 341.43436pt x 140.38887pt.
- [5 <./tline.png>] [6] <microdiag.jpg, id=473, 188.20313pt x 97.86563pt>
+ [5 <./tline.png>] [6] <microdiag.jpg, id=502, 188.20313pt x 97.86563pt>
 File: microdiag.jpg Graphic file (type jpg)
 
 <use microdiag.jpg>
-Package pdftex.def Info: microdiag.jpg used on input line 513.
+Package pdftex.def Info: microdiag.jpg used on input line 518.
 (pdftex.def)             Requested size: 277.41176pt x 144.2654pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
 
  []
 
@@ -573,114 +617,120 @@ Chapter 3.
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 606--608
+Underfull \hbox (badness 10000) in paragraph at lines 611--613
 
  []
 
 
-LaTeX Warning: Reference `fig:res:' on page 11 undefined on input line 627.
+LaTeX Warning: Reference `fig:res:' on page 11 undefined on input line 632.
 
 
-LaTeX Warning: Reference `fig:res:' on page 11 undefined on input line 627.
+LaTeX Warning: Reference `fig:res:' on page 11 undefined on input line 632.
 
 
-LaTeX Warning: Reference `fig:res:' on page 11 undefined on input line 627.
+LaTeX Warning: Reference `fig:res:' on page 11 undefined on input line 632.
 
 [11
 
-] [12]
+] [12] [13]
 Chapter 5.
-[13
-
-]
-Chapter 6.
 [14
 
 ]
-Chapter 7.
+Chapter 6.
 [15
 
 ]
-Appendix A.
+Chapter 7.
 [16
 
 ]
-Appendix B.
+Appendix A.
 [17
+
+]
+Appendix B.
+[18
 
 ]
 Appendix C.
 
-Overfull \hbox (3.88347pt too wide) in paragraph at lines 830--842
+Overfull \hbox (3.88347pt too wide) in paragraph at lines 871--883
  [][] 
  []
 
-[18
-
-]
-Appendix D.
 [19
 
 ]
-Appendix E.
+Appendix D.
 [20
+
+]
+Overfull \hbox (482.89885pt too wide) in paragraph at lines 904--932
+ [][][] 
+ []
+
+[21
+
+] [22
+
+]
+Appendix E.
+[23
+
+] [24
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 882.
+(hyperref)                be the same. Added a new anchor on input line 976.
 
 (ThesisReport.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 886.
- [21
-
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 980.
+ [25
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 886.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 980.
  (ThesisReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 886.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 886.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 980.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 980.
+Package rerunfilecheck Info: File `ThesisReport.out' has not changed.
+(rerunfilecheck)             Checksum: 7849239361A30FC8F35C6674822140BA;5174.
 
-
-Package rerunfilecheck Warning: File `ThesisReport.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `ThesisReport.out':
-(rerunfilecheck)             Before: E4A51F6D03009143180A8A31E1797773;4866
-(rerunfilecheck)             After:  1DACC931CA65082646C6DF8CCF6A815C;4865.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 886.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 980.
  ) 
 Here is how much of TeX's memory you used:
- 7890 strings out of 493634
- 117803 string characters out of 3135240
- 208631 words of memory out of 3000000
- 11042 multiletter control sequences out of 15000+200000
- 46111 words of font info for 36 fonts, out of 3000000 for 9000
+ 8104 strings out of 493634
+ 121142 string characters out of 3135239
+ 234564 words of memory out of 3000000
+ 11218 multiletter control sequences out of 15000+200000
+ 53967 words of font info for 44 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 30i,10n,49p,996b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathe
-x.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
-athit.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/
+ 30i,13n,49p,996b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
+c}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
+t.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
+athex.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/
 lm-mathsy.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
-/lm/lm-rm.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
 /lm/lm-rmtt.enc}<C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmbx12.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/lm/lmex10.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/lm/lmmi12.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/lm/lmmi8.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Matty/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Matty/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Users/Matty/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Matty/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on ThesisReport.pdf (29 pages, 353535 bytes).
+e1/public/lm/lmbx8.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/lm/lmex10.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/lm/lmmi12.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/lm/lmmib10.pfb><C:/Users/Matty/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Matty/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Matty/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Matty/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Users/Matty/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Matty/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
+Output written on ThesisReport.pdf (33 pages, 386345 bytes).
 PDF statistics:
- 611 PDF objects out of 1000 (max. 8388607)
- 120 named destinations out of 1000 (max. 500000)
- 624 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 668 PDF objects out of 1000 (max. 8388607)
+ 131 named destinations out of 1000 (max. 500000)
+ 664 words of extra memory for PDF output out of 10000 (max. 10000000)
 
