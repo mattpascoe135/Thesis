@@ -1,3 +1,5 @@
+\newcommand{\model}{ABCD}
+
 \documentclass[12pt,openany,a4paper]{book}
 \newcommand\tabSpace[1][1cm]{\hspace*{#1}}
 \usepackage{graphicx}
@@ -10,6 +12,7 @@
 \usepackage{multirow}
 \usepackage{longtable}
 \usepackage[subnum]{cases}
+\usepackage{caption}
 %Code coloring
 \usepackage{color}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -629,7 +632,7 @@ We currently have $3$ boards available
 
 
 
-The three available evaluation boards we investigated using a MODELNUMBER VNA; each switch was wired so that the input is connected to the output, while all other ports were $50\ohm$ terminated. The switch was powered and the controls set to allow the signal to proprigate down the open path, then changed the state to have a closed path; this was conducted for each evaluation board. The results were exported to a \textit{.s2p} file to be analysed using ADS, and the results can be seen in Figure's \ref{fig:res:}, \ref{fig:res:} \& \ref{fig:res:}. 
+The three available evaluation boards we investigated using a \model \ VNA; each switch was wired so that the input is connected to the output, while all other ports were $50\ohm$ terminated. The switch was powered and the controls set to allow the signal to proprigate down the open path, then changed the state to have a closed path; this was conducted for each evaluation board. The results were exported to a \textit{.s2p} file to be analysed using ADS, and the results can be seen in Figure's \ref{fig:res:}, \ref{fig:res:} \& \ref{fig:res:}. 
 %Insert Images
 These simulations 
 
@@ -664,8 +667,18 @@ Using the evaluated RF switches two separate designs are developed ,
 
 
 
+\subsection{Design 1}
 
+\subsection{Design 2}
 
+\subsection{Design 3}
+
+\subsection{Output 1}
+
+\subsection{Output 2}
+%TODO : show pcb board
+
+Due to time constraints, since the ... design wasn't working it was decided to disregard the design as it would be too expensive and time consuming to re-design this design.
 
 
 \section{Development}
@@ -679,11 +692,7 @@ This section looks at the development of the RF switch matrix.
 One of the key design parameters is for developing a portable device, this requires the switch matrix to be as small as possible. To determine the best solution ADS's LineCalc is used to % 
 
 
-
 %TODO : talk about the altium design, physical requirements/limitations
-
-
-
 
 \newcommand{\pcbestimate1}{$35$ }
 \newcommand{\pcbestimate2}{$35$ }
@@ -709,7 +718,7 @@ The RF switch chips that were selected are only available in QFN, .... or ... pa
 
 %TODO : device selection
 \newcommand{\numberofpins}{$35$ }
-\section{Micro-controller Development}
+\section{Micro-controller Development}		\label{sec:micro_dev}
 In order to control and operate the RF Switch system a some type of micro-controller is required to be used to switch the inputs and outputs of the system. The micro-controller needs to meet the following key design parameters:
 \begin{itemize}
 	\setlength\itemsep{-0.5em}
@@ -752,17 +761,283 @@ Therefore using this we are able to determine:
 %---------------------------------------------------------------------------------
 \chapter{Verification}
 
-\section{Individual Board's}
-This section looks at the results obtain from each of the 
+\section{Individual Board's}	\label{sec:indv_boards}
+This section looks at the results obtain from each of the individual boards, each board was tested with a \model \ VNA. By evaluating these boards it can be determined 
+\subsection{Design 1}
+Design 1 has been tested with , there are $3$ 
+\subsubsection{Losses}
+\begin{figure}[H]
+	\centering
+%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Design 1 S-Parameters}
+	\label{fig:ufl_sma}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input insertion
+
+%TODO : S21 output insertion
+
+%TODO : S22 output reflection
+
+\subsubsection{Switch Speed}
+
+\subsubsection{Power Requirements}
+
+
+\subsection{Design 2}
+
+\subsubsection{Losses}
+\begin{figure}[H]
+	\centering
+%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Design 2 S-Parameters}
+	\label{fig:ufl_sma}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input insertion
+
+%TODO : S21 output insertion
+
+%TODO : S22 output reflection
+
+\subsubsection{Switch Speed}
+
+\subsubsection{Power Requirements}
+
+
+\subsection{Design 3}
+
+\subsubsection{Losses}
+\begin{figure}[H]
+	\centering
+%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Design 3 S-Parameters}
+	\label{fig:ufl_sma}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input insertion
+
+%TODO : S21 output insertion
+
+%TODO : S22 output reflection
+
+\subsubsection{Switch Speed}
+
+\subsubsection{Power Requirements}
+
+
+\subsection{Output 1}
+
+\subsubsection{Losses}
+\begin{figure}[H]
+	\centering
+%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Output 1 S-Parameters}
+	\label{fig:output1_sp}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input insertion
+
+%TODO : S21 output insertion
+
+%TODO : S22 output reflection
+
+\subsubsection{Switch Speed}
+
+\subsubsection{Power Requirements}
+
+
+
+\subsection{Cabling}
+There are several different cabling options available; three different cabling options have been looked at, this includes flexable and rigid SMA cables, and UFL cabling. Looking at Figure \ref{fig:flex_sma} - \ref{fig:ufl} we can determine the effects of cabling in the final design
+\begin{figure}[H]
+	\centering
+%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Flexable SMA cable S-Parameters}
+	\label{fig:flex_sma}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Rigid SMA cable S-Parameters}
+	\label{fig:rigid_sma}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{UFL cable S-Parameters}
+	\label{fig:ufl_sma}
+\end{figure} 
 
 
 \section{RF Switch Matrix}
+This section looks at the overall characteristics of the final RF switch matrix design. To determine the overall performance of the system, this required evaluating the performance, speed, size and power constraints.
+
+\subsection{Final Design}
+From looking at the results obtained in Section \ref{sec:indv_boards} it can be seen that the only option for the output SPDT switch is `Output 1'. Therefore the $16$ output terminals will have the reflection seen in Figure \ref{fig:output1_sp} $S_{22}$ signal, this will be connected to the SP16T via a UFL-UFL connector seen in Figure \ref{fig:ufl_sma}. \\
+Looking at the results obtained, it can be seen that `Design ...' has an insertion loss of ...dB 
+
+%TODO : finish this section, compare the insertion/isolation between the designs.
+
+Therefore the final design will use  `Design ...' and `Output 1'. 
 
 \subsection{Losses}
+In order to determine the characteristics of the designed RF switch matrix, its characteristics of can be modelled using S-Parameters to evaluate the final design. Using the \model \ VNA the switch matrix was analysed to determine the amount of losses that are present in the system. \\
+Looking at Figure \ref{fig:rf_sparam} we can determine the performance of the overall system. There are multiple paths that need to be considered in order to fully evaluate the RF switch, there are 9 different paths that can be taken; these can be seen below in Figure \ref{fig:rf_sparam1} - \ref{fig:rf_sparam9}.
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{S-Parameters of RF switch matrix \\ (Left) Path 1, (Right) Diagram}
+	\label{fig:rf_sparam1}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input insertion
+
+%TODO : S21 output insertion
+
+%TODO : S22 output reflection
+
+
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=1\textwidth]{rf_sparam.png}
+	\caption{S-Parameters of RF switch matrix\\ (Left) Path 2, (Right) Diagram}
+	\label{fig:rf_sparam2}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input isolation
+
+%TODO : S21 output isolation
+
+%TODO : S22 output reflection
+
+
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{S-Parameters of RF switch matrix\\ (Left) Path 3, (Right) Diagram}
+	\label{fig:rf_sparam3}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input isolation
+
+%TODO : S21 output isolation
+
+%TODO : S22 output reflection
+
+
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{S-Parameters of RF switch matrix\\ (Left) Path 4, (Right) Diagram}
+	\label{fig:rf_sparam4}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input isolation
+
+%TODO : S21 output isolation
+
+%TODO : S22 output reflection
+
+
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{S-Parameters of RF switch matrix\\ (Left) Path 5, (Right) Diagram}
+	\label{fig:rf_sparam5}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input isolation
+
+%TODO : S21 output isolation
+
+%TODO : S22 output reflection
+
+
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{S-Parameters of RF switch matrix\\ (Left) Path 6, (Right) Diagram}
+	\label{fig:rf_sparam6}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input isolation
+
+%TODO : S21 output isolation
+
+%TODO : S22 output reflection
+
+
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{S-Parameters of RF switch matrix\\ (Left) Path 7, (Right) Diagram}
+	\label{fig:rf_sparam7}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input isolation
+
+%TODO : S21 output isolation
+
+%TODO : S22 output reflection
+
+
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{S-Parameters of RF switch matrix\\ (Left) Path 8, (Right) Diagram}
+	\label{fig:rf_sparam8}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input isolation
+
+%TODO : S21 output isolation
+
+%TODO : S22 output reflection
+
+
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{S-Parameters of RF switch matrix\\ (Left) Path 9, (Right) Diagram}
+	\label{fig:rf_sparam9}
+\end{figure} 
+%TODO : S11 input reflection
+
+%TODO : S12 input isolation
+
+%TODO : S21 output isolation
+
+%TODO : S22 output reflection
+
 
 \subsection{Speed}
+We know from Section \ref{sec:micro_dev} that micro-controller is capable of controlling the switches at .... \ns , but the SSR's are not capable of operating at this speed. Therefore the maximum switching frequency needs to be determined for this RF switch. \\
+Looking at the datasheets it can be seen that the .... is the slowest chip in this system which bottlenecks the maximum performance of the switch. Therefore we can say that theoretical switching speed is limited to .... \us . \\[0.3cm]
+With the fully developed RF switch matrix it can be fully evaluated to determine its performance in regard to speed; as can be seen in Figure \ref{fig:speedtest} the switch matrix is wired so that one input and output are connected to the VNA.
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Speed test set-up for RF Switch Matrix}
+	\label{fig:speedtest}
+\end{figure} 
+Using the set-up shown in Figure \ref{fig:speedtest} the VNA monitor's the signal strength to determine the speed which causes the insertion loss to drop bellow the level seen in Figure \ref{fig:rf_sparam1}. By doing this it was determined that the maximum switching speed of the micro-controller is ... \us , which is close to the expected limitaion of the ..... RF chip.
 
 \subsection{Power Requirements \& Control}
+
+
 
 %---------------------------------------------------------------------------------
 
@@ -774,6 +1049,7 @@ This section looks at the results obtain from each of the
 %---------------------------------------------------------------------------------
 \chapter{Discussion}
 \section{Problems}
+
 
 \subsection{Resource Availability}
 
@@ -805,6 +1081,7 @@ This section looks at the results obtain from each of the
 
 
 %TODO : Intergrate an SDR into the switch matrix, replacing the microcontroller allowing for more precise control over switches
+%TODO : Resolve impedance mismatch at input/output of switch
 \section{Future Work}
 
 
