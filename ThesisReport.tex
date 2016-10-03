@@ -13,6 +13,8 @@
 \usepackage{longtable}
 \usepackage[subnum]{cases}
 \usepackage{caption}
+\usepackage{tabularx} % in the preamble
+
 %Code coloring
 \usepackage{color}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -35,10 +37,15 @@
   breakatwhitespace=true,
   tabsize=3
 }
+
 %BibTeX referencing packages
 \usepackage{lmodern}
 \usepackage{hyperref}
-\usepackage{breakurl}
+%\usepackage{breakurl}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 
 
@@ -374,7 +381,7 @@ The primary objective are to complete the following tasks: \\[-0.8cm]
 
 
 
-
+%TODO : give introduction in the section
 \section{Thesis Structure}
 \textbf{Chapter 2} investigates the prior technology available that can be adapted or utilised in order to assist in the development of RF switching system. \newline
 \textbf{Chapter 3} defines the relevant theory that is required to understand the topics discussed in this thesis. \newline
@@ -414,6 +421,9 @@ This chapter looks into the currently available designs used for high speed RF s
 
 %TODO : Look into mechanical motion technology in rf imaging techniques???
 \subsection{Currently Available Technology}
+There is currently a wide variety of application for RF switching systems, EMR are primarily used but there has been recent interest in SSR applications.  EMR switching systems are a predominate choice due to their low losses and have been utilised in many various applications. A journal article in [24] looks at the performance of microelectromechanical systems (MEMS) and the wide field of application for MEMS in communications, medical and aerospace; this wide field means that there is a large application that can benefit from the development of RF switching systems. As seen in [24] RF switching systems have a wide range of application, it can be seen in [25], which investigate the interference problem of a MIMO beam-switching antenna. In order to control the multiple beam switching antennas requires a high speed switching system, therefore they utilised a SSR allowing them to achieve speeds from 1-100ns; this high speed capability is ideal for the application of the thesis [25].\\
+There is also a large application for RF switching systems in medical imaging, which is the primary focus of this thesis. The journal article in [3] describes a medical imaging system that uses a RF system, it rotates a body around an antenna by a stepper motor to obtain measurements from antenna at different positions; this system utilises a SDR and a single antenna to obtain its measurements as it rotates around the body. It was determined that the current microwave imaging system currently takes 45 minutes to complete its analysis, but by replacing the rotating platform with an array of 20 antennas using a EMR switching network could reduce the time to less than 1 minutes [3]. Since we are expecting SSR to provide a faster switching speed reducing the time taken for the measurements to be completed.\\
+The journal articles [26, 27] that discuss the use of EMR technology to allow a RF front end to control multiple antennas in different applications of biomedical engineering. In [26] a network of EMR is used to allow a VNA to perform radar measurements through 16 antennas in the frequency domain. The switches are controlled by a computer and takes around 3 minutes for the measurements to be taken [26]. An article from [27] looks at using an array of RF antennas switched by an EMR so they can image a head to detect a haemorrhage stroke [27]. The need for RF switching systems can be seen but the use of SSR instead of EMR can potentially reduce the size and noise of the switching while increasing the speed allowing their design to be faster, more compact and quieter which is potentially ideal for medical applications. 
 
 
 \subsection{Previous designs}
@@ -436,7 +446,7 @@ To design and develop microwave circuits a fundamental understanding of how micr
 
 \subsection{Transmission Line Theory}
 A transmission line is a medium that transfers electromagnetic energy along its path, an example can be seen in \fig{fig:tline}. Transmission lines will form the primary basis of this thesis since it will be primary medium for the signal travelling through the RF switching system. It is crucial to ensure that the transmission line matches the source and antenna; otherwise it can cause the power to be reflected back. \newline
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
     \includegraphics[width=0.8\textwidth]{tline.png}
 	\caption{Transmission line Thevenin equivalent of antenna and transmitter}
@@ -447,32 +457,94 @@ L-section is a method used for matching transmission lines; this involves using 
 
 \subsection{Scattering Parameters}
 Scattering parameters (S-Parameters) are a matrix that describes the behaviour of linear electrical networks; this matrix is used over a broad range of disciplines of electrical engineering but is particularly useful in microwave engineering.
-Since the RF switching system this thesis is designing will not generating its own signal or provide any RF front end's; even though the system is switching, it will always have a single input and single output. Therefore, this design can be simplified to be a 2-port network, as shown in Figure 2.\\[0.1cm]
-%figure
-2-port networks are most commonly used and can easily be adapted to systems that are more complex, Figure 2 shows a simple diagram of a 2-port network and Equation 1 shows the matrix and equations given for the network [9].
+Since the RF switching system this thesis is designing will not generating its own signal or provide any RF front end's; even though the system is switching, it will always have a single input and single output. Therefore, this design can be simplified to be a 2-port network, as shown in Figure \ref{fig:sparam}.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=0.8\textwidth]{sparam.png}
+	\caption{2-port switching system [10]}
+	\label{fig:sparam}
+\end{figure} 
+2-port networks are most commonly used and can easily be adapted to systems that are more complex, Figure \ref{fig:sparam} shows a simple diagram of a 2-port network and Equation \ref{eq:sparam} shows the matrix and equations given for the network [9].
+\begin{align}
+\left( \begin{array}{c}
+b_1 \\
+b_2 \end{array} \right) &=
+\left( \begin{array}{cc}
+S_{11} & S_{12} \\
+S_{11} & S_{12} \end{array} \right)
+\left( \begin{array}{c}
+a_1 \\
+a_2 \end{array} \right) \label{eq:sparam} \\
+b_1 &= S_{11}a_1+S_{12}a_2 \nonumber \\
+b_2 &= S_{21}a_1+S_{22}a_2 \nonumber
+\end{align}
+These parameters can be directly measured with a network analyser and will be used to determine the characteristics of the different RF switches.
+
+
 
 \subsection{System Losses}
+When working with RF and microwave systems it is important to understand the different types of losses that can occur in the system and how it will affect the performance. There are three significant losses to be consider, these are insertion loss, return loss and isolation.
+Insertion loss is the loss of the signals power in decibels (dB) from the insertion of a device in the input or output of the system. The loss can be determined given the scattering equation of the system, as defined in Equation \ref{eq:ins_loss}.
+\begin{align}
+Insertion \ loss &= -20\cdot \log_{10}\left( |\Gamma | \right) \label{eq:ins_loss}
+\end{align}
+The return loss is the loss of the signals power in dB from the signal reflection; this is often caused by an impedance mismatch on the load. The loss can be determined given the reflection coefficient, as shown in Equation \ref{eq:ret_loss}.
+\begin{align}
+\Gamma &= \frac{Z_L-Z_S}{Z_L+Z_S} \label{eq:ref} \\
+Return \ loss &= -20\cdot \log_{10}\left( |\Gamma | \right) \label{eq:ret_loss}
+\end{align}
+The isolation is the degree of attenuation from other signals from outside or on other channels in the system. Increasing the isolation of the device reduces the influence of other signals. The isolation of the system can be determined by measuring the signal strength at an output where the input is not routed to [9]. All of these parameters need to be seriously considered, and form the base of the analysis for the design and development of the RF switching system.
+
+
+
+\section{RF Switch}
+There are two typical types of switches that are used in RF and microwave switching systems, electromechanical switches (EMR) and solid-state switches (SSR). These switches are often available in four different topologies:
+\begin{itemize}
+	\setlength\itemsep{-0.5em}
+	\item Single-pole double-throw (SPDT)
+	\item Single-pole-multiple-throw (SPnT)
+	\item Double-pole-double-throw (DPDT)
+	\item Bypass switch [11]
+\end{itemize}
+This project is interested in the development of a single input with multiple outputs so will look into utilising combinations of SPDT and SPnT topologies to meet this requirement. \\
+Solid-state relay's (SSR) are typically constructed in semiconductor packaging, giving them a small size and are switched by applying an external voltage across its control terminals. Since there are no physical switching mechanisms for SSR, there is no component to wear out allowing the SSR to potentially switch an infinite amount of times. \\
+Whereas electromechanical relays (EMR) rely on a mechanical contact to switch the outputs, resulting in an often larger size. Since there is a physical movement required to switch the outputs the EMR, there will be limit on the number of switches before it begins to fail; this is not particularly idea for the RF switching system this thesis is looking at as it will require switches to be replaced after set period depending on its usage. \\
+EMR's have a larger frequency range than most SSR's, they support frequencies from DC to the GHz range whereas SSR's often begin around the KHz up to GHz; both switches are ideal as the switch will be working in high frequencies. The insertion loss is often greater in SSR compared to most EMR's but SSR's provide a greater isolation in comparison against EMR. On average, the SSR's provide a greater switching speed with significantly lower settling time making them ideal for high speed switching [5]. \\
+Both switches have advantages and disadvantages; however, this project looks into the development of a switching system to switch at high speeds with minimal losses, size, noise and power. SSR are the most suitable for meeting these requirements and will therefore be the primary focus of this project.
 
 
 
 
-
-
-
-
-
-
-\section{RF Switches}
-This thesis topic looks into the development of a RF switching system, this will be done by utilising RF and microwave switches to create an RF switching matrix. An RF switch matrix are used to route RF signals from an input to an output.
+\section{RF Switches Matrix}
+This thesis topic looks into the development of a RF switching system, this will be done by utilising RF and microwave switches to create an RF switching matrix. An RF switch matrix are used to route RF signals from an input to an output.\\
 There are several different types of switching matrix's, there is multiple input multiple output (MIMO), multiple input single output (MISO), single input multiple output (SIMO) and single input single output (SISO) [12]. For this project we are looking at controlling multiple outputs with a single input, so will be implementing a SIMO RF switching matrix.
+
 
 \subsection{Switch Architecture}
 
 
+
 \subsection{Switch Topologies}
-When constructing a RF switch there are two typical topologies, these are multiplexers and general purpose relays; examples can be seen in Figure 3. General purpose relays are commonly a SPDT or SDnT relay's that are used for routing a signal between multiple paths. Multiplexers are devices that route a single input to multiple outputs or vice versa, they are commonly built from multiple SPDT relays but have a greater inherited insertion loss from this configuration [13]. 
-%IMAGE
-Looking at Figure 3 (b) it can be assumed that there will be losses through each path it takes, insertion loses through first switch, first cable/track, second switch, etc. Therefore, it is ideal to develop a topology as close to Figure 3 (a) to ensure there is little loss through multiple cascaded switches and cable/tracks. This thesis will be looking into designing a 1x12 SIMO multiplexer, similar to the design in Figure 3 (b) to provide the available ports as well as a consistent loss through the system.
+When constructing a RF switch there are two typical topologies, these are multiplexers and general purpose relays; examples can be seen in Figure 3. General purpose relays are commonly a SPDT or SDnT relay's that are used for routing a signal between multiple paths. Multiplexers are devices that route a single input to multiple outputs or vice versa, they are commonly built from multiple SPDT relays but have a greater inherited insertion loss from this configuration [13].
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=0.8\textwidth]{topology.png}
+	\caption{(a) is a Quad SPDT, (b) 8x1 multiplexer. [14, 15]}
+	\label{fig:topology}
+\end{figure} 
+Looking at Figure \ref{fig:topology} (b) it can be assumed that there will be losses through each path it takes, insertion loses through first switch, first cable/track, second switch, etc. Therefore, it is ideal to develop a topology as close to Figure \ref{fig:topology} (a) to ensure there is little loss through multiple cascaded switches and cable/tracks. This thesis will be looking into designing a 2x16 MIMO multiplexer, similar to the design in Figure \ref{fig:topology} (b) to provide the available ports as well as a consistent loss through the system.
+
+%TODO : Talk about UFL connectors
+\subsection{Cabling}
+When developing the RF switching system it is probable to require cables to connect the switches together. If the development boards are used it will be a requirement, and the PCB development could be built into separate daughter boards and connected together via cable. \\
+There are three main types of coax cabling:
+\begin{itemize}
+	\setlength\itemsep{-0.5em}
+	\item Semi-rigid
+	\item Comfortable
+	\item Flexible
+\end{itemize}
+This project will look into the use of semi-rigid SMA cables, as they typically have low losses for signal transmission and are well suited for fixed devices [16]. The connection between will need to be measured and matched as discussed in section 2.1.1 to ensure that the signal retains its integrity.
 
 
 
@@ -516,7 +588,7 @@ Microstrip RF tracks are the most common RF transmission line currently used in 
 % need to talk about microstrip in general
 %----------------------
 \fig{fig:microdiag} presents a typical microstrip which has been labelled the critical dimensions of this transmission line. \newline
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
     \includegraphics[width=0.65\textwidth]{microdiag.jpg}
 	\caption{Microstrip diagram}
@@ -626,33 +698,66 @@ This chapter will cover the progression of the design and development of the RF 
 
 
 \section{Evaluation}
+This section looks at evaluating the currently available RF switches in Section \ref{sec:evalboard_eval} that can be used, and alternative possibilities in developing a custom RF switch matrix.\\
 
-\subsection{Evaluation Boards}
-We currently have $3$ boards available 
-
-
-
-The three available evaluation boards we investigated using a \model \ VNA; each switch was wired so that the input is connected to the output, while all other ports were $50\ohm$ terminated. The switch was powered and the controls set to allow the signal to proprigate down the open path, then changed the state to have a closed path; this was conducted for each evaluation board. The results were exported to a \textit{.s2p} file to be analysed using ADS, and the results can be seen in Figure's \ref{fig:res:}, \ref{fig:res:} \& \ref{fig:res:}. 
-%Insert Images
-These simulations 
-
+\subsection{Evaluation Boards}		\label{sec:evalboard_eval}
+We currently have $3$ evaluation RF switch boards available; these include:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{p{5cm} r}
+	asdf & $\$50$ USD \\
+	asdf & $\$50$ USD\\
+	asdf & $\$50$ USD\\	
+	\end{tabular}
+\end{table} 
+\vspace{-4mm}
+The three available evaluation boards we investigated using a \model \ VNA; each switch was wired so that the input is connected to the output, while all other ports were $50\ohm$ terminated. The switch was powered and the controls set to allow the signal to propagate down the open path, then changed the state to have a closed path; this was conducted for each evaluation board. The results were exported to a \textit{.s2p} file to be analysed using ADS, and the results can be seen in Appendix \ref{sec:eval_res} 's Figure's \ref{fig:res:}, \ref{fig:res:} \& \ref{fig:res:}. \\
+These simulations \\
+The results of ... 
+%the good board
+is the most ideal RF switch out of the three boards, but the overall price to construct the switch matrix is far too expensive to construct as it will cost $\$50$ which is unrealistic to rival 
 
 
 \subsection{RF Switches}
-
-
+It was seen in previous section that the EMR and 
+%TODO : Is it a switch matrix
+switch relay provided significantly better results for: insertion, isolation and reflection but are significantly larger and heavier than SSR's tested. Since this thesis is looking at developing a lightweight switch matrix it is decided that high performance SSR's will be looked at instead of EMR. \\
+There is a large variety of RF switches available in varying topologies, therefore the following RF switches will be looked at:\\[-0.8cm]
+\begin{table}[H]
+	\centering
+	\begin{tabular}{p{5cm} r}
+	asdf & $\$50$ USD \\
+	asdf & $\$50$ USD\\
+	asdf & $\$50$ USD\\	
+	\end{tabular}
+\end{table} 
+\vspace{-4mm}
+These are the RF switches that will be further investigated in this thesis to determine if a custom RF switch design is able to constructed at a competitive price to the evaluation boards seen in Section \ref{sec:evalboard_eval}. It can already be seen that the individual price is significantly cheaper but will require a PCB to be constructed; this will allow the design to be custom designed to fit in the most space efficient package possible to allow for a portable and lightweight design.
 
 \subsection{Transmission Line Design}
-
-
-
-
+Using the ADS three different transmission lines were tested, using the parameters seen in Appendix \ref{sec:substrate_param}, Table \ref{tab:tracks} was constructed.\begin{table}[H]
+	\centering
+	\begin{tabular}{|L{4cm}||C{3cm}|C{3cm}|C{3cm}|}
+		\hline
+		Track Type & Width & Length & Gap \\
+		\hline
+		Micro-strip & & & -\\
+		Strip-line & & & -\\
+		Co-planar Wave-guide & & &\\
+		\hline
+	\end{tabular}
+	\caption{Transmission Line Design Parameters}
+	\label{tab:tracks}
+\end{table} 
+\vspace{-2mm}
+Therefore looking at Table \ref{tab:tracks} it can be seen that the most space efficient transmission line is the CPWG design; therefore, the CPWG design allows the PCB to be the most space efficient design for the RF switch design.
+%TODO : talk about picket fencing
 
 
 
 
 \section{Design}
-For the design of the RF switch matrix, several key design citerias were identified to be required for the final product of the switch matrix. These are:
+For the design of the RF switch matrix, several key design citerias were identified to be required for the final product of the switch matrix; these specifications are:
 \begin{itemize}
 	\setlength\itemsep{-0.5em}
 	\item Two RF inputs
@@ -661,24 +766,157 @@ For the design of the RF switch matrix, several key design citerias were identif
 	\item Power-able from low-power device (such as USB)
 	\item Input and output are $50\ohm$
 \end{itemize}
-In order to meet these specifications 
+%TODO : talk about the general design
+In order to achieve this design the switch matrix will consist of two SP16T's where the output of each switch is wired to a SPDT. 
 
-Using the evaluated RF switches two separate designs are developed , 
+In order to meet these specifications several different designs have been developed, which can be seen in Section \ref{sec:design1} - \ref{sec:output2}. There are three different SP16T switch designs for the input and two SPDT output switch designs for the output; to determine the most suitable design these five designs are designed to determine a suitable low-loss, high isolation switch matrix.
 
+\subsection{Design 1}		\label{sec:design1}
+This design looks at constructing a SP16T RF switch using the SKY13418-485LF; this is a SP8T switch which is doesn't require any external DC blocking capacitors on the RF ports. \\
+To get 16 outputs the design requires a SPDT switch on each output of the SP8T; from the switches that are being looked at the ... is the most suitable. It has a poor reflection on the input and output but has high performance for the insertion and isolation, since the input and output reflection are determined by the SP8T switch and second SPDT switch. \\
+%TODO : talk about the DC blocking capacitors, non-terminated output of switch
+%TODO : input is sma and output is ufl
+This design was developed in Altium Designer and can be seen in Figure \ref{fig:design1}.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=0.8\textwidth]{design1_pcb.png}
+	\caption{PCB Design for `Design 1'}
+	\label{fig:design1}
+\end{figure} 
+Therefore using this combination of SP8T and SPDT switches we are able to estimate the parameters of the switch based off of the specifications in the data-sheet as seen in Table \ref{tab:des1_param}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
+		\hline
+		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{4}{c|}{Value}\\
+		\cline{2-5}
+		& $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
+		\hline
+		Insertion & & & & \\
+		Isolation & & & & \\
+		Input Reflection & & & & \\
+		Output Reflection & & & & \\
+		Max Switching Speed & & & &\\
+		\hline
+	\end{tabular}
+	\caption{Design 1 Ideal parameters}
+	\label{tab:des1_param}
+\end{table}
+%TODO : discuss why this is a good design based on table results
 
-
-\subsection{Design 1}
 
 \subsection{Design 2}
+This design looks at constructing an alternative SP16T RF switch using a different topology from Section \ref{sec:design1}, it was found that the .... tested in Section \ref{sec:evalboard_eval}. By using the RF chips and transmission line design an alternative construction of the SP16T switch can be designed that is significantly more space efficient and cost effective than the evaluation boards seen in Appendix ....\\
+This design was developed in Altium Designer and can be seen in Figure \ref{fig:design2}.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=0.8\textwidth]{design2_pcb.png}
+	\caption{PCB Design for `Design 2'}
+	\label{fig:design2}
+\end{figure} 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
+		\hline
+		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{4}{c|}{Value}\\
+		\cline{2-5}
+		& $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
+		\hline
+		Insertion & & & & \\
+		Isolation & & & & \\
+		Input Reflection & & & & \\
+		Output Reflection & & & & \\
+		Max Switching Speed & & & &\\
+		\hline
+	\end{tabular}
+	\caption{Design 2 Ideal parameters}
+	\label{tab:des2_param}
+\end{table}
+%TODO : discuss why this is a good design based on table results
+
 
 \subsection{Design 3}
+This design looks at constructing a SP16T RF switch using 
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
+		\hline
+		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{4}{c|}{Value}\\
+		\cline{2-5}
+		& $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
+		\hline
+		Insertion & & & & \\
+		Isolation & & & & \\
+		Input Reflection & & & & \\
+		Output Reflection & & & & \\
+		Max Switching Speed & & & &\\
+		\hline
+	\end{tabular}
+	\caption{Design 3 Ideal parameters}
+	\label{tab:des3_param}
+\end{table}
+%TODO : discuss why this is a good design based on table results
+
+
 
 \subsection{Output 1}
+The output design requires constructing a SPDT switch for the output of the RF switch matrix, this requires a switch that has low insertion loss and isn't reflective. The switch should also in
 
-\subsection{Output 2}
+
+This design was developed in Altium Designer and can be seen in Figure \ref{fig:output1}.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=0.8\textwidth]{output1_pcb.png}
+	\caption{PCB Design for `Output 1'}
+	\label{fig:output1}
+\end{figure} 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
+		\hline
+		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{4}{c|}{Value}\\
+		\cline{2-5}
+		& $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
+		\hline
+		Insertion & & & & \\
+		Isolation & & & & \\
+		Input Reflection & & & & \\
+		Output Reflection & & & & \\
+		Max Switching Speed & & & &\\
+		\hline
+	\end{tabular}
+	\caption{Design 3 Ideal parameters}
+	\label{tab:des3_param}
+\end{table}
+%TODO : discuss why this is a good design based on table results
+
+
+\subsection{Output 2}		\label{sec:output2}
 %TODO : show pcb board
-
-Due to time constraints, since the ... design wasn't working it was decided to disregard the design as it would be too expensive and time consuming to re-design this design.
+This design looks at constructing a SP16T RF switch using 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
+		\hline
+		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{4}{c|}{Value}\\
+		\cline{2-5}
+		& $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
+		\hline
+		Insertion & & & & \\
+		Isolation & & & & \\
+		Input Reflection & & & & \\
+		Output Reflection & & & & \\
+		Max Switching Speed & & & &\\
+		\hline
+	\end{tabular}
+	\caption{Design 3 Ideal parameters}
+	\label{tab:des3_param}
+\end{table}
+%TODO : discuss why this is a good design based on table results
 
 
 \section{Development}
@@ -694,8 +932,7 @@ One of the key design parameters is for developing a portable device, this requi
 
 %TODO : talk about the altium design, physical requirements/limitations
 
-\newcommand{\pcbestimate1}{$35$ }
-\newcommand{\pcbestimate2}{$35$ }
+
 \subsection{RF Switch Development}
 After the design of the PCB had been completed the order was processed by a PCB development company. During this project two companies were used: PCBZone and PCBWay. The key difference between these companies was price, quantity and quality; 
 
@@ -717,12 +954,11 @@ The RF switch chips that were selected are only available in QFN, .... or ... pa
 
 
 %TODO : device selection
-\newcommand{\numberofpins}{$35$ }
 \section{Micro-controller Development}		\label{sec:micro_dev}
 In order to control and operate the RF Switch system a some type of micro-controller is required to be used to switch the inputs and outputs of the system. The micro-controller needs to meet the following key design parameters:
 \begin{itemize}
 	\setlength\itemsep{-0.5em}
-	\item Capable of supporting \numberofpins control pins.
+	\item Capable of supporting .... control pins.
 	\item Enable a switch speed of $100$\ns
 	\item Low power requirements, less than $5$\W
 	\item Source power from USB, and communicate using $15260$ Baud rate.
@@ -762,15 +998,18 @@ Therefore using this we are able to determine:
 \chapter{Verification}
 
 \section{Individual Board's}	\label{sec:indv_boards}
-This section looks at the results obtain from each of the individual boards, each board was tested with a \model \ VNA. By evaluating these boards it can be determined 
-\subsection{Design 1}
-Design 1 has been tested with , there are $3$ 
+This section looks at the results obtain from each of the individual boards, each board was tested with a \model \ VNA. By evaluating these boards it can be determined which is most suited for the final design of the RF switch matrix; Section \ref{sec:res_des1} - \ref{sec:res_out2} details the analysed results and discuses the benefits and disadvantages of that design. 
+
+
+\subsection{Design 1}	\label{sec:res_des1}
+Design 1 has been tested with a VNA, there are $3$ different characteristics that were subjected to the analysis of the DP16T RF switch: losses, speed and power.
+ 
 \subsubsection{Losses}
 \begin{figure}[H]
 	\centering
 %	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
 	\caption{Design 1 S-Parameters}
-	\label{fig:ufl_sma}
+	\label{fig:design1_sma}
 \end{figure} 
 %TODO : S11 input reflection
 
@@ -785,14 +1024,16 @@ Design 1 has been tested with , there are $3$
 \subsubsection{Power Requirements}
 
 
+
 \subsection{Design 2}
+Design 2 has been tested with a VNA, there are $3$ different characteristics that are key to the analysis of the SP16T RF switch: losses, speed and power.
 
 \subsubsection{Losses}
 \begin{figure}[H]
 	\centering
 %	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
 	\caption{Design 2 S-Parameters}
-	\label{fig:ufl_sma}
+	\label{fig:design2_sma}
 \end{figure} 
 %TODO : S11 input reflection
 
@@ -808,13 +1049,14 @@ Design 1 has been tested with , there are $3$
 
 
 \subsection{Design 3}
+Design 3 has been tested with a VNA, there are $3$ different characteristics that are key to the analysis of the SP16T RF switch: losses, speed and power.
 
 \subsubsection{Losses}
 \begin{figure}[H]
 	\centering
 %	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
 	\caption{Design 3 S-Parameters}
-	\label{fig:ufl_sma}
+	\label{fig:design3_sma}
 \end{figure} 
 %TODO : S11 input reflection
 
@@ -830,6 +1072,7 @@ Design 1 has been tested with , there are $3$
 
 
 \subsection{Output 1}
+Output 1 has been tested with a VNA, there are $3$ different characteristics that are key to the analysis of the SP16T RF switch: losses, speed and power.
 
 \subsubsection{Losses}
 \begin{figure}[H]
@@ -851,28 +1094,31 @@ Design 1 has been tested with , there are $3$
 \subsubsection{Power Requirements}
 
 
+\subsection{Output 2}		\label{sec:res_out2}
+The design for `Output 2' seen in Section \ref{sec:output2} was developed and tested using a VNA; it was found that the design wasn't operating. So due to time constraints, since the RF chip was not functioning it was decided to disregard this design as it would be too expensive and time consuming to re-design \& develop this design.
+
 
 \subsection{Cabling}
-There are several different cabling options available; three different cabling options have been looked at, this includes flexable and rigid SMA cables, and UFL cabling. Looking at Figure \ref{fig:flex_sma} - \ref{fig:ufl} we can determine the effects of cabling in the final design
+There are several different cabling options available; three different cabling options have been looked at, this includes flexible and rigid SMA cables, and UFL cabling. Looking at Figure \ref{fig:flex_sma} - \ref{fig:ufl_sma} we can determine the effects of cabling in the final design.
 \begin{figure}[H]
 	\centering
 %	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{Flexable SMA cable S-Parameters}
+	\caption{Flexable $0.5$m SMA cable S-Parameters}
 	\label{fig:flex_sma}
 \end{figure} 
 \begin{figure}[H]
 	\centering
 %	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{Rigid SMA cable S-Parameters}
+	\caption{Rigid $0.5$m SMA cable S-Parameters}
 	\label{fig:rigid_sma}
 \end{figure} 
 \begin{figure}[H]
 	\centering
 %	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{UFL cable S-Parameters}
+	\caption{$0.5$m UFL cable S-Parameters}
 	\label{fig:ufl_sma}
 \end{figure} 
-
+It can be seen that there is a significant loss from looking at Figure \ref{fig:ufl_sma} in using the UFL cable instead of the SMA cabling seen in Figure \ref{fig:rigid_sma} \& \ref{fig:flex_sma}. It has been decided that the design would suffer this loss in order to allow for a more flexible cabling method allowing for a device which is significantly more portable and smaller. 
 
 \section{RF Switch Matrix}
 This section looks at the overall characteristics of the final RF switch matrix design. To determine the overall performance of the system, this required evaluating the performance, speed, size and power constraints.
@@ -1124,7 +1370,7 @@ Using the set-up shown in Figure \ref{fig:speedtest} the VNA monitor's the signa
 
 
 
-\chapter{Substrate Parameters}
+\chapter{Substrate Parameters}		\label{sec:substrate_param}
 The following tables contain the parameters and details for the substrates investigated in this thesis. \newline
 \begin{table}[!htbp]
 \centering

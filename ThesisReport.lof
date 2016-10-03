@@ -1,28 +1,33 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Transmission line Thevenin equivalent of antenna and transmitter\relax }}{5}{figure.caption.5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Microstrip diagram\relax }}{8}{figure.caption.6}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Transmission line Thevenin equivalent of antenna and transmitter\relax }}{6}{figure.caption.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 2-port switching system [10]\relax }}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces (a) is a Quad SPDT, (b) 8x1 multiplexer. [14, 15]\relax }}{10}{figure.caption.7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Microstrip diagram\relax }}{12}{figure.caption.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces PCB Design for `Design 1'\relax }}{18}{figure.caption.12}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces PCB Design for `Design 2'\relax }}{19}{figure.caption.14}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces PCB Design for `Output 1'\relax }}{20}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Design 1 S-Parameters\relax }}{14}{figure.caption.9}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Design 2 S-Parameters\relax }}{14}{figure.caption.13}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Design 3 S-Parameters\relax }}{15}{figure.caption.17}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Output 1 S-Parameters\relax }}{15}{figure.caption.21}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Flexable SMA cable S-Parameters\relax }}{15}{figure.caption.24}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Rigid SMA cable S-Parameters\relax }}{15}{figure.caption.25}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces UFL cable S-Parameters\relax }}{15}{figure.caption.26}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 1, (Right) Diagram\relax }}{16}{figure.caption.27}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 2, (Right) Diagram\relax }}{16}{figure.caption.28}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 3, (Right) Diagram\relax }}{16}{figure.caption.29}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 4, (Right) Diagram\relax }}{16}{figure.caption.30}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 5, (Right) Diagram\relax }}{16}{figure.caption.31}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 6, (Right) Diagram\relax }}{17}{figure.caption.32}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 7, (Right) Diagram\relax }}{17}{figure.caption.33}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 8, (Right) Diagram\relax }}{17}{figure.caption.34}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 9, (Right) Diagram\relax }}{17}{figure.caption.35}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Speed test set-up for RF Switch Matrix\relax }}{17}{figure.caption.36}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Design 1 S-Parameters\relax }}{23}{figure.caption.22}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Design 2 S-Parameters\relax }}{23}{figure.caption.26}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Design 3 S-Parameters\relax }}{24}{figure.caption.30}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Output 1 S-Parameters\relax }}{24}{figure.caption.34}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Flexable $0.5$m SMA cable S-Parameters\relax }}{25}{figure.caption.37}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Rigid $0.5$m SMA cable S-Parameters\relax }}{25}{figure.caption.38}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces $0.5$m UFL cable S-Parameters\relax }}{25}{figure.caption.39}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 1, (Right) Diagram\relax }}{26}{figure.caption.40}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 2, (Right) Diagram\relax }}{26}{figure.caption.41}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 3, (Right) Diagram\relax }}{26}{figure.caption.42}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 4, (Right) Diagram\relax }}{26}{figure.caption.43}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 5, (Right) Diagram\relax }}{26}{figure.caption.44}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 6, (Right) Diagram\relax }}{26}{figure.caption.45}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 7, (Right) Diagram\relax }}{26}{figure.caption.46}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 8, (Right) Diagram\relax }}{26}{figure.caption.47}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces S-Parameters of RF switch matrix (Left) Path 9, (Right) Diagram\relax }}{26}{figure.caption.48}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Speed test set-up for RF Switch Matrix\relax }}{27}{figure.caption.49}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

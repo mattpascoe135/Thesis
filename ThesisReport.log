@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.6)  1 OCT 2016 20:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.6)  4 OCT 2016 08:27
 entering extended mode
 **./ThesisReport.tex
 (ThesisReport.tex
@@ -259,6 +259,25 @@ Package caption Info: longtable package is loaded.
 sty"
 Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 ))
+("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\tabularx.sty
+"
+Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
+ ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen128
+\extrarowheight=\dimen129
+\NC@list=\toks25
+\extratabsurround=\skip65
+\backup@length=\skip66
+)
+\TX@col@width=\dimen130
+\TX@old@table=\dimen131
+\TX@old@col=\dimen132
+\TX@target=\dimen133
+\TX@delta=\dimen134
+\TX@cols=\count117
+\TX@ftn=\toks26
+)
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.sty
 "
 Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
@@ -369,15 +388,15 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 .sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen128
-\Hy@linkcounter=\count117
-\Hy@pagecounter=\count118
+\@linkdim=\dimen135
+\Hy@linkcounter=\count118
+\Hy@pagecounter=\count119
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.de
 f"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count119
+\Hy@SavedSpaceFactor=\count120
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperref.
 cfg"
@@ -390,16 +409,16 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count120
+\c@Hy@tempcnt=\count121
  ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen129
-\Fld@menulength=\count121
-\Field@Width=\dimen130
-\Fld@charsize=\dimen131
+\XeTeXLinkMargin=\dimen136
+\Fld@menulength=\count122
+\Field@Width=\dimen137
+\Fld@charsize=\dimen138
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -409,9 +428,9 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count122
-\c@Item=\count123
-\c@Hfootnote=\count124
+\Hy@abspage=\count123
+\c@Item=\count124
+\c@Hfootnote=\count125
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
@@ -420,8 +439,8 @@ Package hyperref Message: Driver (autodetected): hpdftex.
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex.d
 ef"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count125
-\c@bookmark@seq@number=\count126
+\Fld@listcount=\count126
+\c@bookmark@seq@number=\count127
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfile
 check.sty"
@@ -429,64 +448,36 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip65
-)
-("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\breakurl\breakurl.
-sty"
-Package: breakurl 2013/04/10 v1.40 Breakable hyperref URLs
-
-("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.st
-y"
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.
-tex"
-("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkvutils
-.tex"
-\XKV@toks=\toks25
-\XKV@tempa@toks=\toks26
-)
-\XKV@depth=\count127
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-
-Package breakurl Warning: You are using breakurl while processing via pdflatex.
-
-(breakurl)                \burl will be just a synonym of \url.
-(breakurl)                 on input line 48.
-
+\Hy@SectionHShift=\skip67
 )
 \c@defn=\count128
 \c@theorem=\count129
 \c@lemma=\count130
  (ThesisReport.aux
 
-LaTeX Warning: Label `fig:ufl_sma' multiply defined.
+LaTeX Warning: Label `tab:des3_param' multiply defined.
 
 
-LaTeX Warning: Label `fig:ufl_sma' multiply defined.
-
-
-LaTeX Warning: Label `fig:ufl_sma' multiply defined.
+LaTeX Warning: Label `tab:des3_param' multiply defined.
 
 )
 \openout1 = `ThesisReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 194.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 201.
 
  ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -495,24 +486,24 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count131
-\scratchdimen=\dimen132
+\scratchdimen=\dimen139
 \scratchbox=\box37
 \nofMPsegments=\count132
 \nofMParguments=\count133
 \everyMPshowfont=\toks27
 \MPscratchCnt=\count134
-\MPscratchDim=\dimen133
+\MPscratchDim=\dimen140
 \MPnumerator=\count135
 \makeMPintoPDFobject=\count136
 \everyMPtoPDFconversion=\toks28
 ) ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 194.
+LaTeX Info: Redefining \selectfont on input line 201.
 \c@lstlisting=\count137
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box38
-Package hyperref Info: Link coloring OFF on input line 194.
+Package hyperref Info: Link coloring OFF on input line 201.
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -524,18 +515,18 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count138
 )
-LaTeX Info: Redefining \ref on input line 194.
-LaTeX Info: Redefining \pageref on input line 194.
-LaTeX Info: Redefining \nameref on input line 194.
+LaTeX Info: Redefining \ref on input line 201.
+LaTeX Info: Redefining \pageref on input line 201.
+LaTeX Info: Redefining \nameref on input line 201.
  (ThesisReport.out) (ThesisReport.out)
 \@outlinefile=\write3
 \openout3 = `ThesisReport.out'.
 
 
-<UQLogo.png, id=370, 284.5029pt x 112.2594pt>
+<UQLogo.png, id=382, 284.5029pt x 112.2594pt>
 File: UQLogo.png Graphic file (type png)
  <use UQLogo.png>
-Package pdftex.def Info: UQLogo.png used on input line 201.
+Package pdftex.def Info: UQLogo.png used on input line 208.
 (pdftex.def)             Requested size: 284.52756pt x 112.26938pt.
  [1
 
@@ -543,36 +534,36 @@ Package pdftex.def Info: UQLogo.png used on input line 201.
 
 {C:/Users/Matty/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./UQLogo.pn
 g>] [2]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 295
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 302
 .
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmtt.fd"
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 300.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 307.
 
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 300
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 307
 .
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 300
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 307
 .
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 300.
+(Font)              <12> on input line 307.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 300.
+(Font)              <8> on input line 307.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 300.
+(Font)              <6> on input line 307.
 
 [3
 
@@ -598,28 +589,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 Chapter 1.
 
-LaTeX Warning: Citation `ref4' on page 1 undefined on input line 358.
+LaTeX Warning: Citation `ref4' on page 1 undefined on input line 365.
 
 
-LaTeX Warning: Citation `ref5' on page 1 undefined on input line 359.
+LaTeX Warning: Citation `ref5' on page 1 undefined on input line 366.
 
 [1
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 366--369
+Underfull \hbox (badness 10000) in paragraph at lines 373--376
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 370.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 377.
 
 ("C:\Users\Matty\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 370.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 377.
 
-Underfull \hbox (badness 10000) in paragraph at lines 379--386
+Underfull \hbox (badness 10000) in paragraph at lines 386--393
 
  []
 
@@ -627,136 +618,183 @@ Underfull \hbox (badness 10000) in paragraph at lines 379--386
 Chapter 2.
 [4
 
-] <tline.png, id=577, 377.15906pt x 155.07938pt>
+] [5] <tline.png, id=619, 377.15906pt x 155.07938pt>
 File: tline.png Graphic file (type png)
  <use tline.png>
-Package pdftex.def Info: tline.png used on input line 441.
+Package pdftex.def Info: tline.png used on input line 451.
 (pdftex.def)             Requested size: 341.43436pt x 140.38887pt.
- [5 <./tline.png>] [6]
 
-Package caption Warning: \label without proper reference on input line 1138.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `tab:substrate' on page 7 undefined on input line 488.
-
-
-<microdiag.jpg, id=591, 188.20313pt x 97.86563pt>
-File: microdiag.jpg Graphic file (type jpg)
- <use microdiag.jpg>
-Package pdftex.def Info: microdiag.jpg used on input line 521.
-(pdftex.def)             Requested size: 277.41176pt x 144.2654pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 546--547
+Underfull \hbox (badness 10000) in paragraph at lines 448--454
 
  []
 
-[8 <./microdiag.jpg>] [9]
+<sparam.png, id=621, 396.7322pt x 176.15813pt>
+File: sparam.png Graphic file (type png)
+ <use sparam.png>
+Package pdftex.def Info: sparam.png used on input line 463.
+(pdftex.def)             Requested size: 341.43436pt x 151.6086pt.
+ [6 <./tline.png>] [7 <./sparam.png>] [8] <topology.png, id=644, 279.29344pt x 
+246.9225pt>
+File: topology.png Graphic file (type png)
+
+<use topology.png>
+Package pdftex.def Info: topology.png used on input line 531.
+(pdftex.def)             Requested size: 341.43436pt x 301.87042pt.
+ [9] [10 <./topology.png>]
+
+Package caption Warning: \label without proper reference on input line 1386.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:substrate' on page 11 undefined on input line 560
+.
+
+<microdiag.jpg, id=660, 188.20313pt x 97.86563pt>
+File: microdiag.jpg Graphic file (type jpg)
+ <use microdiag.jpg>
+Package pdftex.def Info: microdiag.jpg used on input line 593.
+(pdftex.def)             Requested size: 277.41176pt x 144.2654pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 586--596
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 618--619
+
+ []
+
+[12 <./microdiag.jpg>] [13]
 Chapter 3.
-[10
+[14
 
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--616
+Underfull \hbox (badness 10000) in paragraph at lines 686--688
 
  []
 
 
-LaTeX Warning: Reference `fig:res:' on page 11 undefined on input line 635.
+Underfull \hbox (badness 10000) in paragraph at lines 701--702
+
+ []
 
 
-LaTeX Warning: Reference `fig:res:' on page 11 undefined on input line 635.
+LaTeX Warning: Reference `sec:eval_res' on page 15 undefined on input line 714.
 
 
-LaTeX Warning: Reference `fig:res:' on page 11 undefined on input line 635.
 
-[11
+LaTeX Warning: Reference `fig:res:' on page 15 undefined on input line 714.
 
-] [12] [13]
-Chapter 5.
-[14
+
+LaTeX Warning: Reference `fig:res:' on page 15 undefined on input line 714.
+
+
+LaTeX Warning: Reference `fig:res:' on page 15 undefined on input line 714.
+
+[15
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 722--733
 
-LaTeX Warning: Reference `fig:ufl' on page 15 undefined on input line 856.
+ []
 
-[15]
+[16] <design1_pcb.png, id=703, 916.1728pt x 666.23906pt>
+File: design1_pcb.png Graphic file (type png)
+ <use design1_pcb.png>
+Package pdftex.def Info: design1_pcb.png used on input line 782.
+(pdftex.def)             Requested size: 341.43436pt x 248.2938pt.
 
-LaTeX Warning: Reference `fig:rf_sparam' on page 16 undefined on input line 890
-.
+[17] <design2_pcb.png, id=713, 846.91406pt x 666.99188pt>
+File: design2_pcb.png Graphic file (type png)
 
-[16] [17]
+<use design2_pcb.png>
+Package pdftex.def Info: design2_pcb.png used on input line 813.
+(pdftex.def)             Requested size: 341.43436pt x 268.89876pt.
+ [18 <./design1_pcb.png>] [19 <./design2_pcb.png>]
+<output1_pcb.png, id=723, 781.41937pt x 526.96875pt>
+File: output1_pcb.png Graphic file (type png)
+ <use output1_pcb.png>
+Package pdftex.def Info: output1_pcb.png used on input line 872.
+(pdftex.def)             Requested size: 341.43436pt x 230.25075pt.
+
+[20 <./output1_pcb.png>] [21] [22]
+Chapter 5.
+[23
+
+] [24]
+
+LaTeX Warning: Reference `fig:rf_sparam' on page 25 undefined on input line 113
+6.
+
+[25] [26] [27]
 Chapter 6.
-[18
+[28
 
 ]
 Chapter 7.
-[19
+[29
 
 ]
 Appendix A.
-[20
+[30
 
 ]
 Appendix B.
-[21
+[31
 
 ]
 Appendix C.
 
-Package caption Warning: \label without proper reference on input line 1157.
+Package caption Warning: \label without proper reference on input line 1405.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `tab:bom' on page 22 undefined on input line 1145.
+LaTeX Warning: Reference `tab:bom' on page 32 undefined on input line 1391.
 
 
-Overfull \hbox (3.88347pt too wide) in paragraph at lines 1148--1160
+Overfull \hbox (7.08342pt too wide) in paragraph at lines 1394--1406
  [][] 
  []
 
-[22
+[32
 
 ]
 Appendix D.
-[23
+[33
 
 ]
-Overfull \hbox (482.89885pt too wide) in paragraph at lines 1181--1209
+Overfull \hbox (492.4987pt too wide) in paragraph at lines 1427--1455
  [][][] 
  []
 
-[24
+[34
 
-] [25
+] [35
 
 ]
 Appendix E.
-[26
+[36
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1253.
+(hyperref)                be the same. Added a new anchor on input line 1499.
 
 (ThesisReport.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1257.
- [27
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1503.
+ [37
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1257.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1503.
  (ThesisReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1257.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1257.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1503.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1503.
 
 Package rerunfilecheck Info: File `ThesisReport.out' has not changed.
-(rerunfilecheck)             Checksum: 0BE752FD1C0EB461D9F942FFFD1377C3;5871.
+(rerunfilecheck)             Checksum: AAAD0A5F4B09F7A19EEED00FD8431507;6060.
 
 
 LaTeX Warning: There were undefined references.
@@ -764,16 +802,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1257.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1503.
  ) 
 Here is how much of TeX's memory you used:
- 9236 strings out of 493634
- 141850 string characters out of 3135240
- 255202 words of memory out of 3000000
- 12299 multiletter control sequences out of 15000+200000
+ 9179 strings out of 493634
+ 140513 string characters out of 3135240
+ 251700 words of memory out of 3000000
+ 12216 multiletter control sequences out of 15000+200000
  53967 words of font info for 44 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 36i,13n,77p,996b,430s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,14n,49p,1019b,389s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
 c}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
 t.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
@@ -792,9 +830,9 @@ ams/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Matty/AppData/Local/P
 rograms/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Users/Matty/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Matty/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on ThesisReport.pdf (35 pages, 406451 bytes).
+Output written on ThesisReport.pdf (45 pages, 1025240 bytes).
 PDF statistics:
- 795 PDF objects out of 1000 (max. 8388607)
- 173 named destinations out of 1000 (max. 500000)
- 752 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 921 PDF objects out of 1000 (max. 8388607)
+ 203 named destinations out of 1000 (max. 500000)
+ 801 words of extra memory for PDF output out of 10000 (max. 10000000)
 
