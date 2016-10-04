@@ -863,7 +863,7 @@ This design looks at constructing a SP16T RF switch using
 
 
 \subsection{Output 1}
-The output design requires constructing a SPDT switch for the output of the RF switch matrix, this requires a switch that has low insertion loss and isn't reflective. The switch should also in
+The output design requires constructing a SPDT switch for the output of the RF switch matrix, this requires a switch that has low insertion loss and isn't reflective. The switch should also include 
 
 
 This design was developed in Altium Designer and can be seen in Figure \ref{fig:output1}.
@@ -1005,12 +1005,21 @@ This section looks at the results obtain from each of the individual boards, eac
 Design 1 has been tested with a VNA, there are $3$ different characteristics that were subjected to the analysis of the DP16T RF switch: losses, speed and power.
  
 \subsubsection{Losses}
+
 \begin{figure}[H]
 	\centering
-%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{Design 1 S-Parameters}
+	\includegraphics[width=0.75\textwidth]{Design1-1.png}
+	\caption{Design 1 S-Parameters - Track Open}
 	\label{fig:design1_sma}
 \end{figure} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Design1-2.png}
+	\caption{Design 1 S-Parameters - SP8T Open, SPDT Closed}
+	\label{fig:design1_sma}
+\end{figure} 
+It can be seen looking at the results that the results obtained in Figure \ref{fig:design1_sma}
+%Talk about the following results
 %TODO : S11 input reflection
 
 %TODO : S12 input insertion
@@ -1102,23 +1111,32 @@ The design for `Output 2' seen in Section \ref{sec:output2} was developed and te
 There are several different cabling options available; three different cabling options have been looked at, this includes flexible and rigid SMA cables, and UFL cabling. Looking at Figure \ref{fig:flex_sma} - \ref{fig:ufl_sma} we can determine the effects of cabling in the final design.
 \begin{figure}[H]
 	\centering
-%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\includegraphics[width=0.75\textwidth]{SMA-flex.png}
 	\caption{Flexable $0.5$m SMA cable S-Parameters}
 	\label{fig:flex_sma}
 \end{figure} 
 \begin{figure}[H]
 	\centering
-%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\includegraphics[width=0.75\textwidth]{SMA-rig.png}
 	\caption{Rigid $0.5$m SMA cable S-Parameters}
 	\label{fig:rigid_sma}
 \end{figure} 
+%TODO : discuss problems with using sma connectors
+
 \begin{figure}[H]
 	\centering
-%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\includegraphics[width=1\textwidth]{UFL-res.png}
+	\caption{$0.5$m UFL cable S-Parameters}
+	\label{fig:ufl_sma-bad}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{UFL-short-res.png}
 	\caption{$0.5$m UFL cable S-Parameters}
 	\label{fig:ufl_sma}
 \end{figure} 
-It can be seen that there is a significant loss from looking at Figure \ref{fig:ufl_sma} in using the UFL cable instead of the SMA cabling seen in Figure \ref{fig:rigid_sma} \& \ref{fig:flex_sma}. It has been decided that the design would suffer this loss in order to allow for a more flexible cabling method allowing for a device which is significantly more portable and smaller. 
+It can be seen that there is a larger loss from the UFL cable seen in Figure \ref{fig:ufl_sma} in comparison to the SMA cabling seen in Figure \ref{fig:flex_sma} and \ref{fig:rigid_sma}. It has been decided that the design would suffer this loss in order to allow for a more flexible cabling method allowing for a device which is significantly more portable and smaller. \\
+An issue was found that can be seen in Figure \ref{fig:ufl_sma-bad}, this is a UFL connector that has been connected and disconnected multiple times; UFL cabling is commonly designed for less than $20$ mating's. A new UFL cable was tested which can be seen in Figure \ref{fig:ufl_sma}, giving a significantly better response for insertion and reflection.
 
 \section{RF Switch Matrix}
 This section looks at the overall characteristics of the final RF switch matrix design. To determine the overall performance of the system, this required evaluating the performance, speed, size and power constraints.
@@ -1302,6 +1320,8 @@ Using the set-up shown in Figure \ref{fig:speedtest} the VNA monitor's the signa
 
 \section{Objective Fulfilment}
 
+\subsection{Comparison to Available Technology}
+%TODO : compare results to the switch relay
 
 
 \section{Contributions}
