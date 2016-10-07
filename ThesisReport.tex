@@ -619,6 +619,32 @@ Stripline RF tracks are ... \newline
 
 We are able to caluclate the dimensions shown in Figure 3.2
 
+
+\begin{align}
+\beta&=\frac{\omega}{v_p} 	\nonumber \\
+&= \sqrt{\epsilon_r} \cdot k_0	\label{eq:stripline:beta}
+\end{align}
+
+\begin{align}
+Z_0&= \sqrt{\frac{L}{C}} \nonumber \\
+	&=\frac{1}{v_p \cdot C}	\label{eq:stripline:impedance}
+\end{align}
+
+
+\begin{numcases}{\frac{W_e}{b}=}
+	\frac{W}{b} & $when \left( \frac{W}{b} \right) > 0.35$  \label{eq:stripline:wb>0.35} \\
+	\frac{W}{b}-\left(0.35-\frac{W}{b} \right)^2 & $when \left( \frac{W}{b} \right) < 0.35$  \label{eq:stripline:wb<0.35}
+\end{numcases}
+
+\begin{numcases}{\frac{W}{b}=}
+	x &$when \sqrt{\epsilon_r} \cdot Z_0<120\ohm$  \label{eq:stripline:<120} \\
+	0.85 - \sqrt{0.6-x} & $when \sqrt{\epsilon_r} \cdot Z_0<120\ohm$  \label{eq:stripline:>120}
+\end{numcases}
+
+\begin{align}
+x=\frac{20 \pi}{\sqrt{\epsilon_r \cdot Z_0}}	\label{eq:stripline:x}
+\end{align}
+
 \subsection{Coplanar Wave-guide}
 C
 
