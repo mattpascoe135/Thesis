@@ -1,4 +1,4 @@
-\newcommand{\model}{ABCD}
+\newcommand{\model}{Anritsu MS46322A}
 
 \documentclass[12pt,openany,a4paper]{book}
 \newcommand\tabSpace[1][1cm]{\hspace*{#1}}
@@ -7,6 +7,7 @@
 \usepackage{enumitem}
 \usepackage{listings}
 \usepackage{amsmath}
+\usepackage{color} 
 \usepackage{float}
 \usepackage{pdflscape}
 \usepackage{multirow}
@@ -421,7 +422,7 @@ This chapter looks into the currently available designs used for high speed RF s
 
 %TODO : Look into mechanical motion technology in rf imaging techniques???
 \subsection{Currently Available Technology}
-There is currently a wide variety of application for RF switching systems, EMR are primarily used but there has been recent interest in SSR applications.  EMR switching systems are a predominate choice due to their low losses and have been utilised in many various applications. A journal article in [24] looks at the performance of microelectromechanical systems (MEMS) and the wide field of application for MEMS in communications, medical and aerospace; this wide field means that there is a large application that can benefit from the development of RF switching systems. As seen in [24] RF switching systems have a wide range of application, it can be seen in [25], which investigate the interference problem of a MIMO beam-switching antenna. In order to control the multiple beam switching antennas requires a high speed switching system, therefore they utilised a SSR allowing them to achieve speeds from 1-100ns; this high speed capability is ideal for the application of the thesis [25].\\
+There is currently a wide variety of application for RF switching systems, EMR are primarily used but there has been recent interest in SSR applications. EMR switching systems are a predominate choice due to their low losses and have been utilised in many various applications. A journal article in [24] looks at the performance of micro-electromechanical systems (MEMS) and the wide field of application for MEMS in communications, medical and aerospace; this wide field means that there is a large application that can benefit from the development of RF switching systems. As seen in [24] RF switching systems have a wide range of application, it can be seen in [25], which investigate the interference problem of a MIMO beam-switching antenna. In order to control the multiple beam switching antennas requires a high speed switching system, therefore they utilised a SSR allowing them to achieve speeds from 1-100ns; this high speed capability is ideal for the application of the thesis [25].\\
 There is also a large application for RF switching systems in medical imaging, which is the primary focus of this thesis. The journal article in [3] describes a medical imaging system that uses a RF system, it rotates a body around an antenna by a stepper motor to obtain measurements from antenna at different positions; this system utilises a SDR and a single antenna to obtain its measurements as it rotates around the body. It was determined that the current microwave imaging system currently takes 45 minutes to complete its analysis, but by replacing the rotating platform with an array of 20 antennas using a EMR switching network could reduce the time to less than 1 minutes [3]. Since we are expecting SSR to provide a faster switching speed reducing the time taken for the measurements to be completed.\\
 The journal articles [26, 27] that discuss the use of EMR technology to allow a RF front end to control multiple antennas in different applications of biomedical engineering. In [26] a network of EMR is used to allow a VNA to perform radar measurements through 16 antennas in the frequency domain. The switches are controlled by a computer and takes around 3 minutes for the measurements to be taken [26]. An article from [27] looks at using an array of RF antennas switched by an EMR so they can image a head to detect a haemorrhage stroke [27]. The need for RF switching systems can be seen but the use of SSR instead of EMR can potentially reduce the size and noise of the switching while increasing the speed allowing their design to be faster, more compact and quieter which is potentially ideal for medical applications. 
 
@@ -444,7 +445,7 @@ The application of the RF switching system this thesis looks a developing, is to
 \section{Microwave Theory}
 To design and develop microwave circuits a fundamental understanding of how microwaves operate and ... in ... is required
 
-\subsection{Transmission Line Theory}
+\subsection{Transmission Line Theory}	\label{sec:tran_theory}
 A transmission line is a medium that transfers electromagnetic energy along its path, an example can be seen in \fig{fig:tline}. Transmission lines will form the primary basis of this thesis since it will be primary medium for the signal travelling through the RF switching system. It is crucial to ensure that the transmission line matches the source and antenna; otherwise it can cause the power to be reflected back. \newline
 \begin{figure}[H]
 	\centering
@@ -545,7 +546,7 @@ There are three main types of coax cabling:
 	\item Comfortable
 	\item Flexible
 \end{itemize}
-This project will look into the use of semi-rigid SMA cables, as they typically have low losses for signal transmission and are well suited for fixed devices [16]. The connection between will need to be measured and matched as discussed in section 2.1.1 to ensure that the signal retains its integrity.
+This project will look into the use of semi-rigid SMA cables, as they typically have low losses for signal transmission and are well suited for fixed devices [16]. The connection between will need to be measured and matched as discussed in Section \ref{sec:tran_theory} to ensure that the signal retains its integrity.
 
 
 
@@ -564,9 +565,9 @@ When designing PCB's for
 
 
 %TODO : Replace 'track' with 'transmission line'
-\section{RF Track Design}
+\section{RF Transmission Line Design}
 %talk about; microstrip, stripline, coplanar. design techniques, 
-For designing the RF tracks on the PCB there are three primary options available
+For designing the RF transmission line on the PCB there are three primary options available
 \begin{itemize}[noitemsep,topsep=0.5pt]
 	\item Micro-strip
 	\item Coplanar Wave-guide, and
@@ -616,9 +617,9 @@ We are able to determine the width ($W$) and length($X$) of the track by selecti
 
 
 \subsection{Strip-line}
-Stripline RF tracks are ... \newline
+Strip-line RF tracks are ... \newline
 
-We are able to caluclate the dimensions shown in Figure 3.2
+We are able to calculate the dimensions shown in Figure 3.2
 
 
 \begin{align}
@@ -664,7 +665,7 @@ C
 \section{Radiation Emission}
 
 
-\subsection{Picket Fencing Technique}
+\subsection{Picket Fencing Technique}	\label{sec:picket}
 
 
 \subsection{Shielding}
@@ -680,6 +681,7 @@ C
 
 
 %---------------------------------------------------------------------------------
+%Possibly remove this section of the report
 \chapter{RF Switch Evaluation}
 In this chapter the design of discrete RF switches is evaluated in comparaison to commercially available switches. This chapter will look into the design and simulations of SPDT, SP4T and SP8T RF switches within the frequency range of 100MHz-4GHz to gain a better understanding of RF switch functionality and variants.
  
@@ -748,8 +750,9 @@ is the most ideal RF switch out of the three boards, but the overall price to co
 \subsection{RF Switches}
 It was seen in previous section that the EMR and 
 %TODO : Is it a switch matrix
-switch relay provided significantly better results for: insertion, isolation and reflection but are significantly larger and heavier than SSR's tested. Since this thesis is looking at developing a lightweight switch matrix it is decided that high performance SSR's will be looked at instead of EMR. \\
-There is a large variety of RF switches available in varying topologies, therefore the following RF switches will be looked at:\\[-0.8cm]
+switch relay provided significantly better results for: insertion, isolation and reflection but are significantly larger and heavier than SSR's tested. Since this thesis is looking at developing a lightweight switch matrix it is decided that high performance SSR's will be looked at instead of EMR. \\[0.2cm]
+For constructing the switch matrix there are three primary topolgies that will be looked at since, SP16T are not largely available at a low price, instead this thesis will look at cascading two or more switches that are SPDT, SP4T or SP8T; to create a custom SP16T switch.\\
+There is a large variety of RF switches available in varying topologies, the following RF switches were identified as interesting:\\[-0.8cm]
 \begin{table}[H]
 	\centering
 	\begin{tabular}{p{5cm} r}
@@ -759,12 +762,12 @@ There is a large variety of RF switches available in varying topologies, therefo
 	\end{tabular}
 \end{table} 
 \vspace{-4mm}
-These are the RF switches that will be further investigated in this thesis to determine if a custom RF switch design is able to constructed at a competitive price to the evaluation boards seen in Section \ref{sec:evalboard_eval}. It can already be seen that the individual price is significantly cheaper but will require a PCB to be constructed; this will allow the design to be custom designed to fit in the most space efficient package possible to allow for a portable and lightweight design.
+These are the RF switches that will be further investigated in this thesis to determine if a custom RF switch design is able to constructed at a competitive price to the evaluation boards seen in Section \ref{sec:evalboard_eval}. It can already be seen that the individual price is significantly cheaper but will require a PCB to be constructed; this will allow the design to be custom designed to fit in the most space efficient package possible to allow for a portable and lightweight design. 
 
 \subsection{Transmission Line Design}
 Using the ADS three different transmission lines were tested, using the parameters seen in Appendix \ref{sec:substrate_param}, Table \ref{tab:tracks} was constructed.\begin{table}[H]
 	\centering
-	\begin{tabular}{|L{4cm}||C{3cm}|C{3cm}|C{3cm}|}
+	\begin{tabular}{L{4cm} C{3cm} C{3cm} C{3cm}}
 		\hline
 		Track Type & Width & Length & Gap \\
 		\hline
@@ -777,7 +780,8 @@ Using the ADS three different transmission lines were tested, using the paramete
 	\label{tab:tracks}
 \end{table} 
 \vspace{-2mm}
-Therefore looking at Table \ref{tab:tracks} it can be seen that the most space efficient transmission line is the CPWG design; therefore, the CPWG design allows the PCB to be the most space efficient design for the RF switch design.
+Therefore looking at Table \ref{tab:tracks} it can be seen that the most space efficient transmission line is the CPWG design; therefore, the CPWG design allows the PCB to be the most space efficient design for the RF switch design.\\
+In addition to the Grounded CPWG, picket fencing will be added to the tracks to ensure that there is minimal amount of losses or noise entering the system as seen in Section \ref{sec:picket}.
 %TODO : talk about picket fencing
 
 
@@ -791,18 +795,17 @@ For the design of the RF switch matrix, several key design citerias were identif
 	\item Sixteen RF outputs
 	\item Maximum path loss of $3$dB
 	\item Power-able from low-power device (such as USB)
-	\item Input and output are $50\ohm$
+	\item Input and output of switch matrix are $50\ohm$
 \end{itemize}
 %TODO : talk about the general design
-In order to achieve this design the switch matrix will consist of two SP16T's where the output of each switch is wired to a SPDT. 
-
-In order to meet these specifications several different designs have been developed, which can be seen in Section \ref{sec:design1} - \ref{sec:output2}. There are three different SP16T switch designs for the input and two SPDT output switch designs for the output; to determine the most suitable design these five designs are designed to determine a suitable low-loss, high isolation switch matrix.
+%TODO : mention that the design is blocking, two signals cant add together on the output.
+In order to construct the DP16T switch matrix the the design will be split into two stages, an input and output stage. The input stage will take a two different inputs, the switch will be controlled to route a path from the input to the output; this will require two separate SP16T RF switch. Each output of DP16T matrix needs to be able to switch between the two outputs of each SP16T switch, therefore this design will require 16 SPDT switches. \\[0.2cm]
+In order to meet these specifications several different designs have been developed, which can be seen in Section \ref{sec:design1} - \ref{sec:output2}. There are three different SP16T switch designs for the input and two SPDT output switch designs for the output; to determine the most suitable design these five designs are designed to determine a suitable low-loss, high isolation switch matrix. \\[0.2cm]
+All the design's for the SP16T switches will feature an SMA input for the input to the switch matrix, and UFL connectors on the output. Since the internals of the design will be restricted from the consumer UFL cabling allows for a much more compact and flexible design. This selection is expected to have a poor insertion loss compared to SMA but is significantly more flexible and thinner allowing for the overall size of the switch matrix to be reduced significantly.\\
+The output switches will feature a similar design; where the input to the SPDT switch is SMA and the two outputs will be UFL. The SPDT switch will need to be $50\ohm$ terminated when inactive to ensure that there isn't any reflections occurring within the switch if the signal is being routed to the same output, since the design in a blocking switch matrix.  
 
 \subsection{Design 1}		\label{sec:design1}
-This design looks at constructing a SP16T RF switch using the SKY13418-485LF; this is a SP8T switch which is doesn't require any external DC blocking capacitors on the RF ports. \\
-To get 16 outputs the design requires a SPDT switch on each output of the SP8T; from the switches that are being looked at the ... is the most suitable. It has a poor reflection on the input and output but has high performance for the insertion and isolation, since the input and output reflection are determined by the SP8T switch and second SPDT switch. \\
-%TODO : talk about the DC blocking capacitors, non-terminated output of switch
-%TODO : input is sma and output is ufl
+This design looks at constructing a SP16T RF switch using the SKY13418-485LF and MASWSS0115 cascaded together. The SKY13418 is a SP8T switch that provides a low insertion loss that has a frequency range from $100$MHz to $3$Ghz.  The chip features the input in the centre with $4$ outputs either side of the input. This allows for the tracks to be spaced by $30^o$ segments, and the remainder to be space for logic. To get full 16 outputs the design requires a MASWSS0115 SPDT switch on each output of the SP8T; from the switches that are being evaluated the MASWSS0115 provides the lowest insertion loss, although it has a poor reflection on the output. The SKY13418 has DC blocking integrated into the chip by the MASWSS0115 doesn't, therefore it requires DC blocking capacitors of $33$\pF \ to be placed on all of the RF inputs and outputs. \\[0.2cm]
 This design was developed in Altium Designer and can be seen in Figure \ref{fig:design1}.
 \begin{figure}[H]
 	\centering
@@ -810,30 +813,54 @@ This design was developed in Altium Designer and can be seen in Figure \ref{fig:
 	\caption{PCB Design for `Design 1'}
 	\label{fig:design1}
 \end{figure} 
+\subsubsection{Specifications}
 Therefore using this combination of SP8T and SPDT switches we are able to estimate the parameters of the switch based off of the specifications in the data-sheet as seen in Table \ref{tab:des1_param}.
 \begin{table}[H]
 	\centering
-	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
+	\begin{tabular}{| L{4cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} |}
 		\hline
-		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{4}{c|}{Value}\\
-		\cline{2-5}
-		& $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
+		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{5}{c|}{Value}\\
+		\cline{2-6}
+		& $100$MHz & $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
 		\hline
-		Insertion & & & & \\
-		Isolation & & & & \\
-		Input Reflection & & & & \\
-		Output Reflection & & & & \\
-		Max Switching Speed & & & &\\
+		Insertion & & & & &\\
+		\noalign{\hrule height 0.01pt}
+		Isolation & & & & & \\
+		\noalign{\hrule height 0.01pt}
+		Input Reflection & & & & & \\
+		\noalign{\hrule height 0.01pt}
+		Output Reflection (Inactive) & & & & & \\
+		\noalign{\hrule height 0.01pt}
+		Max. Switching Speed & & & & &\\
 		\hline
 	\end{tabular}
-	\caption{Design 1 Ideal parameters}
+	\caption{Design 1 - Ideal parameters}
 	\label{tab:des1_param}
 \end{table}
+It can be seen that the expected insertion loss is relatively low at a maximum of $1$dB loss, the isolation is not too bad with a minimum of $1$dB. 
 %TODO : discuss why this is a good design based on table results
+%TODO : talk about the frequency range of the switch
+%TODO : talk about the maximum input power
+%TODO : 
 
+\subsubsection{Control}
+In order to control this  board there are $3$ control pins for the SP8T switch, and $16$ control pins for the SPDT switches. The logic voltages for this board are detailed in Table \ref{tab:design1_logic_v}.
+\begin{table}
+	\centering
+	\begin{tabular}{L{3cm}C{3cm}C{3cm}}
+	& On & Off\\
+	\hline
+	SP8T & $0$V$\pm 0.3V$ & $1.35$V - $2.7$V \\
+	SPDT & $0$V$\pm 0.2V$ & $2.3$V - $5$V\\
+	\hline	
+	\end{tabular}
+	\caption{Logic Voltage Control}
+	\label{tab:design1_logic_v}
+\end{table}
+Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design1}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first bits are connected to each SPDT switch and the last three bits are connected to the SP8T switch.
 
 \subsection{Design 2}
-This design looks at constructing an alternative SP16T RF switch using a different topology from Section \ref{sec:design1}, it was found that the .... tested in Section \ref{sec:evalboard_eval}. By using the RF chips and transmission line design an alternative construction of the SP16T switch can be designed that is significantly more space efficient and cost effective than the evaluation boards seen in Appendix ....\\
+This design looks at constructing an alternative design to SP16T RF switch using a different topology from Section \ref{sec:design1}; it was found that the SP4T PE42441 Evaluation Board tested in Section \ref{sec:evalboard_eval} provided good performance for both insertion and isolation. By cascading the SP4T together with itself would provide $16$ possible transmission lines for the switch. By using the same transmission line design used in Design 1, an alternative construction of the SP16T switch can be designed. By designing this board on a PCB it is able to significantly more space efficient, cost effective with less cabling than what would be required to construct it from the tested evaluation board seen in Section \ref{sec:evalboard_eval}.\\[0.2cm]
 This design was developed in Altium Designer and can be seen in Figure \ref{fig:design2}.
 \begin{figure}[H]
 	\centering
@@ -844,45 +871,55 @@ This design was developed in Altium Designer and can be seen in Figure \ref{fig:
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
+	\begin{tabular}{| L{4cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} |}
 		\hline
-		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{4}{c|}{Value}\\
-		\cline{2-5}
-		& $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
+		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{5}{c|}{Value}\\
+		\cline{2-6}
+		& $100$MHz & $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
 		\hline
-		Insertion & & & & \\
-		Isolation & & & & \\
-		Input Reflection & & & & \\
-		Output Reflection & & & & \\
-		Max Switching Speed & & & &\\
+		Insertion & & & & &\\
+		\noalign{\hrule height 0.01pt}
+		Isolation & & & & & \\
+		\noalign{\hrule height 0.01pt}
+		Input Reflection & & & & & \\
+		\noalign{\hrule height 0.01pt}
+		Output Reflection (Inactive) & & & & & \\
+		\noalign{\hrule height 0.01pt}
+		Max. Switching Speed & & & & &\\
 		\hline
 	\end{tabular}
-	\caption{Design 2 Ideal parameters}
+	\caption{Design 2 - Ideal parameters}
 	\label{tab:des2_param}
 \end{table}
 %TODO : discuss why this is a good design based on table results
 
 
 \subsection{Design 3}
-This design looks at constructing a SP16T RF switch using 
+This design looks at constructing a SP16T RF switch using an similar design to Design 2, this utilises the PE42442 chip which is from the same family as the PE42441. Similar to teh PE42441, the PE42442 is a SP4T RF switch that slightly varries in their specifications. The PE42442 provides a lower input power, but provides a slightly better insertion and isolation response than the PE42441.\\[0.2cm]
+
+The device is able to be compacted into a smaller board due to the alternate arrangement of pins in comparison to Design 2; this new Altium design can be seen in Figure \ref{fig:design3}.
 
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
+	\begin{tabular}{| L{4cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} |}
 		\hline
-		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{4}{c|}{Value}\\
-		\cline{2-5}
-		& $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
+		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{5}{c|}{Value}\\
+		\cline{2-6}
+		& $100$MHz & $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
 		\hline
-		Insertion & & & & \\
-		Isolation & & & & \\
-		Input Reflection & & & & \\
-		Output Reflection & & & & \\
-		Max Switching Speed & & & &\\
+		Insertion & & & & &\\
+		\noalign{\hrule height 0.01pt}
+		Isolation & & & & & \\
+		\noalign{\hrule height 0.01pt}
+		Input Reflection & & & & & \\
+		\noalign{\hrule height 0.01pt}
+		Output Reflection (Inactive) & & & & & \\
+		\noalign{\hrule height 0.01pt}
+		Max. Switching Speed & & & & &\\
 		\hline
 	\end{tabular}
-	\caption{Design 3 Ideal parameters}
+	\caption{Design 3 - Ideal parameters}
 	\label{tab:des3_param}
 \end{table}
 %TODO : discuss why this is a good design based on table results
@@ -1150,7 +1187,7 @@ Output 1 has been tested with a VNA, there are $3$ different characteristics tha
 The design for `Output 2' seen in Section \ref{sec:output2} was developed and tested using a VNA; it was found that the design wasn't operating. So due to time constraints, since the RF chip was not functioning it was decided to disregard this design as it would be too expensive and time consuming to re-design \& develop this design.
 
 
-\subsection{Cabling}
+\subsection{Cabling}		\label{sec:res_cabling}
 There are several different cabling options available; three different cabling options have been looked at, this includes flexible and rigid SMA cables, and UFL cabling. Looking at Figure \ref{fig:flex_sma} - \ref{fig:ufl_sma} we can determine the effects of cabling in the final design.
 \begin{figure}[H]
 	\centering
@@ -1198,10 +1235,12 @@ Therefore the final design will use  `Design ...' and `Output 1'.
 \subsection{Losses}
 In order to determine the characteristics of the designed RF switch matrix, its characteristics of can be modelled using S-Parameters to evaluate the final design. Using the \model \ VNA the switch matrix was analysed to determine the amount of losses that are present in the system. \\
 Looking at Figure \ref{fig:rf_sparam} we can determine the performance of the overall system. There are multiple paths that need to be considered in order to fully evaluate the RF switch, there are 9 different paths that can be taken; these can be seen below in Figure \ref{fig:rf_sparam1} - \ref{fig:rf_sparam9}.
+%TODO : far to many pictures, only do 3: insertion, isolation best case, isolation worst case
+
 \begin{figure}[H]
 	\centering
 %    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{S-Parameters of RF switch matrix \\ (Left) Path 1, (Right) Diagram}
+	\caption{S-Parameters of RF switch matrix \\ Insertion Loss}
 	\label{fig:rf_sparam1}
 \end{figure} 
 %TODO : S11 input reflection
@@ -1216,7 +1255,7 @@ Looking at Figure \ref{fig:rf_sparam} we can determine the performance of the ov
 \begin{figure}[H]
 	\centering
 %    \includegraphics[width=1\textwidth]{rf_sparam.png}
-	\caption{S-Parameters of RF switch matrix\\ (Left) Path 2, (Right) Diagram}
+	\caption{S-Parameters of RF switch matrix\\ Isolation (Best case)}
 	\label{fig:rf_sparam2}
 \end{figure} 
 %TODO : S11 input reflection
@@ -1231,7 +1270,7 @@ Looking at Figure \ref{fig:rf_sparam} we can determine the performance of the ov
 \begin{figure}[H]
 	\centering
 %    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{S-Parameters of RF switch matrix\\ (Left) Path 3, (Right) Diagram}
+	\caption{S-Parameters of RF switch matrix\\ Isolation (Worst case)}
 	\label{fig:rf_sparam3}
 \end{figure} 
 %TODO : S11 input reflection
@@ -1243,98 +1282,10 @@ Looking at Figure \ref{fig:rf_sparam} we can determine the performance of the ov
 %TODO : S22 output reflection
 
 
-\begin{figure}[H]
-	\centering
-%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{S-Parameters of RF switch matrix\\ (Left) Path 4, (Right) Diagram}
-	\label{fig:rf_sparam4}
-\end{figure} 
-%TODO : S11 input reflection
-
-%TODO : S12 input isolation
-
-%TODO : S21 output isolation
-
-%TODO : S22 output reflection
-
-
-\begin{figure}[H]
-	\centering
-%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{S-Parameters of RF switch matrix\\ (Left) Path 5, (Right) Diagram}
-	\label{fig:rf_sparam5}
-\end{figure} 
-%TODO : S11 input reflection
-
-%TODO : S12 input isolation
-
-%TODO : S21 output isolation
-
-%TODO : S22 output reflection
-
-
-\begin{figure}[H]
-	\centering
-%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{S-Parameters of RF switch matrix\\ (Left) Path 6, (Right) Diagram}
-	\label{fig:rf_sparam6}
-\end{figure} 
-%TODO : S11 input reflection
-
-%TODO : S12 input isolation
-
-%TODO : S21 output isolation
-
-%TODO : S22 output reflection
-
-
-\begin{figure}[H]
-	\centering
-%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{S-Parameters of RF switch matrix\\ (Left) Path 7, (Right) Diagram}
-	\label{fig:rf_sparam7}
-\end{figure} 
-%TODO : S11 input reflection
-
-%TODO : S12 input isolation
-
-%TODO : S21 output isolation
-
-%TODO : S22 output reflection
-
-
-\begin{figure}[H]
-	\centering
-%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{S-Parameters of RF switch matrix\\ (Left) Path 8, (Right) Diagram}
-	\label{fig:rf_sparam8}
-\end{figure} 
-%TODO : S11 input reflection
-
-%TODO : S12 input isolation
-
-%TODO : S21 output isolation
-
-%TODO : S22 output reflection
-
-
-\begin{figure}[H]
-	\centering
-%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{S-Parameters of RF switch matrix\\ (Left) Path 9, (Right) Diagram}
-	\label{fig:rf_sparam9}
-\end{figure} 
-%TODO : S11 input reflection
-
-%TODO : S12 input isolation
-
-%TODO : S21 output isolation
-
-%TODO : S22 output reflection
 
 
 \subsection{Speed}
-We know from Section \ref{sec:micro_dev} that micro-controller is capable of controlling the switches at .... \ns , but the SSR's are not capable of operating at this speed. Therefore the maximum switching frequency needs to be determined for this RF switch. \\
+We know from Section \ref{sec:micro_dev} that micro-controller is capable of controlling the switches at .... \us , but the SSR's are capable of operating above this speed. Therefore the maximum switching frequency needs to be determined for this RF switch. \\
 Looking at the datasheets it can be seen that the .... is the slowest chip in this system which bottlenecks the maximum performance of the switch. Therefore we can say that theoretical switching speed is limited to .... \us . \\[0.3cm]
 With the fully developed RF switch matrix it can be fully evaluated to determine its performance in regard to speed; as can be seen in Figure \ref{fig:speedtest} the switch matrix is wired so that one input and output are connected to the VNA.
 \begin{figure}[H]
@@ -1359,12 +1310,19 @@ Using the set-up shown in Figure \ref{fig:speedtest} the VNA monitor's the signa
 %---------------------------------------------------------------------------------
 \chapter{Discussion}
 \section{Problems}
+It was seen that there was a poor reflection in the results from Design 1, Design 3, Output 1 and the final switch matrix; a cause of this poor result is was identified when analysing the cabling in Section \ref{sec:res_cabling}. 
 
+%PROBLEM - Impedance mismatches at io terminals and i/o of chips
+%	SOLUTION - Fix trac sizes, add chebyshev transformer at input of chips
+%		design alternate transformer
+%		Run simulations in ads
+%		
 
 \subsection{Resource Availability}
 
 
 \section{Objective Fulfilment}
+
 
 \subsection{Comparison to Available Technology}
 %TODO : compare results to the switch relay
@@ -1440,24 +1398,27 @@ Using the set-up shown in Figure \ref{fig:speedtest} the VNA monitor's the signa
 The following tables contain the parameters and details for the substrates investigated in this thesis. \newline
 \begin{table}[!htbp]
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{L{3cm}C{2cm}C{2cm}}
 \hline
-Parameter 	& Value \\
+Substrate & Parameter & Value \\
 \hline
-Er 	& 4.7 	\\
-Mur 	& 1 \\
-H 	& even 	\\
+\hline
+\multirow{3}{*}{FR-4} & Er & 4.7 	\\
+& Mur & 1 \\
+& H & even 	\\
+\hline
+\multirow{3}{*}{Epoxy} & Er & 4.7 	\\
+& Mur & 1 \\
+& H & even 	\\
 \hline
 \end{tabular}
+\caption{\sl Parameters for simulation of PCB substrate's}
 \label{tab:substrate}
-\caption{\sl Parameters for simulation of FR-4 substrate}
 \end{table}
 
 \chapter{Bill of Materials}
 In order to construct the design of the Switching Matrix we require the following components, a Bill of Materials has been constructed and can be seen in \tab{tab:bom}.
-\begin{table}[!htbp]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|c|c|}
 \hline
 Name & Description & Digikey Part no. & Min Order no. & Price & Quantity & Total \\
 \hline
@@ -1467,10 +1428,9 @@ Name & Description & Digikey Part no. & Min Order no. & Price & Quantity & Total
 \hline
 \multicolumn{5}{|c}{} & \textbf{Total}: & \$$100$\\
 \hline
-\end{tabular}
-\label{tab:bom}
 \caption{\sl Bill of Materials}
-\end{table}
+\label{tab:bom}
+\end{longtable}
 
 
 
@@ -1482,22 +1442,18 @@ Name & Description & Digikey Part no. & Min Order no. & Price & Quantity & Total
 
 
 
-\chapter{RF Switch Controls}
+\chapter{RF Switch Controls}		
 \begin{landscape}
-\section{Design 1}
-
-% Table generated by Excel2LaTeX from sheet 'Logic Tables'
+\section{Design 1}	\label{sec:logic_design1}
 \begin{table}[H]
   \centering
-  \caption{Add caption}
+  \caption{`Design 1' Logic Control Table}
     \begin{tabular}{|cccc|ccccccccccccccccccc|}
-    \hline
-    \multicolumn{23}{|c|}{\textbf{Design 1}} \\
     \hline
     \multicolumn{4}{|c|}{\textbf{Input}} & \multicolumn{19}{c|}{\textbf{Output}} \\
     \hline
     \multicolumn{1}{|c|}{\multirow{2}[4]{*}{\boldmath{}\textbf{$x_3$}\unboldmath{}}} & \multicolumn{1}{c|}{\multirow{2}[4]{*}{\boldmath{}\textbf{$x_2$}\unboldmath{}}} & \multicolumn{1}{c|}{\multirow{2}[4]{*}{\boldmath{}\textbf{$x_1$}\unboldmath{}}} & \multirow{2}[4]{*}{\boldmath{}\textbf{$x_0$}\unboldmath{}} & \multicolumn{2}{c|}{\textbf{$SPDT_1$}} & \multicolumn{2}{c|}{\textbf{$SPDT_2$}} & \multicolumn{2}{c|}{\textbf{$SPDT_3$}} & \multicolumn{2}{c|}{\textbf{$SPDT_4$}} & \multicolumn{2}{c|}{\textbf{$SPDT_5$}} & \multicolumn{2}{c|}{\textbf{$SPDT_6$}} & \multicolumn{2}{c|}{\textbf{$SPDT_7$}} & \multicolumn{2}{c|}{\textbf{$SPDT_8$}} & \multicolumn{3}{c|}{\textbf{$SP8T$}} \\
-\cline{5-23}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} &       & \multicolumn{1}{c|}{\textbf{Input 1}} & \multicolumn{1}{c|}{\textbf{Input 2}} & \multicolumn{1}{c|}{\textbf{Input 1}} & \multicolumn{1}{c|}{\textbf{Input 2}} & \multicolumn{1}{c|}{\textbf{Input 1}} & \multicolumn{1}{c|}{\textbf{Input 2}} & \multicolumn{1}{c|}{\textbf{Input 1}} & \multicolumn{1}{c|}{\textbf{Input 2}} & \multicolumn{1}{c|}{\textbf{Input 1}} & \multicolumn{1}{c|}{\textbf{Input 2}} & \multicolumn{1}{c|}{\textbf{Input 1}} & \multicolumn{1}{c|}{\textbf{Input 2}} & \multicolumn{1}{c|}{\textbf{Input 1}} & \multicolumn{1}{c|}{\textbf{Input 2}} & \multicolumn{1}{c|}{\textbf{Input 1}} & \multicolumn{1}{c|}{\textbf{Input 2}} & \multicolumn{1}{c|}{\textbf{Input 1}} & \multicolumn{1}{c|}{\textbf{Input 2}} & \textbf{Input 3} \\
+\cline{5-23}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} &       & \multicolumn{1}{c|}{\textbf{V1}} & \multicolumn{1}{c|}{\textbf{V2}} & \multicolumn{1}{c|}{\textbf{V1}} & \multicolumn{1}{c|}{\textbf{V2}} & \multicolumn{1}{c|}{\textbf{V1}} & \multicolumn{1}{c|}{\textbf{V2}} & \multicolumn{1}{c|}{\textbf{V1}} & \multicolumn{1}{c|}{\textbf{V2}} & \multicolumn{1}{c|}{\textbf{V1}} & \multicolumn{1}{c|}{\textbf{V2}} & \multicolumn{1}{c|}{\textbf{V1}} & \multicolumn{1}{c|}{\textbf{V2}} & \multicolumn{1}{c|}{\textbf{V1}} & \multicolumn{1}{c|}{\textbf{V2}} & \multicolumn{1}{c|}{\textbf{V1}} & \multicolumn{1}{c|}{\textbf{V2}} & \multicolumn{1}{c|}{\textbf{V1}} & \multicolumn{1}{c|}{\textbf{V2}} & \textbf{V3} \\
     \hline
     0     & 0     & 0     & 0     & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_1$ & $x_2$ & $x_3$ \\
     0     & 0     & 0     & 1     & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_0$ & $\bar{x_0}$ & $x_1$ & $x_2$ & $x_3$ \\
