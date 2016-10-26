@@ -495,6 +495,7 @@ Return \ loss &= -20\cdot \log_{10}\left( |\Gamma | \right) \label{eq:ret_loss}
 \end{align}
 The isolation is the degree of attenuation from other signals from outside or on other channels in the system. Increasing the isolation of the device reduces the influence of other signals. The isolation of the system can be determined by measuring the signal strength at an output where the input is not routed to [9]. All of these parameters need to be seriously considered, and form the base of the analysis for the design and development of the RF switching system.
 
+%TODO : Talk about de-embedding systems and embedding systems
 
 
 \section{RF Switch}
@@ -1028,21 +1029,37 @@ This section looks at the results obtain from each of the individual boards, eac
 
 
 \subsection{Design 1}	\label{sec:res_des1}
-Design 1 has been tested with a VNA, there are $3$ different characteristics that were subjected to the analysis of the DP16T RF switch: losses, speed and power.
+The design for `Design 1' which was designed in Section \ref{sec:design1} was constructed and developed according to the design. This section looks at analysing the SP16T RF switch developed to determine the losses, speed and power requirements of the design and comparing them against the specifications detailed in the RF switches data-sheet.\\
+A \model \ VNA is used to analyse the SP16T; this is used to determine the losses of the system, the micro-controller is used to increment the switch speed of the device to determine the frequency where the SP16T is unable to maintain the losses seen in the previous section. Finally the 
  
 \subsubsection{Losses}
+Design 1 has been tested with a VNA to obtain $3$ different results for the device which shows an open transmission line seen in Figure \ref{fig:design1_1}. Additional tests were conducted to determine the effects of the SP16T when one or all of the switches are closed to determine the internal reflections of the device; these results can be seen in Figure \ref{fig:design1_2} - \ref{fig:design1_4}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{Design1-1.png}
-	\caption{Design 1 S-Parameters - Track Open}
-	\label{fig:design1_sma}
+	\caption{Design 1 S-Parameters - SP8T Open, SPDT Open}
+	\label{fig:design1_1}
 \end{figure} 
+
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{Design1-2.png}
 	\caption{Design 1 S-Parameters - SP8T Open, SPDT Closed}
-	\label{fig:design1_sma}
+	\label{fig:design1_2}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+%	\includegraphics[width=0.75\textwidth]{Design1-2.png}
+	\caption{Design 1 S-Parameters - SP8T Closed, SPDT Open}
+	\label{fig:design1_3}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+%	\includegraphics[width=0.75\textwidth]{Design1-2.png}
+	\caption{Design 1 S-Parameters - SP8T Closed, SPDT Closed}
+	\label{fig:design1_4}
 \end{figure} 
 It can be seen looking at the results that the results obtained in Figure \ref{fig:design1_sma}
 %Talk about the following results
@@ -1148,6 +1165,7 @@ There are several different cabling options available; three different cabling o
 	\label{fig:rigid_sma}
 \end{figure} 
 %TODO : discuss problems with using sma connectors
+It can be seen that more rigid cable has a far better response for insertion, although both these cables are particularly bulky in their size. 
 
 \begin{figure}[H]
 	\centering
@@ -1166,6 +1184,8 @@ An issue was found that can be seen in Figure \ref{fig:ufl_sma-bad}, this is a U
 
 \section{RF Switch Matrix}
 This section looks at the overall characteristics of the final RF switch matrix design. To determine the overall performance of the system, this required evaluating the performance, speed, size and power constraints.
+
+\subsection{Analysis}
 
 \subsection{Final Design}
 From looking at the results obtained in Section \ref{sec:indv_boards} it can be seen that the only option for the output SPDT switch is `Output 1'. Therefore the $16$ output terminals will have the reflection seen in Figure \ref{fig:output1_sp} $S_{22}$ signal, this will be connected to the SP16T via a UFL-UFL connector seen in Figure \ref{fig:ufl_sma}. \\
