@@ -46,75 +46,71 @@
 \contentsline {subsubsection}{Specifications}{19}{section*.13}
 \contentsline {subsubsection}{Control}{19}{section*.15}
 \contentsline {subsection}{\numberline {4.2.2}Design 2}{20}{subsection.4.2.2}
-\contentsline {subsubsection}{Specifications}{20}{section*.18}
+\contentsline {subsubsection}{Specifications}{21}{section*.18}
 \contentsline {subsubsection}{Control}{21}{section*.20}
 \contentsline {subsection}{\numberline {4.2.3}Design 3}{21}{subsection.4.2.3}
 \contentsline {subsubsection}{Specifications}{22}{section*.23}
 \contentsline {subsubsection}{Control}{23}{section*.25}
 \contentsline {subsection}{\numberline {4.2.4}Output 1}{23}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Output 2}{24}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Development}{24}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}PCB Development}{24}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}RF Switch Development}{24}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Physical Construction}{24}{section.4.4}
-\contentsline {section}{\numberline {4.5}Micro-controller Development}{24}{section.4.5}
+\contentsline {section}{\numberline {4.3}Development}{25}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}PCB Development}{25}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}RF Switch Development}{25}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Physical Construction}{25}{section.4.4}
+\contentsline {section}{\numberline {4.5}Micro-controller Development}{25}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Design}{25}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Evaluation}{25}{subsection.4.5.2}
-\contentsline {chapter}{\numberline {5}Verification}{26}{chapter.5}
-\contentsline {section}{\numberline {5.1}Individual Board's}{26}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Design 1}{26}{subsection.5.1.1}
-\contentsline {subsubsection}{Losses}{26}{section*.30}
-\contentsline {subsubsection}{Switch Speed}{28}{section*.35}
-\contentsline {subsubsection}{Power Requirements}{28}{section*.36}
-\contentsline {subsection}{\numberline {5.1.2}Design 2}{28}{subsection.5.1.2}
-\contentsline {subsubsection}{Losses}{28}{section*.37}
-\contentsline {subsubsection}{Switch Speed}{28}{section*.39}
-\contentsline {subsubsection}{Power Requirements}{28}{section*.40}
-\contentsline {subsection}{\numberline {5.1.3}Design 3}{28}{subsection.5.1.3}
-\contentsline {subsubsection}{Losses}{28}{section*.41}
-\contentsline {subsubsection}{Switch Speed}{28}{section*.43}
-\contentsline {subsubsection}{Power Requirements}{28}{section*.44}
-\contentsline {subsection}{\numberline {5.1.4}Output 1}{28}{subsection.5.1.4}
-\contentsline {subsubsection}{Losses}{29}{section*.45}
-\contentsline {subsubsection}{Switch Speed}{29}{section*.47}
-\contentsline {subsubsection}{Power Requirements}{29}{section*.48}
-\contentsline {subsection}{\numberline {5.1.5}Output 2}{29}{subsection.5.1.5}
-\contentsline {subsection}{\numberline {5.1.6}Cabling}{29}{subsection.5.1.6}
-\contentsline {section}{\numberline {5.2}RF Switch Matrix}{31}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Analysis}{31}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Final Design}{31}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Losses}{32}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Speed}{32}{subsection.5.2.4}
-\contentsline {subsection}{\numberline {5.2.5}Power Requirements \& Control}{33}{subsection.5.2.5}
-\contentsline {chapter}{\numberline {6}Discussion}{34}{chapter.6}
-\contentsline {section}{\numberline {6.1}Problems}{34}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Impedance Mismatch}{34}{subsection.6.1.1}
-\contentsline {subsubsection}{Simulations}{34}{section*.57}
-\contentsline {subsubsection}{Resolving Impedance Mismatch}{34}{section*.58}
-\contentsline {subsection}{\numberline {6.1.2}Resource Availability}{34}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Removing Losses from VNA Results}{34}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}MATLAB Code}{35}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Objective Fulfilment}{35}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Comparison to Available Technology}{35}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Contributions}{35}{section.6.4}
-\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{36}{chapter.7}
-\contentsline {section}{\numberline {7.1}Conclusion}{36}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future Work}{36}{section.7.2}
-\contentsline {part}{Appendices}{36}{section.7.2}
-\contentsline {chapter}{\numberline {A}PCB Design}{37}{appendix.A}
-\contentsline {section}{\numberline {A.1}Design 1}{37}{section.A.1}
-\contentsline {section}{\numberline {A.2}Design 2}{37}{section.A.2}
-\contentsline {section}{\numberline {A.3}Design 3}{37}{section.A.3}
-\contentsline {section}{\numberline {A.4}Output Design 1}{37}{section.A.4}
-\contentsline {section}{\numberline {A.5}Output Design 2}{37}{section.A.5}
-\contentsline {section}{\numberline {A.6}Output Design 3}{37}{section.A.6}
-\contentsline {chapter}{\numberline {B}Substrate Parameters}{38}{appendix.B}
-\contentsline {chapter}{\numberline {C}Bill of Materials}{39}{appendix.C}
-\contentsline {chapter}{\numberline {D}RF Switch Controls}{40}{appendix.D}
-\contentsline {section}{\numberline {D.1}Design 1}{41}{section.D.1}
-\contentsline {subsection}{\numberline {D.1.1}Design 2}{42}{subsection.D.1.1}
-\contentsline {subsection}{\numberline {D.1.2}Design 3}{42}{subsection.D.1.2}
-\contentsline {subsection}{\numberline {D.1.3}Output 1}{42}{subsection.D.1.3}
-\contentsline {subsection}{\numberline {D.1.4}Output 2}{42}{subsection.D.1.4}
-\contentsline {chapter}{\numberline {E}Companion disk}{43}{appendix.E}
-\contentsline {section}{\numberline {}Bibliography}{45}{section*.63}
+\contentsline {subsection}{\numberline {4.5.2}Evaluation}{26}{subsection.4.5.2}
+\contentsline {chapter}{\numberline {5}Verification}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Individual Board's}{27}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Design 1}{27}{subsection.5.1.1}
+\contentsline {subsubsection}{Losses}{27}{section*.30}
+\contentsline {subsubsection}{Power Requirements}{29}{section*.34}
+\contentsline {subsection}{\numberline {5.1.2}Design 2}{29}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Design 3}{29}{subsection.5.1.3}
+\contentsline {subsubsection}{Losses}{30}{section*.37}
+\contentsline {subsubsection}{Switch Speed}{32}{section*.41}
+\contentsline {subsubsection}{Power Requirements}{32}{section*.42}
+\contentsline {subsection}{\numberline {5.1.4}Output 1}{32}{subsection.5.1.4}
+\contentsline {subsubsection}{Losses}{32}{section*.43}
+\contentsline {subsubsection}{Switch Speed}{32}{section*.45}
+\contentsline {subsubsection}{Power Requirements}{32}{section*.46}
+\contentsline {subsection}{\numberline {5.1.5}Output 2}{32}{subsection.5.1.5}
+\contentsline {subsection}{\numberline {5.1.6}Cabling}{32}{subsection.5.1.6}
+\contentsline {section}{\numberline {5.2}RF Switch Matrix}{35}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Analysis}{35}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Final Design}{35}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Losses}{35}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Speed}{36}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.5}Power Requirements \& Control}{36}{subsection.5.2.5}
+\contentsline {chapter}{\numberline {6}Discussion}{37}{chapter.6}
+\contentsline {section}{\numberline {6.1}Problems}{37}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Impedance Mismatch}{37}{subsection.6.1.1}
+\contentsline {subsubsection}{Simulations}{37}{section*.55}
+\contentsline {subsubsection}{Resolving Impedance Mismatch}{37}{section*.56}
+\contentsline {subsection}{\numberline {6.1.2}Resource Availability}{37}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Removing Losses from VNA Results}{37}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}MATLAB Code}{38}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Objective Fulfilment}{38}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Comparison to Available Technology}{38}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}Contributions}{38}{section.6.4}
+\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{39}{chapter.7}
+\contentsline {section}{\numberline {7.1}Conclusion}{39}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future Work}{39}{section.7.2}
+\contentsline {part}{Appendices}{39}{section.7.2}
+\contentsline {chapter}{\numberline {A}PCB Design}{40}{appendix.A}
+\contentsline {section}{\numberline {A.1}Design 1}{40}{section.A.1}
+\contentsline {section}{\numberline {A.2}Design 2}{40}{section.A.2}
+\contentsline {section}{\numberline {A.3}Design 3}{40}{section.A.3}
+\contentsline {section}{\numberline {A.4}Output Design 1}{40}{section.A.4}
+\contentsline {section}{\numberline {A.5}Output Design 2}{40}{section.A.5}
+\contentsline {section}{\numberline {A.6}Output Design 3}{40}{section.A.6}
+\contentsline {chapter}{\numberline {B}Substrate Parameters}{41}{appendix.B}
+\contentsline {chapter}{\numberline {C}Bill of Materials}{42}{appendix.C}
+\contentsline {chapter}{\numberline {D}RF Switch Controls}{43}{appendix.D}
+\contentsline {section}{\numberline {D.1}Design 1}{44}{section.D.1}
+\contentsline {subsection}{\numberline {D.1.1}Design 2}{45}{subsection.D.1.1}
+\contentsline {subsection}{\numberline {D.1.2}Design 3}{45}{subsection.D.1.2}
+\contentsline {subsection}{\numberline {D.1.3}Output 1}{45}{subsection.D.1.3}
+\contentsline {subsection}{\numberline {D.1.4}Output 2}{45}{subsection.D.1.4}
+\contentsline {chapter}{\numberline {E}Companion disk}{46}{appendix.E}
+\contentsline {section}{\numberline {}Bibliography}{47}{section*.61}

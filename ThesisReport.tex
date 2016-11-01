@@ -852,8 +852,10 @@ In order to control this  board there are $3$ control pins for the SP8T switch, 
 \end{table}
 Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design1}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first bits are connected to each SPDT switch and the last three bits are connected to the SP8T switch.
 
-\subsection{Design 2}
+\subsection{Design 2}		\label{sec:design2}
 This design looks at constructing an alternative design to SP16T RF switch using a different topology from Section \ref{sec:design1}; it was found that the SP4T PE42441 Evaluation Board tested in Section \ref{sec:evalboard_eval} provided good performance for both insertion and isolation. By cascading the SP4T together with itself would provide $16$ possible transmission lines for the switch. By using the same transmission line design used in Design 1, an alternative construction of the SP16T switch can be designed. By designing this board on a PCB it is able to significantly more space efficient, cost effective with less cabling than what would be required to construct it from the tested evaluation board seen in Section \ref{sec:evalboard_eval}.\\[0.2cm]
+The pins on the PE42441 were spaced so that the transmission lines could be angled $45^o$ apart from each other. This was done for each chip leading from the SMA to UFL. Similar to `Design 1' the track length was designed to provide enough spacing for the PE42441 chips and UFL connectors from each other and the header connectors. The chips do not require DC blocking so no capacitors are required on the input or outputs; following the specifications on the PE42441's data-sheet, 0.1\uF decoupling capacitors were added to the $V_{cc}$, $V_0$ and $V_1$. 
+\\[0.2cm]
 This design was developed in Altium Designer and can be seen in Figure \ref{fig:design2}.
 \begin{figure}[H]
 	\centering
@@ -905,7 +907,7 @@ In order to control this  board there are $3$ control pins for the SP8T switch, 
 Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design1}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
 
 
-\subsection{Design 3}
+\subsection{Design 3}		\label{sec:design3}
 This design looks at constructing a SP16T RF switch using an similar design to Design 2, this utilises the PE42442 chip which is from the same family as the PE42441. Similar to teh PE42441, the PE42442 is a SP4T RF switch that slightly varries in their specifications. The PE42442 provides a lower input power, but provides a slightly better insertion and isolation response than the PE42441.\\[0.2cm]
 
 The device is able to be compacted into a smaller board due to the alternate arrangement of pins in comparison to Design 2; this new Altium design can be seen in Figure \ref{fig:design3}.
@@ -949,7 +951,7 @@ In order to control this  board there are $3$ control pins for the SP8T switch, 
 
 
 
-\subsection{Output 1}
+\subsection{Output 1}		\label{sec:output1}
 The output design requires constructing a SPDT switch for the output of the RF switch matrix, this requires a switch that has low insertion loss and isn't reflective. The switch should also include 
 
 
@@ -1093,34 +1095,27 @@ The design for `Design 1' which was designed in Section \ref{sec:design1} was co
 A \model \ VNA is used to analyse the SP16T; this is used to determine the losses of the system, the micro-controller is used to increment the switch speed of the device to determine the frequency where the SP16T is unable to maintain the losses seen in the previous section. Finally the 
  
 \subsubsection{Losses}
-Design 1 has been tested with a VNA to obtain $3$ different results for the device which shows an open transmission line seen in Figure \ref{fig:design1_1}. Additional tests were conducted to determine the effects of the SP16T when one or all of the switches are closed to determine the internal reflections of the device; these results can be seen in Figure \ref{fig:design1_2} - \ref{fig:design1_4}.
+Design 1 has been tested with a VNA to obtain $3$ different results for the device which shows an open transmission line seen in Figure \ref{fig:design1_1}. Additional tests were conducted to determine the effects of the SP16T when one or all of the switches are closed to determine the internal reflections of the device; these results can be seen in Figure \ref{fig:design1_2} - \ref{fig:design1_3}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{Design1-1.png}
-	\caption{Design 1 S-Parameters - SP8T Open, SPDT Open}
+	\caption{Design 1 S-Parameters - Insertion Loss}
 	\label{fig:design1_1}
 \end{figure} 
-
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{Design1-2.png}
-	\caption{Design 1 S-Parameters - SP8T Open, SPDT Closed}
+	\caption{Design 1 S-Parameters - Isolation (Best case)}
 	\label{fig:design1_2}
 \end{figure} 
 \begin{figure}[H]
 	\centering
-%	\includegraphics[width=0.75\textwidth]{Design1-2.png}
-	\caption{Design 1 S-Parameters - SP8T Closed, SPDT Open}
+	%\includegraphics[width=0.75\textwidth]{Design1-2.png}
+	\caption{Design 1 S-Parameters - Isolation (Worst case)}
 	\label{fig:design1_3}
 \end{figure} 
-\begin{figure}[H]
-	\centering
-%	\includegraphics[width=0.75\textwidth]{Design1-2.png}
-	\caption{Design 1 S-Parameters - SP8T Closed, SPDT Closed}
-	\label{fig:design1_4}
-\end{figure} 
+
 It can be seen looking at the results that the results obtained in Figure \ref{fig:design1_sma}
 %Talk about the following results
 %TODO : S11 input reflection
@@ -1131,44 +1126,65 @@ It can be seen looking at the results that the results obtained in Figure \ref{f
 
 %TODO : S22 output reflection
 
-\subsubsection{Switch Speed}
-
 \subsubsection{Power Requirements}
+
+
+
+
+
+
 
 
 
 \subsection{Design 2}
-Design 2 has been tested with a VNA, there are $3$ different characteristics that are key to the analysis of the SP16T RF switch: losses, speed and power.
-
-\subsubsection{Losses}
+The design for `Design 2' which was completed in Section \ref{sec:design2} was constructed and developed according to the design. This section looks at analysing the SP16T RF switch developed to determine the losses, operation requirements of this design against the specifications detailed in the RF switches data-sheets. \\[0.2cm]
+It was found that this board was not functioning, after wiring the board upto the micro-controller it was found that the changing the logic on the centre PE42441 chip didn't make a significant change to the insertion of the board. Whereas changing the logic on the second PE42441 chip cascaded had a small change on the insertion loss of the device; this change can be seen in Figure \ref{fig:design2_1} and \ref{fig:design2_2}.
 \begin{figure}[H]
 	\centering
-%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{Design 2 S-Parameters}
-	\label{fig:design2_sma}
+	%\includegraphics[width=0.75\textwidth]{Design1-2.png}
+	\caption{Design 2 S-Parameters - Insertion (Best case)}
+	\label{fig:design2_1}
 \end{figure} 
-%TODO : S11 input reflection
+\begin{figure}[H]
+	\centering
+	%\includegraphics[width=0.75\textwidth]{Design1-2.png}
+	\caption{Design 2 S-Parameters - Insertion (Worst case)}
+	\label{fig:design2_2}
+\end{figure} 
+Therefore it can be seen that there is an issue within the first chip, this issue is likely due to an issue from soldering. 
 
-%TODO : S12 input insertion
+Therefore, due to time constraints of the thesis this design was terminated as the design expectations from Section \ref{sec:design2} had poorer insertion losses than the `Design 1' or `Design 3' so under the allocated budget was not worth further investigating.   
 
-%TODO : S21 output insertion
 
-%TODO : S22 output reflection
 
-\subsubsection{Switch Speed}
 
-\subsubsection{Power Requirements}
+
 
 
 \subsection{Design 3}
-Design 3 has been tested with a VNA, there are $3$ different characteristics that are key to the analysis of the SP16T RF switch: losses, speed and power.
-
+The design for `Design 3' which was designed in Section \ref{sec:design3} was constructed and developed according to the design. This section looks at analysing the SP16T RF switch developed to determine the losses, speed and power requirements of the design and comparing them against the specifications detailed in the RF switches data-sheet.\\
+A \model \ VNA is used to analyse the SP16T; this is used to determine the losses of the system, the micro-controller is used to increment the switch speed of the device to determine the frequency where the SP16T is unable to maintain the losses seen in the previous section. Finally the 
+ 
 \subsubsection{Losses}
+Design 3 has been tested with a VNA to obtain $3$ different results for the device which shows an open transmission line seen in Figure \ref{fig:design3_1}. Additional tests were conducted to determine the effects of the SP16T when one or all of the switches are closed to determine the internal reflections of the device; these results can be seen in Figure \ref{fig:design3_2} - \ref{fig:design3_3}. 
+
 \begin{figure}[H]
 	\centering
-%	\includegraphics[width=0.75\textwidth]{rf_sparam.png}
-	\caption{Design 3 S-Parameters}
-	\label{fig:design3_sma}
+	\includegraphics[width=0.75\textwidth]{Design3-1.png}
+	\caption{Design 1 S-Parameters - Insertion Loss}
+	\label{fig:design3_1}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Design3-2.png}
+	\caption{Design 1 S-Parameters - Isolation (Best case)}
+	\label{fig:design3_2}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Design3-3.png}
+	\caption{Design 1 S-Parameters - Isolation (Worst case)}
+	\label{fig:design1_3}
 \end{figure} 
 %TODO : S11 input reflection
 
