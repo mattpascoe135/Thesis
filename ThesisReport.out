@@ -70,28 +70,31 @@
 \BOOKMARK [2][-]{subsection.5.2.5}{Power Requirements \046 Control}{section.5.2}% 70
 \BOOKMARK [0][-]{chapter.6}{Discussion}{}% 71
 \BOOKMARK [1][-]{section.6.1}{Problems}{chapter.6}% 72
-\BOOKMARK [2][-]{subsection.6.1.1}{Resource Availability}{section.6.1}% 73
-\BOOKMARK [1][-]{section.6.2}{Objective Fulfilment}{chapter.6}% 74
-\BOOKMARK [2][-]{subsection.6.2.1}{Comparison to Available Technology}{section.6.2}% 75
-\BOOKMARK [1][-]{section.6.3}{Contributions}{chapter.6}% 76
-\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Work}{}% 77
-\BOOKMARK [1][-]{section.7.1}{Conclusion}{chapter.7}% 78
-\BOOKMARK [1][-]{section.7.2}{Future Work}{chapter.7}% 79
-\BOOKMARK [-1][-]{section.7.2}{Appendices}{}% 80
-\BOOKMARK [0][-]{appendix.A}{PCB Design}{section.7.2}% 81
-\BOOKMARK [1][-]{section.A.1}{Design 1}{appendix.A}% 82
-\BOOKMARK [1][-]{section.A.2}{Design 2}{appendix.A}% 83
-\BOOKMARK [1][-]{section.A.3}{Design 3}{appendix.A}% 84
-\BOOKMARK [1][-]{section.A.4}{Output Design 1}{appendix.A}% 85
-\BOOKMARK [1][-]{section.A.5}{Output Design 2}{appendix.A}% 86
-\BOOKMARK [1][-]{section.A.6}{Output Design 3}{appendix.A}% 87
-\BOOKMARK [0][-]{appendix.B}{Substrate Parameters}{section.7.2}% 88
-\BOOKMARK [0][-]{appendix.C}{Bill of Materials}{section.7.2}% 89
-\BOOKMARK [0][-]{appendix.D}{RF Switch Controls}{section.7.2}% 90
-\BOOKMARK [1][-]{section.D.1}{Design 1}{appendix.D}% 91
-\BOOKMARK [2][-]{subsection.D.1.1}{Design 2}{section.D.1}% 92
-\BOOKMARK [2][-]{subsection.D.1.2}{Design 3}{section.D.1}% 93
-\BOOKMARK [2][-]{subsection.D.1.3}{Output 1}{section.D.1}% 94
-\BOOKMARK [2][-]{subsection.D.1.4}{Output 2}{section.D.1}% 95
-\BOOKMARK [0][-]{appendix.E}{Companion disk}{section.7.2}% 96
-\BOOKMARK [1][-]{section*.53}{Bibliography}{appendix.E}% 97
+\BOOKMARK [2][-]{subsection.6.1.1}{Impedance Mismatch}{section.6.1}% 73
+\BOOKMARK [2][-]{subsection.6.1.2}{Resource Availability}{section.6.1}% 74
+\BOOKMARK [1][-]{section.6.2}{Removing Losses from VNA Results}{chapter.6}% 75
+\BOOKMARK [2][-]{subsection.6.2.1}{MATLAB Code}{section.6.2}% 76
+\BOOKMARK [1][-]{section.6.3}{Objective Fulfilment}{chapter.6}% 77
+\BOOKMARK [2][-]{subsection.6.3.1}{Comparison to Available Technology}{section.6.3}% 78
+\BOOKMARK [1][-]{section.6.4}{Contributions}{chapter.6}% 79
+\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Work}{}% 80
+\BOOKMARK [1][-]{section.7.1}{Conclusion}{chapter.7}% 81
+\BOOKMARK [1][-]{section.7.2}{Future Work}{chapter.7}% 82
+\BOOKMARK [-1][-]{section.7.2}{Appendices}{}% 83
+\BOOKMARK [0][-]{appendix.A}{PCB Design}{section.7.2}% 84
+\BOOKMARK [1][-]{section.A.1}{Design 1}{appendix.A}% 85
+\BOOKMARK [1][-]{section.A.2}{Design 2}{appendix.A}% 86
+\BOOKMARK [1][-]{section.A.3}{Design 3}{appendix.A}% 87
+\BOOKMARK [1][-]{section.A.4}{Output Design 1}{appendix.A}% 88
+\BOOKMARK [1][-]{section.A.5}{Output Design 2}{appendix.A}% 89
+\BOOKMARK [1][-]{section.A.6}{Output Design 3}{appendix.A}% 90
+\BOOKMARK [0][-]{appendix.B}{Substrate Parameters}{section.7.2}% 91
+\BOOKMARK [0][-]{appendix.C}{Bill of Materials}{section.7.2}% 92
+\BOOKMARK [0][-]{appendix.D}{RF Switch Controls}{section.7.2}% 93
+\BOOKMARK [1][-]{section.D.1}{Design 1}{appendix.D}% 94
+\BOOKMARK [2][-]{subsection.D.1.1}{Design 2}{section.D.1}% 95
+\BOOKMARK [2][-]{subsection.D.1.2}{Design 3}{section.D.1}% 96
+\BOOKMARK [2][-]{subsection.D.1.3}{Output 1}{section.D.1}% 97
+\BOOKMARK [2][-]{subsection.D.1.4}{Output 2}{section.D.1}% 98
+\BOOKMARK [0][-]{appendix.E}{Companion disk}{section.7.2}% 99
+\BOOKMARK [1][-]{section*.63}{Bibliography}{appendix.E}% 100

@@ -361,10 +361,10 @@ your thesis, seek advice from your supervisor.
 \chapter{Introduction}
 \section{Background}
 \justify
-There has been a growing demand for the development of wireless systems, to meet the increasing demands of consumers. In order to meet this demand researchers have looked to software defined radio's (SDR); this interest in SDR is due to the ease and simplicity for the development and implementation in various applications. This rise in interest has led to a large spike in development of SDR, which is resulting in a broadened application for SDR. \cite{ref1} \\
-SDR's are being applied in a variety of different scenarios, but this thesis focuses primarily on the development of a switching system to complement the research done using SDR as a tool for medical imaging. The use of SDR in microwave imaging has provided an alternative diagnostic tool that presents significant benefits of current technology, primarily because of its low cost, portability, non-invasiveness and uses non-ionization radiation. This allows the system to be compact and suitable for medical application in the field. \cite{ref2} \cite{ref3} \\
-As the demand for faster wireless systems increases, so does the interest in researching the application of using multiple antenna wireless links for digital communication; using multiple antennas introduces a greater range of possibilities by increasing the speed of the networks traffic \cite{ref4}. To accommodate for the control of multiple radio frequency (RF) front ends the communication system will require a RF switching system; there are two primary categories for RF and microwave switches, electromechanical relay (EMR) and solid-state relay (SSR). \\
-There are advantages and disadvantages in use either, SSR's are available in smaller packages and have a higher switching speed but are restricted to single pole, EMR's have a lower isolation loss but are have slower speed due to their physical construction. SSR don't have a wearable switching mechanism while EMR do, making them impractical in scenarios which require large amounts of switching \cite{ref5}. Therefore, this thesis will primarily focus on utilising SSR's as opposed to EMR's, to meet the high speed requirements while maintaining a low cost and compact design. \\
+There has been a growing demand for the development of wireless systems, to meet the increasing demands of consumers. In order to meet this demand researchers have looked to software defined radio's (SDR); this interest in SDR is due to the ease and simplicity for the development and implementation in various applications. This rise in interest has led to a large spike in development of SDR, which is resulting in a broadened application for SDR. \cite{ref1} \\[0.2cm]
+SDR's are being applied in a variety of different scenarios, but this thesis focuses primarily on the development of a switching system to complement the research done using SDR as a tool for medical imaging. The use of SDR in microwave imaging has provided an alternative diagnostic tool that presents significant benefits of current technology, primarily because of its low cost, portability, non-invasiveness and uses non-ionization radiation. This allows the system to be compact and suitable for medical application in the field. \cite{ref2} \cite{ref3} \\[0.2cm]
+As the demand for faster wireless systems increases, so does the interest in researching the application of using multiple antenna wireless links for digital communication; using multiple antennas introduces a greater range of possibilities by increasing the speed of the networks traffic \cite{ref4}. To accommodate for the control of multiple radio frequency (RF) front ends the communication system will require a RF switching system; there are two primary categories for RF and microwave switches, electromechanical relay (EMR) and solid-state relay (SSR). \\[0.2cm]
+There are advantages and disadvantages in use either, SSR's are available in smaller packages and have a higher switching speed but are restricted to single pole, EMR's have a lower isolation loss but are have slower speed due to their physical construction. SSR don't have a wearable switching mechanism while EMR do, making them impractical in scenarios which require large amounts of switching \cite{ref5}. Therefore, this thesis will primarily focus on utilising SSR's as opposed to EMR's, to meet the high speed requirements while maintaining a low cost and compact design. \\[0.2cm]
 This thesis project looks into the development of an RF switching system to allow an RF front end to be connected to a large number of antennas or sensors, by developing a RF switch matrix that provides a high speed switching on multiple antennas. The results obtained from this will facilitate and support the expansion in the current development of biomedical RF imaging systems as well as future projects.
 
 
@@ -390,7 +390,6 @@ The primary objective are to complete the following tasks: \\[-0.8cm]
 \textbf{Chapter 5} depicts the flow of the project, starting from the thesis's definition and following it through the solution, design, simulation, implementation and results. \newline
 \textbf{Chapter 6} contains performance results of the RF switch matrix, and the RF switch matrix's characteristics. \newline
 \textbf{Chapter 7} discusses the performance of the produced switch matrix and future work.  
-\newline
 
 
 
@@ -422,9 +421,9 @@ This chapter looks into the currently available designs used for high speed RF s
 
 %TODO : Look into mechanical motion technology in rf imaging techniques???
 \subsection{Currently Available Technology}
-There is currently a wide variety of application for RF switching systems, EMR are primarily used but there has been recent interest in SSR applications. EMR switching systems are a predominate choice due to their low losses and have been utilised in many various applications. A journal article in [24] looks at the performance of micro-electromechanical systems (MEMS) and the wide field of application for MEMS in communications, medical and aerospace; this wide field means that there is a large application that can benefit from the development of RF switching systems. As seen in [24] RF switching systems have a wide range of application, it can be seen in [25], which investigate the interference problem of a MIMO beam-switching antenna. In order to control the multiple beam switching antennas requires a high speed switching system, therefore they utilised a SSR allowing them to achieve speeds from 1-100ns; this high speed capability is ideal for the application of the thesis [25].\\
-There is also a large application for RF switching systems in medical imaging, which is the primary focus of this thesis. The journal article in [3] describes a medical imaging system that uses a RF system, it rotates a body around an antenna by a stepper motor to obtain measurements from antenna at different positions; this system utilises a SDR and a single antenna to obtain its measurements as it rotates around the body. It was determined that the current microwave imaging system currently takes 45 minutes to complete its analysis, but by replacing the rotating platform with an array of 20 antennas using a EMR switching network could reduce the time to less than 1 minutes [3]. Since we are expecting SSR to provide a faster switching speed reducing the time taken for the measurements to be completed.\\
-The journal articles [26, 27] that discuss the use of EMR technology to allow a RF front end to control multiple antennas in different applications of biomedical engineering. In [26] a network of EMR is used to allow a VNA to perform radar measurements through 16 antennas in the frequency domain. The switches are controlled by a computer and takes around 3 minutes for the measurements to be taken [26]. An article from [27] looks at using an array of RF antennas switched by an EMR so they can image a head to detect a haemorrhage stroke [27]. The need for RF switching systems can be seen but the use of SSR instead of EMR can potentially reduce the size and noise of the switching while increasing the speed allowing their design to be faster, more compact and quieter which is potentially ideal for medical applications. 
+There is currently a wide variety of application for RF switching systems, EMR are primarily used but there has been recent interest in SSR applications. EMR switching systems are a predominate choice due to their low losses and have been utilised in many various applications. A journal article in \cite{ref24} looks at the performance of micro-electromechanical systems (MEMS) and the wide field of application for MEMS in communications, medical and aerospace; this wide field means that there is a large application that can benefit from the development of RF switching systems. As seen in \cite{ref24} RF switching systems have a wide range of application, it can be seen in [25], which investigate the interference problem of a MIMO beam-switching antenna. In order to control the multiple beam switching antennas requires a high speed switching system, therefore they utilised a SSR allowing them to achieve speeds from 1-100ns; this high speed capability is ideal for the application of the thesis \cite{ref25}.\\[0.2cm]
+There is also a large application for RF switching systems in medical imaging, which is the primary focus of this thesis. The journal article in \cite{ref3} describes a medical imaging system that uses a RF system, it rotates a body around an antenna by a stepper motor to obtain measurements from antenna at different positions; this system utilises a SDR and a single antenna to obtain its measurements as it rotates around the body. It was determined that the current microwave imaging system currently takes 45 minutes to complete its analysis, but by replacing the rotating platform with an array of 20 antennas using a EMR switching network could reduce the time to less than 1 minutes \cite{ref3}. Since we are expecting SSR to provide a faster switching speed reducing the time taken for the measurements to be completed.\\[0.2cm]
+The journal articles \cite{ref26}, \cite{ref27} that discuss the use of EMR technology to allow a RF front end to control multiple antennas in different applications of biomedical engineering. In \cite{ref26} a network of EMR is used to allow a VNA to perform radar measurements through 16 antennas in the frequency domain. The switches are controlled by a computer and takes around 3 minutes for the measurements to be taken \cite{ref26}. An article from \cite{ref27} looks at using an array of RF antennas switched by an EMR so they can image a head to detect a haemorrhage stroke. \cite{ref27} The need for RF switching systems can be seen but the use of SSR instead of EMR can potentially reduce the size and noise of the switching while increasing the speed allowing their design to be faster, more compact and quieter which is potentially ideal for medical applications. 
 
 
 \subsection{Previous designs}
@@ -434,7 +433,7 @@ In order to develop the PCB
 
 
 \section{Software Defined Radio}
-The application of the RF switching system this thesis looks a developing, is to provide an RF front end such as a software defined radio (SDR) or Vector Network Analyser (VNA) with the ability to communicate multiple antennas or sensors. An SDR is a radio that is partially or entirely controlled by software in the physical layer in the Open Systems Interconnection (OSI) model. The OSI model is used to describe the subsystems of a communication system, where the physical layer represents the data. This allows for the software or firmware to be adjusted resulting in the change the carrier frequency, data rate, modulation, coding, etc. without having the reconstruct the hardware of the radio [6]. This project doesn't look into the control of an SDR, instead focuses on interfacing the switching system with the SDR. It is expected that the SDR will have an impedance of $50\ohm$ which is common of most SDR technology or a less common impedance of $75\ohm$ [7].
+The application of the RF switching system this thesis looks a developing, is to provide an RF front end such as a software defined radio (SDR) or Vector Network Analyser (VNA) with the ability to communicate multiple antennas or sensors. An SDR is a radio that is partially or entirely controlled by software in the physical layer in the Open Systems Interconnection (OSI) model. The OSI model is used to describe the subsystems of a communication system, where the physical layer represents the data. This allows for the software or firmware to be adjusted resulting in the change the carrier frequency, data rate, modulation, coding, etc. without having the reconstruct the hardware of the radio \cite{ref6}. This project doesn't look into the control of an SDR, instead focuses on interfacing the switching system with the SDR. It is expected that the SDR will have an impedance of $50\ohm$ which is common of most SDR technology or a less common impedance of $75\ohm$ \cite{ref7}.
 
 \subsection{Analysing SDR Signals}
 
@@ -453,11 +452,11 @@ A transmission line is a medium that transfers electromagnetic energy along its 
 	\caption{Transmission line Thevenin equivalent of antenna and transmitter}
 	\label{fig:tline}
 \end{figure} 
-To prevent this reflection, the impedances at each end must be matched to the transmission lines characteristic impedance. This can be done through L-section matching, stepped transmission lines or filters.  \\[0.1cm]
-L-section is a method used for matching transmission lines; this involves using a capacitor and inductor in a series and parallel combination to match the load. Stepped transmission lines provides impedance matching for lumped elements. Finally, filters can also be used for impedance matching; they are typically used to provide an adjustable match for the circuit over different frequencies. By inserting a filter that is a perfect match for the transmission line at a known frequency [9]. This theory will be considered when evaluating the design for the development boards and if required the PCB so they are perfectly matched to reduce any unnecessary losses in the system.
+To prevent this reflection, the impedances at each end must be matched to the transmission lines characteristic impedance. This can be done through L-section matching, stepped transmission lines or filters.  \\[0.2cm]
+L-section is a method used for matching transmission lines; this involves using a capacitor and inductor in a series and parallel combination to match the load. Stepped transmission lines provides impedance matching for lumped elements. Finally, filters can also be used for impedance matching; they are typically used to provide an adjustable match for the circuit over different frequencies. By inserting a filter that is a perfect match for the transmission line at a known frequency \cite{ref9}. This theory will be considered when evaluating the design for the development boards and if required the PCB so they are perfectly matched to reduce any unnecessary losses in the system.
 
 \subsection{Scattering Parameters}
-Scattering parameters (S-Parameters) are a matrix that describes the behaviour of linear electrical networks; this matrix is used over a broad range of disciplines of electrical engineering but is particularly useful in microwave engineering.
+Scattering parameters (S-Parameters) are a matrix that describes the behaviour of linear electrical networks; this matrix is used over a broad range of disciplines of electrical engineering but is particularly useful in microwave engineering.\\
 Since the RF switching system this thesis is designing will not generating its own signal or provide any RF front end's; even though the system is switching, it will always have a single input and single output. Therefore, this design can be simplified to be a 2-port network, as shown in Figure \ref{fig:sparam}.
 \begin{figure}[H]
 	\centering
@@ -465,7 +464,7 @@ Since the RF switching system this thesis is designing will not generating its o
 	\caption{2-port switching system [10]}
 	\label{fig:sparam}
 \end{figure} 
-2-port networks are most commonly used and can easily be adapted to systems that are more complex, Figure \ref{fig:sparam} shows a simple diagram of a 2-port network and Equation \ref{eq:sparam} shows the matrix and equations given for the network [9].
+2-port networks are most commonly used and can easily be adapted to systems that are more complex, Figure \ref{fig:sparam} shows a simple diagram of a 2-port network and Equation \ref{eq:sparam} shows the matrix and equations given for the network \cite{ref9}.
 \begin{align}
 \left( \begin{array}{c}
 b_1 \\
@@ -484,7 +483,7 @@ These parameters can be directly measured with a network analyser and will be us
 
 
 \subsection{System Losses}
-When working with RF and microwave systems it is important to understand the different types of losses that can occur in the system and how it will affect the performance. There are three significant losses to be consider, these are insertion loss, return loss and isolation.
+When working with RF and microwave systems it is important to understand the different types of losses that can occur in the system and how it will affect the performance. There are three significant losses to be consider, these are insertion loss, return loss and isolation.\\
 Insertion loss is the loss of the signals power in decibels (dB) from the insertion of a device in the input or output of the system. The loss can be determined given the scattering equation of the system, as defined in Equation \ref{eq:ins_loss}.
 \begin{align}
 Insertion \ loss &= -20\cdot \log_{10}\left( |\Gamma | \right) \label{eq:ins_loss}
@@ -494,7 +493,7 @@ The return loss is the loss of the signals power in dB from the signal reflectio
 \Gamma &= \frac{Z_L-Z_S}{Z_L+Z_S} \label{eq:ref} \\
 Return \ loss &= -20\cdot \log_{10}\left( |\Gamma | \right) \label{eq:ret_loss}
 \end{align}
-The isolation is the degree of attenuation from other signals from outside or on other channels in the system. Increasing the isolation of the device reduces the influence of other signals. The isolation of the system can be determined by measuring the signal strength at an output where the input is not routed to [9]. All of these parameters need to be seriously considered, and form the base of the analysis for the design and development of the RF switching system.
+The isolation is the degree of attenuation from other signals from outside or on other channels in the system. Increasing the isolation of the device reduces the influence of other signals. The isolation of the system can be determined by measuring the signal strength at an output where the input is not routed to. \cite{ref9} All of these parameters need to be seriously considered, and form the base of the analysis for the design and development of the RF switching system.
 
 %TODO : Talk about de-embedding systems and embedding systems
 
@@ -511,7 +510,7 @@ There are two typical types of switches that are used in RF and microwave switch
 This project is interested in the development of a single input with multiple outputs so will look into utilising combinations of SPDT and SPnT topologies to meet this requirement. \\
 Solid-state relay's (SSR) are typically constructed in semiconductor packaging, giving them a small size and are switched by applying an external voltage across its control terminals. Since there are no physical switching mechanisms for SSR, there is no component to wear out allowing the SSR to potentially switch an infinite amount of times. \\
 Whereas electromechanical relays (EMR) rely on a mechanical contact to switch the outputs, resulting in an often larger size. Since there is a physical movement required to switch the outputs the EMR, there will be limit on the number of switches before it begins to fail; this is not particularly idea for the RF switching system this thesis is looking at as it will require switches to be replaced after set period depending on its usage. \\
-EMR's have a larger frequency range than most SSR's, they support frequencies from DC to the GHz range whereas SSR's often begin around the KHz up to GHz; both switches are ideal as the switch will be working in high frequencies. The insertion loss is often greater in SSR compared to most EMR's but SSR's provide a greater isolation in comparison against EMR. On average, the SSR's provide a greater switching speed with significantly lower settling time making them ideal for high speed switching [5]. \\
+EMR's have a larger frequency range than most SSR's, they support frequencies from DC to the GHz range whereas SSR's often begin around the KHz up to GHz; both switches are ideal as the switch will be working in high frequencies. The insertion loss is often greater in SSR compared to most EMR's but SSR's provide a greater isolation in comparison against EMR. On average, the SSR's provide a greater switching speed with significantly lower settling time making them ideal for high speed switching \cite{ref5}. \\
 Both switches have advantages and disadvantages; however, this project looks into the development of a switching system to switch at high speeds with minimal losses, size, noise and power. SSR are the most suitable for meeting these requirements and will therefore be the primary focus of this project.
 
 
@@ -519,19 +518,19 @@ Both switches have advantages and disadvantages; however, this project looks int
 
 \section{RF Switches Matrix}
 This thesis topic looks into the development of a RF switching system, this will be done by utilising RF and microwave switches to create an RF switching matrix. An RF switch matrix are used to route RF signals from an input to an output.\\
-There are several different types of switching matrix's, there is multiple input multiple output (MIMO), multiple input single output (MISO), single input multiple output (SIMO) and single input single output (SISO) [12]. For this project we are looking at controlling multiple outputs with a single input, so will be implementing a SIMO RF switching matrix.
+There are several different types of switching matrix's, there is multiple input multiple output (MIMO), multiple input single output (MISO), single input multiple output (SIMO) and single input single output (SISO) \cite{ref12}. For this project we are looking at controlling multiple outputs with a single input, so will be implementing a SIMO RF switching matrix.
 
 
 \subsection{Switch Architecture}
-
+%Blocking / nonblocking system
 
 
 \subsection{Switch Topologies}
-When constructing a RF switch there are two typical topologies, these are multiplexers and general purpose relays; examples can be seen in Figure 3. General purpose relays are commonly a SPDT or SDnT relay's that are used for routing a signal between multiple paths. Multiplexers are devices that route a single input to multiple outputs or vice versa, they are commonly built from multiple SPDT relays but have a greater inherited insertion loss from this configuration [13].
+When constructing a RF switch there are two typical topologies, these are multiplexers and general purpose relays; examples can be seen in Figure 3. General purpose relays are commonly a SPDT or SDnT relay's that are used for routing a signal between multiple paths. Multiplexers are devices that route a single input to multiple outputs or vice versa, they are commonly built from multiple SPDT relays but have a greater inherited insertion loss from this configuration \cite{ref13}.
 \begin{figure}[H]
 	\centering
     \includegraphics[width=0.8\textwidth]{topology.png}
-	\caption{(a) is a Quad SPDT, (b) 8x1 multiplexer. [14, 15]}
+	\caption{(a) is a Quad SPDT, (b) 8x1 multiplexer}
 	\label{fig:topology}
 \end{figure} 
 Looking at Figure \ref{fig:topology} (b) it can be assumed that there will be losses through each path it takes, insertion loses through first switch, first cable/track, second switch, etc. Therefore, it is ideal to develop a topology as close to Figure \ref{fig:topology} (a) to ensure there is little loss through multiple cascaded switches and cable/tracks. This thesis will be looking into designing a 2x16 MIMO multiplexer, similar to the design in Figure \ref{fig:topology} (b) to provide the available ports as well as a consistent loss through the system.
@@ -707,9 +706,7 @@ There are two
 
 %---------------------------------------------------------------------------------
 \chapter{Methodology}
-%the steps needed to be taken
-%characterisation, analysis, pcb design, pcb manufacture, testing/evaluation, redesign or implementation
-For this Thesis the design has been broken into five primary sections:\\[-0.8cm]
+This chapter of the thesis looks at the methodology employed in the design and development of the RF switch matrix. For this Thesis the design stage has been broken into five primary sections:\\[-0.8cm]
 \begin{itemize}
 	\setlength\itemsep{-0.5em}
 	\item Evaluation of RF switches
@@ -718,16 +715,14 @@ For this Thesis the design has been broken into five primary sections:\\[-0.8cm]
 	\item Evaluate the RF switch matrix
 	\item Construction of matrix enclosure
 \end{itemize}
-This chapter will cover the progression of the design and development of the RF switch matrix for the thesis.
-
-
-
+These sections will be further discussed to analyse the progression of the design and development of the RF switch matrix.
 
 \section{Evaluation}
-This section looks at evaluating the currently available RF switches in Section \ref{sec:evalboard_eval} that can be used, and alternative possibilities in developing a custom RF switch matrix.\\
+This section looks at evaluating the currently available RF switch evaluation boards listed in Section \ref{sec:evalboard_eval} that can be used, and alternative possibilities in developing a custom RF switch matrix.
 
 \subsection{Evaluation Boards}		\label{sec:evalboard_eval}
-We currently have $3$ evaluation RF switch boards available; these include:
+We currently have $4$ evaluation RF switch boards available; these include:
+\vspace{-0.5em}
 \begin{table}[H]
 	\centering
 	\begin{tabular}{p{5cm} r}
@@ -737,7 +732,7 @@ We currently have $3$ evaluation RF switch boards available; these include:
 	\end{tabular}
 \end{table} 
 \vspace{-4mm}
-The three available evaluation boards we investigated using a \model \ VNA; each switch was wired so that the input is connected to the output, while all other ports were $50\ohm$ terminated. The switch was powered and the controls set to allow the signal to propagate down the open path, then changed the state to have a closed path; this was conducted for each evaluation board. The results were exported to a \textit{.s2p} file to be analysed using ADS, and the results can be seen in Appendix \ref{sec:eval_res} 's Figure's \ref{fig:res:}, \ref{fig:res:} \& \ref{fig:res:}. \\
+The three available evaluation boards we investigated using a \model \ Vector Network Analyser (VNA); each switch was wired so that the input is connected to the output, while all other ports were $50\ohm$ terminated. The switch was powered and the controls set to allow the signal to propagate down the open path, then changed the state to have a closed path; this was conducted for each evaluation board. The results were exported to a \textit{.s2p} file to be analysed using ADS, and the results can be seen in Appendix \ref{sec:eval_res} 's Figure's \ref{fig:res:}, \ref{fig:res:} \& \ref{fig:res:}. \\
 These simulations \\
 The results of ... 
 %the good board
@@ -842,7 +837,7 @@ It can be seen that the expected insertion loss is relatively low at a maximum o
 
 \subsubsection{Control}
 In order to control this  board there are $3$ control pins for the SP8T switch, and $16$ control pins for the SPDT switches. The logic voltages for this board are detailed in Table \ref{tab:design1_logic_v}.
-\begin{table}
+\begin{table}[H]
 	\centering
 	\begin{tabular}{L{3cm}C{3cm}C{3cm}}
 	\hline
@@ -867,6 +862,8 @@ This design was developed in Altium Designer and can be seen in Figure \ref{fig:
 	\label{fig:design2}
 \end{figure} 
 
+\subsubsection{Specifications}
+Therefore using the SP4T switches cascaded together the performance of the switch can be estimate the parameters of the switch based off of the specifications presented in the PE42441's data-sheet; the estimated performance can be seen in Table \ref{tab:des1_param}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{| L{4cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} |}
@@ -876,20 +873,36 @@ This design was developed in Altium Designer and can be seen in Figure \ref{fig:
 		& $100$MHz & $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
 		\hline
 		Insertion & & & & &\\
-		\noalign{\hrule height 0.01pt}
 		Isolation & & & & & \\
-		\noalign{\hrule height 0.01pt}
 		Input Reflection & & & & & \\
-		\noalign{\hrule height 0.01pt}
-		Output Reflection (Inactive) & & & & & \\
-		\noalign{\hrule height 0.01pt}
+		Output Reflection & & & & & \\
 		Max. Switching Speed & & & & &\\
 		\hline
 	\end{tabular}
-	\caption{Design 2 - Ideal parameters}
-	\label{tab:des2_param}
+	\caption{Design 1 - Ideal parameters}
+	\label{tab:des1_param}
 \end{table}
+It can be seen that the expected insertion loss is relatively low at a maximum of $1$dB loss, the isolation is not too bad with a minimum of $1$dB. 
 %TODO : discuss why this is a good design based on table results
+%TODO : talk about the frequency range of the switch
+%TODO : talk about the maximum input power
+%TODO : 
+
+\subsubsection{Control}
+In order to control this  board there are $3$ control pins for the SP8T switch, and $16$ control pins for the SPDT switches. The logic voltages for this board are detailed in Table \ref{tab:design2_logic_v}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{L{3cm}C{3cm}C{3cm}}
+	\hline
+	RF Switch & On & Off\\
+	\hline
+	SP4T & $0$V$\pm 0.3V$ & $1.35$V - $2.7$V \\
+	\hline	
+	\end{tabular}
+	\caption{Logic Voltage Control}
+	\label{tab:design2_logic_v}
+\end{table}
+Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design1}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
 
 
 \subsection{Design 3}
@@ -897,7 +910,16 @@ This design looks at constructing a SP16T RF switch using an similar design to D
 
 The device is able to be compacted into a smaller board due to the alternate arrangement of pins in comparison to Design 2; this new Altium design can be seen in Figure \ref{fig:design3}.
 
+This design was developed in Altium Designer and can be seen in Figure \ref{fig:design3}.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=0.8\textwidth]{design3_pcb.png}
+	\caption{PCB Design for `Design 3'}
+	\label{fig:design3}
+\end{figure} 
 
+\subsubsection{Specifications}
+Therefore using the SP4T switches cascaded together the performance of the switch can be estimate the parameters of the switch based off of the specifications presented in the PE42442's data-sheet; the estimated performance can be seen in Table \ref{tab:des1_param}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{| L{4cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} |}
@@ -907,20 +929,23 @@ The device is able to be compacted into a smaller board due to the alternate arr
 		& $100$MHz & $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
 		\hline
 		Insertion & & & & &\\
-		\noalign{\hrule height 0.01pt}
 		Isolation & & & & & \\
-		\noalign{\hrule height 0.01pt}
 		Input Reflection & & & & & \\
-		\noalign{\hrule height 0.01pt}
-		Output Reflection (Inactive) & & & & & \\
-		\noalign{\hrule height 0.01pt}
+		Output Reflection & & & & & \\
 		Max. Switching Speed & & & & &\\
 		\hline
 	\end{tabular}
-	\caption{Design 3 - Ideal parameters}
-	\label{tab:des3_param}
+	\caption{Design 1 - Ideal parameters}
+	\label{tab:des1_param}
 \end{table}
+It can be seen that the expected insertion loss is relatively low at a maximum of $1$dB loss, the isolation is not too bad with a minimum of $1$dB. 
 %TODO : discuss why this is a good design based on table results
+%TODO : talk about the frequency range of the switch
+%TODO : talk about the maximum input power
+%TODO : 
+
+\subsubsection{Control}
+In order to control this  board there are $3$ control pins for the SP8T switch, and $16$ control pins for the SPDT switches. The logic voltages for this board are detailed in Table
 
 
 
@@ -1283,8 +1308,8 @@ Looking at Figure \ref{fig:rf_sparam} we can determine the performance of the ov
 
 
 \subsection{Speed}
-We know from Section \ref{sec:micro_dev} that micro-controller is capable of controlling the switches at .... \us , but the SSR's are capable of operating above this speed. Therefore the maximum switching frequency needs to be determined for this RF switch. \\
-Looking at the datasheets it can be seen that the .... is the slowest chip in this system which bottlenecks the maximum performance of the switch. Therefore we can say that theoretical switching speed is limited to .... \us . \\[0.3cm]
+We know from Section \ref{sec:micro_dev} that micro-controller is capable of controlling the switches at 1500\us , but the SSR's are capable of operating above this speed. Therefore the maximum switching frequency needs to be determined for this RF switch. \\
+Using the specifications from the datasheets, it can be said that the maximum switching speed for the switch matrix is 150\us. The 150\us is determined by the slowest chip in this system which bottlenecks the maximum switching speed of the overall performance of the switch matrix. Therefore we can say that theoretical switching speed is limited to .... \us . \\[0.3cm]
 With the fully developed RF switch matrix it can be fully evaluated to determine its performance in regard to speed; as can be seen in Figure \ref{fig:speedtest} the switch matrix is wired so that one input and output are connected to the VNA.
 \begin{figure}[H]
 	\centering
@@ -1292,7 +1317,7 @@ With the fully developed RF switch matrix it can be fully evaluated to determine
 	\caption{Speed test set-up for RF Switch Matrix}
 	\label{fig:speedtest}
 \end{figure} 
-Using the set-up shown in Figure \ref{fig:speedtest} the VNA monitor's the signal strength to determine the speed which causes the insertion loss to drop bellow the level seen in Figure \ref{fig:rf_sparam1}. By doing this it was determined that the maximum switching speed of the micro-controller is ... \us , which is close to the expected limitaion of the ..... RF chip.
+Using the set-up shown in Figure \ref{fig:speedtest} the VNA monitor's the signal strength to determine the speed which causes the insertion loss to drop bellow the level seen in Figure \ref{fig:rf_sparam1}. By doing this it was determined that the maximum switching speed of the micro-controller is ... \us , which is close to the expected limitation of the ..... RF chip.
 
 \subsection{Power Requirements \& Control}
 
@@ -1315,8 +1340,43 @@ It was seen that there was a poor reflection in the results from Design 1, Desig
 %		design alternate transformer
 %		Run simulations in ads
 %		
+\subsection{Impedance Mismatch}	\label{sec:imp-mismatch}
+
+\subsubsection{Simulations}
+
+
+\subsubsection{Resolving Impedance Mismatch}
+
+
+
 
 \subsection{Resource Availability}
+
+
+
+\section{Removing Losses from VNA Results}
+Since the loss due to the mismatch discussed in Section \ref{sec:imp-mismatch} can be simulated in ADS as seen in Figure \ref{} we are able to write MATLAB code given in Section \ref{sec:matlab-res}. This MATLAB code de-embeds the S-Parameters of the RF chips from the mismatch caused by the micro-strip track; this result is plotted to estimate the ideal insertion loss and reflection of the switch matrix without the impedance mismatch. 
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Ideal S-Parameters of Switch Matrix}
+	\label{fig:ideal-switchmatrix}
+\end{figure} 
+Therefore it can be seen comparing the results in Figure \ref{fig:ideal-switchmatrix} against the analysed results in Figure \ref{} has improved as the frequency increases. It should be noted that this is not the actual frequency response of a corrected PCB; using ADS a new simulation can be computed to simulated the new loss due to the transmission lines. By adding the S-Parameters 
+ of a corrected board without 
+ 
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Corrected S-Parameters of Switch Matrix}
+	\label{fig:corrected-switchmatrix}
+\end{figure} 
+
+\subsection{MATLAB Code} \label{sec:matlab-res}
+\begin{lstlisting}
+asdf
+\end{lstlisting}
+
 
 
 \section{Objective Fulfilment}

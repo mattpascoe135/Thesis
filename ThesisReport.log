@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.6)  28 OCT 2016 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.6)  1 NOV 2016 16:36
 entering extended mode
 **./ThesisReport.tex
 (ThesisReport.tex
@@ -455,7 +455,10 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \c@lemma=\count130
  (ThesisReport.aux
 
-LaTeX Warning: Label `tab:des3_param' multiply defined.
+LaTeX Warning: Label `tab:des1_param' multiply defined.
+
+
+LaTeX Warning: Label `tab:des1_param' multiply defined.
 
 
 LaTeX Warning: Label `tab:des3_param' multiply defined.
@@ -523,7 +526,7 @@ LaTeX Info: Redefining \nameref on input line 202.
 \openout3 = `ThesisReport.out'.
 
 
-<UQLogo.png, id=390, 284.5029pt x 112.2594pt>
+<UQLogo.png, id=402, 284.5029pt x 112.2594pt>
 File: UQLogo.png Graphic file (type png)
  <use UQLogo.png>
 Package pdftex.def Info: UQLogo.png used on input line 209.
@@ -569,33 +572,27 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] (ThesisReport.toc [4
 
-] [5])
+] [5] [6])
 \tf@toc=\write4
 \openout4 = `ThesisReport.toc'.
 
- [6] (ThesisReport.lof)
+ [7] (ThesisReport.lof)
 \tf@lof=\write5
 \openout5 = `ThesisReport.lof'.
 
- [7
+ [8
 
 ] (ThesisReport.lot)
 \tf@lot=\write6
 \openout6 = `ThesisReport.lot'.
 
+ [9
 
-[8
+] [10
 
 ]
 Chapter 1.
-
-LaTeX Warning: Citation `ref4' on page 1 undefined on input line 366.
-
-
-LaTeX Warning: Citation `ref5' on page 1 undefined on input line 367.
-
 [1
-
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 374--377
@@ -610,49 +607,45 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 378.
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--394
-
- []
-
 [2] [3]
 Chapter 2.
 [4
 
-] [5] <tline.png, id=627, 377.15906pt x 155.07938pt>
+] [5] <tline.png, id=681, 377.15906pt x 155.07938pt>
 File: tline.png Graphic file (type png)
  <use tline.png>
-Package pdftex.def Info: tline.png used on input line 452.
+Package pdftex.def Info: tline.png used on input line 451.
 (pdftex.def)             Requested size: 341.43436pt x 140.38887pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 449--455
+Underfull \hbox (badness 10000) in paragraph at lines 448--454
 
  []
 
-<sparam.png, id=629, 396.7322pt x 176.15813pt>
+<sparam.png, id=684, 396.7322pt x 176.15813pt>
 File: sparam.png Graphic file (type png)
  <use sparam.png>
-Package pdftex.def Info: sparam.png used on input line 464.
+Package pdftex.def Info: sparam.png used on input line 463.
 (pdftex.def)             Requested size: 341.43436pt x 151.6086pt.
- [6 <./tline.png>] [7 <./sparam.png>] [8] <topology.png, id=652, 279.29344pt x 
+ [6 <./tline.png>] [7 <./sparam.png>] [8] <topology.png, id=713, 279.29344pt x 
 246.9225pt>
 File: topology.png Graphic file (type png)
 
 <use topology.png>
-Package pdftex.def Info: topology.png used on input line 533.
+Package pdftex.def Info: topology.png used on input line 532.
 (pdftex.def)             Requested size: 341.43436pt x 301.87042pt.
  [9] [10 <./topology.png>]
-<microdiag.jpg, id=669, 188.20313pt x 97.86563pt>
+<microdiag.jpg, id=733, 188.20313pt x 97.86563pt>
 File: microdiag.jpg Graphic file (type jpg)
  <use microdiag.jpg>
-Package pdftex.def Info: microdiag.jpg used on input line 595.
+Package pdftex.def Info: microdiag.jpg used on input line 594.
 (pdftex.def)             Requested size: 277.41176pt x 144.2654pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 588--598
+Underfull \hbox (badness 10000) in paragraph at lines 587--597
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 620--621
+Underfull \hbox (badness 10000) in paragraph at lines 619--620
 
  []
 
@@ -663,174 +656,184 @@ Chapter 3.
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 712--714
+Underfull \hbox (badness 10000) in paragraph at lines 709--711
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--728
-
- []
-
-
-LaTeX Warning: Reference `sec:eval_res' on page 15 undefined on input line 740.
+LaTeX Warning: Reference `sec:eval_res' on page 15 undefined on input line 735.
 
 
 
-LaTeX Warning: Reference `fig:res:' on page 15 undefined on input line 740.
+LaTeX Warning: Reference `fig:res:' on page 15 undefined on input line 735.
 
 
-LaTeX Warning: Reference `fig:res:' on page 15 undefined on input line 740.
+LaTeX Warning: Reference `fig:res:' on page 15 undefined on input line 735.
 
 
-LaTeX Warning: Reference `fig:res:' on page 15 undefined on input line 740.
+LaTeX Warning: Reference `fig:res:' on page 15 undefined on input line 735.
 
 [15
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 748--760
+Underfull \hbox (badness 10000) in paragraph at lines 743--755
 
  []
 
-[16] [17] <design1_pcb.png, id=723, 916.1728pt x 666.23906pt>
+[16] [17] <design1_pcb.png, id=786, 916.1728pt x 666.23906pt>
 File: design1_pcb.png Graphic file (type png)
 
 <use design1_pcb.png>
-Package pdftex.def Info: design1_pcb.png used on input line 809.
+Package pdftex.def Info: design1_pcb.png used on input line 804.
 (pdftex.def)             Requested size: 341.43436pt x 248.2938pt.
  [18 <./design1_pcb.png>]
-<design2_pcb.png, id=735, 846.91406pt x 666.99188pt>
+<design2_pcb.png, id=798, 846.91406pt x 666.99188pt>
 File: design2_pcb.png Graphic file (type png)
  <use design2_pcb.png>
-Package pdftex.def Info: design2_pcb.png used on input line 865.
+Package pdftex.def Info: design2_pcb.png used on input line 860.
 (pdftex.def)             Requested size: 341.43436pt x 268.89876pt.
 
 [19] [20 <./design2_pcb.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 896--897
+Underfull \hbox (badness 10000) in paragraph at lines 909--910
 
  []
 
+[21] <design3_pcb.png, id=821, 674.52pt x 496.85625pt>
+File: design3_pcb.png Graphic file (type png)
+ <use design3_pcb.png>
+Package pdftex.def Info: design3_pcb.png used on input line 916.
+(pdftex.def)             Requested size: 341.43436pt x 251.50555pt.
 
-LaTeX Warning: Reference `fig:design3' on page 21 undefined on input line 898.
-
-[21] <output1_pcb.png, id=751, 781.41937pt x 526.96875pt>
+[22 <./design3_pcb.png>] <output1_pcb.png, id=829, 781.41937pt x 526.96875pt>
 File: output1_pcb.png Graphic file (type png)
 
 <use output1_pcb.png>
-Package pdftex.def Info: output1_pcb.png used on input line 934.
+Package pdftex.def Info: output1_pcb.png used on input line 959.
 (pdftex.def)             Requested size: 341.43436pt x 230.25075pt.
- [22 <./output1_pcb.png>] [23] [24]
+ [23 <./output1_pcb.png>] [24] [25]
 Chapter 5.
-<Design1-1.png, id=772, 590.95781pt x 523.9575pt>
+<Design1-1.png, id=850, 590.95781pt x 523.9575pt>
 File: Design1-1.png Graphic file (type png)
  <use Design1-1.png>
-Package pdftex.def Info: Design1-1.png used on input line 1075.
+Package pdftex.def Info: Design1-1.png used on input line 1100.
 (pdftex.def)             Requested size: 320.09349pt x 283.80428pt.
- [25
+ [26
 
 ]
-<Design1-2.png, id=778, 590.95781pt x 523.9575pt>
+<Design1-2.png, id=856, 590.95781pt x 523.9575pt>
 File: Design1-2.png Graphic file (type png)
  <use Design1-2.png>
-Package pdftex.def Info: Design1-2.png used on input line 1083.
+Package pdftex.def Info: Design1-2.png used on input line 1108.
 (pdftex.def)             Requested size: 320.09349pt x 283.80428pt.
- [26 <./Design1-1.png> <./Design1-2.png>]
+ [27 <./Design1-1.png> <./Design1-2.png>]
 
-LaTeX Warning: Reference `fig:design1_sma' on page 27 undefined on input line 1
-099.
+LaTeX Warning: Reference `fig:design1_sma' on page 28 undefined on input line 1
+124.
 
-[27] <SMA-flex.png, id=798, 590.95781pt x 523.9575pt>
+[28] <SMA-flex.png, id=877, 590.95781pt x 523.9575pt>
 File: SMA-flex.png Graphic file (type png)
  <use SMA-flex.png>
-Package pdftex.def Info: SMA-flex.png used on input line 1192.
+Package pdftex.def Info: SMA-flex.png used on input line 1217.
 (pdftex.def)             Requested size: 320.09349pt x 283.80428pt.
 
-<SMA-rig.png, id=799, 590.95781pt x 523.9575pt>
+<SMA-rig.png, id=878, 590.95781pt x 523.9575pt>
 File: SMA-rig.png Graphic file (type png)
  <use SMA-rig.png>
-Package pdftex.def Info: SMA-rig.png used on input line 1198.
+Package pdftex.def Info: SMA-rig.png used on input line 1223.
 (pdftex.def)             Requested size: 320.09349pt x 283.80428pt.
- [28 <./SMA-flex.png>] <UFL-res.png, id=807, 806.26219pt x 392.21532pt>
+ [29 <./SMA-flex.png>] <UFL-res.png, id=886, 806.26219pt x 392.21532pt>
 File: UFL-res.png Graphic file (type png)
  <use UFL-res.png>
-Package pdftex.def Info: UFL-res.png used on input line 1207.
+Package pdftex.def Info: UFL-res.png used on input line 1232.
 (pdftex.def)             Requested size: 426.79134pt x 207.61578pt.
 
-<UFL-short-res.png, id=808, 590.95781pt x 523.9575pt>
+<UFL-short-res.png, id=887, 590.95781pt x 523.9575pt>
 File: UFL-short-res.png Graphic file (type png)
  <use UFL-short-res.png>
-Package pdftex.def Info: UFL-short-res.png used on input line 1213.
+Package pdftex.def Info: UFL-short-res.png used on input line 1238.
 (pdftex.def)             Requested size: 320.09349pt x 283.80428pt.
 
-[29 <./SMA-rig.png> <./UFL-res.png>] [30 <./UFL-short-res.png>]
+[30 <./SMA-rig.png> <./UFL-res.png>] [31 <./UFL-short-res.png>]
 
-LaTeX Warning: Reference `fig:rf_sparam' on page 31 undefined on input line 123
-5.
+LaTeX Warning: Reference `fig:rf_sparam' on page 32 undefined on input line 126
+0.
 
 
-LaTeX Warning: Reference `fig:rf_sparam9' on page 31 undefined on input line 12
-35.
+LaTeX Warning: Reference `fig:rf_sparam9' on page 32 undefined on input line 12
+60.
 
-[31] [32]
+[32] [33]
 Chapter 6.
-[33
 
-]
-Chapter 7.
+LaTeX Warning: Reference `' on page 34 undefined on input line 1358.
+
+
+LaTeX Warning: Reference `' on page 34 undefined on input line 1365.
+
 [34
+
+] [35]
+Chapter 7.
+[36
 
 ]
 Appendix A.
-[35
+[37
 
 ]
 Appendix B.
-[36
+[38
 
 ]
 Appendix C.
 
-Overfull \hbox (7.08342pt too wide) in alignment at lines 1419--1431
+Overfull \hbox (7.08342pt too wide) in alignment at lines 1479--1491
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1431
+Underfull \vbox (badness 10000) detected at line 1491
  []
 
-[37
+[39
 
 ]
 Appendix D.
-[38
+[40
 
-] [39
-
-] [40
-
-]
-Appendix E.
-[41
+] [41
 
 ] [42
 
 ]
+Appendix E.
+[43
 
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1519.
-
-(ThesisReport.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1523.
- [43
+] [44
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1523.
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1579.
+
+(ThesisReport.bbl [45
+
+]
+Underfull \hbox (badness 2073) in paragraph at lines 86--89
+[]$\OT1/lmr/m/n/12 http : / / www . ni . com / white-[]paper / 5776 / en/$[], D
+e-cem-ber 2011, (Ac-cessed on
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1583.
+ [46]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1583.
  (ThesisReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1523.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1523.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1583.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1583.
 
 Package rerunfilecheck Info: File `ThesisReport.out' has not changed.
-(rerunfilecheck)             Checksum: B473646CDF803B0269FECC622FDD7654;6224.
+(rerunfilecheck)             Checksum: 6EDA2DA4E45ED9D4DFEE77D5FC2B8951;6444.
 
 
 LaTeX Warning: There were undefined references.
@@ -838,22 +841,22 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1523.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1583.
  ) 
 Here is how much of TeX's memory you used:
- 9240 strings out of 493634
- 141456 string characters out of 3135240
- 252087 words of memory out of 3000000
- 12257 multiletter control sequences out of 15000+200000
- 53967 words of font info for 44 fonts, out of 3000000 for 9000
+ 9360 strings out of 493634
+ 142779 string characters out of 3135240
+ 252671 words of memory out of 3000000
+ 12343 multiletter control sequences out of 15000+200000
+ 57221 words of font info for 46 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 36i,14n,49p,1019b,428s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,14n,49p,1068b,1028s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
 c}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
-t.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
-athex.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/
-lm-mathsy.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
-/lm/lm-rmtt.enc}<C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+t.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-r
+mtt.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm
+-mathex.enc}{C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/l
+m/lm-mathsy.enc}<C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmbx12.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/lm/lmbx8.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/lm/lmex10.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.9/fo
@@ -861,14 +864,16 @@ nts/type1/public/lm/lmmi12.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Matty/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/lm/lmmib10.pfb><C:/Users/Matty/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Matty/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Matty/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Matty/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Users/Matty/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Matty/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on ThesisReport.pdf (51 pages, 1177118 bytes).
+s/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/Matty/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Matty/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Matty/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Users/Matty/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Matty/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Matty/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
+Output written on ThesisReport.pdf (56 pages, 1549708 bytes).
 PDF statistics:
- 985 PDF objects out of 1000 (max. 8388607)
- 217 named destinations out of 1000 (max. 500000)
- 847 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1095 PDF objects out of 1200 (max. 8388607)
+ 248 named destinations out of 1000 (max. 500000)
+ 876 words of extra memory for PDF output out of 10000 (max. 10000000)
 
