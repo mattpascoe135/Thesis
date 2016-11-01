@@ -775,6 +775,7 @@ Using the ADS three different transmission lines were tested, using the paramete
 Therefore looking at Table \ref{tab:tracks} it can be seen that the most space efficient transmission line is the CPWG design; therefore, the CPWG design allows the PCB to be the most space efficient design for the RF switch design.\\
 In addition to the Grounded CPWG, picket fencing will be added to the tracks to ensure that there is minimal amount of losses or noise entering the system as seen in Section \ref{sec:picket}.
 %TODO : talk about picket fencing
+The picket fence was a single row of via's spaced from the track by ...mm and each other by ...mm, the diameter of the via's were ...mm following the standard method for adding picket fences specified in .... \cite{}
 
 
 
@@ -963,6 +964,9 @@ This design was developed in Altium Designer and can be seen in Figure \ref{fig:
 	\label{fig:output1}
 \end{figure} 
 
+%TALK TO KONSTANTY ABOUT THIS SECTION HERE
+Since it was later found in Section \ref{} that this RF Switch was better suited that `Output 2' it was decided to construct the switch matrix output of 16 PE42423 SPDT switches. Fitting 16 of the PCB boards seen in Figure \ref{fig:output1} would be take up more spacing than required and since FR-4 substrate was used could lead to a large amount of variance in dielectric constant between each board.
+
 \begin{table}[H]
 	\centering
 	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
@@ -1009,21 +1013,27 @@ This design looks at constructing a SP16T RF switch using
 
 
 \section{Development}
-This section looks at the development of the RF switch matrix.
-
-
+This section of the report looks at the construction and development of the PCB boards and 
 
 \subsection{PCB Development}
+After the design of the PCB had been completed the order was processed by a PCB development company. During this project two companies were used: PCBZone and PCBWay. The key difference between these companies was price, quantity and quality; 
 
-%TODO : talk about the pcb design stage, ads calculations and simulations
-One of the key design parameters is for developing a portable device, this requires the switch matrix to be as small as possible. To determine the best solution ADS's LineCalc is used to % 
+\subsubsection{Design 1}
+
+\subsubsection{Design 2}
+
+\subsubsection{Design 3}
+
+\subsubsection{Output 1}
+
+\subsubsection{Output 2}
 
 
 %TODO : talk about the altium design, physical requirements/limitations
 
 
 \subsection{RF Switch Development}
-After the design of the PCB had been completed the order was processed by a PCB development company. During this project two companies were used: PCBZone and PCBWay. The key difference between these companies was price, quantity and quality; 
+
 
 %TODO : Breif discsusion about the soldering and selection of chips and capacitors
 The RF switch chips that were selected are only available in QFN, .... or ... packages; this limited the design capabilities to SMD

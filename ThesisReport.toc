@@ -44,36 +44,41 @@
 \contentsline {section}{\numberline {4.2}Design}{17}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Design 1}{18}{subsection.4.2.1}
 \contentsline {subsubsection}{Specifications}{19}{section*.13}
-\contentsline {subsubsection}{Control}{19}{section*.15}
+\contentsline {subsubsection}{Control}{20}{section*.15}
 \contentsline {subsection}{\numberline {4.2.2}Design 2}{20}{subsection.4.2.2}
 \contentsline {subsubsection}{Specifications}{21}{section*.18}
-\contentsline {subsubsection}{Control}{21}{section*.20}
-\contentsline {subsection}{\numberline {4.2.3}Design 3}{21}{subsection.4.2.3}
-\contentsline {subsubsection}{Specifications}{22}{section*.23}
+\contentsline {subsubsection}{Control}{22}{section*.20}
+\contentsline {subsection}{\numberline {4.2.3}Design 3}{22}{subsection.4.2.3}
+\contentsline {subsubsection}{Specifications}{23}{section*.23}
 \contentsline {subsubsection}{Control}{23}{section*.25}
-\contentsline {subsection}{\numberline {4.2.4}Output 1}{23}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}Output 1}{24}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Output 2}{24}{subsection.4.2.5}
 \contentsline {section}{\numberline {4.3}Development}{25}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}PCB Development}{25}{subsection.4.3.1}
+\contentsline {subsubsection}{Design 1}{25}{section*.29}
+\contentsline {subsubsection}{Design 2}{25}{section*.30}
+\contentsline {subsubsection}{Design 3}{25}{section*.31}
+\contentsline {subsubsection}{Output 1}{25}{section*.32}
+\contentsline {subsubsection}{Output 2}{25}{section*.33}
 \contentsline {subsection}{\numberline {4.3.2}RF Switch Development}{25}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Physical Construction}{25}{section.4.4}
-\contentsline {section}{\numberline {4.5}Micro-controller Development}{25}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Design}{25}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.4}Physical Construction}{26}{section.4.4}
+\contentsline {section}{\numberline {4.5}Micro-controller Development}{26}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Design}{26}{subsection.4.5.1}
 \contentsline {subsection}{\numberline {4.5.2}Evaluation}{26}{subsection.4.5.2}
 \contentsline {chapter}{\numberline {5}Verification}{27}{chapter.5}
 \contentsline {section}{\numberline {5.1}Individual Board's}{27}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Design 1}{27}{subsection.5.1.1}
-\contentsline {subsubsection}{Losses}{27}{section*.30}
-\contentsline {subsubsection}{Power Requirements}{29}{section*.34}
+\contentsline {subsubsection}{Losses}{27}{section*.35}
+\contentsline {subsubsection}{Power Requirements}{29}{section*.39}
 \contentsline {subsection}{\numberline {5.1.2}Design 2}{29}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}Design 3}{29}{subsection.5.1.3}
-\contentsline {subsubsection}{Losses}{30}{section*.37}
-\contentsline {subsubsection}{Switch Speed}{32}{section*.41}
-\contentsline {subsubsection}{Power Requirements}{32}{section*.42}
+\contentsline {subsubsection}{Losses}{30}{section*.42}
+\contentsline {subsubsection}{Switch Speed}{32}{section*.46}
+\contentsline {subsubsection}{Power Requirements}{32}{section*.47}
 \contentsline {subsection}{\numberline {5.1.4}Output 1}{32}{subsection.5.1.4}
-\contentsline {subsubsection}{Losses}{32}{section*.43}
-\contentsline {subsubsection}{Switch Speed}{32}{section*.45}
-\contentsline {subsubsection}{Power Requirements}{32}{section*.46}
+\contentsline {subsubsection}{Losses}{32}{section*.48}
+\contentsline {subsubsection}{Switch Speed}{32}{section*.50}
+\contentsline {subsubsection}{Power Requirements}{32}{section*.51}
 \contentsline {subsection}{\numberline {5.1.5}Output 2}{32}{subsection.5.1.5}
 \contentsline {subsection}{\numberline {5.1.6}Cabling}{32}{subsection.5.1.6}
 \contentsline {section}{\numberline {5.2}RF Switch Matrix}{35}{section.5.2}
@@ -85,8 +90,8 @@
 \contentsline {chapter}{\numberline {6}Discussion}{37}{chapter.6}
 \contentsline {section}{\numberline {6.1}Problems}{37}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Impedance Mismatch}{37}{subsection.6.1.1}
-\contentsline {subsubsection}{Simulations}{37}{section*.55}
-\contentsline {subsubsection}{Resolving Impedance Mismatch}{37}{section*.56}
+\contentsline {subsubsection}{Simulations}{37}{section*.60}
+\contentsline {subsubsection}{Resolving Impedance Mismatch}{37}{section*.61}
 \contentsline {subsection}{\numberline {6.1.2}Resource Availability}{37}{subsection.6.1.2}
 \contentsline {section}{\numberline {6.2}Removing Losses from VNA Results}{37}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}MATLAB Code}{38}{subsection.6.2.1}
@@ -113,4 +118,4 @@
 \contentsline {subsection}{\numberline {D.1.3}Output 1}{45}{subsection.D.1.3}
 \contentsline {subsection}{\numberline {D.1.4}Output 2}{45}{subsection.D.1.4}
 \contentsline {chapter}{\numberline {E}Companion disk}{46}{appendix.E}
-\contentsline {section}{\numberline {}Bibliography}{47}{section*.61}
+\contentsline {section}{\numberline {}Bibliography}{47}{section*.66}
