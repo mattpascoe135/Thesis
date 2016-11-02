@@ -675,29 +675,29 @@ C
 
 
 
-
-%---------------------------------------------------------------------------------
-%Possibly remove this section of the report
-\chapter{RF Switch Evaluation}
-In this chapter the design of discrete RF switches is evaluated in comparaison to commercially available switches. This chapter will look into the design and simulations of SPDT, SP4T and SP8T RF switches within the frequency range of 100MHz-4GHz to gain a better understanding of RF switch functionality and variants.
- 
-\section{RF Switch Design}
-There are two 
-
-
-\subsection{PIN Diode}
-
-
-\subsection{FET}
-
-\section{Topologies}
-
-
-
-\section{Available RF Switches}
-
-%---------------------------------------------------------------------------------
- 
+%
+%%---------------------------------------------------------------------------------
+%%Possibly remove this section of the report
+%\chapter{RF Switch Evaluation}
+%In this chapter the design of discrete RF switches is evaluated in comparaison to commercially available switches. This chapter will look into the design and simulations of SPDT, SP4T and SP8T RF switches within the frequency range of 100MHz-4GHz to gain a better understanding of RF switch functionality and variants.
+% 
+%\section{RF Switch Design}
+%There are two 
+%
+%
+%\subsection{PIN Diode}
+%
+%
+%\subsection{FET}
+%
+%\section{Topologies}
+%
+%
+%
+%\section{Available RF Switches}
+%
+%%---------------------------------------------------------------------------------
+% 
 
 
 
@@ -780,7 +780,7 @@ The picket fence was a single row of via's spaced from the track by ...mm and ea
 
 
 
-\section{Design}
+\section{Design}	\label{sec:design}
 For the design of the RF switch matrix, several key design citerias were identified to be required for the final product of the switch matrix; these specifications are:
 \begin{itemize}
 	\setlength\itemsep{-0.5em}
@@ -792,7 +792,13 @@ For the design of the RF switch matrix, several key design citerias were identif
 \end{itemize}
 %TODO : talk about the general design
 %TODO : mention that the design is blocking, two signals cant add together on the output.
-In order to construct the DP16T switch matrix the the design will be split into two stages, an input and output stage. The input stage will take a two different inputs, the switch will be controlled to route a path from the input to the output; this will require two separate SP16T RF switch. Each output of DP16T matrix needs to be able to switch between the two outputs of each SP16T switch, therefore this design will require 16 SPDT switches. \\[0.2cm]
+In order to construct the DP16T switch matrix the the design will be split into two stages, an input and output stage. The input stage will take a two different inputs, the switch will be controlled to route a path from the input to the output; this will require two separate SP16T RF switch. Each output of DP16T matrix needs to be able to switch between the two outputs of each SP16T switch, therefore this design will require 16 SPDT switches. An example of the way the switch matrix will be wired can be seen in Figure \ref{fig:block-swmtx}.\\[0.2cm]
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=0.7\textwidth]{switchmtx-block.png}
+	\caption{Block Diagram of Switch Matrix}
+	\label{fig:block-swmtx}
+\end{figure} 
 In order to meet these specifications several different designs have been developed, which can be seen in Section \ref{sec:design1} - \ref{sec:output2}. There are three different SP16T switch designs for the input and two SPDT output switch designs for the output; to determine the most suitable design these five designs are designed to determine a suitable low-loss, high isolation switch matrix. \\[0.2cm]
 All the design's for the SP16T switches will feature an SMA input for the input to the switch matrix, and UFL connectors on the output. Since the internals of the design will be restricted from the consumer UFL cabling allows for a much more compact and flexible design. This selection is expected to have a poor insertion loss compared to SMA but is significantly more flexible and thinner allowing for the overall size of the switch matrix to be reduced significantly.\\
 The output switches will feature a similar design; where the input to the SPDT switch is SMA and the two outputs will be UFL. The SPDT switch will need to be $50\ohm$ terminated when inactive to ensure that there isn't any reflections occurring within the switch if the signal is being routed to the same output, since the design in a blocking switch matrix.  
@@ -892,7 +898,7 @@ It can be seen that the expected insertion loss is relatively low at a maximum o
 %TODO : 
 
 \subsubsection{Control}
-In order to control this  board there are $3$ control pins for the SP8T switch, and $16$ control pins for the SPDT switches. The logic voltages for this board are detailed in Table \ref{tab:design2_logic_v}
+In order to control this  board there are $10$ control pins for the SP4T switch; the logic voltages for this board are detailed in Table \ref{tab:design2_logic_v}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{L{3cm}C{3cm}C{3cm}}
@@ -905,13 +911,12 @@ In order to control this  board there are $3$ control pins for the SP8T switch, 
 	\caption{Logic Voltage Control}
 	\label{tab:design2_logic_v}
 \end{table}
-Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design1}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
+Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design2}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
 
 
 \subsection{Design 3}		\label{sec:design3}
-This design looks at constructing a SP16T RF switch using an similar design to Design 2, this utilises the PE42442 chip which is from the same family as the PE42441. Similar to teh PE42441, the PE42442 is a SP4T RF switch that slightly varries in their specifications. The PE42442 provides a lower input power, but provides a slightly better insertion and isolation response than the PE42441.\\[0.2cm]
-
-The device is able to be compacted into a smaller board due to the alternate arrangement of pins in comparison to Design 2; this new Altium design can be seen in Figure \ref{fig:design3}.
+This design looks at constructing a SP16T RF switch using an similar design to Design 2, this utilises the PE42442 chip which is from the same family as the PE42441. Similar to teh PE42441, the PE42442 is a SP4T RF switch that slightly varies in their specifications. The PE42442 provides a lower input power, but provides a slightly better insertion and isolation response than the PE42441.\\[0.2cm]
+The device is able to be compacted into a smaller board due to the alternate arrangement of pins in comparison to Design 2; this new Altium design can be seen in Figure \ref{fig:design3}. The boards are arranged so that they are symmetrical down the centre, each chip is spaced to provide enough space for the logic control lines and $V_{cc}$ to be able to be connected to the chip without running underneath any of the transmission lines. This required the two centre outputs from the first RF chip to be spaced $90^o$ apart from each other
 
 This design was developed in Altium Designer and can be seen in Figure \ref{fig:design3}.
 \begin{figure}[H]
@@ -948,8 +953,20 @@ It can be seen that the expected insertion loss is relatively low at a maximum o
 %TODO : 
 
 \subsubsection{Control}
-In order to control this  board there are $3$ control pins for the SP8T switch, and $16$ control pins for the SPDT switches. The logic voltages for this board are detailed in Table
-
+In order to control this  board there are $15$ control pins for the SP4T switch, but since this design doesn't require an all-on or all-off state we are able to ground the third voltage pin and only use $10$ control pins for switching the SP4T; the logic voltages for this board are detailed in Table \ref{tab:design3_logic_v}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{L{3cm}C{3cm}C{3cm}}
+	\hline
+	RF Switch & On & Off\\
+	\hline
+	SP4T & $0$V$\pm 0.3V$ & $1.35$V - $2.7$V \\
+	\hline	
+	\end{tabular}
+	\caption{Logic Voltage Control}
+	\label{tab:design3_logic_v}
+\end{table}
+Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design3}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
 
 
 \subsection{Output 1}		\label{sec:output1}
@@ -963,10 +980,14 @@ This design was developed in Altium Designer and can be seen in Figure \ref{fig:
 	\caption{PCB Design for `Output 1'}
 	\label{fig:output1}
 \end{figure} 
-
 %TALK TO KONSTANTY ABOUT THIS SECTION HERE
-Since it was later found in Section \ref{} that this RF Switch was better suited that `Output 2' it was decided to construct the switch matrix output of 16 PE42423 SPDT switches. Fitting 16 of the PCB boards seen in Figure \ref{fig:output1} would be take up more spacing than required and since FR-4 substrate was used could lead to a large amount of variance in dielectric constant between each board.
-
+Since it was later found in Section \ref{} that this RF Switch was better suited that `Output 2' it was decided to construct the switch matrix output of 16 PE42423 SPDT switches. Fitting 16 of the PCB boards seen in Figure \ref{fig:output1} would be take up more spacing than required and since FR-4 substrate was used could lead to a large amount of variance in dielectric constant between each board. Therefore a larger board which contains $4$ separate PE42423 RF switch was designed in Altium Designer which can be seen in Figure \ref{fig:output1-large}. This also allows for a more structurally sound board which is able to fit into case easier.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=0.8\textwidth]{output1_pcb.png}
+	\caption{Combined PCB Design for `Output 1'}
+	\label{fig:output1-large}
+\end{figure} 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
@@ -985,8 +1006,27 @@ Since it was later found in Section \ref{} that this RF Switch was better suited
 	\caption{Design 3 Ideal parameters}
 	\label{tab:des3_param}
 \end{table}
+It can be seen that the expected insertion loss is relatively low at a maximum of $1$dB loss, the isolation is not too bad with a minimum of $1$dB. 
 %TODO : discuss why this is a good design based on table results
+%TODO : talk about the frequency range of the switch
+%TODO : talk about the maximum input power
+%TODO : 
 
+\subsubsection{Control}
+In order to control this board there are $2$ control pins for the SP4T switch, but since this design doesn't require an all-on or all-off state we are able to ground the third voltage pin and only use $10$ control pins for switching the SP4T; the logic voltages for this board are detailed in Table \ref{tab:design2_logic_v}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{L{3cm}C{3cm}C{3cm}}
+	\hline
+	RF Switch & On & Off\\
+	\hline
+	SP4T & $0$V$\pm 0.3V$ & $1.35$V - $2.7$V \\
+	\hline	
+	\end{tabular}
+	\caption{Logic Voltage Control}
+	\label{tab:design2_logic_v}
+\end{table}
+Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design3}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
 
 \subsection{Output 2}		\label{sec:output2}
 %TODO : show pcb board
@@ -1018,36 +1058,79 @@ This section of the report looks at the construction and development of the PCB 
 \subsection{PCB Development}
 After the design of the PCB had been completed the order was processed by a PCB development company. During this project two companies were used: PCBZone and PCBWay. The key difference between these companies was price, quantity and quality; 
 
-\subsubsection{Design 1}
-
-\subsubsection{Design 2}
-
-\subsubsection{Design 3}
-
-\subsubsection{Output 1}
-
-\subsubsection{Output 2}
-
-
-%TODO : talk about the altium design, physical requirements/limitations
-
-
-\subsection{RF Switch Development}
-
-
-%TODO : Breif discsusion about the soldering and selection of chips and capacitors
-The RF switch chips that were selected are only available in QFN, .... or ... packages; this limited the design capabilities to SMD
+Once the PCB's and components arrived they were soldered and constructed to be fully tested and analysed in Section \ref{chap:verification}; the constructed boards can be seen from Figure \ref{fig:act:design1} - \ref{fig:act:output2}.
+\begin{figure}[H]
+	\centering
+    %\includegraphics[width=0.8\textwidth]{output1_pcb.png}
+	\caption{PCB Construction of `Design 1'}
+	\label{fig:act:design1}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+    %\includegraphics[width=0.8\textwidth]{output1_pcb.png}
+	\caption{PCB Construction of `Design 2'}
+	\label{fig:act:design2}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+    %\includegraphics[width=0.8\textwidth]{output1_pcb.png}
+	\caption{PCB Construction of `Design 3'}
+	\label{fig:act:design3}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+    %\includegraphics[width=0.8\textwidth]{output1_pcb.png}
+	\caption{PCB Construction of `Output 1'}
+	\label{fig:act:output1}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+    %\includegraphics[width=0.8\textwidth]{output1_pcb.png}
+	\caption{PCB Construction of `Output 1 - Large'}
+	\label{fig:act:output1}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+    %\includegraphics[width=0.8\textwidth]{output1_pcb.png}
+	\caption{PCB Construction of `Output 2'}
+	\label{fig:act:output2}
+\end{figure} 
+These boards will be used to evaluate the functionality of the SSR's as high-speed RF switches as well as for the construction of the RF Switch Matrix.
 
 
 
 
 \section{Physical Construction}
 %TODO : talk about PCB development/soldering/stands/mounts/cabling
+This section of the report looks at the construction of the housing for the RF Switch Matrix, the case should be:
+\vspace{-0.3cm}
+\begin{itemize}
+	\setlength\itemsep{-0.5em}
+	\item Cheap, light-weight and ....
+	\item Material is conductive to provide RF shielding
+	\item Able to be cut and reshaped
+\end{itemize}
+
 
 
 %TODO : talk about the case development/sizing/mounting
-
-
+\subsection{Case Design}
+The case was constructed from a $0.5$\mm thick aluminium sheet to provide a RF shielding case to reduce the amount of RF signals from entering or leaving the switch matrix and causing interference to the RF equipment being attached to the switch matrix.
+\\[0.2cm]
+Using the requirements previously stated a suitable design for the case was developed which would provide a tight fit for the PCB's as well as the micro-controller designed in Section \ref{sec:micro_dev}. The schematics for the case can be seen in Figure \ref{fig:case-schem}.
+\begin{figure}[H]
+	\centering
+    %\includegraphics[width=0.8\textwidth]{output1_pcb.png}
+	\caption{Schematics for Case Design}
+	\label{fig:case-schem}
+\end{figure} 
+Using the drawing from Figure \ref{fig:case-schem} the case was constructed using tin-snips to cut the aluminium sheeting into the two separate ....., since the aluminium was light it was able to folded over a block of wood to obtain the $90^o$ bends. A template was designed to ensure that the $4\times 4$ grid of SMA connectors would be able to fit onto a cardboard template to ensure that the design was suitable and transferred to the final aluminium sheet;  power-tools were used to drill the holes for the switches, SMA connectors and USB Type-B connector. The final construction was tested to ensure that all the board would fit into the case; $1$\cm nylon spacers were used to stand the boards apart from eachother. The final design of the case can be seen in Figure \ref{fig:case}.
+\begin{figure}[H]
+	\centering
+    %\includegraphics[width=0.8\textwidth]{output1_pcb.png}
+	\caption{RF Switch Matrix Case}
+	\label{fig:case}
+\end{figure} 
 
 
 
@@ -1066,19 +1149,32 @@ In order to control and operate the RF Switch system a some type of micro-contro
 The ideal device is a low-powered micro-controller, for this project the PSOC4-BLE has been selected to ensure that it is able to control the 
 
 
-%TODO : Flow chart, block diagram
 \subsection{Design}
-
-
-
-For each development board a logic table was developed, the table for the .... can be seen in Table \ref{tab:logic_design}. This table determines the logic required to ensure that the control is kept to its most simplistic form.
-\begin{table}
+In order to control the PSOC4-BLE code was written to control the RF Switch matrix, a flow-chart was developed to initialise the development of the micro-controller; the flowchart for the micro-controller can be seen in Figure \ref{fig:micro-flowchart}.
+\begin{figure}[H]
 	\centering
-	%insert table from appendicies
-	\caption{Design ... Logic Table}
-	\label{tab:logic_design}
-\end{table}
-Therefore using this we are able to determine:
+	%\includegraphics[width=0.75\textwidth]{Design1-1.png}
+	\caption{Micro-controller Flowchart}
+	\label{fig:micro-flowchart}
+\end{figure} 
+%TODO : Describe the flowchart methods
+
+
+For each development board a logic table was developed, these logic tables can be seen in Appendix \ref{app:logic-control} which were developed for each board; these table determines the logic required to ensure that the number of control pins to a minimum.
+
+
+
+\subsection{Components}
+In order to control all of the RF switches we need utilise all of the GPIO pins on the PSOC micro-controller; to control both SP16T RF switches we require atleast $8$ GPIO pins, and $16$ GPIO pins for each SPDT switch. To make the micro-controller more functional a feature to control the switch matrix with an external controller was included, this requires $8$ GPIO pins to read the data in as well as a clock pin to latch the data through the system as well as a pin to toggle between the micro-controller code and user input data. Two GPIO pins were are required for $T_x$ and $R_x$ for UART communications so that the user is able to control the speed and active pins of the switch matrix.\\[0.2cm] 
+In order to achieve this two $1-8$ multiplexers were used, this allows for $8$ unique paths for a single voltage which is suitable for the SPDT switches. Therefore using two $1-8$ multiplexers the $16$ SPDT can be controlled by $8$ GPIO pins instead of $16$. For powering and communicating with the micro-controller a USB Tpye-B port was used, this was connected to a USB-Serial converter to provide UART communication between a computer and the micro-controller as well as a voltage supply.\\[0.2cm]
+Therefore the block diagram for the controller can be developed which can be seen in Figure \ref{fig:micro-block}.
+\begin{figure}[H]
+	\centering
+	%\includegraphics[width=0.75\textwidth]{Design1-1.png}
+	\caption{Micro-controller Block Diagram}
+	\label{fig:micro-block}
+\end{figure} 
+
 
 \subsection{Evaluation}
 
@@ -1094,7 +1190,7 @@ Therefore using this we are able to determine:
 
 
 %---------------------------------------------------------------------------------
-\chapter{Verification}
+\chapter{Verification}		\label{chap:verification}
 
 \section{Individual Board's}	\label{sec:indv_boards}
 This section looks at the results obtain from each of the individual boards, each board was tested with a \model \ VNA. By evaluating these boards it can be determined which is most suited for the final design of the RF switch matrix; Section \ref{sec:res_des1} - \ref{sec:res_out2} details the analysed results and discuses the benefits and disadvantages of that design. 
@@ -1136,7 +1232,7 @@ It can be seen looking at the results that the results obtained in Figure \ref{f
 
 %TODO : S22 output reflection
 
-\subsubsection{Power Requirements}
+\subsubsection{Comparison}
 
 
 
@@ -1356,10 +1452,34 @@ Using the set-up shown in Figure \ref{fig:speedtest} the VNA monitor's the signa
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 %---------------------------------------------------------------------------------
 \chapter{Discussion}
 \section{Problems}
 It was seen that there was a poor reflection in the results from Design 1, Design 3, Output 1 and the final switch matrix; a cause of this poor result is was identified when analysing the cabling in Section \ref{sec:res_cabling}. 
+
+
+
+
+
+\subsection{Converting `Design 1' to a Non-Reflective Switch}
+
+
+
+
+
 
 %PROBLEM - Impedance mismatches at io terminals and i/o of chips
 %	SOLUTION - Fix trac sizes, add chebyshev transformer at input of chips
@@ -1367,12 +1487,45 @@ It was seen that there was a poor reflection in the results from Design 1, Desig
 %		Run simulations in ads
 %		
 \subsection{Impedance Mismatch}	\label{sec:imp-mismatch}
+It can be seen looking at the results obtained for the RF Switch Matrix in Figure \ref{} that there are significant reflections on $S_{(1,1)}$ and $S_{(2,2)}$. After reviewing the design of the RF switches, PCB design's and equipment used to analyse and measure the RF switches, upon further inspection of the RF tracks it can be seen in Figure \ref{} that there are two different mismatches that occur in the circuit.
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Speed test set-up for RF Switch Matrix}
+	\label{fig:speedtest}
+\end{figure} 
+The first input/output of each PCB has a small change in width, which causes a small impedance change; the effects of this impedance change can be visualised in Figure \ref{fig:imp-mismatch-1}. The second mismatch is at the input/output of the RF chip; in order to connect the transmission line to the RF chip it must change from length to a more suitable size to connect all of the pins. This mismatch can be seen in Figure \ref{fig:imp-mismatch-2}, this width change is unavoidable and need to step down; this can be rectified by adding an impedance transformer to the input/output.
 
 \subsubsection{Simulations}
+To determine the effect of the impedance mismatch ADS was used to simulate the impedance mismatch for both types previously discussed. These simulations can be seen in Figure \ref{fig:imp-mismatch-1} \& \ref{fig:imp-mismatch-2}.
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Impedance Mismatch on SMA/UFL}
+	\label{fig:imp-mismatch-1}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Impedance Mismatch on RF Chip}
+	\label{fig:imp-mismatch-2}
+\end{figure} 
 
 
 \subsubsection{Resolving Impedance Mismatch}
+The effects of the mismatch for the input/output are minimal and can be easily rectified on a second PCB order, whereas the mismatch due to RF chips require additional design requirements. Using the code provided in Appendix \ref{app:matlab-cheby} we are able to construct a Chebychev transformer that can reduce the losses in the RF board; a Chebychev transformer was selected since it provides a wide frequency match as opposed to a Binomial transformer. The MATLAB code provided calculates the changes in impedance for the transmission line. LineCalc was used afterwards to determine the new transmission line design, using this new design a new simulation was run the determine the new losses of the tracks; this can be seen in Figure \ref{fig:imp-mismatch-3}.
+\begin{figure}[H]
+	\centering
+%    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
+	\caption{Impedance Mismatch on RF Chip}
+	\label{fig:imp-mismatch-3}
+\end{figure} 
 
+
+
+\subsection{Removing Mismatch Losses from RF Switch Matrix}
+Using the results obtained in Section \ref{sec:imp-mismatch} simulations were found which described the losses from the mismatch it was investigated as to how the system would perform with the recommendations in-place. Instead of reconstructing the PCB's this section looks at de-embeding the S-parameters obtained in the previous simulations from the measured results from the VNA. This is done using the code in Appendix \ref{} which takes a selected input for the previous losses, new losses and the overall system losses and then performs a series of calculations previously discussed in Section \ref{}. %REFERENCE TO THE BACKGROUND INFORMATION ABOUT EMBEDDING AND DEEMBEDDING
+This script returns two plots, the first is the result without any losses due to tracks which should be approximate to the specifications given in the data-sheets and Section \ref{sec:design}
 
 
 
@@ -1413,7 +1566,7 @@ asdf
 
 
 \section{Contributions}
-
+This thesis has provided a 
 
 
 
@@ -1435,6 +1588,8 @@ asdf
 
 
 %TODO : Intergrate an SDR into the switch matrix, replacing the microcontroller allowing for more precise control over switches
+
+
 %TODO : Resolve impedance mismatch at input/output of switch
 \section{Future Work}
 
@@ -1526,7 +1681,7 @@ Name & Description & Digikey Part no. & Min Order no. & Price & Quantity & Total
 
 
 
-\chapter{RF Switch Controls}		
+\chapter{RF Switch Controls}		\label{app:logic-control}
 \begin{landscape}
 \section{Design 1}	\label{sec:logic_design1}
 \begin{table}[H]
