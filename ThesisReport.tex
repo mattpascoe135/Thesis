@@ -848,7 +848,7 @@ In order to control this  board there are $3$ control pins for the SP8T switch, 
 	\centering
 	\begin{tabular}{L{3cm}C{3cm}C{3cm}}
 	\hline
-	RF Switch & On & Off\\
+	RF Switch & Off & On\\
 	\hline
 	SP8T & $0$V$\pm 0.3V$ & $1.35$V - $2.7$V \\
 	SPDT & $0$V$\pm 0.2V$ & $2.3$V - $5$V\\
@@ -857,7 +857,42 @@ In order to control this  board there are $3$ control pins for the SP8T switch, 
 	\caption{Logic Voltage Control}
 	\label{tab:design1_logic_v}
 \end{table}
-Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design1}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first bits are connected to each SPDT switch and the last three bits are connected to the SP8T switch.
+Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. Using the logic control table specified in Table \ref{tab:logic-cont-design1} a logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design1}. 
+\begin{table}
+	\centering
+	\begin{minipage}{.5\linewidth}
+		\centering
+	\begin{tabular}{l c c c}
+		\hline
+		\multicolumn{4}{c}{SP8T} \\
+		State & $V_1$ & $V_2$ & $V_3$\\
+		\hline
+		RF1 & Off & Off & Off\\
+		RF2 & Off & Off & On\\
+		RF3 & Off & On & Off\\
+		RF4 & Off & On & On\\
+		RF5 & On & Off & Off\\
+		RF6 & On & Off & On\\
+		RF7 & On & On & Off\\
+		RF8 & On & On & On\\
+		\hline
+	\end{tabular}	
+    \end{minipage}%
+    \begin{minipage}{.5\linewidth}
+		\centering
+    \begin{tabular}{l c c}
+    	\hline
+		\multicolumn{3}{c}{SPDT} \\
+		State & $V_1$ & $V_2$\\
+		\hline
+		RF1 & On & Off \\
+		RF2 & Off & On\\
+		\hline
+	\end{tabular}
+    \end{minipage}%
+    \caption{Logic Control Table for `Design 1'} \label{tab:logic-cont-design1}
+\end{table}
+Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first bits are connected to each SPDT switch and the last three bits are connected to the SP8T switch.
 
 \subsection{Design 2}		\label{sec:design2}
 This design looks at constructing an alternative design to SP16T RF switch using a different topology from Section \ref{sec:design1}; it was found that the SP4T PE42441 Evaluation Board tested in Section \ref{sec:evalboard_eval} provided good performance for both insertion and isolation. By cascading the SP4T together with itself would provide $16$ possible transmission lines for the switch. By using the same transmission line design used in Design 1, an alternative construction of the SP16T switch can be designed. By designing this board on a PCB it is able to significantly more space efficient, cost effective with less cabling than what would be required to construct it from the tested evaluation board seen in Section \ref{sec:evalboard_eval}.\\[0.2cm]
@@ -911,13 +946,27 @@ In order to control this  board there are $10$ control pins for the SP4T switch;
 	\caption{Logic Voltage Control}
 	\label{tab:design2_logic_v}
 \end{table}
-Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design2}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
+Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. Using the logic control table specified in Table \ref{} a logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design2}. 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l c c }
+		\hline
+		State & $V_1$ & $V_2$\\
+		\hline
+		RF1 & Off & Off \\
+		RF2 & On & Off \\
+		RF3 & Off & On\\
+		RF4 & On & On		\\
+		\hline
+	\end{tabular}
+    \caption{Logic Control Table for `Design 2'} \label{tab:logic-cont-design2}
+\end{table}
+Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
 
 
 \subsection{Design 3}		\label{sec:design3}
-This design looks at constructing a SP16T RF switch using an similar design to Design 2, this utilises the PE42442 chip which is from the same family as the PE42441. Similar to teh PE42441, the PE42442 is a SP4T RF switch that slightly varies in their specifications. The PE42442 provides a lower input power, but provides a slightly better insertion and isolation response than the PE42441.\\[0.2cm]
-The device is able to be compacted into a smaller board due to the alternate arrangement of pins in comparison to Design 2; this new Altium design can be seen in Figure \ref{fig:design3}. The boards are arranged so that they are symmetrical down the centre, each chip is spaced to provide enough space for the logic control lines and $V_{cc}$ to be able to be connected to the chip without running underneath any of the transmission lines. This required the two centre outputs from the first RF chip to be spaced $90^o$ apart from each other
-
+This design looks at constructing a SP16T RF switch using an similar design to Design 2, this utilises the PE42442 chip which is from the same family as the PE42441. Similar to the PE42441, the PE42442 is a SP4T RF switch that slightly varies in their specifications. The PE42442 provides a lower input power, but provides a slightly better insertion and isolation response in comparison to the PE42441. This allowed for a similar set-up for the board layout where the first SP4T switch leads to a second cascaded SP4T switch.\\[0.2cm]
+The device is able to be compacted into a smaller board due to the alternate arrangement of pins in comparison to Design 2; this new Altium design can be seen in Figure \ref{fig:design3}. The boards are arranged so that they are symmetrical down the centre, each chip is spaced to provide enough space for the logic control lines and $V_{cc}$ to be able to be connected to the chip without running underneath any of the transmission lines. This required the two centre outputs from the first RF chip, IC2 and IC5, to be spaced $90^o$ apart from each other the two edge chips were then spaced $60^o$ away to provide enough room for the data lines to connect to the RF chips.\\[0.2cm]
 This design was developed in Altium Designer and can be seen in Figure \ref{fig:design3}.
 \begin{figure}[H]
 	\centering
@@ -966,7 +1015,22 @@ In order to control this  board there are $15$ control pins for the SP4T switch,
 	\caption{Logic Voltage Control}
 	\label{tab:design3_logic_v}
 \end{table}
-Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design3}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
+Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. Using the logic control table specified in Table \ref{tab:logic-cont-design3} a logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design2}. 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l c c }
+		\hline
+		State & $V_1$ & $V_2$\\
+		\hline
+		RF4 & Off & Off \\
+		RF1 & Off & On \\
+		RF2 & On & Off\\
+		RF3 & On & On	\\	
+		\hline
+	\end{tabular}
+    \caption{Logic Control Table for `Design 3'} \label{tab:logic-cont-design3}
+\end{table}
+Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
 
 
 \subsection{Output 1}		\label{sec:output1}
@@ -1020,36 +1084,96 @@ In order to control this board there are $2$ control pins for the SP4T switch, b
 	\hline
 	RF Switch & On & Off\\
 	\hline
-	SP4T & $0$V$\pm 0.3V$ & $1.35$V - $2.7$V \\
+	SPDT & $0$V$\pm 0.3V$ & $1.35$V - $2.7$V \\
 	\hline	
 	\end{tabular}
 	\caption{Logic Voltage Control}
 	\label{tab:design2_logic_v}
 \end{table}
-Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. A logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design3}. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
-
-\subsection{Output 2}		\label{sec:output2}
-%TODO : show pcb board
-This design looks at constructing a SP16T RF switch using 
+Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. Using the logic control table specified in Table \ref{tab:logic-cont-design3} a logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design2}. 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{| L{4cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} |}
+	\begin{tabular}{l c c }
 		\hline
-		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{4}{c|}{Value}\\
-		\cline{2-5}
-		& $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
+		State & $V_1$ & $V_2$\\
 		\hline
-		Insertion & & & & \\
-		Isolation & & & & \\
-		Input Reflection & & & & \\
-		Output Reflection & & & & \\
-		Max Switching Speed & & & &\\
+		RF4 & Off & Off \\
+		RF1 & Off & On \\
+		RF2 & On & Off\\
+		RF3 & On & On	\\	
 		\hline
 	\end{tabular}
-	\caption{Design 3 Ideal parameters}
-	\label{tab:des3_param}
+    \caption{Logic Control Table for `Design 3'} \label{tab:logic-cont-design3}
 \end{table}
+Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
+
+\subsection{Output 2}		\label{sec:output2}
+This design looks at constructing a SP16T RF switch using an similar design to Design 2, this utilises the PE42442 chip which is from the same family as the PE42441. Similar to the PE42441, the PE42442 is a SP4T RF switch that slightly varies in their specifications. The PE42442 provides a lower input power, but provides a slightly better insertion and isolation response in comparison to the PE42441. This allowed for a similar set-up for the board layout where the first SP4T switch leads to a second cascaded SP4T switch.\\[0.2cm]
+The device is able to be compacted into a smaller board due to the alternate arrangement of pins in comparison to Design 2; this new Altium design can be seen in Figure \ref{fig:design3}. The boards are arranged so that they are symmetrical down the centre, each chip is spaced to provide enough space for the logic control lines and $V_{cc}$ to be able to be connected to the chip without running underneath any of the transmission lines. This required the two centre outputs from the first RF chip, IC2 and IC5, to be spaced $90^o$ apart from each other the two edge chips were then spaced $60^o$ away to provide enough room for the data lines to connect to the RF chips.\\[0.2cm]
+This design was developed in Altium Designer and can be seen in Figure \ref{fig:design3}.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=0.8\textwidth]{design3_pcb.png}
+	\caption{PCB Design for `Design 3'}
+	\label{fig:design3}
+\end{figure} 
+
+\subsubsection{Specifications}
+Therefore using the SP4T switches cascaded together the performance of the switch can be estimate the parameters of the switch based off of the specifications presented in the PE42442's data-sheet; the estimated performance can be seen in Table \ref{tab:des1_param}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| L{4cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} |}
+		\hline
+		\multicolumn{1}{|c|}{\multirow{2}{*}{Parameter}} & \multicolumn{5}{c|}{Value}\\
+		\cline{2-6}
+		& $100$MHz & $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
+		\hline
+		Insertion & & & & &\\
+		Isolation & & & & & \\
+		Input Reflection & & & & & \\
+		Output Reflection & & & & & \\
+		Max. Switching Speed & & & & &\\
+		\hline
+	\end{tabular}
+	\caption{Design 1 - Ideal parameters}
+	\label{tab:des1_param}
+\end{table}
+It can be seen that the expected insertion loss is relatively low at a maximum of $1$dB loss, the isolation is not too bad with a minimum of $1$dB. 
 %TODO : discuss why this is a good design based on table results
+%TODO : talk about the frequency range of the switch
+%TODO : talk about the maximum input power
+%TODO : 
+
+\subsubsection{Control}
+In order to control this  board there are $15$ control pins for the SP4T switch, but since this design doesn't require an all-on or all-off state we are able to ground the third voltage pin and only use $10$ control pins for switching the SP4T; the logic voltages for this board are detailed in Table \ref{tab:design3_logic_v}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{L{3cm}C{3cm}C{3cm}}
+	\hline
+	RF Switch & On & Off\\
+	\hline
+	SP4T & $0$V$\pm 0.3V$ & $1.35$V - $2.7$V \\
+	\hline	
+	\end{tabular}
+	\caption{Logic Voltage Control}
+	\label{tab:design3_logic_v}
+\end{table}
+Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. Using the logic control table specified in Table \ref{tab:logic-cont-design3} a logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design2}. 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l c c }
+		\hline
+		State & $V_1$ & $V_2$\\
+		\hline
+		RF4 & Off & Off \\
+		RF1 & Off & On \\
+		RF2 & On & Off\\
+		RF3 & On & On	\\	
+		\hline
+	\end{tabular}
+    \caption{Logic Control Table for `Design 3'} \label{tab:logic-cont-design3}
+\end{table}
+Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
 
 
 \section{Development}
@@ -1367,17 +1491,17 @@ An issue was found that can be seen in Figure \ref{fig:ufl_sma-bad}, this is a U
 \section{RF Switch Matrix}
 This section looks at the overall characteristics of the final RF switch matrix design. To determine the overall performance of the system, this required evaluating the performance, speed, size and power constraints.
 
-\subsection{Analysis}
-
 \subsection{Final Design}
 From looking at the results obtained in Section \ref{sec:indv_boards} it can be seen that the only option for the output SPDT switch is `Output 1'. Therefore the $16$ output terminals will have the reflection seen in Figure \ref{fig:output1_sp} $S_{22}$ signal, this will be connected to the SP16T via a UFL-UFL connector seen in Figure \ref{fig:ufl_sma}. \\
 Looking at the results obtained, it can be seen that `Design ...' has an insertion loss of ...dB 
 
 %TODO : finish this section, compare the insertion/isolation between the designs.
 
-Therefore the final design will use  `Design ...' and `Output 1'. 
+Therefore the final design will use `Design 3' for the SP16T RF switch at the input and `Output 1' as the SPDT switch on the output
 
-\subsection{Losses}
+\subsection{Analysis}
+
+\subsubsection{Losses}
 In order to determine the characteristics of the designed RF switch matrix, its characteristics of can be modelled using S-Parameters to evaluate the final design. Using the \model \ VNA the switch matrix was analysed to determine the amount of losses that are present in the system. \\
 Looking at Figure \ref{fig:rf_sparam} we can determine the performance of the overall system. There are multiple paths that need to be considered in order to fully evaluate the RF switch, there are 9 different paths that can be taken; these can be seen below in Figure \ref{fig:rf_sparam1} - \ref{fig:rf_sparam9}.
 %TODO : far to many pictures, only do 3: insertion, isolation best case, isolation worst case
@@ -1429,7 +1553,7 @@ Looking at Figure \ref{fig:rf_sparam} we can determine the performance of the ov
 
 
 
-\subsection{Speed}
+\subsubsection{Speed}
 We know from Section \ref{sec:micro_dev} that micro-controller is capable of controlling the switches at 1500\us , but the SSR's are capable of operating above this speed. Therefore the maximum switching frequency needs to be determined for this RF switch. \\
 Using the specifications from the datasheets, it can be said that the maximum switching speed for the switch matrix is 150\us. The 150\us is determined by the slowest chip in this system which bottlenecks the maximum switching speed of the overall performance of the switch matrix. Therefore we can say that theoretical switching speed is limited to .... \us . \\[0.3cm]
 With the fully developed RF switch matrix it can be fully evaluated to determine its performance in regard to speed; as can be seen in Figure \ref{fig:speedtest} the switch matrix is wired so that one input and output are connected to the VNA.
@@ -1441,9 +1565,9 @@ With the fully developed RF switch matrix it can be fully evaluated to determine
 \end{figure} 
 Using the set-up shown in Figure \ref{fig:speedtest} the VNA monitor's the signal strength to determine the speed which causes the insertion loss to drop bellow the level seen in Figure \ref{fig:rf_sparam1}. By doing this it was determined that the maximum switching speed of the micro-controller is ... \us , which is close to the expected limitation of the ..... RF chip.
 
-\subsection{Power Requirements \& Control}
+\subsubsection{Power Requirements \& Control}
 
-
+\subsubsection{Size Requirements}
 
 %---------------------------------------------------------------------------------
 
@@ -1564,11 +1688,17 @@ Therefore it can be seen comparing the results in Figure \ref{fig:ideal-switchma
 
 
 \section{Objective Fulfilment}
-
+This section of the report looks at the 
 
 \subsection{Comparison to Available Technology}
 %TODO : compare results to the switch relay
-
+To evaluate the performance of the RF Switch matrix it was compared against two different types of RF Switch Matrix's. The RF switch matrix's that will be looked at are the:
+\begin{itemize}
+	\setlength\itemsep{-0.5em}
+	\item 1
+	\item 2
+\end{itemize}
+For this thesis teh .... can be tested to obtain a better idea of how the switch will perform if it was set-up in the same configuration to teh DP16T switch developed for this thesis. Yes
 
 \section{Contributions}
 This thesis has provided a 

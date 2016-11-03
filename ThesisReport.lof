@@ -8,45 +8,47 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Block Diagram of Switch Matrix\relax }}{17}{figure.caption.12}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces PCB Design for `Design 1'\relax }}{18}{figure.caption.13}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces PCB Design for `Design 2'\relax }}{20}{figure.caption.18}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces PCB Design for `Design 3'\relax }}{22}{figure.caption.23}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces PCB Design for `Output 1'\relax }}{23}{figure.caption.28}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Combined PCB Design for `Output 1'\relax }}{24}{figure.caption.29}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces PCB Construction of `Design 1'\relax }}{26}{figure.caption.34}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces PCB Construction of `Design 2'\relax }}{26}{figure.caption.35}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces PCB Construction of `Design 3'\relax }}{26}{figure.caption.36}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces PCB Construction of `Output 1'\relax }}{26}{figure.caption.37}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces PCB Construction of `Output 1 - Large'\relax }}{26}{figure.caption.38}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces PCB Construction of `Output 2'\relax }}{26}{figure.caption.39}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Schematics for Case Design\relax }}{27}{figure.caption.40}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces RF Switch Matrix Case\relax }}{27}{figure.caption.41}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Micro-controller Flowchart\relax }}{28}{figure.caption.42}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Micro-controller Block Diagram\relax }}{28}{figure.caption.43}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces PCB Design for `Design 2'\relax }}{20}{figure.caption.19}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces PCB Design for `Design 3'\relax }}{22}{figure.caption.25}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces PCB Design for `Output 1'\relax }}{24}{figure.caption.31}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Combined PCB Design for `Output 1'\relax }}{25}{figure.caption.32}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces PCB Design for `Design 3'\relax }}{27}{figure.caption.37}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces PCB Construction of `Design 1'\relax }}{29}{figure.caption.43}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces PCB Construction of `Design 2'\relax }}{29}{figure.caption.44}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces PCB Construction of `Design 3'\relax }}{29}{figure.caption.45}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces PCB Construction of `Output 1'\relax }}{29}{figure.caption.46}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces PCB Construction of `Output 1 - Large'\relax }}{29}{figure.caption.47}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces PCB Construction of `Output 2'\relax }}{29}{figure.caption.48}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Schematics for Case Design\relax }}{30}{figure.caption.49}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces RF Switch Matrix Case\relax }}{30}{figure.caption.50}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Micro-controller Flowchart\relax }}{30}{figure.caption.51}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Micro-controller Block Diagram\relax }}{31}{figure.caption.52}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Design 1 S-Parameters - Insertion Loss\relax }}{30}{figure.caption.45}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Design 1 S-Parameters - Isolation (Best case)\relax }}{30}{figure.caption.46}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Design 1 S-Parameters - Isolation (Worst case)\relax }}{31}{figure.caption.47}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Design 2 S-Parameters - Insertion (Best case)\relax }}{31}{figure.caption.49}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Design 2 S-Parameters - Insertion (Worst case)\relax }}{31}{figure.caption.50}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Design 1 S-Parameters - Insertion Loss\relax }}{32}{figure.caption.52}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Design 1 S-Parameters - Isolation (Best case)\relax }}{33}{figure.caption.53}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Design 1 S-Parameters - Isolation (Worst case)\relax }}{33}{figure.caption.54}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Output 1 S-Parameters\relax }}{34}{figure.caption.58}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Flexable $0.5$m SMA cable S-Parameters\relax }}{35}{figure.caption.61}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Rigid $0.5$m SMA cable S-Parameters\relax }}{35}{figure.caption.62}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces $0.5$m UFL cable S-Parameters\relax }}{36}{figure.caption.63}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces $0.5$m UFL cable S-Parameters\relax }}{36}{figure.caption.64}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces S-Parameters of RF switch matrix Insertion Loss\relax }}{37}{figure.caption.65}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces S-Parameters of RF switch matrix Isolation (Best case)\relax }}{37}{figure.caption.66}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces S-Parameters of RF switch matrix Isolation (Worst case)\relax }}{38}{figure.caption.67}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Speed test set-up for RF Switch Matrix\relax }}{38}{figure.caption.68}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Design 1 S-Parameters - Insertion Loss\relax }}{33}{figure.caption.54}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Design 1 S-Parameters - Isolation (Best case)\relax }}{33}{figure.caption.55}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Design 1 S-Parameters - Isolation (Worst case)\relax }}{34}{figure.caption.56}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Design 2 S-Parameters - Insertion (Best case)\relax }}{34}{figure.caption.58}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Design 2 S-Parameters - Insertion (Worst case)\relax }}{34}{figure.caption.59}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Design 1 S-Parameters - Insertion Loss\relax }}{35}{figure.caption.61}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Design 1 S-Parameters - Isolation (Best case)\relax }}{36}{figure.caption.62}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Design 1 S-Parameters - Isolation (Worst case)\relax }}{36}{figure.caption.63}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Output 1 S-Parameters\relax }}{37}{figure.caption.67}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Flexable $0.5$m SMA cable S-Parameters\relax }}{38}{figure.caption.70}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Rigid $0.5$m SMA cable S-Parameters\relax }}{38}{figure.caption.71}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces $0.5$m UFL cable S-Parameters\relax }}{39}{figure.caption.72}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces $0.5$m UFL cable S-Parameters\relax }}{39}{figure.caption.73}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces S-Parameters of RF switch matrix Insertion Loss\relax }}{40}{figure.caption.75}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces S-Parameters of RF switch matrix Isolation (Best case)\relax }}{40}{figure.caption.76}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces S-Parameters of RF switch matrix Isolation (Worst case)\relax }}{41}{figure.caption.77}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Speed test set-up for RF Switch Matrix\relax }}{41}{figure.caption.79}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Speed test set-up for RF Switch Matrix\relax }}{39}{figure.caption.69}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Impedance Mismatch on SMA/UFL\relax }}{40}{figure.caption.71}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Impedance Mismatch on RF Chip\relax }}{40}{figure.caption.72}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Impedance Mismatch on RF Chip\relax }}{40}{figure.caption.74}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Ideal S-Parameters of Switch Matrix\relax }}{41}{figure.caption.75}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Corrected S-Parameters of Switch Matrix\relax }}{41}{figure.caption.76}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Speed test set-up for RF Switch Matrix\relax }}{42}{figure.caption.82}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Impedance Mismatch on SMA/UFL\relax }}{43}{figure.caption.84}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Impedance Mismatch on RF Chip\relax }}{43}{figure.caption.85}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Impedance Mismatch on RF Chip\relax }}{43}{figure.caption.87}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Ideal S-Parameters of Switch Matrix\relax }}{44}{figure.caption.88}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Corrected S-Parameters of Switch Matrix\relax }}{44}{figure.caption.89}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Corrected S-Parameters of Switch Matrix\relax }}{44}{figure.caption.90}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
