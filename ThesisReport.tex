@@ -361,8 +361,8 @@ your thesis, seek advice from your supervisor.
 \chapter{Introduction}
 \section{Background}
 \justify
-There has been a growing demand for the development of wireless systems, to meet the increasing demands of consumers. In order to meet this demand researchers have looked to software defined radio's (SDR); this interest in SDR is due to the ease and simplicity for the development and implementation in various applications. This rise in interest has led to a large spike in development of SDR, which is resulting in a broadened application for SDR. \cite{ref1} \\[0.2cm]
-SDR's are being applied in a variety of different scenarios, but this thesis focuses primarily on the development of a switching system to complement the research done using SDR as a tool for medical imaging. The use of SDR in microwave imaging has provided an alternative diagnostic tool that presents significant benefits of current technology, primarily because of its low cost, portability, non-invasiveness and uses non-ionization radiation. This allows the system to be compact and suitable for medical application in the field. \cite{ref2} \cite{ref3} \\[0.2cm]
+There has been a growing demand for the development of wireless systems, to meet the increasing demands of consumers. To meet this demand researchers have looked to software defined radio's (SDR); this interest in SDR is due to the ease and simplicity for the development and implementation in various applications. This rise in interest has led to a large spike in development of SDR, which is resulting in a broadened application for SDR. \cite{ref1} \\[0.2cm]
+This thesis focuses on the development of a switching system to complement the research done using SDR as a tool for medical imaging. The use of SDR in microwave imaging has provided an alternative diagnostic tool that presents significant benefits of current technology, primarily because of its low cost, portability, non-invasiveness and uses non-ionization radiation. This allows the system to be compact and suitable for medical application in the field. \cite{ref2} \cite{ref3} \\[0.2cm]
 As the demand for faster wireless systems increases, so does the interest in researching the application of using multiple antenna wireless links for digital communication; using multiple antennas introduces a greater range of possibilities by increasing the speed of the networks traffic \cite{ref4}. To accommodate for the control of multiple radio frequency (RF) front ends the communication system will require a RF switching system; there are two primary categories for RF and microwave switches, electromechanical relay (EMR) and solid-state relay (SSR). \\[0.2cm]
 There are advantages and disadvantages in use either, SSR's are available in smaller packages and have a higher switching speed but are restricted to single pole, EMR's have a lower isolation loss but are have slower speed due to their physical construction. SSR don't have a wearable switching mechanism while EMR do, making them impractical in scenarios which require large amounts of switching \cite{ref5}. Therefore, this thesis will primarily focus on utilising SSR's as opposed to EMR's, to meet the high speed requirements while maintaining a low cost and compact design. \\[0.2cm]
 This thesis project looks into the development of an RF switching system to allow an RF front end to be connected to a large number of antennas or sensors, by developing a RF switch matrix that provides a high speed switching on multiple antennas. The results obtained from this will facilitate and support the expansion in the current development of biomedical RF imaging systems as well as future projects.
@@ -434,11 +434,6 @@ In order to develop the PCB
 
 \section{Software Defined Radio}
 The application of the RF switching system this thesis looks a developing, is to provide an RF front end such as a software defined radio (SDR) or Vector Network Analyser (VNA) with the ability to communicate multiple antennas or sensors. An SDR is a radio that is partially or entirely controlled by software in the physical layer in the Open Systems Interconnection (OSI) model. The OSI model is used to describe the subsystems of a communication system, where the physical layer represents the data. This allows for the software or firmware to be adjusted resulting in the change the carrier frequency, data rate, modulation, coding, etc. without having the reconstruct the hardware of the radio \cite{ref6}. This project doesn't look into the control of an SDR, instead focuses on interfacing the switching system with the SDR. It is expected that the SDR will have an impedance of $50\ohm$ which is common of most SDR technology or a less common impedance of $75\ohm$ \cite{ref7}.
-
-\subsection{Analysing SDR Signals}
-
-\subsection{Radar Signal Analysis}
-
 
 
 \section{Microwave Theory}
@@ -780,6 +775,10 @@ The picket fence was a single row of via's spaced from the track by ...mm and ea
 
 
 
+
+
+
+
 \section{Design}	\label{sec:design}
 For the design of the RF switch matrix, several key design citerias were identified to be required for the final product of the switch matrix; these specifications are:
 \begin{itemize}
@@ -823,13 +822,9 @@ Therefore using this combination of SP8T and SPDT switches we are able to estima
 		& $100$MHz & $1$GHz & $2$GHz & $3$GHz & $4$Ghz \\
 		\hline
 		Insertion & & & & &\\
-		\noalign{\hrule height 0.01pt}
 		Isolation & & & & & \\
-		\noalign{\hrule height 0.01pt}
-		Input Reflection & & & & & \\
-		\noalign{\hrule height 0.01pt}
-		Output Reflection (Inactive) & & & & & \\
-		\noalign{\hrule height 0.01pt}
+		Return Loss & & & & & \\
+		Output Return Loss & & & & & \\
 		Max. Switching Speed & & & & &\\
 		\hline
 	\end{tabular}
@@ -907,7 +902,7 @@ This design was developed in Altium Designer and can be seen in Figure \ref{fig:
 \end{figure} 
 
 \subsubsection{Specifications}
-Therefore using the SP4T switches cascaded together the performance of the switch can be estimate the parameters of the switch based off of the specifications presented in the PE42441's data-sheet; the estimated performance can be seen in Table \ref{tab:des1_param}.
+Therefore using the SP4T switches cascaded together the performance of the switch can be estimate the parameters of the switch based off of the specifications presented in the PE42441's data-sheet; the estimated performance can be seen in Table \ref{tab:des2_param}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{| L{4cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} |}
@@ -918,13 +913,13 @@ Therefore using the SP4T switches cascaded together the performance of the switc
 		\hline
 		Insertion & & & & &\\
 		Isolation & & & & & \\
-		Input Reflection & & & & & \\
-		Output Reflection & & & & & \\
+		Return Loss & & & & & \\
+		Output Return Loss & & & & & \\
 		Max. Switching Speed & & & & &\\
 		\hline
 	\end{tabular}
-	\caption{Design 1 - Ideal parameters}
-	\label{tab:des1_param}
+	\caption{Design 2 - Ideal parameters}
+	\label{tab:des2_param}
 \end{table}
 It can be seen that the expected insertion loss is relatively low at a maximum of $1$dB loss, the isolation is not too bad with a minimum of $1$dB. 
 %TODO : discuss why this is a good design based on table results
@@ -987,13 +982,13 @@ Therefore using the SP4T switches cascaded together the performance of the switc
 		\hline
 		Insertion & & & & &\\
 		Isolation & & & & & \\
-		Input Reflection & & & & & \\
-		Output Reflection & & & & & \\
+		Return Loss & & & & & \\
+		Output Return Loss & & & & & \\
 		Max. Switching Speed & & & & &\\
 		\hline
 	\end{tabular}
-	\caption{Design 1 - Ideal parameters}
-	\label{tab:des1_param}
+	\caption{Design 3 - Ideal parameters}
+	\label{tab:des3_param}
 \end{table}
 It can be seen that the expected insertion loss is relatively low at a maximum of $1$dB loss, the isolation is not too bad with a minimum of $1$dB. 
 %TODO : discuss why this is a good design based on table results
@@ -1062,8 +1057,8 @@ Since it was later found in Section \ref{} that this RF Switch was better suited
 		\hline
 		Insertion & & & & \\
 		Isolation & & & & \\
-		Input Reflection & & & & \\
-		Output Reflection & & & & \\
+		Return Loss & & & & \\
+		Output Return Loss & & & & \\
 		Max Switching Speed & & & &\\
 		\hline
 	\end{tabular}
@@ -1107,19 +1102,22 @@ Therefore this the device can be controlled using a $4$-bit number representing 
 \end{table}
 Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch. Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
 
+
+
 \subsection{Output 2}		\label{sec:output2}
-This design looks at constructing a SP16T RF switch using an similar design to Design 2, this utilises the PE42442 chip which is from the same family as the PE42441. Similar to the PE42441, the PE42442 is a SP4T RF switch that slightly varies in their specifications. The PE42442 provides a lower input power, but provides a slightly better insertion and isolation response in comparison to the PE42441. This allowed for a similar set-up for the board layout where the first SP4T switch leads to a second cascaded SP4T switch.\\[0.2cm]
-The device is able to be compacted into a smaller board due to the alternate arrangement of pins in comparison to Design 2; this new Altium design can be seen in Figure \ref{fig:design3}. The boards are arranged so that they are symmetrical down the centre, each chip is spaced to provide enough space for the logic control lines and $V_{cc}$ to be able to be connected to the chip without running underneath any of the transmission lines. This required the two centre outputs from the first RF chip, IC2 and IC5, to be spaced $90^o$ apart from each other the two edge chips were then spaced $60^o$ away to provide enough room for the data lines to connect to the RF chips.\\[0.2cm]
-This design was developed in Altium Designer and can be seen in Figure \ref{fig:design3}.
+This design looks at constructing a SPDT RF switch using an similar design to Output 1, this utilises the MACOM MASW-008543
+chip. Similar to the PE42423, the MASW-008543 is a SPDT RF switch that switches between two outputs, as-well as switching between a terminated output similar to Figure \ref{}. The MASW-008543 provides a smaller bandwidth, but provides a slightly better insertion and isolation response in comparison to the PE42423. The design for the board using a similar design `Output 1', the pin layout of the chip allows for the control pins to be placed away from the RF tracks.\\[0.2cm]
+The device is able to be compacted into a small board similar to `Output 1'; this Altium design can be seen in Figure \ref{fig:output2}. The boards are arranged so that they are symmetrical down the centre, the tracks are equal length; and the control lines are spaced to provide adequate distance between the RF transmission lines, without running underneath any of the transmission lines. The output transmission lines are spaced $30^o$ apart from each; the lengths of the tracks are set to an arbitrary length of ....\mm \ to keep the size of the board to a minimum.\\[0.2cm]
+This design was developed in Altium Designer and can be seen in Figure \ref{fig:output2}.
 \begin{figure}[H]
 	\centering
-    \includegraphics[width=0.8\textwidth]{design3_pcb.png}
-	\caption{PCB Design for `Design 3'}
-	\label{fig:design3}
+    \includegraphics[width=0.8\textwidth]{output2_pcb.png}
+	\caption{PCB Design for `Output 2'}
+	\label{fig:output2}
 \end{figure} 
 
 \subsubsection{Specifications}
-Therefore using the SP4T switches cascaded together the performance of the switch can be estimate the parameters of the switch based off of the specifications presented in the PE42442's data-sheet; the estimated performance can be seen in Table \ref{tab:des1_param}.
+Therefore using the SPDT switches cascaded together the performance of the switch can be estimate the parameters of the switch based off of the specifications presented in the PE42442's data-sheet; the estimated performance can be seen in Table \ref{tab:des1_param}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{| L{4cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} |}
@@ -1130,12 +1128,12 @@ Therefore using the SP4T switches cascaded together the performance of the switc
 		\hline
 		Insertion & & & & &\\
 		Isolation & & & & & \\
-		Input Reflection & & & & & \\
+		Return Loss & & & & & \\
 		Output Reflection & & & & & \\
 		Max. Switching Speed & & & & &\\
 		\hline
 	\end{tabular}
-	\caption{Design 1 - Ideal parameters}
+	\caption{Output 2 - Ideal parameters}
 	\label{tab:des1_param}
 \end{table}
 It can be seen that the expected insertion loss is relatively low at a maximum of $1$dB loss, the isolation is not too bad with a minimum of $1$dB. 
@@ -1145,35 +1143,40 @@ It can be seen that the expected insertion loss is relatively low at a maximum o
 %TODO : 
 
 \subsubsection{Control}
-In order to control this  board there are $15$ control pins for the SP4T switch, but since this design doesn't require an all-on or all-off state we are able to ground the third voltage pin and only use $10$ control pins for switching the SP4T; the logic voltages for this board are detailed in Table \ref{tab:design3_logic_v}.
+In order to control this board there are $2$ control pins for the SPDT switch, but since this design doesn't require an all-on or all-off state we are able to ground the third voltage pin and only use $2$ control pins for switching the SPDT; the logic voltages for this board are detailed in Table \ref{tab:output2_logic_v}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{L{3cm}C{3cm}C{3cm}}
 	\hline
 	RF Switch & On & Off\\
 	\hline
-	SP4T & $0$V$\pm 0.3V$ & $1.35$V - $2.7$V \\
+	SPDT & $0$V$\pm 0.3V$ & $1.35$V - $2.7$V \\
 	\hline	
 	\end{tabular}
 	\caption{Logic Voltage Control}
-	\label{tab:design3_logic_v}
+	\label{tab:output2_logic_v}
 \end{table}
-Therefore this the device can be controlled using a $4$-bit number representing the current active switch for the input. Using the logic control table specified in Table \ref{tab:logic-cont-design3} a logic table has been drawn to design a suitable method to control the SP16T switch with minimal amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design2}. 
+Therefore this the device can be controlled using a $1$-bit number representing the current active switch for the input. Using the logic control table specified in Table \ref{tab:logic-cont-output2} a logic table has been drawn to design a suitable method to control the individual SPDT switch to minimise the amount of cabling and components required; the results can be seen in Appendix \ref{sec:logic_design2}. 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{l c c }
 		\hline
 		State & $V_1$ & $V_2$\\
 		\hline
-		RF4 & Off & Off \\
-		RF1 & Off & On \\
-		RF2 & On & Off\\
-		RF3 & On & On	\\	
+		RF1 & On & Off \\
+		RF2 & Off & On \\
 		\hline
 	\end{tabular}
-    \caption{Logic Control Table for `Design 3'} \label{tab:logic-cont-design3}
+    \caption{Logic Control Table for `Output 2'} \label{tab:logic-cont-output2}
 \end{table}
-Therefore this design can be easily controlled using the output logic from the micro-controller where the output signal is $4$-bits, the first two bits are connected to each of the cascaded SP4T switches and the last two bits are connected to the centre SP4T switch.
+If this design is to be used in the large scale development of the 16 port matrix, it would be worth including a FET controller so only a single voltage. This new design can be seen in Figure \ref{fig:output2-control}
+\begin{figure}[H]
+	\centering
+    %\includegraphics[width=0.8\textwidth]{output2_pcb.png}
+	\caption{Logic Control Circuit for `Output 2'}
+	\label{fig:output2-control}
+\end{figure} 
+Therefore this design can be easily controlled using the output logic from a micro-controller with a single bit.
 
 
 \section{Development}
@@ -1565,10 +1568,15 @@ With the fully developed RF switch matrix it can be fully evaluated to determine
 \end{figure} 
 Using the set-up shown in Figure \ref{fig:speedtest} the VNA monitor's the signal strength to determine the speed which causes the insertion loss to drop bellow the level seen in Figure \ref{fig:rf_sparam1}. By doing this it was determined that the maximum switching speed of the micro-controller is ... \us , which is close to the expected limitation of the ..... RF chip.
 
+
 \subsubsection{Power Requirements \& Control}
+In order to power this device the `Design 3' SP16T switch requires a supply voltage of $....V$ for each RF chip, each RF chip requires $....\mu A$; therefore the SP16T requires $....\mW$. The SPDT switch array requires a supply voltage of $....V$ for each RF chip, each RF chip requires $....\mu A$; therefore 16 SPDT RF switches requires $....\mW$.\\[0.2cm]
+%Talk about the control systems for the switch system
+
 
 \subsubsection{Size Requirements}
-
+The size of each the SP16T RF switch is $...\mm \times ....\mm$; since the boards use SSR's the boards are relatively flat, the SMA connector is the largest component on the board so the height is $...\mm$. The cabling will be soldered directly to the header holes to ensure that cabling takes a minimal amount of spacing. Similarly the SPDT output board has the same height, but the length and width are $...\mm \times ...\mm$. \\[0.2cm]
+Using the M3 hole drilled in each of the board a spacer can be placed between each board and mounted to the case. A $1\cm$ nylon spacer was selected due to price and availability, using these spaces the total height of the SP16T RF switch becomes $....\mm$ and the SPDT switch array becomes $....\mm$.
 %---------------------------------------------------------------------------------
 
 
@@ -1599,10 +1607,29 @@ It was seen that there was a poor reflection in the results from Design 1, Desig
 
 
 \subsection{Converting `Design 1' to a Non-Reflective Switch}
-
-
-
-
+Since it was determined that the design was to be non-reflective this caused `Design 1' to be discarded as a choice, this can however be rectified by adding an additional two more RF MASWSS0115 SPDT switches onto each SPDT switch in the current design shown in Section \ref{sec:design1}. By adding these two switches onto the first it can switch between a terminated load and the UFL connector; the ideal configuration of these switches can be seen in Figure \ref{fig:corrected-design1}.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=1\textwidth]{design1-rectify.png}
+	\caption{Terminated Switch for `Design 1'}
+	\label{fig:corrected-design1}
+\end{figure}
+Using this new design a micro-controller can have better control over the output; as it can be seen in Figure \ref{fig:corrected-design1} there are more control signals, logic to control this can be developed in a table seen below in Table \ref{tab:control-correcteddesign1}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l c c c c c c}
+		\hline
+		State & $V_{1_0}$ & $V_{2_0}$ & $V_{1_1}$ & $V_{2_1}$ & $V_{1_2}$ & $V_{2_2}$\\
+		\hline
+		UFL$_1$ & \\
+		UFL$_2$ & \\
+		All Off & \\
+		\hline
+	\end{tabular}
+	\caption{Control Table for Terminated Switch}
+	\label{tab:control-correcteddesign1}
+\end{table}
+Therefore it can be seen that this new design can be controlled 
 
 
 %PROBLEM - Impedance mismatches at io terminals and i/o of chips
@@ -1637,13 +1664,35 @@ To determine the effect of the impedance mismatch ADS was used to simulate the i
 
 
 \subsubsection{Resolving Impedance Mismatch}
-The effects of the mismatch for the input/output are minimal and can be easily rectified on a second PCB order, whereas the mismatch due to RF chips require additional design requirements. Using the code provided in Appendix \ref{app:matlab-cheby} we are able to construct a Chebychev transformer that can reduce the losses in the RF board; a Chebychev transformer was selected since it provides a wide frequency match as opposed to a Binomial transformer. The MATLAB code provided calculates the changes in impedance for the transmission line. LineCalc was used afterwards to determine the new transmission line design, using this new design a new simulation was run the determine the new losses of the tracks; this can be seen in Figure \ref{fig:imp-mismatch-3}.
+The effects of the mismatch for the input/output are minimal and can be easily rectified on a second PCB order, whereas the mismatch due to RF chips require additional design requirements. Using the code provided in Appendix \ref{app:matlab-cheby} we are able to construct a Chebychev transformer that can reduce the losses in the RF board; a Chebychev transformer was selected since it provides a wide frequency match as opposed to a Binomial transformer. \\[0.2cm]
+The MATLAB code provided calculates the changes in impedance for the transmission line. for the Grounded Coplanar Wave-guide the following results can be obtained as seen in Table \ref{tab:cheby-6imp}. In order to keep the size to a minimum, the length will be set to $1\cm$; this length is subtracted from the existing lengths in the system.
+\begin{table}[H]
+\centering
+\begin{tabular}{l c c}
+	\hline
+	Track \# & Impedance & Width (mm) \\
+	\hline
+	0 & $50\Omega$ 		& \\
+	1 & $50.2245\Omega$ & \\
+	2 & $51.5926\Omega$ & \\
+	3 & $55.1783\Omega$ & \\
+	4 & $60.3498\Omega$ & \\
+	5 & $64.5441\Omega$ & \\
+	6 & $66.3023\Omega$ & \\
+	7 & $66.6\Omega$ 	& \\	
+	\hline
+\end{tabular} 
+\caption{Chebyshev Six Stage Impedance Matching}
+\label{tab:cheby-6imp}
+\end{table}
+LineCalc was used afterwards to determine the new transmission line width, using this new design a new simulation was run the determine the new losses of the tracks; this can be seen in Figure \ref{fig:imp-mismatch-3}.
 \begin{figure}[H]
 	\centering
 %    \includegraphics[width=0.75\textwidth]{rf_sparam.png}
 	\caption{Impedance Mismatch on RF Chip}
 	\label{fig:imp-mismatch-3}
 \end{figure} 
+As it can be seen that the new result in Figure \ref{fig:imp-mismatch-3} is significantly better than the current implementation seen in Figure \ref{fig:imp-mismatch-2}. Therefore by changing this the effects on the insertion loss decrease by $...$dB and return loss decreases by $...$dB
 
 
 
@@ -1657,7 +1706,7 @@ This script returns two plots, the first is the result without any losses due to
 
 
 
-\section{Removing Losses from VNA Results}
+\section{De-embedding from VNA Results}
 Since the loss due to the mismatch discussed in Section \ref{sec:imp-mismatch} can be simulated in ADS as seen in Figure \ref{} we are able to write MATLAB code given in Section \ref{sec:matlab-res}. This MATLAB code de-embeds the S-Parameters of the RF chips from the mismatch caused by the micro-strip track; this result is plotted to estimate the ideal insertion loss and reflection of the switch matrix without the impedance mismatch. 
 \begin{figure}[H]
 	\centering
@@ -1740,32 +1789,6 @@ This thesis has provided a
 
 
 \newpage
-\chapter{PCB Design}
-\section{Design 1}	\label{sec:pcb_design1}
-
-\section{Design 2}	\label{sec:pcb_design2}
-
-\section{Design 3}	\label{sec:pcb_design3}
-
-\section{Output Design 1}	\label{sec:pcb_outdesign1}
-
-\section{Output Design 2}	\label{sec:pcb_outdesign2}
-
-\section{Output Design 3}	\label{sec:pcb_outdesign3}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \chapter{Substrate Parameters}		\label{sec:substrate_param}
@@ -1789,6 +1812,12 @@ Substrate & Parameter & Value \\
 \caption{\sl Parameters for simulation of PCB substrate's}
 \label{tab:substrate}
 \end{table}
+
+
+
+
+
+
 
 \chapter{Bill of Materials}
 In order to construct the design of the Switching Matrix we require the following components, a Bill of Materials has been constructed and can be seen in \tab{tab:bom}.
