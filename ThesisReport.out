@@ -15,70 +15,98 @@
 \BOOKMARK [2][-]{subsection.2.3.1}{Transmission Line Theory}{section.2.3}% 15
 \BOOKMARK [2][-]{subsection.2.3.2}{Scattering Parameters}{section.2.3}% 16
 \BOOKMARK [2][-]{subsection.2.3.3}{System Losses}{section.2.3}% 17
-\BOOKMARK [1][-]{section.2.4}{RF Switch}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.5}{RF Switches Matrix}{chapter.2}% 19
-\BOOKMARK [2][-]{subsection.2.5.1}{Switch Architecture}{section.2.5}% 20
-\BOOKMARK [2][-]{subsection.2.5.2}{Switch Topologies}{section.2.5}% 21
-\BOOKMARK [2][-]{subsection.2.5.3}{Cabling}{section.2.5}% 22
-\BOOKMARK [1][-]{section.2.6}{Substrate Selection}{chapter.2}% 23
-\BOOKMARK [1][-]{section.2.7}{RF Transmission Line Design}{chapter.2}% 24
-\BOOKMARK [2][-]{subsection.2.7.1}{Micro-strip}{section.2.7}% 25
-\BOOKMARK [2][-]{subsection.2.7.2}{Strip-line}{section.2.7}% 26
-\BOOKMARK [2][-]{subsection.2.7.3}{Coplanar Wave-guide}{section.2.7}% 27
-\BOOKMARK [1][-]{section.2.8}{Radiation Emission}{chapter.2}% 28
-\BOOKMARK [2][-]{subsection.2.8.1}{Picket Fencing Technique}{section.2.8}% 29
-\BOOKMARK [2][-]{subsection.2.8.2}{Shielding}{section.2.8}% 30
-\BOOKMARK [0][-]{chapter.3}{Methodology}{}% 31
-\BOOKMARK [1][-]{section.3.1}{Evaluation}{chapter.3}% 32
-\BOOKMARK [2][-]{subsection.3.1.1}{Evaluation Boards}{section.3.1}% 33
-\BOOKMARK [2][-]{subsection.3.1.2}{RF Switches}{section.3.1}% 34
-\BOOKMARK [2][-]{subsection.3.1.3}{Transmission Line Design}{section.3.1}% 35
-\BOOKMARK [1][-]{section.3.2}{Design}{chapter.3}% 36
-\BOOKMARK [2][-]{subsection.3.2.1}{Design 1}{section.3.2}% 37
-\BOOKMARK [2][-]{subsection.3.2.2}{Design 2}{section.3.2}% 38
-\BOOKMARK [2][-]{subsection.3.2.3}{Design 3}{section.3.2}% 39
-\BOOKMARK [2][-]{subsection.3.2.4}{Output 1}{section.3.2}% 40
-\BOOKMARK [2][-]{subsection.3.2.5}{Output 2}{section.3.2}% 41
-\BOOKMARK [1][-]{section.3.3}{Development}{chapter.3}% 42
-\BOOKMARK [2][-]{subsection.3.3.1}{PCB Development}{section.3.3}% 43
-\BOOKMARK [1][-]{section.3.4}{Physical Construction}{chapter.3}% 44
-\BOOKMARK [2][-]{subsection.3.4.1}{Case Design}{section.3.4}% 45
-\BOOKMARK [1][-]{section.3.5}{Micro-controller Development}{chapter.3}% 46
-\BOOKMARK [2][-]{subsection.3.5.1}{Design}{section.3.5}% 47
-\BOOKMARK [2][-]{subsection.3.5.2}{Components}{section.3.5}% 48
-\BOOKMARK [2][-]{subsection.3.5.3}{Evaluation}{section.3.5}% 49
-\BOOKMARK [0][-]{chapter.4}{Verification}{}% 50
-\BOOKMARK [1][-]{section.4.1}{Individual Board's}{chapter.4}% 51
-\BOOKMARK [2][-]{subsection.4.1.1}{Design 1}{section.4.1}% 52
-\BOOKMARK [2][-]{subsection.4.1.2}{Design 2}{section.4.1}% 53
-\BOOKMARK [2][-]{subsection.4.1.3}{Design 3}{section.4.1}% 54
-\BOOKMARK [2][-]{subsection.4.1.4}{Output 1}{section.4.1}% 55
-\BOOKMARK [2][-]{subsection.4.1.5}{Output 2}{section.4.1}% 56
-\BOOKMARK [2][-]{subsection.4.1.6}{Cabling}{section.4.1}% 57
-\BOOKMARK [1][-]{section.4.2}{RF Switch Matrix}{chapter.4}% 58
-\BOOKMARK [2][-]{subsection.4.2.1}{Final Design}{section.4.2}% 59
-\BOOKMARK [2][-]{subsection.4.2.2}{Analysis}{section.4.2}% 60
-\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 61
-\BOOKMARK [1][-]{section.5.1}{Problems}{chapter.5}% 62
-\BOOKMARK [2][-]{subsection.5.1.1}{Converting `Design 1' to a Non-Reflective Switch}{section.5.1}% 63
-\BOOKMARK [2][-]{subsection.5.1.2}{Impedance Mismatch}{section.5.1}% 64
-\BOOKMARK [2][-]{subsection.5.1.3}{Removing Mismatch Losses from RF Switch Matrix}{section.5.1}% 65
-\BOOKMARK [2][-]{subsection.5.1.4}{Resource Availability}{section.5.1}% 66
-\BOOKMARK [1][-]{section.5.2}{De-embedding from VNA Results}{chapter.5}% 67
-\BOOKMARK [1][-]{section.5.3}{Objective Fulfilment}{chapter.5}% 68
-\BOOKMARK [2][-]{subsection.5.3.1}{Comparison to Available Technology}{section.5.3}% 69
-\BOOKMARK [1][-]{section.5.4}{Contributions}{chapter.5}% 70
-\BOOKMARK [0][-]{chapter.6}{Conclusions and Future Work}{}% 71
-\BOOKMARK [1][-]{section.6.1}{Conclusion}{chapter.6}% 72
-\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 73
-\BOOKMARK [-1][-]{section.6.2}{Appendices}{}% 74
-\BOOKMARK [0][-]{appendix.A}{Substrate Parameters}{section.6.2}% 75
-\BOOKMARK [0][-]{appendix.B}{Bill of Materials}{section.6.2}% 76
-\BOOKMARK [0][-]{appendix.C}{RF Switch Controls}{section.6.2}% 77
-\BOOKMARK [1][-]{section.C.1}{Design 1}{appendix.C}% 78
-\BOOKMARK [2][-]{subsection.C.1.1}{Design 2}{section.C.1}% 79
-\BOOKMARK [2][-]{subsection.C.1.2}{Design 3}{section.C.1}% 80
-\BOOKMARK [2][-]{subsection.C.1.3}{Output 1}{section.C.1}% 81
-\BOOKMARK [2][-]{subsection.C.1.4}{Output 2}{section.C.1}% 82
-\BOOKMARK [0][-]{appendix.D}{Companion disk}{section.6.2}% 83
-\BOOKMARK [1][-]{section*.97}{Bibliography}{appendix.D}% 84
+\BOOKMARK [2][-]{subsection.2.3.4}{Network Analysis}{section.2.3}% 18
+\BOOKMARK [1][-]{section.2.4}{RF Switch}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.5}{RF Switches Matrix}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.5.1}{Switch Architecture}{section.2.5}% 21
+\BOOKMARK [2][-]{subsection.2.5.2}{Switch Topologies}{section.2.5}% 22
+\BOOKMARK [2][-]{subsection.2.5.3}{Cabling}{section.2.5}% 23
+\BOOKMARK [1][-]{section.2.6}{Substrate Selection}{chapter.2}% 24
+\BOOKMARK [1][-]{section.2.7}{RF Transmission Line Design}{chapter.2}% 25
+\BOOKMARK [2][-]{subsection.2.7.1}{Micro-strip}{section.2.7}% 26
+\BOOKMARK [2][-]{subsection.2.7.2}{Strip-line}{section.2.7}% 27
+\BOOKMARK [2][-]{subsection.2.7.3}{Grounded Coplanar Wave-guide}{section.2.7}% 28
+\BOOKMARK [2][-]{subsection.2.7.4}{Radiation Emission}{section.2.7}% 29
+\BOOKMARK [0][-]{chapter.3}{Evaluation}{}% 30
+\BOOKMARK [1][-]{section.3.1}{Evaluation}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.1.1}{Evaluation Boards}{section.3.1}% 32
+\BOOKMARK [2][-]{subsection.3.1.2}{Evaluation Board Results}{section.3.1}% 33
+\BOOKMARK [2][-]{subsection.3.1.3}{RF Switches}{section.3.1}% 34
+\BOOKMARK [2][-]{subsection.3.1.4}{Transmission Line Design}{section.3.1}% 35
+\BOOKMARK [0][-]{chapter.4}{Design}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Design 1}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.1.1}{Specifications}{section.4.1}% 38
+\BOOKMARK [2][-]{subsection.4.1.2}{Control}{section.4.1}% 39
+\BOOKMARK [1][-]{section.4.2}{Design 2}{chapter.4}% 40
+\BOOKMARK [2][-]{subsection.4.2.1}{Specifications}{section.4.2}% 41
+\BOOKMARK [2][-]{subsection.4.2.2}{Control}{section.4.2}% 42
+\BOOKMARK [1][-]{section.4.3}{Design 3}{chapter.4}% 43
+\BOOKMARK [2][-]{subsection.4.3.1}{Specifications}{section.4.3}% 44
+\BOOKMARK [2][-]{subsection.4.3.2}{Control}{section.4.3}% 45
+\BOOKMARK [1][-]{section.4.4}{Output 1}{chapter.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.1}{Control}{section.4.4}% 47
+\BOOKMARK [1][-]{section.4.5}{Output 2}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.5.1}{Specifications}{section.4.5}% 49
+\BOOKMARK [2][-]{subsection.4.5.2}{Control}{section.4.5}% 50
+\BOOKMARK [1][-]{section.4.6}{Development}{chapter.4}% 51
+\BOOKMARK [2][-]{subsection.4.6.1}{PCB Development}{section.4.6}% 52
+\BOOKMARK [1][-]{section.4.7}{Physical Construction}{chapter.4}% 53
+\BOOKMARK [2][-]{subsection.4.7.1}{Case Design}{section.4.7}% 54
+\BOOKMARK [1][-]{section.4.8}{Micro-controller Development}{chapter.4}% 55
+\BOOKMARK [2][-]{subsection.4.8.1}{Design}{section.4.8}% 56
+\BOOKMARK [2][-]{subsection.4.8.2}{Components}{section.4.8}% 57
+\BOOKMARK [0][-]{chapter.5}{Verification}{}% 58
+\BOOKMARK [1][-]{section.5.1}{Individual Board's}{chapter.5}% 59
+\BOOKMARK [2][-]{subsection.5.1.1}{Design 1}{section.5.1}% 60
+\BOOKMARK [2][-]{subsection.5.1.2}{Design 2}{section.5.1}% 61
+\BOOKMARK [2][-]{subsection.5.1.3}{Design 3}{section.5.1}% 62
+\BOOKMARK [2][-]{subsection.5.1.4}{Output 1}{section.5.1}% 63
+\BOOKMARK [2][-]{subsection.5.1.5}{Output 2}{section.5.1}% 64
+\BOOKMARK [2][-]{subsection.5.1.6}{Cabling}{section.5.1}% 65
+\BOOKMARK [1][-]{section.5.2}{RF Switch Matrix}{chapter.5}% 66
+\BOOKMARK [2][-]{subsection.5.2.1}{Final Design}{section.5.2}% 67
+\BOOKMARK [2][-]{subsection.5.2.2}{Analysis}{section.5.2}% 68
+\BOOKMARK [0][-]{chapter.6}{Discussion}{}% 69
+\BOOKMARK [1][-]{section.6.1}{Problems}{chapter.6}% 70
+\BOOKMARK [2][-]{subsection.6.1.1}{Converting `Design 1' to a Non-Reflective Switch}{section.6.1}% 71
+\BOOKMARK [2][-]{subsection.6.1.2}{Micro-Controller Replacement}{section.6.1}% 72
+\BOOKMARK [2][-]{subsection.6.1.3}{Impedance Mismatch}{section.6.1}% 73
+\BOOKMARK [2][-]{subsection.6.1.4}{Removing Mismatch Losses from RF Switch Matrix}{section.6.1}% 74
+\BOOKMARK [1][-]{section.6.2}{De-embedding from VNA Results}{chapter.6}% 75
+\BOOKMARK [1][-]{section.6.3}{Objective Fulfilment}{chapter.6}% 76
+\BOOKMARK [2][-]{subsection.6.3.1}{Comparison to Available Technology}{section.6.3}% 77
+\BOOKMARK [1][-]{section.6.4}{Contributions}{chapter.6}% 78
+\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Work}{}% 79
+\BOOKMARK [1][-]{section.7.1}{Conclusion}{chapter.7}% 80
+\BOOKMARK [1][-]{section.7.2}{Future Work}{chapter.7}% 81
+\BOOKMARK [-1][-]{section.7.2}{Appendices}{}% 82
+\BOOKMARK [0][-]{appendix.A}{RF Switch Key Data-sheet Characteristics}{section.7.2}% 83
+\BOOKMARK [1][-]{section.A.1}{SKY-13418}{appendix.A}% 84
+\BOOKMARK [2][-]{subsection.A.1.1}{Losses}{section.A.1}% 85
+\BOOKMARK [2][-]{subsection.A.1.2}{Chip Pinout}{section.A.1}% 86
+\BOOKMARK [1][-]{section.A.2}{MACOM MASWSS0115}{appendix.A}% 87
+\BOOKMARK [2][-]{subsection.A.2.1}{Losses}{section.A.2}% 88
+\BOOKMARK [2][-]{subsection.A.2.2}{Chip Pinout}{section.A.2}% 89
+\BOOKMARK [1][-]{section.A.3}{PE42441}{appendix.A}% 90
+\BOOKMARK [2][-]{subsection.A.3.1}{Losses}{section.A.3}% 91
+\BOOKMARK [2][-]{subsection.A.3.2}{Chip Pinout}{section.A.3}% 92
+\BOOKMARK [1][-]{section.A.4}{PE42442}{appendix.A}% 93
+\BOOKMARK [2][-]{subsection.A.4.1}{Losses}{section.A.4}% 94
+\BOOKMARK [2][-]{subsection.A.4.2}{Chip Pinout}{section.A.4}% 95
+\BOOKMARK [1][-]{section.A.5}{PE42423}{appendix.A}% 96
+\BOOKMARK [2][-]{subsection.A.5.1}{Losses}{section.A.5}% 97
+\BOOKMARK [2][-]{subsection.A.5.2}{Chip Pinout}{section.A.5}% 98
+\BOOKMARK [1][-]{section.A.6}{MACOM MASW-008543}{appendix.A}% 99
+\BOOKMARK [2][-]{subsection.A.6.1}{Losses}{section.A.6}% 100
+\BOOKMARK [2][-]{subsection.A.6.2}{Chip Pinout}{section.A.6}% 101
+\BOOKMARK [0][-]{appendix.B}{Substrate Parameters}{section.7.2}% 102
+\BOOKMARK [0][-]{appendix.C}{Bill of Materials}{section.7.2}% 103
+\BOOKMARK [0][-]{appendix.D}{RF Switch Controls}{section.7.2}% 104
+\BOOKMARK [1][-]{section.D.1}{Design 1}{appendix.D}% 105
+\BOOKMARK [2][-]{subsection.D.1.1}{Design 2}{section.D.1}% 106
+\BOOKMARK [2][-]{subsection.D.1.2}{Design 3}{section.D.1}% 107
+\BOOKMARK [2][-]{subsection.D.1.3}{Output 1}{section.D.1}% 108
+\BOOKMARK [2][-]{subsection.D.1.4}{Output 2}{section.D.1}% 109
+\BOOKMARK [0][-]{appendix.E}{MATLAB Code}{section.7.2}% 110
+\BOOKMARK [0][-]{appendix.F}{Companion disk}{section.7.2}% 111
+\BOOKMARK [1][-]{section*.113}{Bibliography}{appendix.F}% 112

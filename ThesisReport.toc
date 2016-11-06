@@ -1,107 +1,137 @@
 \contentsline {chapter}{Abstract}{iii}{chapter*.1}
-\contentsline {chapter}{List of Figures}{viii}{chapter*.3}
-\contentsline {chapter}{List of Tables}{ix}{chapter*.4}
+\contentsline {chapter}{List of Figures}{ix}{chapter*.3}
+\contentsline {chapter}{List of Tables}{x}{chapter*.4}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Aims/Objectives}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Thesis Structure}{2}{section.1.3}
 \contentsline {section}{\numberline {1.4}Expected Contribution}{2}{section.1.4}
-\contentsline {chapter}{\numberline {2}Literature review}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}Prior Art}{4}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Currently Available Technology}{4}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Previous designs}{5}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Software Defined Radio}{5}{section.2.2}
-\contentsline {section}{\numberline {2.3}Microwave Theory}{5}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Transmission Line Theory}{6}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Scattering Parameters}{6}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}System Losses}{7}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}RF Switch}{8}{section.2.4}
+\contentsline {chapter}{\numberline {2}Literature review}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Prior Art}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Currently Available Technology}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Previous designs}{4}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Software Defined Radio}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Microwave Theory}{4}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Transmission Line Theory}{5}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Scattering Parameters}{5}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}System Losses}{6}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Network Analysis}{7}{subsection.2.3.4}
+\contentsline {subsubsection}{Embedding Networks}{7}{section*.7}
+\contentsline {subsubsection}{De-Embedding Networks}{8}{section*.8}
+\contentsline {section}{\numberline {2.4}RF Switch}{9}{section.2.4}
 \contentsline {section}{\numberline {2.5}RF Switches Matrix}{9}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Switch Architecture}{9}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Switch Topologies}{9}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Cabling}{10}{subsection.2.5.3}
-\contentsline {section}{\numberline {2.6}Substrate Selection}{11}{section.2.6}
-\contentsline {section}{\numberline {2.7}RF Transmission Line Design}{11}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Micro-strip}{11}{subsection.2.7.1}
-\contentsline {subsection}{\numberline {2.7.2}Strip-line}{12}{subsection.2.7.2}
-\contentsline {subsection}{\numberline {2.7.3}Coplanar Wave-guide}{13}{subsection.2.7.3}
-\contentsline {section}{\numberline {2.8}Radiation Emission}{13}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}Picket Fencing Technique}{13}{subsection.2.8.1}
-\contentsline {subsection}{\numberline {2.8.2}Shielding}{13}{subsection.2.8.2}
-\contentsline {chapter}{\numberline {3}Methodology}{14}{chapter.3}
-\contentsline {section}{\numberline {3.1}Evaluation}{14}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Evaluation Boards}{14}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}RF Switches}{15}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Transmission Line Design}{15}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Design}{16}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Design 1}{17}{subsection.3.2.1}
-\contentsline {subsubsection}{Specifications}{18}{section*.14}
-\contentsline {subsubsection}{Control}{19}{section*.16}
-\contentsline {subsection}{\numberline {3.2.2}Design 2}{19}{subsection.3.2.2}
-\contentsline {subsubsection}{Specifications}{20}{section*.20}
-\contentsline {subsubsection}{Control}{21}{section*.22}
-\contentsline {subsection}{\numberline {3.2.3}Design 3}{22}{subsection.3.2.3}
-\contentsline {subsubsection}{Specifications}{22}{section*.26}
-\contentsline {subsubsection}{Control}{23}{section*.28}
-\contentsline {subsection}{\numberline {3.2.4}Output 1}{24}{subsection.3.2.4}
-\contentsline {subsubsection}{Control}{25}{section*.34}
-\contentsline {subsection}{\numberline {3.2.5}Output 2}{26}{subsection.3.2.5}
-\contentsline {subsubsection}{Specifications}{27}{section*.38}
-\contentsline {subsubsection}{Control}{27}{section*.40}
-\contentsline {section}{\numberline {3.3}Development}{28}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}PCB Development}{28}{subsection.3.3.1}
-\contentsline {section}{\numberline {3.4}Physical Construction}{29}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Case Design}{29}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Micro-controller Development}{30}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Design}{30}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Components}{31}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Evaluation}{31}{subsection.3.5.3}
-\contentsline {chapter}{\numberline {4}Verification}{32}{chapter.4}
-\contentsline {section}{\numberline {4.1}Individual Board's}{32}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Design 1}{32}{subsection.4.1.1}
-\contentsline {subsubsection}{Losses}{32}{section*.54}
-\contentsline {subsubsection}{Comparison}{34}{section*.58}
-\contentsline {subsection}{\numberline {4.1.2}Design 2}{34}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Design 3}{34}{subsection.4.1.3}
-\contentsline {subsubsection}{Losses}{35}{section*.61}
-\contentsline {subsubsection}{Switch Speed}{37}{section*.65}
-\contentsline {subsubsection}{Power Requirements}{37}{section*.66}
-\contentsline {subsection}{\numberline {4.1.4}Output 1}{37}{subsection.4.1.4}
-\contentsline {subsubsection}{Losses}{37}{section*.67}
-\contentsline {subsubsection}{Switch Speed}{37}{section*.69}
-\contentsline {subsubsection}{Power Requirements}{37}{section*.70}
-\contentsline {subsection}{\numberline {4.1.5}Output 2}{37}{subsection.4.1.5}
-\contentsline {subsection}{\numberline {4.1.6}Cabling}{37}{subsection.4.1.6}
-\contentsline {section}{\numberline {4.2}RF Switch Matrix}{40}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Final Design}{40}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Analysis}{40}{subsection.4.2.2}
-\contentsline {subsubsection}{Losses}{40}{section*.75}
-\contentsline {subsubsection}{Speed}{41}{section*.79}
-\contentsline {subsubsection}{Power Requirements \& Control}{41}{section*.81}
-\contentsline {subsubsection}{Size Requirements}{42}{section*.82}
-\contentsline {chapter}{\numberline {5}Discussion}{43}{chapter.5}
-\contentsline {section}{\numberline {5.1}Problems}{43}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Converting `Design 1' to a Non-Reflective Switch}{43}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Impedance Mismatch}{44}{subsection.5.1.2}
-\contentsline {subsubsection}{Simulations}{44}{section*.86}
-\contentsline {subsubsection}{Resolving Impedance Mismatch}{45}{section*.89}
-\contentsline {subsection}{\numberline {5.1.3}Removing Mismatch Losses from RF Switch Matrix}{45}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Resource Availability}{46}{subsection.5.1.4}
-\contentsline {section}{\numberline {5.2}De-embedding from VNA Results}{46}{section.5.2}
-\contentsline {section}{\numberline {5.3}Objective Fulfilment}{46}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Comparison to Available Technology}{46}{subsection.5.3.1}
-\contentsline {section}{\numberline {5.4}Contributions}{47}{section.5.4}
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{48}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusion}{48}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Work}{48}{section.6.2}
-\contentsline {part}{Appendices}{48}{section.6.2}
-\contentsline {chapter}{\numberline {A}Substrate Parameters}{49}{appendix.A}
-\contentsline {chapter}{\numberline {B}Bill of Materials}{50}{appendix.B}
-\contentsline {chapter}{\numberline {C}RF Switch Controls}{51}{appendix.C}
-\contentsline {section}{\numberline {C.1}Design 1}{52}{section.C.1}
-\contentsline {subsection}{\numberline {C.1.1}Design 2}{53}{subsection.C.1.1}
-\contentsline {subsection}{\numberline {C.1.2}Design 3}{53}{subsection.C.1.2}
-\contentsline {subsection}{\numberline {C.1.3}Output 1}{53}{subsection.C.1.3}
-\contentsline {subsection}{\numberline {C.1.4}Output 2}{53}{subsection.C.1.4}
-\contentsline {chapter}{\numberline {D}Companion disk}{54}{appendix.D}
-\contentsline {section}{\numberline {}Bibliography}{55}{section*.97}
+\contentsline {subsection}{\numberline {2.5.1}Switch Architecture}{10}{subsection.2.5.1}
+\contentsline {subsubsection}{Blocking Switch Matrix}{10}{section*.10}
+\contentsline {subsubsection}{Non-Blocking Switch Matrix}{10}{section*.12}
+\contentsline {subsection}{\numberline {2.5.2}Switch Topologies}{11}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Cabling}{12}{subsection.2.5.3}
+\contentsline {section}{\numberline {2.6}Substrate Selection}{13}{section.2.6}
+\contentsline {section}{\numberline {2.7}RF Transmission Line Design}{14}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Micro-strip}{15}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Strip-line}{15}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}Grounded Coplanar Wave-guide}{16}{subsection.2.7.3}
+\contentsline {subsection}{\numberline {2.7.4}Radiation Emission}{16}{subsection.2.7.4}
+\contentsline {subsubsection}{Picket Fencing Technique}{16}{section*.19}
+\contentsline {subsubsection}{Shielding}{16}{section*.20}
+\contentsline {chapter}{\numberline {3}Evaluation}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Evaluation}{17}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Evaluation Boards}{17}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Evaluation Board Results}{18}{subsection.3.1.2}
+\contentsline {subsubsection}{PE42441}{18}{section*.22}
+\contentsline {subsubsection}{asdf}{18}{section*.24}
+\contentsline {subsubsection}{BGS15AM}{19}{section*.26}
+\contentsline {subsubsection}{BGS12PL6}{19}{section*.28}
+\contentsline {subsubsection}{Results}{19}{section*.30}
+\contentsline {subsection}{\numberline {3.1.3}RF Switches}{19}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Transmission Line Design}{20}{subsection.3.1.4}
+\contentsline {chapter}{\numberline {4}Design}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Design 1}{22}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Specifications}{23}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Control}{24}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Design 2}{24}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Specifications}{25}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Control}{26}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Design 3}{27}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Specifications}{28}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Control}{29}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Output 1}{29}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Control}{31}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Output 2}{32}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Specifications}{33}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Control}{33}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Development}{34}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}PCB Development}{34}{subsection.4.6.1}
+\contentsline {section}{\numberline {4.7}Physical Construction}{36}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Case Design}{36}{subsection.4.7.1}
+\contentsline {section}{\numberline {4.8}Micro-controller Development}{37}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Design}{37}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}Components}{40}{subsection.4.8.2}
+\contentsline {chapter}{\numberline {5}Verification}{42}{chapter.5}
+\contentsline {section}{\numberline {5.1}Individual Board's}{42}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Design 1}{42}{subsection.5.1.1}
+\contentsline {subsubsection}{Losses}{42}{section*.63}
+\contentsline {subsubsection}{Comparison}{44}{section*.66}
+\contentsline {subsection}{\numberline {5.1.2}Design 2}{44}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Design 3}{45}{subsection.5.1.3}
+\contentsline {subsubsection}{Losses}{45}{section*.67}
+\contentsline {subsubsection}{Comparison}{46}{section*.70}
+\contentsline {subsection}{\numberline {5.1.4}Output 1}{46}{subsection.5.1.4}
+\contentsline {subsubsection}{Losses}{47}{section*.71}
+\contentsline {subsubsection}{Comparison}{48}{section*.74}
+\contentsline {subsection}{\numberline {5.1.5}Output 2}{48}{subsection.5.1.5}
+\contentsline {subsection}{\numberline {5.1.6}Cabling}{48}{subsection.5.1.6}
+\contentsline {section}{\numberline {5.2}RF Switch Matrix}{50}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Final Design}{50}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Analysis}{50}{subsection.5.2.2}
+\contentsline {subsubsection}{Losses}{50}{section*.77}
+\contentsline {subsubsection}{Speed}{51}{section*.80}
+\contentsline {subsubsection}{Power Requirements \& Control}{52}{section*.81}
+\contentsline {subsubsection}{Size Requirements}{52}{section*.82}
+\contentsline {chapter}{\numberline {6}Discussion}{53}{chapter.6}
+\contentsline {section}{\numberline {6.1}Problems}{53}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Converting `Design 1' to a Non-Reflective Switch}{53}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Micro-Controller Replacement}{54}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Impedance Mismatch}{55}{subsection.6.1.3}
+\contentsline {subsubsection}{Simulations}{55}{section*.88}
+\contentsline {subsubsection}{Resolving Impedance Mismatch}{56}{section*.91}
+\contentsline {subsection}{\numberline {6.1.4}Removing Mismatch Losses from RF Switch Matrix}{57}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}De-embedding from VNA Results}{57}{section.6.2}
+\contentsline {section}{\numberline {6.3}Objective Fulfilment}{58}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Comparison to Available Technology}{58}{subsection.6.3.1}
+\contentsline {subsubsection}{USB-8SPDT-A18}{58}{section*.97}
+\contentsline {subsubsection}{50MS-334 RF Matrix Switch System}{60}{section*.101}
+\contentsline {section}{\numberline {6.4}Contributions}{61}{section.6.4}
+\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{62}{chapter.7}
+\contentsline {section}{\numberline {7.1}Conclusion}{62}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future Work}{62}{section.7.2}
+\contentsline {part}{Appendices}{63}{section.7.2}
+\contentsline {chapter}{\numberline {A}RF Switch Key Data-sheet Characteristics}{64}{appendix.A}
+\contentsline {section}{\numberline {A.1}SKY-13418}{65}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Losses}{65}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Chip Pinout}{65}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}MACOM MASWSS0115}{65}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Losses}{65}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Chip Pinout}{65}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}PE42441}{65}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Losses}{65}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Chip Pinout}{65}{subsection.A.3.2}
+\contentsline {section}{\numberline {A.4}PE42442}{65}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}Losses}{65}{subsection.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}Chip Pinout}{67}{subsection.A.4.2}
+\contentsline {section}{\numberline {A.5}PE42423}{68}{section.A.5}
+\contentsline {subsection}{\numberline {A.5.1}Losses}{68}{subsection.A.5.1}
+\contentsline {subsection}{\numberline {A.5.2}Chip Pinout}{69}{subsection.A.5.2}
+\contentsline {section}{\numberline {A.6}MACOM MASW-008543}{70}{section.A.6}
+\contentsline {subsection}{\numberline {A.6.1}Losses}{70}{subsection.A.6.1}
+\contentsline {subsection}{\numberline {A.6.2}Chip Pinout}{70}{subsection.A.6.2}
+\contentsline {chapter}{\numberline {B}Substrate Parameters}{71}{appendix.B}
+\contentsline {chapter}{\numberline {C}Bill of Materials}{72}{appendix.C}
+\contentsline {chapter}{\numberline {D}RF Switch Controls}{73}{appendix.D}
+\contentsline {section}{\numberline {D.1}Design 1}{74}{section.D.1}
+\contentsline {subsection}{\numberline {D.1.1}Design 2}{75}{subsection.D.1.1}
+\contentsline {subsection}{\numberline {D.1.2}Design 3}{75}{subsection.D.1.2}
+\contentsline {subsection}{\numberline {D.1.3}Output 1}{75}{subsection.D.1.3}
+\contentsline {subsection}{\numberline {D.1.4}Output 2}{75}{subsection.D.1.4}
+\contentsline {chapter}{\numberline {E}MATLAB Code}{76}{appendix.E}
+\contentsline {chapter}{\numberline {F}Companion disk}{77}{appendix.F}
+\contentsline {section}{\numberline {}Bibliography}{79}{section*.113}
